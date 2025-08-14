@@ -12,14 +12,16 @@
       "dest": "/static/$1"
     },
     {
+      "src": "/project/(.*)",
+      "dest": "app.py"
+    },
+    {
       "src": "/(.*)",
       "dest": "app.py"
     }
   ],
   "env": {
     "GEMINI_API_KEY": "@gemini_api_key"
-  }
-}
   },
   "functions": {
     "app.py": {
