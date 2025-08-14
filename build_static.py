@@ -8,6 +8,13 @@ import shutil
 from urllib.parse import urljoin
 from app import app, get_portfolio_data
 
+def fix_paths(content):
+    """Fix paths in HTML content for static hosting"""
+    return (content.replace('href="/static/', 'href="static/')
+                  .replace('src="/static/', 'src="static/')
+                  .replace('href="/project/', 'href="project/')
+                  .replace('href="/chatbot"', 'href="chatbot.html"'))
+
 def build_static_site():
     """Build static HTML files for GitHub Pages"""
     
@@ -28,7 +35,8 @@ def build_static_site():
         # Build home page
         response = client.get('/')
         with open(os.path.join(dist_dir, 'index.html'), 'w', encoding='utf-8') as f:
-            f.write(response.get_data(as_text=True))
+            content = response.get_data(as_text=True)
+            f.write(fix_paths(content))
         
         # Build project detail pages
         for project in portfolio_data['projects']:
@@ -38,12 +46,14 @@ def build_static_site():
             response = client.get(f'/project/{project["id"]}')
             project_file = os.path.join(project_dir, f'{project["id"]}.html')
             with open(project_file, 'w', encoding='utf-8') as f:
-                f.write(response.get_data(as_text=True))
+                content = response.get_data(as_text=True)
+                f.write(fix_paths(content))
         
         # Build chatbot page
         response = client.get('/chatbot')
         with open(os.path.join(dist_dir, 'chatbot.html'), 'w', encoding='utf-8') as f:
-            f.write(response.get_data(as_text=True))
+            content = response.get_data(as_text=True)
+            f.write(fix_paths(content))
     
     # Create .nojekyll file to prevent Jekyll processing
     with open(os.path.join(dist_dir, '.nojekyll'), 'w') as f:
