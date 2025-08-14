@@ -16,18 +16,34 @@ def fix_paths(content, is_project_page=False):
     
     if is_project_page:
         # For project pages, need to go up one directory
-        content = (content.replace('href="/static/', 'href="../static/')
-                        .replace('src="/static/', 'src="../static/')
-                        .replace('href="/project/', 'href="../project/')
-                        .replace('href="/chatbot"', 'href="../chatbot.html"')
-                        .replace('href="/"', 'href="../index.html"'))
+        replacements = [
+            ('href="/static/', 'href="../static/'),
+            ('src="/static/', 'src="../static/'),
+            ('href="/project/', 'href="../project/'),
+            ('href="/chatbot"', 'href="../chatbot.html"'),
+            ('href="/"', 'href="../index.html"'),
+            # Add more specific cases
+            ('href="/static/css/style.css"', 'href="../static/css/style.css"'),
+            ('href="/static/images/', 'href="../static/images/'),
+            ('content="/static/', 'content="../static/'),
+        ]
     else:
         # For root pages
-        content = (content.replace('href="/static/', 'href="static/')
-                        .replace('src="/static/', 'src="static/')
-                        .replace('href="/project/', 'href="project/')
-                        .replace('href="/chatbot"', 'href="chatbot.html"')
-                        .replace('href="/"', 'href="index.html"'))
+        replacements = [
+            ('href="/static/', 'href="static/'),
+            ('src="/static/', 'src="static/'),
+            ('href="/project/', 'href="project/'),
+            ('href="/chatbot"', 'href="chatbot.html"'),
+            ('href="/"', 'href="index.html"'),
+            # Add more specific cases
+            ('href="/static/css/style.css"', 'href="static/css/style.css"'),
+            ('href="/static/images/', 'href="static/images/'),
+            ('content="/static/', 'content="static/'),
+        ]
+    
+    # Apply all replacements
+    for old, new in replacements:
+        content = content.replace(old, new)
     
     return content
 
