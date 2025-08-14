@@ -1,37 +1,55 @@
-# Venkat Chavan N - Portfolio
+# Venkat Chavan N - Portfolio Website
 
-**🌍 Live Portfolio:**
-- GitHub Pages: [https://venkatchavan.github.io/VC_portfolio/](https://venkatchavan.github.io/VC_portfolio/)
-- Vercel: [https://vc-portfolio.vercel.app/](https://vc-portfolio.vercel.app/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success)](https://venkatchavan.github.io/VC_portfolio/)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-blue)](https://vc-portfolio.vercel.app/)
+[![Python](https://img.shields.io/badge/Python-3.11+-blue)](https://www.python.org/downloads/)
+[![Flask](https://img.shields.io/badge/Flask-3.0+-green)](https://flask.palletsprojects.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
-## Professional Portfolio Website
+A dynamic portfolio website showcasing my expertise in Data Engineering, Machine Learning, and AI. Features an AI-powered chatbot using Google's Gemini API, responsive design, and automated deployment.
 
-A comprehensive portfolio showcasing my expertise in Data Engineering and AI, featuring an AI-powered chatbot, detailed project pages, and responsive design.
+## 🎯 Live Deployments
 
-## 🚀 Features
+- **GitHub Pages**: [venkatchavan.github.io/VC_portfolio](https://venkatchavan.github.io/VC_portfolio/)
+- **Vercel**: [vc-portfolio.vercel.app](https://vc-portfolio.vercel.app/)
+
+## ✨ Key Features
 
 ### Core Features
-- **Responsive Design**: Mobile-first design that works perfectly on all devices
-- **Modern UI/UX**: Clean, professional design with smooth animations and hover effects
-- **Interactive Navigation**: Fixed navigation with smooth scrolling
-- **Contact Form**: Functional contact form for potential employers
+- **Responsive Design**: Mobile-first approach with fluid layouts and breakpoints
+- **Modern UI/UX**: Clean interface with smooth animations and intuitive navigation
+- **Dynamic Content**: Server-rendered pages with Flask templates
+- **Interactive Elements**: Smooth scrolling, hover effects, and dynamic navigation
 
 ### Advanced Features
-- **AI-Powered Chatbot**: Gemini-powered chatbot that can answer questions about Venkat's background
-- **Detailed Project Pages**: Individual pages for each project with comprehensive information
-- **Google Scholar Integration**: Direct links to research publications
+- **AI Assistant**: Gemini-powered chatbot for interactive portfolio exploration
+- **Project Showcase**: Detailed pages for each project with comprehensive information
+- **Academic Integration**: Direct links to research publications via Google Scholar
+- **Automated Deployment**: CI/CD with GitHub Actions for static site generation
 - **GitHub Pages Deployment**: Automated deployment to GitHub Pages
 - **Social Media Integration**: Links to GitHub, LinkedIn, Google Scholar, and email
 
 ## 🛠 Technology Stack
 
-- **Backend**: Python Flask
-- **Frontend**: HTML5, CSS3, JavaScript
-- **AI Integration**: Google Gemini API
-- **Deployment**: GitHub Pages with GitHub Actions
-- **Styling**: Custom CSS with modern design principles
-- **Icons**: Font Awesome icons
-- **Typography**: Inter font family
+### Backend
+- **Core**: Python 3.11+, Flask 3.0+
+- **AI Integration**: Google Generative AI (Gemini)
+- **Environment**: python-dotenv for configuration
+- **Template Engine**: Jinja2 for dynamic content
+
+### Frontend
+- **Structure**: HTML5, Semantic markup
+- **Styling**: Custom CSS3 with modern features
+- **Interactivity**: Vanilla JavaScript
+- **Icons**: Font Awesome 6.0
+- **Typography**: Inter font family (Google Fonts)
+
+### Deployment & CI/CD
+- **Static Generation**: Custom Python build script
+- **Version Control**: Git
+- **CI/CD**: GitHub Actions
+- **Hosting**: GitHub Pages (Static), Vercel (Dynamic)
+- **Environment**: Virtual Environment for dependency management
 
 ## 📁 Project Structure
 
