@@ -8,12 +8,22 @@ import shutil
 from urllib.parse import urljoin
 from app import app, get_portfolio_data
 
-def fix_paths(content):
+def fix_paths(content, is_project_page=False):
     """Fix paths in HTML content for static hosting"""
-    return (content.replace('href="/static/', 'href="static/')
-                  .replace('src="/static/', 'src="static/')
-                  .replace('href="/project/', 'href="project/')
-                  .replace('href="/chatbot"', 'href="chatbot.html"'))
+    if is_project_page:
+        # For project pages, need to go up one directory
+        return (content.replace('href="/static/', 'href="../static/')
+                      .replace('src="/static/', 'src="../static/')
+                      .replace('href="/project/', 'href="../project/')
+                      .replace('href="/chatbot"', 'href="../chatbot.html"')
+                      .replace('href="/"', 'href="../index.html"'))
+    else:
+        # For root pages
+        return (content.replace('href="/static/', 'href="static/')
+                      .replace('src="/static/', 'src="static/')
+                      .replace('href="/project/', 'href="project/')
+                      .replace('href="/chatbot"', 'href="chatbot.html"')
+                      .replace('href="/"', 'href="index.html"'))
 
 def build_static_site():
     """Build static HTML files for GitHub Pages"""
@@ -36,7 +46,7 @@ def build_static_site():
         response = client.get('/')
         with open(os.path.join(dist_dir, 'index.html'), 'w', encoding='utf-8') as f:
             content = response.get_data(as_text=True)
-            f.write(fix_paths(content))
+            f.write(fix_paths(content, is_project_page=False))
         
         # Build project detail pages
         for project in portfolio_data['projects']:
@@ -47,13 +57,13 @@ def build_static_site():
             project_file = os.path.join(project_dir, f'{project["id"]}.html')
             with open(project_file, 'w', encoding='utf-8') as f:
                 content = response.get_data(as_text=True)
-                f.write(fix_paths(content))
+                f.write(fix_paths(content, is_project_page=True))
         
         # Build chatbot page
         response = client.get('/chatbot')
         with open(os.path.join(dist_dir, 'chatbot.html'), 'w', encoding='utf-8') as f:
             content = response.get_data(as_text=True)
-            f.write(fix_paths(content))
+            f.write(fix_paths(content, is_project_page=False))
     
     # Create .nojekyll file to prevent Jekyll processing
     with open(os.path.join(dist_dir, '.nojekyll'), 'w') as f:
