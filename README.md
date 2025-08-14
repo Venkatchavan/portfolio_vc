@@ -1,6 +1,8 @@
 # Venkat Chavan N - Portfolio
 
-**🌍 Live Portfolio:** [https://venkatchavan.github.io/portfolio/](https://venkatchavan.github.io/portfolio/)
+**🌍 Live Portfolio:**
+- GitHub Pages: [https://venkatchavan.github.io/VC_portfolio/](https://venkatchavan.github.io/VC_portfolio/)
+- Vercel: [https://vc-portfolio.vercel.app/](https://vc-portfolio.vercel.app/)
 
 ## Professional Portfolio Website
 
