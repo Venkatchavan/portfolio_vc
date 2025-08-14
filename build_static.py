@@ -10,20 +10,26 @@ from app import app, get_portfolio_data
 
 def fix_paths(content, is_project_page=False):
     """Fix paths in HTML content for static hosting"""
+    # First normalize all urls with url_for to standard format
+    content = content.replace('="{{ url_for(\'static\', filename=\'', '="/static/')
+    content = content.replace('\') }}"', '"')
+    
     if is_project_page:
         # For project pages, need to go up one directory
-        return (content.replace('href="/static/', 'href="../static/')
-                      .replace('src="/static/', 'src="../static/')
-                      .replace('href="/project/', 'href="../project/')
-                      .replace('href="/chatbot"', 'href="../chatbot.html"')
-                      .replace('href="/"', 'href="../index.html"'))
+        content = (content.replace('href="/static/', 'href="../static/')
+                        .replace('src="/static/', 'src="../static/')
+                        .replace('href="/project/', 'href="../project/')
+                        .replace('href="/chatbot"', 'href="../chatbot.html"')
+                        .replace('href="/"', 'href="../index.html"'))
     else:
         # For root pages
-        return (content.replace('href="/static/', 'href="static/')
-                      .replace('src="/static/', 'src="static/')
-                      .replace('href="/project/', 'href="project/')
-                      .replace('href="/chatbot"', 'href="chatbot.html"')
-                      .replace('href="/"', 'href="index.html"'))
+        content = (content.replace('href="/static/', 'href="static/')
+                        .replace('src="/static/', 'src="static/')
+                        .replace('href="/project/', 'href="project/')
+                        .replace('href="/chatbot"', 'href="chatbot.html"')
+                        .replace('href="/"', 'href="index.html"'))
+    
+    return content
 
 def build_static_site():
     """Build static HTML files for GitHub Pages"""
