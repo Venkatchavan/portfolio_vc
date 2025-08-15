@@ -26,11 +26,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Venkatchavan/portfolio.git"
+    "url": "https://github.com/Venkatchavan/portfolio_vc.git"
   },
-  "homepage": "https://venkatchavan.github.io/portfolio",
+  "homepage": "https://venkatchavan.github.io/portfolio_vc",
   "bugs": {
-    "url": "https://github.com/Venkatchavan/portfolio/issues"
+    "url": "https://github.com/Venkatchavan/portfolio_vc/issues"
   },
   "engines": {
     "python": ">=3.8"

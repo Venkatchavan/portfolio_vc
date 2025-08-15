@@ -2,8 +2,8 @@
 
 A modern, AI-powered portfolio website showcasing data engineering expertise, machine learning projects, and creative writing. Built with Flask and featuring intelligent chatbot capabilities.
 
-[![Deploy to GitHub Pages](https://github.com/Venkatchavan/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/Venkatchavan/portfolio/actions/workflows/deploy.yml)
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://venkatchavan.github.io/portfolio)
+[![Deploy to GitHub Pages](https://github.com/Venkatchavan/portfolio_vc/actions/workflows/deploy.yml/badge.svg)](https://github.com/Venkatchavan/portfolio_vc/actions/workflows/deploy.yml)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://venkatchavan.github.io/portfolio_vc)
 
 ## ✨ Features
 
@@ -33,7 +33,7 @@ A modern, AI-powered portfolio website showcasing data engineering expertise, ma
 
 ## 🌐 Live Demo
 
-**🔗 Visit the live portfolio:** [https://venkatchavan.github.io/portfolio](https://venkatchavan.github.io/portfolio)
+**🔗 Visit the live portfolio:** [https://venkatchavan.github.io/portfolio_vc](https://venkatchavan.github.io/portfolio_vc)
 
 ### Key Sections:
 - **Home**: Professional introduction and overview

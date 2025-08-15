@@ -104,7 +104,7 @@ def main():
     print("1. ✅ Static site built and committed to repository")
     print("2. 🔄 GitHub Actions will automatically deploy to GitHub Pages")
     print("3. ⏱️  Deployment typically takes 2-5 minutes")
-    print("4. 🌐 Your site will be available at: https://venkatchavan.github.io/portfolio")
+    print("4. 🌐 Your site will be available at: https://venkatchavan.github.io/portfolio_vc")
     print("\n💡 Tips:")
     print("- Check GitHub Actions tab for deployment progress")
     print("- Make sure GitHub Pages is enabled in repository settings")
@@ -113,7 +113,7 @@ def main():
     # Open GitHub Actions page
     try:
         import webbrowser
-        repo_url = "https://github.com/Venkatchavan/portfolio/actions"
+        repo_url = "https://github.com/Venkatchavan/portfolio_vc/actions"
         print(f"\n🔗 Opening GitHub Actions: {repo_url}")
         webbrowser.open(repo_url)
     except Exception:
