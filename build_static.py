@@ -14,25 +14,37 @@ app = create_app()
 
 def fix_paths(content, is_project_page=False):
     """Fix paths in HTML content for static hosting"""
-    # First normalize all urls with url_for to standard format
-    content = content.replace('="{{ url_for(\'static\', filename=\'', '="/static/')
-    content = content.replace('\') }}"', '"')
+    
+    # First, handle Flask url_for patterns more comprehensively
+    import re
+    
+    # Replace url_for patterns
+    content = re.sub(r'\{\{\s*url_for\(\'static\',\s*filename=\'([^\']+)\'\)\s*\}\}', r'static/\1', content)
+    content = re.sub(r'\{\{\s*url_for\(\'main\.home\'\)\s*\}\}', 'index.html', content)
+    content = re.sub(r'\{\{\s*url_for\(\'chatbot\.chatbot\'\)\s*\}\}', 'chatbot.html', content)
+    content = re.sub(r'\{\{\s*url_for\(\'narrative\.narrative_nexus\'\)\s*\}\}', 'narrative_nexus.html', content)
     
     if is_project_page:
         # For project pages, need to go up one directory
         replacements = [
             ('href="/static/', 'href="../static/'),
             ('src="/static/', 'src="../static/'),
+            ('href="static/', 'href="../static/'),
+            ('src="static/', 'src="../static/'),
             ('href="/project/', 'href="../project/'),
             ('href="/chat"', 'href="../chatbot.html"'),
+            ('href="/chat/"', 'href="../chatbot.html"'),
+            ('href="/chat/bot"', 'href="../chatbot.html"'),
             ('href="/chatbot"', 'href="../chatbot.html"'),
             ('href="/narrative/"', 'href="../narrative_nexus.html"'),
             ('href="/narrative/nexus"', 'href="../narrative_nexus.html"'),
+            ('href="chatbot.html"', 'href="../chatbot.html"'),
+            ('href="narrative_nexus.html"', 'href="../narrative_nexus.html"'),
+            ('href="index.html"', 'href="../index.html"'),
             ('href="/"', 'href="../index.html"'),
-            # Add more specific cases
-            ('href="/static/css/style.css"', 'href="../static/css/style.css"'),
-            ('href="/static/images/', 'href="../static/images/'),
+            # Fix content attributes
             ('content="/static/', 'content="../static/'),
+            ('content="static/', 'content="../static/'),
         ]
     else:
         # For root pages
@@ -41,14 +53,14 @@ def fix_paths(content, is_project_page=False):
             ('src="/static/', 'src="static/'),
             ('href="/project/', 'href="project/'),
             ('href="/chat"', 'href="chatbot.html"'),
+            ('href="/chat/"', 'href="chatbot.html"'),
+            ('href="/chat/bot"', 'href="chatbot.html"'),
             ('href="/chatbot"', 'href="chatbot.html"'),
             ('href="/narrative_nexus"', 'href="narrative_nexus.html"'),
             ('href="/narrative/"', 'href="narrative_nexus.html"'),
             ('href="/narrative/nexus"', 'href="narrative_nexus.html"'),
             ('href="/"', 'href="index.html"'),
-            # Add more specific cases
-            ('href="/static/css/style.css"', 'href="static/css/style.css"'),
-            ('href="/static/images/', 'href="static/images/'),
+            # Fix content attributes
             ('content="/static/', 'content="static/'),
         ]
     
@@ -92,10 +104,17 @@ def build_static_site():
                 content = response.get_data(as_text=True)
                 f.write(fix_paths(content, is_project_page=True))
         
-        # Build chatbot page
-        response = client.get('/chat')
+        # Build chatbot page (try main route first, fallback to /bot)
+        try:
+            response = client.get('/chat/')
+            if response.status_code != 200:
+                response = client.get('/chat')
+        except:
+            response = client.get('/chat')
+        
         with open(os.path.join(dist_dir, 'chatbot.html'), 'w', encoding='utf-8') as f:
             content = response.get_data(as_text=True)
+            f.write(fix_paths(content, is_project_page=False))
             f.write(fix_paths(content, is_project_page=False))
         
         # Build Narrative Nexus page
