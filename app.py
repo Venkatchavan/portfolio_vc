@@ -284,7 +284,7 @@ def project_detail(project_id):
 def chatbot():
     return render_template('chatbot.html')
 
-@app.route('/narrative-nexus')
+@app.route('/narrative_nexus')
 def narrative_nexus():
     portfolio_data = get_portfolio_data()
     poems = []

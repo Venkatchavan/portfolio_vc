@@ -34,6 +34,7 @@ def fix_paths(content, is_project_page=False):
             ('src="/static/', 'src="static/'),
             ('href="/project/', 'href="project/'),
             ('href="/chatbot"', 'href="chatbot.html"'),
+            ('href="/narrative_nexus"', 'href="narrative_nexus.html"'),
             ('href="/"', 'href="index.html"'),
             # Add more specific cases
             ('href="/static/css/style.css"', 'href="static/css/style.css"'),
