@@ -6,7 +6,11 @@ This script generates static HTML files from the Flask app
 import os
 import shutil
 from urllib.parse import urljoin
-from app import app, get_portfolio_data
+from app import create_app
+from app.services.portfolio_service import get_portfolio_data
+
+# Create the Flask app
+app = create_app()
 
 def fix_paths(content, is_project_page=False):
     """Fix paths in HTML content for static hosting"""
@@ -72,19 +76,25 @@ def build_static_site():
             f.write(fix_paths(content, is_project_page=False))
         
         # Build project detail pages
-        for project in portfolio_data['projects']:
+        for project in portfolio_data.projects:
             project_dir = os.path.join(dist_dir, 'project')
             os.makedirs(project_dir, exist_ok=True)
             
-            response = client.get(f'/project/{project["id"]}')
-            project_file = os.path.join(project_dir, f'{project["id"]}.html')
+            response = client.get(f'/project/{project.id}')
+            project_file = os.path.join(project_dir, f'{project.id}.html')
             with open(project_file, 'w', encoding='utf-8') as f:
                 content = response.get_data(as_text=True)
                 f.write(fix_paths(content, is_project_page=True))
         
         # Build chatbot page
-        response = client.get('/chatbot')
+        response = client.get('/chat')
         with open(os.path.join(dist_dir, 'chatbot.html'), 'w', encoding='utf-8') as f:
+            content = response.get_data(as_text=True)
+            f.write(fix_paths(content, is_project_page=False))
+        
+        # Build Narrative Nexus page
+        response = client.get('/narrative')
+        with open(os.path.join(dist_dir, 'narrative_nexus.html'), 'w', encoding='utf-8') as f:
             content = response.get_data(as_text=True)
             f.write(fix_paths(content, is_project_page=False))
     

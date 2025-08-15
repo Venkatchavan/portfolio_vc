@@ -1,0 +1,38 @@
+{
+  "name": "venkat-portfolio",
+  "version": "1.0.0",
+  "description": "Modern AI-powered portfolio showcasing data engineering and machine learning projects",
+  "main": "app.py",
+  "scripts": {
+    "dev": "python run.py",
+    "build": "python build_static.py",
+    "test": "python test_portfolio.py",
+    "deploy": "python build_static.py && gh-pages -d dist"
+  },
+  "keywords": [
+    "portfolio",
+    "flask",
+    "ai",
+    "data-engineering",
+    "machine-learning",
+    "python",
+    "gemini-ai"
+  ],
+  "author": {
+    "name": "Venkat Chavan N",
+    "email": "venkat.chavan.n@gmail.com",
+    "url": "https://github.com/Venkatchavan"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Venkatchavan/portfolio.git"
+  },
+  "homepage": "https://venkatchavan.github.io/portfolio",
+  "bugs": {
+    "url": "https://github.com/Venkatchavan/portfolio/issues"
+  },
+  "engines": {
+    "python": ">=3.8"
+  }
+}

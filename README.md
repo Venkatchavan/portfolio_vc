@@ -1,53 +1,113 @@
-# Venkat Chavan N - Portfolio Website
+# 🚀 Venkat Chavan Portfolio
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-success)](https://venkatchavan.github.io/VC_portfolio/)
-[![Vercel](https://img.shields.io/badge/Vercel-Deployed-blue)](https://vc-portfolio.vercel.app/)
-[![Python](https://img.shields.io/badge/Python-3.11+-blue)](https://www.python.org/downloads/)
-[![Flask](https://img.shields.io/badge/Flask-3.0+-green)](https://flask.palletsprojects.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+A modern, AI-powered portfolio website showcasing data engineering expertise, machine learning projects, and creative writing. Built with Flask and featuring intelligent chatbot capabilities.
 
-A dynamic portfolio website showcasing my expertise in Data Engineering, Machine Learning, and AI. Features an AI-powered chatbot using Google's Gemini API, responsive design, and automated deployment.
+[![Deploy to GitHub Pages](https://github.com/Venkatchavan/portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/Venkatchavan/portfolio/actions/workflows/deploy.yml)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://venkatchavan.github.io/portfolio)
 
-## 🎯 Live Deployments
+## ✨ Features
 
-- **GitHub Pages**: [venkatchavan.github.io/VC_portfolio](https://venkatchavan.github.io/VC_portfolio/)
-- **Vercel**: [vc-portfolio.vercel.app](https://vc-portfolio.vercel.app/)
+### 🏗️ Modern Architecture
+- **Modular Flask Application** with blueprint-based structure
+- **Application Factory Pattern** for flexible configuration
+- **Service-Oriented Design** with dedicated modules
+- **Dynamic Content Management** from text files
 
-## ✨ Key Features
+### 🤖 AI-Powered Assistant
+- **Gemini AI Integration** for intelligent conversations
+- **Poetry-Focused Responses** for creative writing discussions
+- **Context-Aware Chat** about projects and experience
+- **Fallback System** for offline functionality
 
-### Core Features
-- **Responsive Design**: Mobile-first approach with fluid layouts and breakpoints
-- **Modern UI/UX**: Clean interface with smooth animations and intuitive navigation
-- **Dynamic Content**: Server-rendered pages with Flask templates
-- **Interactive Elements**: Smooth scrolling, hover effects, and dynamic navigation
+### 🎨 Beautiful Design
+- **Narrative Nexus**: Stunning poetry section with glass morphism
+- **Responsive Layout** optimized for all devices
+- **Interactive Elements**: modals, animations, and transitions
+- **Custom Logo Integration** and professional branding
 
-### Advanced Features
-- **AI Assistant**: Gemini-powered chatbot for interactive portfolio exploration
-- **Project Showcase**: Detailed pages for each project with comprehensive information
-- **Academic Integration**: Direct links to research publications via Google Scholar
-- **Automated Deployment**: CI/CD with GitHub Actions for static site generation
-- **GitHub Pages Deployment**: Automated deployment to GitHub Pages
-- **Social Media Integration**: Links to GitHub, LinkedIn, Google Scholar, and email
+### 📚 Content Features
+- **Dynamic Poetry Collection** with personal poems
+- **Project Showcase** with detailed technical information
+- **Professional Experience** timeline and achievements
+- **Skills Visualization** and technology stack
 
-## 🛠 Technology Stack
+## 🌐 Live Demo
 
-### Backend
-- **Core**: Python 3.11+, Flask 3.0+
-- **AI Integration**: Google Generative AI (Gemini)
-- **Environment**: python-dotenv for configuration
-- **Template Engine**: Jinja2 for dynamic content
+**🔗 Visit the live portfolio:** [https://venkatchavan.github.io/portfolio](https://venkatchavan.github.io/portfolio)
 
-### Frontend
-- **Structure**: HTML5, Semantic markup
-- **Styling**: Custom CSS3 with modern features
-- **Interactivity**: Vanilla JavaScript
-- **Icons**: Font Awesome 6.0
-- **Typography**: Inter font family (Google Fonts)
+### Key Sections:
+- **Home**: Professional introduction and overview
+- **Projects**: Detailed showcase of technical projects
+- **AI Assistant**: Intelligent chatbot for inquiries
+- **Narrative Nexus**: Personal poetry collection with beautiful UI
 
-### Deployment & CI/CD
-- **Static Generation**: Custom Python build script
-- **Version Control**: Git
-- **CI/CD**: GitHub Actions
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+
+- pip (Python package manager)
+
+### Installation & Setup
+
+1. **Clone or download** the project to your local machine
+
+2. **Navigate to the project directory**:
+   ```bash
+   cd portfoliotest
+   ```
+
+3. **Run the setup script**:
+   ```bash
+   python setup_and_run.py
+   ```
+
+The setup script will automatically:
+- Check Python version compatibility
+- Install required packages from `requirements.txt`
+- Create necessary content directories
+- Verify application structure
+- Start the Flask development server
+
+### Manual Setup (Alternative)
+
+If you prefer manual setup:
+
+1. **Install requirements**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Create content directories**:
+   ```bash
+   mkdir -p content/poems content/blogs content/projects
+   ```
+
+3. **Run the application**:
+   ```bash
+   # For modular app structure
+   python -c "from app import create_app; app = create_app(); app.run(debug=True)"
+   
+   # Or if using monolithic app.py
+   python app.py
+   ```
+
+## 🧪 Testing
+
+Run the comprehensive test suite to verify all functionality:
+
+```bash
+python test_portfolio.py
+```
+
+The test suite will:
+- Start the Flask server automatically
+- Test all pages and API endpoints
+- Verify AI chat functionality
+- Check static file accessibility
+- Test project pages and content loading
+- Provide detailed results summary
+
+Made with ❤️ and Flask. Featuring beautiful UI design, AI integration, and modular architecture for scalability and maintainability.
 - **Hosting**: GitHub Pages (Static), Vercel (Dynamic)
 - **Environment**: Virtual Environment for dependency management
 

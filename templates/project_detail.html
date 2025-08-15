@@ -163,7 +163,7 @@
                 <div class="related-project-card">
                     <h3>{{ other_project.title }}</h3>
                     <p>{{ other_project.description }}</p>
-                    <a href="/project/{{ other_project.id }}" class="project-link">View Details</a>
+                    <a href="{{ url_for('projects.project_detail', project_id=other_project.id) }}" class="project-link">View Details</a>
                 </div>
                 {% endif %}
                 {% endfor %}

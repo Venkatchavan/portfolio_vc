@@ -1,4 +1,137 @@
-﻿__pycache__/
-*.pyc
-.venv/
+﻿# 🔒 SECURITY - Environment Variables and API Keys (NEVER COMMIT!)
 .env
+.env.local
+.env.development
+.env.test
+.env.production
+*.env
+.environment
+
+# API Keys and Secrets
+config/secrets.py
+secrets.json
+api_keys.txt
+credentials.json
+gemini_api_key.txt
+openai_api_key.txt
+database_credentials.json
+
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 🌐 Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# 🧪 Testing and Coverage
+.coverage
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+htmlcov/
+
+# 🔧 IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 🌐 Flask Specific
+instance/
+.webassets-cache
+*.db
+*.sqlite
+*.sqlite3
+
+# 📝 Logs
+*.log
+logs/
+log/
+
+# 🏗️ Build outputs
+dist/
+build/
+*.tar.gz
+*.zip
+
+# 🧹 Temporary files
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+
+# 📦 Node modules (if using any frontend tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🔐 SSL Certificates and Keys
+*.pem
+*.key
+*.crt
+*.csr
+
+# 🎯 Project Specific
+portfolio.db
+uploads/
+user_content/
+config_local.py
+local_settings.py
+*.bak
+*.backup
+backup/
+
+# 📱 Mobile and Other
+*.apk
+*.ipa
+
+# 📊 Jupyter Notebook
+.ipynb_checkpoints
+
+# Documentation builds
+docs/_build/
+site/
+
+# Type checkers
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+
+# ⚠️ CRITICAL: Personal and sensitive files
+personal_notes.txt
+TODO_private.md
+deployment_secrets.yaml
+smtp_config.py

@@ -20,7 +20,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="{{ url_for('home') }}" style="text-decoration: none;">
+                <a href="{{ url_for('main.home') }}" style="text-decoration: none;">
                     <img src="{{ url_for('static', filename='images/logo-portfolio.png') }}" 
                          alt="{{ data.name }} Logo" 
                          class="nav-logo-img"
@@ -51,10 +51,10 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url_for('chatbot') }}" class="nav-link">AI Assistant</a>
+                    <a href="{{ url_for('chatbot.chatbot') }}" class="nav-link">AI Assistant</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url_for('narrative_nexus') }}" class="nav-link">Narrative Nexus</a>
+                    <a href="{{ url_for('narrative.narrative_nexus') }}" class="nav-link">Narrative Nexus</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -86,7 +86,7 @@
                 <div class="hero-image">
                     <div class="profile-card">
                         <div class="profile-img">
-                            <img src="{{ url_for('static', filename='images/venkat-profile.jpg') }}" 
+                            <img src="{{ url_for('static', filename='images/chavan-profile.jpg') }}" 
                                  alt="{{ data.name }}" 
                                  class="profile-photo"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -125,7 +125,7 @@
             <div class="about-content">
                 <div class="about-info">
                     <div class="about-photo">
-                        <img src="{{ url_for('static', filename='images/venkat-profile.jpg') }}" 
+                        <img src="{{ url_for('static', filename='images/chavan-profile.jpg') }}" 
                              alt="{{ data.name }}" 
                              class="about-image"
                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -223,7 +223,7 @@
                     <h3 class="project-title">{{ project.title }}</h3>
                     <p class="project-description">{{ project.description }}</p>
                     <div class="project-links">
-                        <a href="/project/{{ project.id }}" class="project-link">View Details</a>
+                        <a href="{{ url_for('projects.project_detail', project_id=project.id) }}" class="project-link">View Details</a>
                         {% if project.github %}
                         <a href="{{ project.github }}" target="_blank" class="project-link">GitHub</a>
                         {% endif %}
