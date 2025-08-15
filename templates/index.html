@@ -20,11 +20,13 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="{{ url_for('static', filename='images/logo-portfolio.png') }}" 
-                     alt="{{ data.name }} Logo" 
-                     class="nav-logo-img"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                <h2 style="display: none;">{{ data.name }}</h2>
+                <a href="{{ url_for('home') }}" style="text-decoration: none;">
+                    <img src="{{ url_for('static', filename='images/logo-portfolio.png') }}" 
+                         alt="{{ data.name }} Logo" 
+                         class="nav-logo-img"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <h2 style="display: none;">{{ data.name }}</h2>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -49,10 +51,10 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/chatbot" class="nav-link">AI Assistant</a>
+                    <a href="{{ url_for('chatbot') }}" class="nav-link">AI Assistant</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/narrative-nexus" class="nav-link">Narrative Nexus</a>
+                    <a href="{{ url_for('narrative_nexus') }}" class="nav-link">Narrative Nexus</a>
                 </li>
             </ul>
             <div class="hamburger">
