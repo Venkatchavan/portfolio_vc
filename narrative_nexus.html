@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrative Nexus - Venkat Chavan N</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/logo-portfolio.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/logo-portfolio.png">
+    <link rel="apple-touch-icon" href="static/images/logo-portfolio.png">
+    <link rel="shortcut icon" href="static/images/logo-portfolio.png">
+    
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <img src="static/images/logo-portfolio.png" 
+                         alt="Venkat Chavan N Logo" 
+                         class="nav-logo-img"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                    <h2 style="display: none; color: inherit;">Venkat Chavan N</h2>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="chatbot.html" class="nav-link">AI Assistant</a>
+                </li>
+                <li class="nav-item">
+                    <a href="narrative_nexus.html" class="nav-link active">Narrative Nexus</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Narrative Nexus Content -->
+    <div class="narrative-container">
+        <header class="narrative-header">
+            <div class="narrative-logo-section">
+                <img src="static/images/Narrative-Nexus-Logo.png" 
+                     alt="Narrative Nexus Logo" 
+                     class="narrative-logo"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <h1 style="display: none;">Narrative Nexus</h1>
+            </div>
+            <p>Where technology meets poetry, and code becomes verse</p>
+        </header>
+
+        <div class="narrative-content">
+            <!-- Left Side - Navigation & AI Assistant -->
+            <div class="narrative-sidebar">
+                <div class="navigation-section">
+                    <h3>Explore</h3>
+                    <ul class="nav-menu">
+                        <li><a href="#poems" class="nav-link active">Poetry Collection</a></li>
+                        <li><a href="#ai-assistant" class="nav-link">AI Assistant</a></li>
+                        <li><a href="#creative-process" class="nav-link">Creative Process</a></li>
+                        <li><a href="#inspiration" class="nav-link">Inspiration</a></li>
+                    </ul>
+                </div>
+
+                <div class="ai-assistant-section" id="ai-assistant">
+                    <h3>🤖 Poetry AI Assistant</h3>
+                    <div class="ai-chat-container">
+                        <div class="ai-messages" id="ai-messages">
+                            <div class="ai-message bot-message">
+                                <p>Hello! I'm your poetry companion. Ask me about poems, poetry techniques, or request a custom verse! ✨</p>
+                            </div>
+                        </div>
+                        <div class="ai-input-container">
+                            <input type="text" id="ai-input" placeholder="Ask about poetry, request a verse..." maxlength="500">
+                            <button id="ai-send-btn" class="ai-send-button">Send</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3>📊 Collection Stats</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">Poems</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">150</span>
+                            <span class="stat-label">Avg Lines</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">Tech</span>
+                            <span class="stat-label">Theme</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inspiration-section" id="inspiration">
+                    <h3>💡 Current Inspiration</h3>
+                    <div class="inspiration-card">
+                        <blockquote>
+                            "In every algorithm lies a story waiting to be told, in every function a verse yearning to be written."
+                        </blockquote>
+                        <cite>- The Digital Poet</cite>
+                    </div>
+                    
+                    <div class="inspiration-sources">
+                        <h4>Drawing from:</h4>
+                        <ul>
+                            <li>🌐 Cloud architectures</li>
+                            <li>🤖 AI algorithms</li>
+                            <li>📡 Network protocols</li>
+                            <li>🔐 Cryptographic patterns</li>
+                            <li>⚡ Real-time systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Poems Collection -->
+            <div class="poems-section" id="poems">
+                <div class="section-header">
+                    <h2>Poetry Collection</h2>
+                    <p>10 poems exploring the intersection of technology and human experience</p>
+                </div>
+
+                
+                    <div class="poems-grid">
+                        
+                        <article class="poem-card" data-poem-id="1">
+                            <header class="poem-header">
+                                <h3 class="poem-title">Footprints in the Snow</h3>
+                                <div class="poem-meta">
+                                    <span class="poem-date">August 15, 2025</span>
+                                    <span class="poem-lines">19 lines</span>
+                                </div>
+                            </header>
+                            
+                            <div class="poem-preview">
+                                
+                                
+                                    <p class="poem-line">The snow first fell—a silver dream,</p>
+                                
+                                    <p class="poem-line">A wonderland in silent gleam.</p>
+                                
+                                    <p class="poem-line">I stepped alone on frozen streets,</p>
+                                
+                                    <p class="poem-line">And found in stillness, quiet beats.</p>
+                                
+                                
+                                    <p class="poem-ellipsis">...</p>
+                                
+                            </div>
+                            
+                            <footer class="poem-footer">
+                                <button class="read-poem-btn" data-poem-title="Footprints in the Snow" data-poem-content="The snow first fell—a silver dream,&amp;#10;A wonderland in silent gleam.&amp;#10;I stepped alone on frozen streets,&amp;#10;And found in stillness, quiet beats.&amp;#10;&amp;#10;With bare feet pressed on icy stone,&amp;#10;I met myself, yet felt alone.&amp;#10;At markets bright with festive cheer,&amp;#10;I smiled through joy and held back fear.&amp;#10;&amp;#10;The lights, the cold, the world so wide,&amp;#10;Yet something empty stayed inside.&amp;#10;When New Year rang, I softly knew—&amp;#10;My heart was calling something true.&amp;#10;&amp;#10;So I booked my flight and let tears show,&amp;#10;Still kissed the snow before I&#39;d go.&amp;#10;Some winters hug, some winters bite,&amp;#10;But all must pass into the light." onclick="openPoemModalFromData(this)">
+                                    Read Full Poem
+                                </button>
+                                <div class="poem-actions">
+                                    <button class="action-btn" data-poem-title="Footprints in the Snow" onclick="sharePoemFromData(this)">
+                                        <span>📤 Share</span>
+                                    </button>
+                                    <button class="action-btn" data-poem-title="Footprints in the Snow" onclick="favoritePoemFromData(this)">
+                                        <span>❤️ Like</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+                        
+                        <article class="poem-card" data-poem-id="2">
+                            <header class="poem-header">
+                                <h3 class="poem-title">Snowfall on My Birthday</h3>
+                                <div class="poem-meta">
+                                    <span class="poem-date">August 15, 2025</span>
+                                    <span class="poem-lines">14 lines</span>
+                                </div>
+                            </header>
+                            
+                            <div class="poem-preview">
+                                
+                                
+                                    <p class="poem-line">No candles lit, no crowded cheer,</p>
+                                
+                                    <p class="poem-line">Just frost and silence drawing near.</p>
+                                
+                                    <p class="poem-line">In foreign lands, my heart did sway,</p>
+                                
+                                    <p class="poem-line">A birthday dawned—a quiet day.</p>
+                                
+                                
+                                    <p class="poem-ellipsis">...</p>
+                                
+                            </div>
+                            
+                            <footer class="poem-footer">
+                                <button class="read-poem-btn" data-poem-title="Snowfall on My Birthday" data-poem-content="No candles lit, no crowded cheer,&amp;#10;Just frost and silence drawing near.&amp;#10;In foreign lands, my heart did sway,&amp;#10;A birthday dawned—a quiet day.&amp;#10;&amp;#10;No calls, no cake, no bursting sound,&amp;#10;Just snowflakes spinning on the ground.&amp;#10;I laughed, I wept, I stood alone,&amp;#10;And found a truth I now call my own:&amp;#10;&amp;#10;That joy and sorrow ebb and flow,&amp;#10;Like drifting snow, like winds that blow.&amp;#10;And even if no one may see—&amp;#10;I celebrate the strength in me." onclick="openPoemModalFromData(this)">
+                                    Read Full Poem
+                                </button>
+                                <div class="poem-actions">
+                                    <button class="action-btn" data-poem-title="Snowfall on My Birthday" onclick="sharePoemFromData(this)">
+                                        <span>📤 Share</span>
+                                    </button>
+                                    <button class="action-btn" data-poem-title="Snowfall on My Birthday" onclick="favoritePoemFromData(this)">
+                                        <span>❤️ Like</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+                        
+                        <article class="poem-card" data-poem-id="3">
+                            <header class="poem-header">
+                                <h3 class="poem-title">The Decision That Left Without Goodbye</h3>
+                                <div class="poem-meta">
+                                    <span class="poem-date">August 15, 2025</span>
+                                    <span class="poem-lines">19 lines</span>
+                                </div>
+                            </header>
+                            
+                            <div class="poem-preview">
+                                
+                                
+                                    <p class="poem-line">No voices weighed, no counsel sought,</p>
+                                
+                                    <p class="poem-line">Just one bold moment, a burning thought.</p>
+                                
+                                    <p class="poem-line">A ticket booked, a world unknown,</p>
+                                
+                                    <p class="poem-line">A journey I would walk alone.</p>
+                                
+                                
+                                    <p class="poem-ellipsis">...</p>
+                                
+                            </div>
+                            
+                            <footer class="poem-footer">
+                                <button class="read-poem-btn" data-poem-title="The Decision That Left Without Goodbye" data-poem-content="No voices weighed, no counsel sought,&amp;#10;Just one bold moment, a burning thought.&amp;#10;A ticket booked, a world unknown,&amp;#10;A journey I would walk alone.&amp;#10;&amp;#10;Delays and doubts, the waiting spun,&amp;#10;The visa stalled, the loan undone.&amp;#10;But still I stood through fear and fire,&amp;#10;Fueled by quiet, growing desire.&amp;#10;&amp;#10;I landed here, the skies so wide,&amp;#10;For three sweet days, I walked with pride.&amp;#10;Then came the ache, the silent cries—&amp;#10;Of missing hands and teary eyes.&amp;#10;&amp;#10;Yet in that ache, I found my name,&amp;#10;In cooking flames and sweeping shame.&amp;#10;From solitude I shaped my core—&amp;#10;That one bold step became much more." onclick="openPoemModalFromData(this)">
+                                    Read Full Poem
+                                </button>
+                                <div class="poem-actions">
+                                    <button class="action-btn" data-poem-title="The Decision That Left Without Goodbye" onclick="sharePoemFromData(this)">
+                                        <span>📤 Share</span>
+                                    </button>
+                                    <button class="action-btn" data-poem-title="The Decision That Left Without Goodbye" onclick="favoritePoemFromData(this)">
+                                        <span>❤️ Like</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+                        
+                        <article class="poem-card" data-poem-id="4">
+                            <header class="poem-header">
+                                <h3 class="poem-title">The Roasts We Lived By</h3>
+                                <div class="poem-meta">
+                                    <span class="poem-date">August 15, 2025</span>
+                                    <span class="poem-lines">14 lines</span>
+                                </div>
+                            </header>
+                            
+                            <div class="poem-preview">
+                                
+                                
+                                    <p class="poem-line">We once spoke flames with every line,</p>
+                                
+                                    <p class="poem-line">Sarcasm seasoned, raw, divine.</p>
+                                
+                                    <p class="poem-line">No feelings bruised, no hearts to mend,</p>
+                                
+                                    <p class="poem-line">Just friendly fire that knew no end.</p>
+                                
+                                
+                                    <p class="poem-ellipsis">...</p>
+                                
+                            </div>
+                            
+                            <footer class="poem-footer">
+                                <button class="read-poem-btn" data-poem-title="The Roasts We Lived By" data-poem-content="We once spoke flames with every line,&amp;#10;Sarcasm seasoned, raw, divine.&amp;#10;No feelings bruised, no hearts to mend,&amp;#10;Just friendly fire that knew no end.&amp;#10;&amp;#10;We laughed so hard we lost our breath,&amp;#10;Insults that loved more than they death.&amp;#10;Comebacks sharp as cricket swings,&amp;#10;We ruled the art of teasing things.&amp;#10;&amp;#10;But now the chats grow still and slow,&amp;#10;Life pulled us each where we must go.&amp;#10;Yet when I&#39;m down or feeling small,&amp;#10;I hear those jokes—and smile through all." onclick="openPoemModalFromData(this)">
+                                    Read Full Poem
+                                </button>
+                                <div class="poem-actions">
+                                    <button class="action-btn" data-poem-title="The Roasts We Lived By" onclick="sharePoemFromData(this)">
+                                        <span>📤 Share</span>
+                                    </button>
+                                    <button class="action-btn" data-poem-title="The Roasts We Lived By" onclick="favoritePoemFromData(this)">
+                                        <span>❤️ Like</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+                        
+                        <article class="poem-card" data-poem-id="5">
+                            <header class="poem-header">
+                                <h3 class="poem-title">The Sleepless Scholar</h3>
+                                <div class="poem-meta">
+                                    <span class="poem-date">August 15, 2025</span>
+                                    <span class="poem-lines">14 lines</span>
+                                </div>
+                            </header>
+                            
+                            <div class="poem-preview">
+                                
+                                
+                                    <p class="poem-line">Once I napped at noon with ease,</p>
+                                
+                                    <p class="poem-line">Chasing dreams in gentle breeze.</p>
+                                
+                                    <p class="poem-line">Now I lie beneath the night,</p>
+                                
+                                    <p class="poem-line">Eyes wide open, far from light.</p>
+                                
+                                
+                                    <p class="poem-ellipsis">...</p>
+                                
+                            </div>
+                            
+                            <footer class="poem-footer">
+                                <button class="read-poem-btn" data-poem-title="The Sleepless Scholar" data-poem-content="Once I napped at noon with ease,&amp;#10;Chasing dreams in gentle breeze.&amp;#10;Now I lie beneath the night,&amp;#10;Eyes wide open, far from light.&amp;#10;&amp;#10;Five hours pass like whispered dust,&amp;#10;Each breath heavy, laced with rust.&amp;#10;The mirror shows what silence hides—&amp;#10;Blackened eyes and faded strides.&amp;#10;&amp;#10;Food feels foreign, thoughts run wild,&amp;#10;Hope lost somewhere in the piled.&amp;#10;But in this ache, a will survives,&amp;#10;A fire that still dares and strives." onclick="openPoemModalFromData(this)">
+                                    Read Full Poem
+                                </button>
+                                <div class="poem-actions">
+                                    <button class="action-btn" data-poem-title="The Sleepless Scholar" onclick="sharePoemFromData(this)">
+                                        <span>📤 Share</span>
+                                    </button>
+                                    <button class="action-btn" data-poem-title="The Sleepless Scholar" onclick="favoritePoemFromData(this)">
+                                        <span>❤️ Like</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+                        
+                        <article class="poem-card" data-poem-id="6">
+                            <header class="poem-header">
+                                <h3 class="poem-title">The Week After I Spoke</h3>
+                                <div class="poem-meta">
+                                    <span class="poem-date">August 15, 2025</span>
+                                    <span class="poem-lines">9 lines</span>
+                                </div>
+                            </header>
+                            
+                            <div class="poem-preview">
+                                
+                                
+                                    <p class="poem-line">I spoke the truth, heart on sleeve,</p>
+                                
+                                    <p class="poem-line">But heard a &#39;no&#39; I couldn&#39;t grieve.</p>
+                                
+                                    <p class="poem-line">A week of silence, strange and still,</p>
+                                
+                                    <p class="poem-line">Yet duty called, and so did will.</p>
+                                
+                                
+                                    <p class="poem-ellipsis">...</p>
+                                
+                            </div>
+                            
+                            <footer class="poem-footer">
+                                <button class="read-poem-btn" data-poem-title="The Week After I Spoke" data-poem-content="I spoke the truth, heart on sleeve,&amp;#10;But heard a &#39;no&#39; I couldn&#39;t grieve.&amp;#10;A week of silence, strange and still,&amp;#10;Yet duty called, and so did will.&amp;#10;&amp;#10;Together we stood, not as I dreamed,&amp;#10;But sharper, calmer, so it seemed.&amp;#10;No love returned, yet strength was born—&amp;#10;We conquered doubts that Monday morn." onclick="openPoemModalFromData(this)">
+                                    Read Full Poem
+                                </button>
+                                <div class="poem-actions">
+                                    <button class="action-btn" data-poem-title="The Week After I Spoke" onclick="sharePoemFromData(this)">
+                                        <span>📤 Share</span>
+                                    </button>
+                                    <button class="action-btn" data-poem-title="The Week After I Spoke" onclick="favoritePoemFromData(this)">
+                                        <span>❤️ Like</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+                        
+                        <article class="poem-card" data-poem-id="7">
+                            <header class="poem-header">
+                                <h3 class="poem-title">Two Days, A Thousand Moments</h3>
+                                <div class="poem-meta">
+                                    <span class="poem-date">August 15, 2025</span>
+                                    <span class="poem-lines">17 lines</span>
+                                </div>
+                            </header>
+                            
+                            <div class="poem-preview">
+                                
+                                
+                                    <p class="poem-line">In the golden breath of German skies,</p>
+                                
+                                    <p class="poem-line">Two days danced before our eyes.</p>
+                                
+                                    <p class="poem-line">An old 2 a.m. friend, still near, still true,</p>
+                                
+                                    <p class="poem-line">With roads that whispered, &#34;It&#39;s just us two.&#34;</p>
+                                
+                                
+                                    <p class="poem-ellipsis">...</p>
+                                
+                            </div>
+                            
+                            <footer class="poem-footer">
+                                <button class="read-poem-btn" data-poem-title="Two Days, A Thousand Moments" data-poem-content="In the golden breath of German skies,&amp;#10;Two days danced before our eyes.&amp;#10;An old 2 a.m. friend, still near, still true,&amp;#10;With roads that whispered, &amp;quot;It&#39;s just us two.&amp;quot;&amp;#10;&amp;#10;Deep talks that bent the edge of time,&amp;#10;Long walks in sync, a perfect rhyme.&amp;#10;Sunsets melting on Peacock Isle,&amp;#10;City scrapers watching us smile.&amp;#10;&amp;#10;We spoke of past, of dreams ahead,&amp;#10;Of roads we&#39;d walked, and words unsaid.&amp;#10;Sudden plans, the easy roasts,&amp;#10;The kind of joy a soul still boasts.&amp;#10;&amp;#10;Two days may fade, the maps may part—&amp;#10;But that connection lives in the heart." onclick="openPoemModalFromData(this)">
+                                    Read Full Poem
+                                </button>
+                                <div class="poem-actions">
+                                    <button class="action-btn" data-poem-title="Two Days, A Thousand Moments" onclick="sharePoemFromData(this)">
+                                        <span>📤 Share</span>
+                                    </button>
+                                    <button class="action-btn" data-poem-title="Two Days, A Thousand Moments" onclick="favoritePoemFromData(this)">
+                                        <span>❤️ Like</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+                        
+                        <article class="poem-card" data-poem-id="8">
+                            <header class="poem-header">
+                                <h3 class="poem-title">Echoes of Friendship</h3>
+                                <div class="poem-meta">
+                                    <span class="poem-date">August 15, 2025</span>
+                                    <span class="poem-lines">14 lines</span>
+                                </div>
+                            </header>
+                            
+                            <div class="poem-preview">
+                                
+                                
+                                    <p class="poem-line">Seven stars once lit my skies,</p>
+                                
+                                    <p class="poem-line">Three moons with laughter in their eyes.</p>
+                                
+                                    <p class="poem-line">We danced through days, no need to say,</p>
+                                
+                                    <p class="poem-line">That hearts were close though miles away.</p>
+                                
+                                
+                                    <p class="poem-ellipsis">...</p>
+                                
+                            </div>
+                            
+                            <footer class="poem-footer">
+                                <button class="read-poem-btn" data-poem-title="Echoes of Friendship" data-poem-content="Seven stars once lit my skies,&amp;#10;Three moons with laughter in their eyes.&amp;#10;We danced through days, no need to say,&amp;#10;That hearts were close though miles away.&amp;#10;&amp;#10;But now the winds grow still and strange,&amp;#10;The calls grow rare, the seasons change.&amp;#10;Yet trust, like roots, runs deep below,&amp;#10;Though time may pause, true bonds still grow.&amp;#10;&amp;#10;I miss their voices, jokes and care,&amp;#10;Yet in my soul, they&#39;re always there.&amp;#10;This pause shall pass, the tides shall turn,&amp;#10;And fires of friendship once more burn." onclick="openPoemModalFromData(this)">
+                                    Read Full Poem
+                                </button>
+                                <div class="poem-actions">
+                                    <button class="action-btn" data-poem-title="Echoes of Friendship" onclick="sharePoemFromData(this)">
+                                        <span>📤 Share</span>
+                                    </button>
+                                    <button class="action-btn" data-poem-title="Echoes of Friendship" onclick="favoritePoemFromData(this)">
+                                        <span>❤️ Like</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+                        
+                        <article class="poem-card" data-poem-id="9">
+                            <header class="poem-header">
+                                <h3 class="poem-title">The Dawn of Narrative Nexus</h3>
+                                <div class="poem-meta">
+                                    <span class="poem-date">August 15, 2025</span>
+                                    <span class="poem-lines">14 lines</span>
+                                </div>
+                            </header>
+                            
+                            <div class="poem-preview">
+                                
+                                
+                                    <p class="poem-line">In silence sparked a voice within,</p>
+                                
+                                    <p class="poem-line">A dream to light where dark had been.</p>
+                                
+                                    <p class="poem-line">With words that teach and thoughts that rise,</p>
+                                
+                                    <p class="poem-line">You built a path beneath wide skies.</p>
+                                
+                                
+                                    <p class="poem-ellipsis">...</p>
+                                
+                            </div>
+                            
+                            <footer class="poem-footer">
+                                <button class="read-poem-btn" data-poem-title="The Dawn of Narrative Nexus" data-poem-content="In silence sparked a voice within,&amp;#10;A dream to light where dark had been.&amp;#10;With words that teach and thoughts that rise,&amp;#10;You built a path beneath wide skies.&amp;#10;&amp;#10;Not just to speak, but stir the soul,&amp;#10;To make the broken pieces whole.&amp;#10;A nexus born of tale and tech,&amp;#10;To chart new worlds from wisdom&#39;s deck.&amp;#10;&amp;#10;So let the journey loud commence,&amp;#10;With passion, art, and eloquence.&amp;#10;Each word a torch, each thought a stream,&amp;#10;This venture flows—a living dream." onclick="openPoemModalFromData(this)">
+                                    Read Full Poem
+                                </button>
+                                <div class="poem-actions">
+                                    <button class="action-btn" data-poem-title="The Dawn of Narrative Nexus" onclick="sharePoemFromData(this)">
+                                        <span>📤 Share</span>
+                                    </button>
+                                    <button class="action-btn" data-poem-title="The Dawn of Narrative Nexus" onclick="favoritePoemFromData(this)">
+                                        <span>❤️ Like</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+                        
+                        <article class="poem-card" data-poem-id="10">
+                            <header class="poem-header">
+                                <h3 class="poem-title">The Pitch of Our Past</h3>
+                                <div class="poem-meta">
+                                    <span class="poem-date">August 15, 2025</span>
+                                    <span class="poem-lines">14 lines</span>
+                                </div>
+                            </header>
+                            
+                            <div class="poem-preview">
+                                
+                                
+                                    <p class="poem-line">We played beneath the dusky skies,</p>
+                                
+                                    <p class="poem-line">With broken bats and dreaming eyes.</p>
+                                
+                                    <p class="poem-line">A taped-up ball, a field of dust,</p>
+                                
+                                    <p class="poem-line">And rules we bent in boyhood trust.</p>
+                                
+                                
+                                    <p class="poem-ellipsis">...</p>
+                                
+                            </div>
+                            
+                            <footer class="poem-footer">
+                                <button class="read-poem-btn" data-poem-title="The Pitch of Our Past" data-poem-content="We played beneath the dusky skies,&amp;#10;With broken bats and dreaming eyes.&amp;#10;A taped-up ball, a field of dust,&amp;#10;And rules we bent in boyhood trust.&amp;#10;&amp;#10;We laughed, we fought, we called each name,&amp;#10;Each match, a legend, not just a game.&amp;#10;From one old street, we grew apart,&amp;#10;But stitched the same within the heart.&amp;#10;&amp;#10;Now scattered wide, our lives unfold,&amp;#10;But when we meet—the past is gold.&amp;#10;For jokes revive and time stands still,&amp;#10;That bond of youth forever will." onclick="openPoemModalFromData(this)">
+                                    Read Full Poem
+                                </button>
+                                <div class="poem-actions">
+                                    <button class="action-btn" data-poem-title="The Pitch of Our Past" onclick="sharePoemFromData(this)">
+                                        <span>📤 Share</span>
+                                    </button>
+                                    <button class="action-btn" data-poem-title="The Pitch of Our Past" onclick="favoritePoemFromData(this)">
+                                        <span>❤️ Like</span>
+                                    </button>
+                                </div>
+                            </footer>
+                        </article>
+                        
+                    </div>
+                
+            </div>
+        </div>
+
+        <!-- Creative Process Section -->
+        <div class="creative-process-section" id="creative-process">
+            <h2>🎨 The Creative Process</h2>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-icon">💻</div>
+                    <h4>Code Inspiration</h4>
+                    <p>Drawing metaphors from programming concepts, system architectures, and development workflows.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">🧠</div>
+                    <h4>Algorithmic Thinking</h4>
+                    <p>Applying logical structures and patterns to create rhythm and flow in verse.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">✨</div>
+                    <h4>Digital Metaphors</h4>
+                    <p>Transforming technical concepts into relatable human experiences and emotions.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon">🎯</div>
+                    <h4>Refined Output</h4>
+                    <p>Iterating and optimizing each poem like debugging code to achieve perfect expression.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Poem Modal -->
+    <div class="poem-modal" id="poemModal">
+        <div class="modal-overlay" onclick="closePoemModal()"></div>
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="modalPoemTitle"></h2>
+                <button class="close-btn" onclick="closePoemModal()">×</button>
+            </header>
+            <div class="modal-body">
+                <div class="poem-full-text" id="modalPoemContent"></div>
+            </div>
+            <footer class="modal-footer">
+                <button class="btn" onclick="shareCurrentPoem()">Share Poem</button>
+                <button class="btn secondary" onclick="closePoemModal()">Close</button>
+            </footer>
+        </div>
+    </div>
+
+    <style>
+    /* Narrative Nexus Styles */
+    .narrative-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        color: white;
+        margin-top: 80px;
+    }
+
+    .narrative-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem 0;
+    }
+
+    .narrative-logo-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .narrative-logo {
+        max-height: 120px;
+        max-width: 300px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 1rem;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        transition: transform 0.3s ease;
+    }
+
+    .narrative-logo:hover {
+        transform: scale(1.05);
+    }
+
+    .narrative-header h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #ffd700, #ff6b6b, #4ecdc4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .narrative-header p {
+        font-size: 1.3rem;
+        opacity: 0.9;
+        font-style: italic;
+    }
+
+    .narrative-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    /* Sidebar Styles */
+    .narrative-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .navigation-section,
+    .ai-assistant-section,
+    .stats-section,
+    .inspiration-section {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .navigation-section h3,
+    .ai-assistant-section h3,
+    .stats-section h3,
+    .inspiration-section h3 {
+        margin-bottom: 1rem;
+        color: #ffd700;
+        font-size: 1.2rem;
+    }
+
+    .navigation-section .nav-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navigation-section .nav-menu li {
+        margin-bottom: 0.5rem;
+    }
+
+    .navigation-section .nav-link {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .navigation-section .nav-link:hover,
+    .navigation-section .nav-link.active {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(5px);
+    }
+
+    /* AI Assistant Styles */
+    .ai-chat-container {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 1rem;
+        max-height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ai-messages {
+        flex: 1;
+        max-height: 200px;
+        overflow-y: auto;
+        margin-bottom: 1rem;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255,255,255,0.3) transparent;
+    }
+
+    .ai-message {
+        margin-bottom: 1rem;
+        padding: 0.8rem;
+        border-radius: 8px;
+        animation: fadeIn 0.3s ease;
+    }
+
+    .bot-message {
+        background: rgba(116, 75, 162, 0.3);
+        border-left: 3px solid #764ba2;
+    }
+
+    .user-message {
+        background: rgba(102, 126, 234, 0.3);
+        border-left: 3px solid #667eea;
+        margin-left: 2rem;
+    }
+
+    .ai-input-container {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    #ai-input {
+        flex: 1;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 0.9rem;
+    }
+
+    #ai-input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .ai-send-button {
+        padding: 0.8rem 1.2rem;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+    }
+
+    .ai-send-button:hover {
+        transform: scale(1.05);
+    }
+
+    .ai-send-button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    /* Stats Section */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 1rem;
+    }
+
+    .stat-item {
+        text-align: center;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+    }
+
+    .stat-number {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #ffd700;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+        opacity: 0.8;
+    }
+
+    /* Inspiration Section */
+    .inspiration-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+        border-left: 4px solid #ffd700;
+    }
+
+    .inspiration-card blockquote {
+        font-style: italic;
+        margin-bottom: 0.5rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .inspiration-card cite {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    .inspiration-sources ul {
+        list-style: none;
+        margin-top: 1rem;
+        padding: 0;
+    }
+
+    .inspiration-sources li {
+        padding: 0.3rem 0;
+        font-size: 0.9rem;
+    }
+
+    /* Poems Section */
+    .poems-section {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 2rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #ffd700;
+    }
+
+    .poems-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+
+    .poem-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 1.5rem;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .poem-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .poem-header {
+        margin-bottom: 1rem;
+    }
+
+    .poem-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: #ffd700;
+    }
+
+    .poem-meta {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        opacity: 0.7;
+    }
+
+    .poem-preview {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .poem-line {
+        margin-bottom: 0.3rem;
+        font-style: italic;
+    }
+
+    .poem-ellipsis {
+        color: #ffd700;
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    .poem-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .read-poem-btn {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+    }
+
+    .read-poem-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .poem-actions {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .action-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        color: white;
+        cursor: pointer;
+        font-size: 0.8rem;
+        transition: background 0.3s ease;
+    }
+
+    .action-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Creative Process Section */
+    .creative-process-section {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 2rem;
+        margin-top: 3rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .creative-process-section h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #ffd700;
+    }
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .process-step {
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .process-step:hover {
+        transform: translateY(-5px);
+    }
+
+    .step-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .process-step h4 {
+        margin-bottom: 1rem;
+        color: #ffd700;
+    }
+
+    /* Modal Styles */
+    .poem-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2000;
+    }
+
+    .modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+        position: relative;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 20px;
+        margin: 5% auto;
+        max-width: 700px;
+        max-height: 80vh;
+        overflow: hidden;
+        color: white;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-header {
+        padding: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .modal-header h2 {
+        color: #ffd700;
+        margin: 0;
+    }
+
+    .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: background 0.3s ease;
+    }
+
+    .close-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .modal-body {
+        padding: 2rem;
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+
+    .poem-full-text {
+        line-height: 1.8;
+        font-size: 1.1rem;
+        white-space: pre-line;
+    }
+
+    .modal-footer {
+        padding: 1.5rem 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .btn.secondary {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn:hover {
+        transform: scale(1.05);
+    }
+
+    /* Empty State */
+    .no-poems {
+        text-align: center;
+        padding: 3rem;
+    }
+
+    .empty-state h3 {
+        margin-bottom: 1rem;
+        color: #ffd700;
+    }
+
+    .empty-state code {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        font-family: monospace;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .narrative-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .narrative-header h1 {
+            font-size: 2.5rem;
+        }
+
+        .narrative-logo {
+            max-height: 80px;
+            max-width: 200px;
+        }
+        
+        .poems-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .process-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .modal-content {
+            margin: 10% 1rem;
+            max-width: none;
+        }
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+
+    .ai-send-button.sending {
+        animation: pulse 0.6s infinite;
+    }
+
+    /* Scrollbar Styling */
+    .ai-messages::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .ai-messages::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+    }
+
+    .ai-messages::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 3px;
+    }
+
+    .ai-messages::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.5);
+    }
+    </style>
+
+    <script>
+    // Navigation menu for mobile
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const navLink = document.querySelectorAll(".nav-link");
+
+    hamburger.addEventListener("click", mobileMenu);
+    navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+    function mobileMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    }
+
+    function closeMenu() {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }
+
+    // Narrative Nexus JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeNarrativeNexus();
+    });
+
+    function initializeNarrativeNexus() {
+        // Initialize AI Assistant
+        initializeAIAssistant();
+        
+        // Initialize smooth scrolling for navigation
+        initializeSmoothScrolling();
+        
+        // Initialize poem interactions
+        initializePoemInteractions();
+    }
+
+    // AI Assistant Functionality
+    function initializeAIAssistant() {
+        const aiInput = document.getElementById('ai-input');
+        const aiSendBtn = document.getElementById('ai-send-btn');
+        const aiMessages = document.getElementById('ai-messages');
+        
+        if (!aiInput || !aiSendBtn || !aiMessages) {
+            console.error('AI Assistant elements not found');
+            return;
+        }
+        
+        // Send message on button click
+        aiSendBtn.addEventListener('click', function() {
+            sendAIMessage();
+        });
+        
+        // Send message on Enter key
+        aiInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendAIMessage();
+            }
+        });
+    }
+
+    function sendAIMessage() {
+        const aiInput = document.getElementById('ai-input');
+        const aiSendBtn = document.getElementById('ai-send-btn');
+        const aiMessages = document.getElementById('ai-messages');
+        
+        const message = aiInput.value.trim();
+        if (!message) return;
+        
+        // Add user message to chat
+        addMessageToChat(message, 'user');
+        aiInput.value = '';
+        
+        // Disable send button temporarily
+        aiSendBtn.disabled = true;
+        aiSendBtn.classList.add('sending');
+        aiSendBtn.textContent = 'Sending...';
+        
+        // Send to AI API
+        fetch('/api/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: message })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Add bot response to chat
+            if (data.response) {
+                addMessageToChat(data.response, 'bot');
+            } else {
+                addMessageToChat("I'm sorry, I couldn't process your request right now. Please try again.", 'bot');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            addMessageToChat("I'm experiencing some technical difficulties. Please try again in a moment.", 'bot');
+        })
+        .finally(() => {
+            // Re-enable send button
+            aiSendBtn.disabled = false;
+            aiSendBtn.classList.remove('sending');
+            aiSendBtn.textContent = 'Send';
+        });
+    }
+
+    function addMessageToChat(message, sender) {
+        const aiMessages = document.getElementById('ai-messages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `ai-message ${sender}-message`;
+        
+        const messageP = document.createElement('p');
+        messageP.textContent = message;
+        messageDiv.appendChild(messageP);
+        
+        aiMessages.appendChild(messageDiv);
+        aiMessages.scrollTop = aiMessages.scrollHeight;
+    }
+
+    // Smooth scrolling for navigation
+    function initializeSmoothScrolling() {
+        document.querySelectorAll('.navigation-section .nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.navigation-section .nav-link').forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Smooth scroll to target
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+
+    // Poem Modal Functions
+    function openPoemModal(title, content) {
+        const modal = document.getElementById('poemModal');
+        const modalTitle = document.getElementById('modalPoemTitle');
+        const modalContent = document.getElementById('modalPoemContent');
+        
+        modalTitle.textContent = title;
+        modalContent.textContent = content;
+        
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePoemModal() {
+        const modal = document.getElementById('poemModal');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Poem Interaction Functions
+    function initializePoemInteractions() {
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('poemModal');
+            if (e.target === modal) {
+                closePoemModal();
+            }
+        });
+        
+        // Close modal with escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePoemModal();
+            }
+        });
+    }
+
+    function sharePoem(title) {
+        if (navigator.share) {
+            navigator.share({
+                title: `${title} - Narrative Nexus`,
+                text: `Check out this poem: "${title}" by Venkat Chavan N`,
+                url: window.location.href
+            }).catch(console.error);
+        } else {
+            // Fallback - copy to clipboard
+            const url = window.location.href;
+            navigator.clipboard.writeText(`Check out this poem: "${title}" by Venkat Chavan N - ${url}`)
+                .then(() => {
+                    alert('Poem link copied to clipboard!');
+                })
+                .catch(() => {
+                    alert('Unable to share. Please copy the URL manually.');
+                });
+        }
+    }
+
+    function favoritePoem(title) {
+        // Store favorites in localStorage
+        let favorites = JSON.parse(localStorage.getItem('favoritePoems') || '[]');
+        
+        if (favorites.includes(title)) {
+            favorites = favorites.filter(t => t !== title);
+            alert('Removed from favorites!');
+        } else {
+            favorites.push(title);
+            alert('Added to favorites!');
+        }
+        
+        localStorage.setItem('favoritePoems', JSON.stringify(favorites));
+    }
+
+    function shareCurrentPoem() {
+        const title = document.getElementById('modalPoemTitle').textContent;
+        sharePoem(title);
+    }
+
+    function openPoemModalFromData(button) {
+        const title = button.getAttribute('data-poem-title');
+        const content = button.getAttribute('data-poem-content')
+            .replace(/&quot;/g, '"')
+            .replace(/&#10;/g, '\n');
+        openPoemModal(title, content);
+    }
+
+    function sharePoemFromData(button) {
+        const title = button.getAttribute('data-poem-title');
+        sharePoem(title);
+    }
+
+    function favoritePoemFromData(button) {
+        const title = button.getAttribute('data-poem-title');
+        favoritePoem(title);
+    }
+    </script>
+</body>
+</html>

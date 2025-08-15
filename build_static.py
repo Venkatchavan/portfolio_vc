@@ -24,7 +24,10 @@ def fix_paths(content, is_project_page=False):
             ('href="/static/', 'href="../static/'),
             ('src="/static/', 'src="../static/'),
             ('href="/project/', 'href="../project/'),
+            ('href="/chat"', 'href="../chatbot.html"'),
             ('href="/chatbot"', 'href="../chatbot.html"'),
+            ('href="/narrative/"', 'href="../narrative_nexus.html"'),
+            ('href="/narrative/nexus"', 'href="../narrative_nexus.html"'),
             ('href="/"', 'href="../index.html"'),
             # Add more specific cases
             ('href="/static/css/style.css"', 'href="../static/css/style.css"'),
@@ -37,8 +40,11 @@ def fix_paths(content, is_project_page=False):
             ('href="/static/', 'href="static/'),
             ('src="/static/', 'src="static/'),
             ('href="/project/', 'href="project/'),
+            ('href="/chat"', 'href="chatbot.html"'),
             ('href="/chatbot"', 'href="chatbot.html"'),
             ('href="/narrative_nexus"', 'href="narrative_nexus.html"'),
+            ('href="/narrative/"', 'href="narrative_nexus.html"'),
+            ('href="/narrative/nexus"', 'href="narrative_nexus.html"'),
             ('href="/"', 'href="index.html"'),
             # Add more specific cases
             ('href="/static/css/style.css"', 'href="static/css/style.css"'),
@@ -93,7 +99,7 @@ def build_static_site():
             f.write(fix_paths(content, is_project_page=False))
         
         # Build Narrative Nexus page
-        response = client.get('/narrative')
+        response = client.get('/narrative/')
         with open(os.path.join(dist_dir, 'narrative_nexus.html'), 'w', encoding='utf-8') as f:
             content = response.get_data(as_text=True)
             f.write(fix_paths(content, is_project_page=False))
