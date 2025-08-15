@@ -20,7 +20,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="/" style="text-decoration: none;">
+                <a href="{{ url_for('home') }}" style="text-decoration: none;">
                     <img src="{{ url_for('static', filename='images/logo-portfolio.png') }}" 
                          alt="Venkat Chavan N Logo" 
                          class="nav-logo-img"
@@ -30,16 +30,19 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="/" class="nav-link">Home</a>
+                    <a href="{{ url_for('home') }}" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/#about" class="nav-link">About</a>
+                    <a href="{{ url_for('home', _anchor='about') }}" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/#projects" class="nav-link">Projects</a>
+                    <a href="{{ url_for('home', _anchor='projects') }}" class="nav-link">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/chatbot" class="nav-link active">AI Assistant</a>
+                    <a href="{{ url_for('chatbot') }}" class="nav-link active">AI Assistant</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('narrative_nexus') }}" class="nav-link">Narrative Nexus</a>
                 </li>
             </ul>
             <div class="hamburger">

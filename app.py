@@ -284,6 +284,29 @@ def project_detail(project_id):
 def chatbot():
     return render_template('chatbot.html')
 
+@app.route('/narrative-nexus')
+def narrative_nexus():
+    portfolio_data = get_portfolio_data()
+    poems = []
+    try:
+        with open('Poems.txt', 'r', encoding='utf-8') as file:
+            content = file.read()
+            poem_blocks = content.split('[')
+            for block in poem_blocks:
+                if block.strip():
+                    title_end = block.find(']')
+                    if title_end != -1:
+                        title = block[:title_end].strip()
+                        body = block[title_end + 1:].strip()
+                        poems.append({
+                            'title': title,
+                            'body': body
+                        })
+    except Exception as e:
+        print(f"Error reading poems: {e}")
+    
+    return render_template('narrative_nexus.html', data=portfolio_data, poems=poems)
+
 @app.route('/api/chat', methods=['POST'])
 def chat():
     try:
