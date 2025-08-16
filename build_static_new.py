@@ -60,8 +60,6 @@ def fix_urls_for_static_site(content, filename, portfolio_data):
         # On other pages, anchor links should navigate back to index.html
         content = re.sub(r'href="(#[^"]*)"', r'href="./index.html\1"', content)
         content = re.sub(r'href="[^"]*main\.home[^"]*#([^"]*)"', r'href="./index.html#\1"', content)
-        # Fix direct anchor links like /#about
-        content = re.sub(r'href="/(#[^"]*)"', r'href="./index.html\1"', content)
     
     # Disable API endpoints for static deployment
     content = content.replace('/api/chat', '#')
@@ -162,8 +160,7 @@ def build_static_site():
                     content = content.replace('href="./narrative_nexus.html"', 'href="../narrative_nexus.html"')
                     content = content.replace('href="./project/', 'href="../project/')
                     
-                    # Fix anchor links for project pages - they should point back to index.html
-                    content = re.sub(r'href="/#([^"]*)"', r'href="../index.html#\1"', content)
+                    # Fix anchor links for project pages
                     content = re.sub(r'href="\.\/index\.html#([^"]*)"', r'href="../index.html#\1"', content)
                     
                     # Create project directory
