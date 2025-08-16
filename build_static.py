@@ -57,6 +57,7 @@ def build_static_site():
         routes = [
             ('/', 'index.html'),
             ('/narrative/nexus', 'narrative_nexus.html'),
+            ('/chat/bot', 'chatbot.html'),
         ]
         
         # Build each route
@@ -71,10 +72,56 @@ def build_static_site():
                     content = content.replace('src="/static/', 'src="./static/')
                     content = content.replace('url(/static/', 'url(./static/')
                     
+                    # Fix Flask URL routing for static deployment
+                    content = content.replace('href="/"', 'href="./index.html"')
+                    content = content.replace('href="/narrative/nexus"', 'href="./narrative_nexus.html"')
+                    content = content.replace('href="/chat/bot"', 'href="./chatbot.html"')
+                    
+                    # Fix anchor links to work with GitHub Pages
+                    content = content.replace('href="#', 'href="./index.html#')
+                    
+                    # Fix API endpoints for static deployment (disable dynamic features)
+                    content = content.replace('/api/chat', '#')
+                    
                     output_file = output_dir / filename
                     with open(output_file, 'w', encoding='utf-8') as f:
                         f.write(content)
                     print(f"✅ Built {route} -> {filename}")
+                else:
+                    print(f"❌ Failed to build {route}: {response.status_code}")
+            except Exception as e:
+                print(f"❌ Error building {route}: {e}")
+        
+        # Build individual project pages
+        from app.services.portfolio_service import get_portfolio_data
+        portfolio_data = get_portfolio_data()
+        
+        for project in portfolio_data.projects:
+            try:
+                route = f'/project/{project.id}'
+                response = client.get(route)
+                if response.status_code == 200:
+                    content = response.get_data(as_text=True)
+                    
+                    # Fix static paths
+                    content = content.replace('href="/static/', 'href="../static/')
+                    content = content.replace('src="/static/', 'src="../static/')
+                    content = content.replace('url(/static/', 'url(../static/')
+                    
+                    # Fix navigation links for project pages (they're in a subdirectory)
+                    content = content.replace('href="/"', 'href="../index.html"')
+                    content = content.replace('href="/narrative/nexus"', 'href="../narrative_nexus.html"')
+                    content = content.replace('href="/chat/bot"', 'href="../chatbot.html"')
+                    content = content.replace('href="#', 'href="../index.html#')
+                    
+                    # Create project directory
+                    project_dir = output_dir / "project"
+                    project_dir.mkdir(exist_ok=True)
+                    
+                    output_file = project_dir / f"{project.id}.html"
+                    with open(output_file, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    print(f"✅ Built {route} -> project/{project.id}.html")
                 else:
                     print(f"❌ Failed to build {route}: {response.status_code}")
             except Exception as e:
@@ -91,6 +138,12 @@ def build_static_site():
                 content = content.replace('href="/static/', 'href="./static/')
                 content = content.replace('src="/static/', 'src="./static/')
                 content = content.replace('url(/static/', 'url(./static/')
+                
+                # Fix navigation for 404 page
+                content = content.replace('href="/"', 'href="./index.html"')
+                content = content.replace('href="/narrative/nexus"', 'href="./narrative_nexus.html"')
+                content = content.replace('href="/chat/bot"', 'href="./chatbot.html"')
+                content = content.replace('href="#', 'href="./index.html#')
                 
                 output_file = output_dir / "404.html"
                 with open(output_file, 'w', encoding='utf-8') as f:

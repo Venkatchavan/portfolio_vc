@@ -39,7 +39,13 @@ jobs:
         FLASK_ENV: production
         SECRET_KEY: static-build-key
         GEMINI_API_KEY: demo-key
-      run: python build_static.py
+      run: |
+        python build_static.py
+        echo "✅ Static site build completed"
+        echo "📁 Generated files:"
+        ls -la dist/
+        echo "📄 Project files:"
+        ls -la dist/project/ || echo "No project directory"
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
