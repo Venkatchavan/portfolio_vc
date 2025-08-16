@@ -50,9 +50,16 @@ def build_static_site():
             try:
                 response = client.get(route)
                 if response.status_code == 200:
+                    content = response.get_data(as_text=True)
+                    
+                    # Fix static paths for GitHub Pages - make them relative
+                    content = content.replace('href="/static/', 'href="./static/')
+                    content = content.replace('src="/static/', 'src="./static/')
+                    content = content.replace('url(/static/', 'url(./static/')
+                    
                     output_file = output_dir / filename
                     with open(output_file, 'w', encoding='utf-8') as f:
-                        f.write(response.get_data(as_text=True))
+                        f.write(content)
                     print(f"✅ Built {route} -> {filename}")
                 else:
                     print(f"❌ Failed to build {route}: {response.status_code}")
@@ -64,9 +71,16 @@ def build_static_site():
             # Use index as 404 fallback
             response = client.get('/')
             if response.status_code == 200:
+                content = response.get_data(as_text=True)
+                
+                # Fix static paths for GitHub Pages
+                content = content.replace('href="/static/', 'href="./static/')
+                content = content.replace('src="/static/', 'src="./static/')
+                content = content.replace('url(/static/', 'url(./static/')
+                
                 output_file = output_dir / "404.html"
                 with open(output_file, 'w', encoding='utf-8') as f:
-                    f.write(response.get_data(as_text=True))
+                    f.write(content)
                 print("✅ Created 404.html")
         except Exception as e:
             print(f"❌ Error creating 404.html: {e}")
