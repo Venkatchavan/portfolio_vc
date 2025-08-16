@@ -31,15 +31,26 @@ def fix_urls_for_static_site(content, filename, portfolio_data):
     content = content.replace('url(/static/', 'url(./static/')
     
     # Fix Flask url_for patterns with regex
-    # Main navigation
+    # Main navigation patterns - more comprehensive matching
     content = re.sub(r'href="[^"]*url_for\([\'"]main\.home[\'"].*?\)"', 'href="./index.html"', content)
     content = re.sub(r'href="[^"]*url_for\([\'"]chatbot\.chatbot[\'"].*?\)"', 'href="./chatbot.html"', content)
     content = re.sub(r'href="[^"]*url_for\([\'"]narrative\.narrative_nexus[\'"].*?\)"', 'href="./narrative_nexus.html"', content)
     
-    # Direct URL patterns
+    # Handle url_for with anchor links
+    content = re.sub(r'href="[^"]*url_for\([\'"]main\.home[\'"][^)]*\)#([^"]*)"', r'href="./index.html#\1"', content)
+    
+    # Direct URL patterns - comprehensive handling
     content = content.replace('href="/"', 'href="./index.html"')
     content = content.replace('href="/chat/bot"', 'href="./chatbot.html"')
     content = content.replace('href="/narrative/nexus"', 'href="./narrative_nexus.html"')
+    
+    # Handle root-relative anchor links specifically  
+    content = content.replace('href="/#about"', 'href="./index.html#about"')
+    content = content.replace('href="/#skills"', 'href="./index.html#skills"')
+    content = content.replace('href="/#experience"', 'href="./index.html#experience"')
+    content = content.replace('href="/#education"', 'href="./index.html#education"')
+    content = content.replace('href="/#projects"', 'href="./index.html#projects"')
+    content = content.replace('href="/#contact"', 'href="./index.html#contact"')
     
     # Project detail links - this fixes "Learn More" buttons
     for project in portfolio_data.projects:
@@ -60,8 +71,6 @@ def fix_urls_for_static_site(content, filename, portfolio_data):
         # On other pages, anchor links should navigate back to index.html
         content = re.sub(r'href="(#[^"]*)"', r'href="./index.html\1"', content)
         content = re.sub(r'href="[^"]*main\.home[^"]*#([^"]*)"', r'href="./index.html#\1"', content)
-        # Fix direct anchor links like /#about
-        content = re.sub(r'href="/(#[^"]*)"', r'href="./index.html\1"', content)
     
     # Disable API endpoints for static deployment
     content = content.replace('/api/chat', '#')
