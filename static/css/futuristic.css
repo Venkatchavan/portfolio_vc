@@ -382,7 +382,214 @@ section {
 }
 
 /*================================================================
-  7. Projects Section
+  7. Experience Section
+================================================================*/
+.experience {
+    padding: 100px 0;
+    background: var(--background-color);
+}
+
+.experience-timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 4rem;
+    position: relative;
+    align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-date {
+    flex: 0 0 150px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-date::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    background: var(--primary-color);
+    border: 3px solid var(--background-color);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+}
+
+.year {
+    background: var(--surface-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: var(--primary-color);
+    font-weight: bold;
+    border: 1px solid var(--primary-color);
+    display: inline-block;
+}
+
+.timeline-content {
+    flex: 1;
+    background: var(--surface-color);
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin: 0 30px;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed) ease;
+    position: relative;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 170, 255, 0.15);
+    border-color: var(--primary-color);
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    left: -20px;
+    border-right-color: var(--surface-color);
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    right: -20px;
+    border-left-color: var(--surface-color);
+    transform: translateY(-50%);
+}
+
+.position-title {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.company-name {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.experience-description {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.experience-highlights {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.experience-highlights li {
+    color: var(--text-color);
+    padding: 0.3rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.experience-highlights li::before {
+    content: '▶';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-tag {
+    background: rgba(0, 255, 127, 0.1);
+    color: var(--secondary-color);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    border: 1px solid rgba(0, 255, 127, 0.3);
+    transition: all var(--transition-speed) ease;
+}
+
+.tech-tag:hover {
+    background: var(--secondary-color);
+    color: var(--background-color);
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Experience Section */
+@media (max-width: 768px) {
+    .experience-timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        margin-left: 50px;
+    }
+    
+    .timeline-date {
+        position: absolute;
+        left: -50px;
+        top: 0;
+        flex: none;
+    }
+    
+    .timeline-date::before {
+        left: 0;
+        transform: translateY(-50%);
+    }
+    
+    .timeline-content {
+        margin: 0;
+        margin-top: 20px;
+    }
+    
+    .timeline-content::before {
+        display: none;
+    }
+}
+
+/*================================================================
+  8. Projects Section
 ================================================================*/
 .projects-grid {
     display: grid;
@@ -415,7 +622,7 @@ section {
 }
 
 /*================================================================
-  8. Startup Ideas Section
+  9. Startup Ideas Section
 ================================================================*/
 .startup-ideas-grid {
     display: grid;
@@ -481,7 +688,7 @@ section {
 }
 
 /*================================================================
-  9. Contact Section
+  10. Contact Section
 ================================================================*/
 .contact-content {
     display: grid;
