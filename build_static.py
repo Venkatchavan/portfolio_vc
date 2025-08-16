@@ -10,6 +10,61 @@ from app import create_app
 from flask import url_for
 import requests
 import time
+import re
+
+def fix_urls_for_static_site(content, filename, portfolio_data):
+    """
+    Fix all Flask URLs to work with static HTML deployment.
+    
+    Args:
+        content (str): HTML content to fix
+        filename (str): Name of the current file being processed
+        portfolio_data: Portfolio data containing project information
+    
+    Returns:
+        str: Fixed HTML content
+    """
+    
+    # Fix static asset paths
+    content = content.replace('href="/static/', 'href="./static/')
+    content = content.replace('src="/static/', 'src="./static/')
+    content = content.replace('url(/static/', 'url(./static/')
+    
+    # Fix Flask url_for patterns with regex
+    # Main navigation
+    content = re.sub(r'href="[^"]*url_for\([\'"]main\.home[\'"].*?\)"', 'href="./index.html"', content)
+    content = re.sub(r'href="[^"]*url_for\([\'"]chatbot\.chatbot[\'"].*?\)"', 'href="./chatbot.html"', content)
+    content = re.sub(r'href="[^"]*url_for\([\'"]narrative\.narrative_nexus[\'"].*?\)"', 'href="./narrative_nexus.html"', content)
+    
+    # Direct URL patterns
+    content = content.replace('href="/"', 'href="./index.html"')
+    content = content.replace('href="/chat/bot"', 'href="./chatbot.html"')
+    content = content.replace('href="/narrative/nexus"', 'href="./narrative_nexus.html"')
+    
+    # Project detail links - this fixes "Learn More" buttons
+    for project in portfolio_data.projects:
+        project_id = project.id
+        
+        # Flask url_for patterns for projects
+        flask_project_pattern = rf'href="[^"]*url_for\([\'"]projects\.project_detail[\'"],\s*project_id=[\'"]?{project_id}[\'"]?\)[^"]*"'
+        content = re.sub(flask_project_pattern, f'href="./project/{project_id}.html"', content)
+        
+        # Direct URL patterns for projects
+        content = content.replace(f'href="/project/{project_id}"', f'href="./project/{project_id}.html"')
+    
+    # Fix anchor links based on current file
+    if filename == 'index.html':
+        # On index page, anchor links stay as # (same page navigation)
+        pass
+    else:
+        # On other pages, anchor links should navigate back to index.html
+        content = re.sub(r'href="(#[^"]*)"', r'href="./index.html\1"', content)
+        content = re.sub(r'href="[^"]*main\.home[^"]*#([^"]*)"', r'href="./index.html#\1"', content)
+    
+    # Disable API endpoints for static deployment
+    content = content.replace('/api/chat', '#')
+    
+    return content
 
 def build_static_site():
     """Build static version of the portfolio for GitHub Pages."""
@@ -50,6 +105,10 @@ def build_static_site():
         shutil.copytree(project_src, project_dst)
         print(f"✅ Copied project files to {project_dst}")
     
+    # Get portfolio data for URL fixing
+    from app.services.portfolio_service import get_portfolio_data
+    portfolio_data = get_portfolio_data()
+    
     # Test server context
     with app.test_client() as client:
         
@@ -67,21 +126,8 @@ def build_static_site():
                 if response.status_code == 200:
                     content = response.get_data(as_text=True)
                     
-                    # Fix static paths for GitHub Pages - make them relative
-                    content = content.replace('href="/static/', 'href="./static/')
-                    content = content.replace('src="/static/', 'src="./static/')
-                    content = content.replace('url(/static/', 'url(./static/')
-                    
-                    # Fix Flask URL routing for static deployment
-                    content = content.replace('href="/"', 'href="./index.html"')
-                    content = content.replace('href="/narrative/nexus"', 'href="./narrative_nexus.html"')
-                    content = content.replace('href="/chat/bot"', 'href="./chatbot.html"')
-                    
-                    # Fix anchor links to work with GitHub Pages
-                    content = content.replace('href="#', 'href="./index.html#')
-                    
-                    # Fix API endpoints for static deployment (disable dynamic features)
-                    content = content.replace('/api/chat', '#')
+                    # Fix all URLs for static deployment
+                    content = fix_urls_for_static_site(content, filename, portfolio_data)
                     
                     output_file = output_dir / filename
                     with open(output_file, 'w', encoding='utf-8') as f:
@@ -93,9 +139,6 @@ def build_static_site():
                 print(f"❌ Error building {route}: {e}")
         
         # Build individual project pages
-        from app.services.portfolio_service import get_portfolio_data
-        portfolio_data = get_portfolio_data()
-        
         for project in portfolio_data.projects:
             try:
                 route = f'/project/{project.id}'
@@ -103,16 +146,23 @@ def build_static_site():
                 if response.status_code == 200:
                     content = response.get_data(as_text=True)
                     
-                    # Fix static paths
+                    # Fix static paths for project pages (they're in a subdirectory)
                     content = content.replace('href="/static/', 'href="../static/')
                     content = content.replace('src="/static/', 'src="../static/')
                     content = content.replace('url(/static/', 'url(../static/')
                     
-                    # Fix navigation links for project pages (they're in a subdirectory)
-                    content = content.replace('href="/"', 'href="../index.html"')
-                    content = content.replace('href="/narrative/nexus"', 'href="../narrative_nexus.html"')
-                    content = content.replace('href="/chat/bot"', 'href="../chatbot.html"')
-                    content = content.replace('href="#', 'href="../index.html#')
+                    # Fix navigation links for project pages
+                    content = fix_urls_for_static_site(content, f"project/{project.id}.html", portfolio_data)
+                    
+                    # Additional fixes for project pages (in subdirectory)
+                    content = content.replace('href="./index.html"', 'href="../index.html"')
+                    content = content.replace('href="./chatbot.html"', 'href="../chatbot.html"')
+                    content = content.replace('href="./narrative_nexus.html"', 'href="../narrative_nexus.html"')
+                    content = content.replace('href="./project/', 'href="../project/')
+                    
+                    # Fix anchor links for project pages - they should point back to index.html
+                    content = re.sub(r'href="/#([^"]*)"', r'href="../index.html#\1"', content)
+                    content = re.sub(r'href="\.\/index\.html#([^"]*)"', r'href="../index.html#\1"', content)
                     
                     # Create project directory
                     project_dir = output_dir / "project"
@@ -134,16 +184,8 @@ def build_static_site():
             if response.status_code == 200:
                 content = response.get_data(as_text=True)
                 
-                # Fix static paths for GitHub Pages
-                content = content.replace('href="/static/', 'href="./static/')
-                content = content.replace('src="/static/', 'src="./static/')
-                content = content.replace('url(/static/', 'url(./static/')
-                
-                # Fix navigation for 404 page
-                content = content.replace('href="/"', 'href="./index.html"')
-                content = content.replace('href="/narrative/nexus"', 'href="./narrative_nexus.html"')
-                content = content.replace('href="/chat/bot"', 'href="./chatbot.html"')
-                content = content.replace('href="#', 'href="./index.html#')
+                # Fix all URLs for 404 page
+                content = fix_urls_for_static_site(content, '404.html', portfolio_data)
                 
                 output_file = output_dir / "404.html"
                 with open(output_file, 'w', encoding='utf-8') as f:

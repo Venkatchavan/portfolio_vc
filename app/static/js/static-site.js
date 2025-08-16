@@ -1,106 +1,263 @@
 /**
- * Static site navigation and functionality
- * Handles client-side features for the deployed static site
+ * Static Site JavaScript - Handles client-side functionality for GitHub Pages deployment
+ * Replaces server-side Flask functionality with client-side solutions
  */
 
-// Handle navigation for static site
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Check if we're on a static site (GitHub Pages)
-    const isStaticSite = window.location.hostname.includes('github.io') || 
-                        window.location.protocol === 'file:' ||
-                        !window.location.port;
+    // Mobile navigation toggle
+    initMobileNavigation();
     
-    if (isStaticSite) {
-        // Disable chatbot functionality on static site
-        const chatForm = document.querySelector('.ai-input-container');
-        const chatInput = document.getElementById('ai-input');
-        const chatSendBtn = document.getElementById('ai-send-btn');
-        
-        if (chatInput && chatSendBtn) {
-            chatInput.disabled = true;
-            chatInput.placeholder = 'Chatbot is available in the local version only';
-            chatSendBtn.disabled = true;
-            chatSendBtn.textContent = 'Offline';
-            
-            // Add a note about the chatbot
-            const messagesContainer = document.getElementById('ai-messages');
-            if (messagesContainer) {
-                const offlineMessage = document.createElement('div');
-                offlineMessage.className = 'ai-message bot-message';
-                offlineMessage.innerHTML = '<p>🤖 The AI chatbot is available when running locally. This is a static version of the portfolio deployed on GitHub Pages.</p>';
-                messagesContainer.appendChild(offlineMessage);
-            }
-        }
-        
-        // Fix contact form for static site
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Contact form submitted! Please send your message directly to venkat.chavan.n@gmail.com');
-            });
-        }
-        
-        // Show static site notice
-        console.log('🌟 This is the static version of Venkat Chavan\'s portfolio deployed on GitHub Pages.');
-        console.log('💻 For the full interactive experience with AI chatbot, run locally: python run.py');
+    // Smooth scrolling for anchor links
+    initSmoothScrolling();
+    
+    // Project cards interactions
+    initProjectCards();
+    
+    // Navigation highlighting
+    initNavigationHighlighting();
+    
+    // Chatbot functionality (static version)
+    if (window.location.pathname.includes('chatbot.html')) {
+        initStaticChatbot();
     }
     
-    // Enhanced navigation for mobile
-    const navToggle = document.createElement('div');
-    navToggle.className = 'nav-toggle';
-    navToggle.innerHTML = '<i class="fas fa-bars"></i>';
-    
-    const navContainer = document.querySelector('.nav-container');
+    console.log('Static site JavaScript initialized');
+});
+
+/**
+ * Initialize mobile navigation functionality
+ */
+function initMobileNavigation() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
-    if (navContainer && navMenu) {
-        navContainer.appendChild(navToggle);
-        
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('nav-menu-open');
-            const icon = navToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            this.classList.toggle('active');
         });
         
         // Close menu when clicking on a link
-        navMenu.addEventListener('click', function(e) {
-            if (e.target.classList.contains('nav-link')) {
-                navMenu.classList.remove('nav-menu-open');
-                const icon = navToggle.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
-            }
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            });
         });
     }
-});
+}
 
-// Smooth scrolling for anchor links (for static site)
-document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('a[href^="./index.html#"], a[href^="#"]');
+/**
+ * Initialize smooth scrolling for anchor links
+ */
+function initSmoothScrolling() {
+    const anchorLinks = document.querySelectorAll('a[href*="#"]');
     
-    links.forEach(link => {
+    anchorLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            let targetId;
             
-            if (href.startsWith('./index.html#')) {
-                targetId = href.substring(13); // Remove './index.html#'
-            } else if (href.startsWith('#')) {
-                targetId = href.substring(1); // Remove '#'
-            }
-            
-            if (targetId && window.location.pathname.includes('index.html') || window.location.pathname === '/') {
+            // Check if it's a same-page anchor link
+            if (href.startsWith('#')) {
                 e.preventDefault();
+                const targetId = href.substring(1);
                 const targetElement = document.getElementById(targetId);
+                
                 if (targetElement) {
                     targetElement.scrollIntoView({
-                        behavior: 'smooth'
+                        behavior: 'smooth',
+                        block: 'start'
                     });
+                }
+            }
+            // Handle cross-page anchor links
+            else if (href.includes('#')) {
+                const [page, anchor] = href.split('#');
+                if (page === './index.html' || page === 'index.html') {
+                    // Store the anchor for after page load
+                    sessionStorage.setItem('scrollToAnchor', anchor);
                 }
             }
         });
     });
-});
+    
+    // Check for stored anchor on page load
+    const storedAnchor = sessionStorage.getItem('scrollToAnchor');
+    if (storedAnchor) {
+        sessionStorage.removeItem('scrollToAnchor');
+        setTimeout(() => {
+            const targetElement = document.getElementById(storedAnchor);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }, 100);
+    }
+}
+
+/**
+ * Initialize project card interactions
+ */
+function initProjectCards() {
+    const projectCards = document.querySelectorAll('.project-card');
+    
+    projectCards.forEach(card => {
+        // Add hover effects
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
+        
+        // Handle "Learn More" button clicks
+        const learnMoreBtn = card.querySelector('.btn-primary, .learn-more-btn');
+        if (learnMoreBtn) {
+            learnMoreBtn.addEventListener('click', function(e) {
+                // Let the default link behavior work
+                console.log('Navigating to project details...');
+            });
+        }
+    });
+}
+
+/**
+ * Initialize navigation highlighting based on current page
+ */
+function initNavigationHighlighting() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        
+        // Remove active class from all links first
+        link.classList.remove('active');
+        
+        // Add active class to current page link
+        if ((currentPage === 'index.html' && (href === './index.html' || href === '/' || href === '#home')) ||
+            (currentPage === 'chatbot.html' && href === './chatbot.html') ||
+            (currentPage === 'narrative_nexus.html' && href === './narrative_nexus.html')) {
+            link.classList.add('active');
+        }
+    });
+}
+
+/**
+ * Initialize static chatbot functionality
+ */
+function initStaticChatbot() {
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-input');
+    const sendButton = document.getElementById('send-button');
+    
+    if (!chatMessages || !chatInput || !sendButton) return;
+    
+    // Add initial bot message
+    addBotMessage("Hello! I'm a static version of the portfolio chatbot. While I can't connect to AI services in this demo, I can share some information about this portfolio!");
+    
+    // Handle send button click
+    sendButton.addEventListener('click', sendStaticMessage);
+    
+    // Handle enter key in input
+    chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendStaticMessage();
+        }
+    });
+    
+    function sendStaticMessage() {
+        const message = chatInput.value.trim();
+        if (!message) return;
+        
+        // Add user message
+        addUserMessage(message);
+        chatInput.value = '';
+        
+        // Generate static bot response
+        setTimeout(() => {
+            const response = generateStaticResponse(message);
+            addBotMessage(response);
+        }, 1000);
+    }
+    
+    function addUserMessage(message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message user-message';
+        messageDiv.innerHTML = `
+            <div class="message-content">
+                <p>${escapeHtml(message)}</p>
+            </div>
+        `;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    function addBotMessage(message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message bot-message';
+        messageDiv.innerHTML = `
+            <div class="message-content">
+                <p>${message}</p>
+            </div>
+        `;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    function generateStaticResponse(userMessage) {
+        const message = userMessage.toLowerCase();
+        
+        if (message.includes('project') || message.includes('work')) {
+            return "I've worked on various exciting projects including AI/ML applications, web development, and data analysis. You can explore them in the Projects section of the portfolio!";
+        } else if (message.includes('skill') || message.includes('technology')) {
+            return "My skills include Python, JavaScript, React, Flask, Machine Learning, Data Science, and more. Check out the Skills section on the main page for a complete list!";
+        } else if (message.includes('experience') || message.includes('background')) {
+            return "I have experience in software development, data science, and AI/ML. Visit the Experience section on the homepage to learn more about my professional journey!";
+        } else if (message.includes('education') || message.includes('study')) {
+            return "My educational background includes studies in Computer Science and related fields. You can find more details in the Education section of the portfolio!";
+        } else if (message.includes('contact') || message.includes('reach')) {
+            return "You can reach out to me through the contact information provided in the portfolio. I'm always open to discussing new opportunities and collaborations!";
+        } else if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+            return "Hello there! I'm excited to help you learn more about this portfolio. Feel free to ask about projects, skills, experience, or anything else you'd like to know!";
+        } else {
+            return "Thanks for your interest! This is a static demo of the chatbot. For a full interactive experience with AI-powered responses, please check out the live version of the portfolio. Feel free to explore the other sections to learn more!";
+        }
+    }
+    
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+}
+
+/**
+ * Utility function to show loading states
+ */
+function showLoading(element) {
+    if (element) {
+        element.innerHTML = '<div class="loading">Loading...</div>';
+    }
+}
+
+/**
+ * Utility function to handle errors gracefully
+ */
+function handleError(error, fallbackMessage = 'Something went wrong. Please try again.') {
+    console.error('Static site error:', error);
+    return fallbackMessage;
+}
+
+// Export functions for global access if needed
+window.StaticSite = {
+    initMobileNavigation,
+    initSmoothScrolling,
+    initProjectCards,
+    initNavigationHighlighting
+};
