@@ -36,6 +36,20 @@ def build_static_site():
         shutil.copytree(static_src, static_dst)
         print(f"✅ Copied static files to {static_dst}")
     
+    # Copy additional static HTML files (like blogs.html)
+    additional_files = ['blogs.html']
+    for file in additional_files:
+        if Path(file).exists():
+            shutil.copy2(file, output_dir / file)
+            print(f"✅ Copied {file} to {output_dir}")
+    
+    # Copy project directory for project detail pages
+    project_src = Path("project")
+    if project_src.exists():
+        project_dst = output_dir / "project"
+        shutil.copytree(project_src, project_dst)
+        print(f"✅ Copied project files to {project_dst}")
+    
     # Test server context
     with app.test_client() as client:
         

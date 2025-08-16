@@ -1,0 +1,25 @@
+📘 Blog 1: Enabling AI to Understand and Process Abstract Concepts
+
+Based on Internship Research 
+
+Artificial Intelligence has made great progress in recognizing images, speech, and text—but teaching AI to understand abstract concepts such as justice, fairness, or creativity is still a major challenge. My research project, conducted during my Master's at SRH Berlin, explored this frontier.
+
+I experimented with different approaches:
+
+Convolutional Neural Networks (CNNs): Effective at identifying complex visual features but limited in grasping abstract reasoning.
+
+Support Vector Machines (SVMs): Good for structured classification tasks but struggled with abstraction.
+
+Object & Emotion Classifiers: Explored linking abstract ideas (like emotions) with contextual data to push AI toward higher-level reasoning.
+
+Key takeaways included:
+
+Human-in-the-Loop (HITL): Guiding AI with expert feedback improves contextual understanding.
+
+Explainable AI (XAI): Crucial for trust, especially in domains like healthcare and law.
+
+MLOps & Concept Drift: Continuous retraining is vital since meanings of abstract concepts evolve with society.
+
+Cross-Domain Knowledge Transfer: Models can learn fairness in one domain (education) and apply it in another (healthcare).
+
+Ultimately, this research underscored that building cognitive architectures combining neural and symbolic reasoning is essential for AI to approach human-like abstraction.

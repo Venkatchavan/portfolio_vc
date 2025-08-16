@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blogs - Venkat Chavan</title>
+    <link rel="stylesheet" href="static/css/futuristic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="static/images/logo-portfolio.png" type="image/png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html">
+                    <img src="static/images/logo-portfolio.png" alt="Portfolio Logo" class="logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#education" class="nav-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="blogs.html" class="nav-link active">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header Section -->
+    <header class="header blogs-header">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Tech Blogs</h1>
+                <p class="hero-subtitle">Insights from AI Research & Data Intelligence</p>
+                <div class="blog-stats">
+                    <span class="stat-item">2 Articles</span>
+                    <span class="stat-item">AI & OSINT Research</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blogs Section -->
+    <section class="blogs-section">
+        <div class="container">
+            <div class="blogs-grid">
+                <!-- Blog 1: AI Abstract Concepts -->
+                <article class="blog-card">
+                    <div class="blog-header">
+                        <div class="blog-meta">
+                            <span class="blog-category">AI Research</span>
+                            <span class="blog-date">Based on Internship Research</span>
+                        </div>
+                        <h2 class="blog-title">Enabling AI to Understand and Process Abstract Concepts</h2>
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-excerpt">
+                            Artificial Intelligence has made great progress in recognizing images, speech, and text—but teaching AI to understand abstract concepts such as justice, fairness, or creativity is still a major challenge. My research project, conducted during my Master's at SRH Berlin, explored this frontier.
+                        </p>
+                        
+                        <h3>Research Approaches</h3>
+                        <p>I experimented with different approaches:</p>
+                        <ul class="blog-list">
+                            <li><strong>Convolutional Neural Networks (CNNs):</strong> Effective at identifying complex visual features but limited in grasping abstract reasoning.</li>
+                            <li><strong>Support Vector Machines (SVMs):</strong> Good for structured classification tasks but struggled with abstraction.</li>
+                            <li><strong>Object & Emotion Classifiers:</strong> Explored linking abstract ideas (like emotions) with contextual data to push AI toward higher-level reasoning.</li>
+                        </ul>
+
+                        <h3>Key Takeaways</h3>
+                        <ul class="blog-list">
+                            <li><strong>Human-in-the-Loop (HITL):</strong> Guiding AI with expert feedback improves contextual understanding.</li>
+                            <li><strong>Explainable AI (XAI):</strong> Crucial for trust, especially in domains like healthcare and law.</li>
+                            <li><strong>MLOps & Concept Drift:</strong> Continuous retraining is vital since meanings of abstract concepts evolve with society.</li>
+                            <li><strong>Cross-Domain Knowledge Transfer:</strong> Models can learn fairness in one domain (education) and apply it in another (healthcare).</li>
+                        </ul>
+
+                        <p class="blog-conclusion">
+                            Ultimately, this research underscored that building cognitive architectures combining neural and symbolic reasoning is essential for AI to approach human-like abstraction.
+                        </p>
+
+                        <div class="blog-tags">
+                            <span class="tag">AI Research</span>
+                            <span class="tag">Abstract Reasoning</span>
+                            <span class="tag">CNNs</span>
+                            <span class="tag">SVMs</span>
+                            <span class="tag">XAI</span>
+                            <span class="tag">MLOps</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog 2: OSINT Trading -->
+                <article class="blog-card">
+                    <div class="blog-header">
+                        <div class="blog-meta">
+                            <span class="blog-category">OSINT Research</span>
+                            <span class="blog-date">Based on Academic Paper</span>
+                        </div>
+                        <h2 class="blog-title">Event-Driven Strategies Using OSINT</h2>
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-excerpt">
+                            Financial markets don't just respond to numbers—they respond to events and emotions. This study focused on how Open-Source Intelligence (OSINT), when paired with event-driven trading strategies, can give traders a competitive edge.
+                        </p>
+                        
+                        <h3>How OSINT Powers Trading</h3>
+                        <ul class="blog-list">
+                            <li><strong>Real-Time Market Insights:</strong> Social media, news, and financial reports act as early warning signals.</li>
+                            <li><strong>Sentiment Analysis:</strong> By applying NLP to Twitter and news data, we quantified market mood—positive or negative—and linked it to price movements.</li>
+                            <li><strong>Event Detection:</strong> Machine learning techniques helped identify significant political, economic, or cultural events affecting markets.</li>
+                        </ul>
+
+                        <h3>Case Study</h3>
+                        <p><strong>Cricket T20 World Cup 2024:</strong> India's win triggered positive sentiment on social media, which aligned with short-term market movement in related sectors.</p>
+
+                        <h3>Challenges & Ethics</h3>
+                        <ul class="blog-list">
+                            <li><strong>Data Reliability:</strong> Not all public data is accurate—misinformation can mislead strategies.</li>
+                            <li><strong>Privacy Concerns:</strong> Using social media data requires strict ethical compliance.</li>
+                            <li><strong>Algorithm + Human Fusion:</strong> The best outcomes came when AI tools worked alongside human analysts.</li>
+                        </ul>
+
+                        <h3>Future Outlook</h3>
+                        <p>
+                            With the rise of AI-powered sentiment analysis, rare event detection, and high-frequency trading models, OSINT will continue reshaping how investors navigate markets. Beyond finance, OSINT is also proving its value in cybersecurity, crisis monitoring, and geopolitical risk analysis.
+                        </p>
+
+                        <p class="blog-conclusion">
+                            <strong>👉 Together, these two works reflect my dual focus:</strong> pushing the boundaries of AI cognition and applying data-driven intelligence to real-world decision-making.
+                        </p>
+
+                        <div class="blog-tags">
+                            <span class="tag">OSINT</span>
+                            <span class="tag">Trading Strategies</span>
+                            <span class="tag">Sentiment Analysis</span>
+                            <span class="tag">NLP</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Financial Markets</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Venkat Chavan</h3>
+                    <p>AI Engineer & Data Scientist</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#projects">Projects</a></li>
+                        <li><a href="index.html#experience">Experience</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/venkatchavan16" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Venkatchavan" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="mailto:venkat.chavan.n@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Venkat Chavan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="static/js/app.js"></script>
+</body>
+</html>
