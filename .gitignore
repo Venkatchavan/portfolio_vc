@@ -79,7 +79,6 @@ logs/
 log/
 
 # 🏗️ Build outputs
-dist/
 build/
 *.tar.gz
 *.zip
