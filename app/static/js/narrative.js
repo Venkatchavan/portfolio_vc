@@ -74,7 +74,7 @@ particlesJS("particles-js", {
     "retina_detect": true
   });
   
-  // Modal Handling
+  // Modal Handling for Poems
   const modal = document.getElementById('poemModal');
   const modalTitle = document.getElementById('modalPoemTitle');
   const modalContent = document.getElementById('modalPoemContent');
@@ -90,6 +90,23 @@ particlesJS("particles-js", {
       modal.style.display = 'none';
   };
   
+  // Blog Modal Handling
+  const blogModal = document.getElementById('blogModal');
+  const blogModalTitle = document.getElementById('modalBlogTitle');
+  const blogModalContent = document.getElementById('modalBlogContent');
+  const blogCloseBtn = document.querySelector('.blog-close-btn');
+  
+  const openBlogModal = (title, content) => {
+      blogModalTitle.textContent = title;
+      blogModalContent.innerHTML = content.replace(/\n/g, '<br>');
+      blogModal.style.display = 'block';
+  };
+  
+  const closeBlogModal = () => {
+      blogModal.style.display = 'none';
+  };
+  
+  // Event Listeners for Poems
   document.querySelectorAll('.read-poem-btn').forEach(button => {
       button.addEventListener('click', () => {
           const title = button.dataset.poemTitle;
@@ -98,10 +115,24 @@ particlesJS("particles-js", {
       });
   });
   
+  // Event Listeners for Blogs
+  document.querySelectorAll('.read-blog-btn').forEach(button => {
+      button.addEventListener('click', () => {
+          const title = button.dataset.blogTitle;
+          const content = button.dataset.blogContent;
+          openBlogModal(title, content);
+      });
+  });
+  
   closeBtn.addEventListener('click', closeModal);
+  blogCloseBtn.addEventListener('click', closeBlogModal);
+  
   window.addEventListener('click', (event) => {
       if (event.target == modal) {
           closeModal();
+      }
+      if (event.target == blogModal) {
+          closeBlogModal();
       }
   });
   

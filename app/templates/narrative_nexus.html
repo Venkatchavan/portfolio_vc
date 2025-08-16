@@ -47,7 +47,7 @@
                     <div class="ai-chat-container">
                         <div class="ai-messages" id="ai-messages">
                             <div class="ai-message bot-message">
-                                <p>Greetings. I am the guardian of this nexus. Ask me about the poems, or request a verse on a topic of your choosing.</p>
+                                <p>Greetings. I am the guardian of this nexus. Ask me about the poems, tech articles, or request a verse on a topic of your choosing.</p>
                             </div>
                         </div>
                         <div class="ai-input-container">
@@ -58,24 +58,48 @@
                 </div>
             </aside>
 
-            <main class="poems-section">
-                <div class="poems-grid">
-                    {% for poem in poems %}
-                    <article class="poem-card">
-                        <h3 class="poem-title">{{ poem.title }}</h3>
-                        <div class="poem-preview">
-                            {% set first_stanza = poem.content.split('\n\n')[0] %}
-                            {% for line in first_stanza.split('\n')[:4] %}
-                                <p>{{ line }}</p>
-                            {% endfor %}
-                            ...
-                        </div>
-                        <button class="read-poem-btn btn btn-secondary" data-poem-title="{{ poem.title }}" data-poem-content="{{ poem.content|replace('"', '&quot;')|replace('\n', '&#10;') }}">
-                            Read Full Verse
-                        </button>
-                    </article>
-                    {% endfor %}
-                </div>
+            <main class="content-section">
+                <!-- Tech Blogs Section -->
+                <section class="blogs-section">
+                    <h2 class="section-title"><i class="fas fa-newspaper"></i> Tech Insights</h2>
+                    <div class="blogs-grid">
+                        {% for blog in blogs %}
+                        <article class="blog-card">
+                            <div class="blog-header">
+                                <h3 class="blog-title">{{ blog.title }}</h3>
+                            </div>
+                            <div class="blog-excerpt">
+                                <p>{{ blog.excerpt }}</p>
+                            </div>
+                            <button class="read-blog-btn btn btn-primary" data-blog-title="{{ blog.title }}" data-blog-content="{{ blog.content|replace('"', '&quot;')|replace('\n', '&#10;') }}">
+                                <i class="fas fa-book-open"></i> Read Article
+                            </button>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </section>
+
+                <!-- Poetry Section -->
+                <section class="poems-section">
+                    <h2 class="section-title"><i class="fas fa-feather-alt"></i> Digital Verses</h2>
+                    <div class="poems-grid">
+                        {% for poem in poems %}
+                        <article class="poem-card">
+                            <h3 class="poem-title">{{ poem.title }}</h3>
+                            <div class="poem-preview">
+                                {% set first_stanza = poem.content.split('\n\n')[0] %}
+                                {% for line in first_stanza.split('\n')[:4] %}
+                                    <p>{{ line }}</p>
+                                {% endfor %}
+                                ...
+                            </div>
+                            <button class="read-poem-btn btn btn-secondary" data-poem-title="{{ poem.title }}" data-poem-content="{{ poem.content|replace('"', '&quot;')|replace('\n', '&#10;') }}">
+                                <i class="fas fa-scroll"></i> Read Full Verse
+                            </button>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </section>
             </main>
         </div>
     </div>
@@ -89,6 +113,19 @@
             </div>
             <div class="modal-body">
                 <div class="poem-full-text" id="modalPoemContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Modal -->
+    <div class="blog-modal" id="blogModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalBlogTitle"></h2>
+                <span class="close-btn blog-close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="blog-full-text" id="modalBlogContent"></div>
             </div>
         </div>
     </div>
