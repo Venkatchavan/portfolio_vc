@@ -28,6 +28,8 @@
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="{{ url_for('narrative.narrative_nexus') }}" class="nav-link">Narrative Nexus</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
@@ -92,6 +94,51 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience" class="experience animated-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Work Experience</h2>
+                <p class="section-subtitle">Building expertise through real-world challenges.</p>
+            </div>
+            <div class="experience-timeline">
+                {% for exp in data.experience %}
+                <div class="experience-item">
+                    <div class="experience-content">
+                        <h3 class="experience-title">{{ exp.title }}</h3>
+                        <h4 class="experience-company">{{ exp.company }}</h4>
+                        <p class="experience-period">{{ exp.period }}</p>
+                        <ul class="experience-responsibilities">
+                            {% for responsibility in exp.responsibilities %}
+                            <li>{{ responsibility }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education animated-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">Academic foundation for innovation.</p>
+            </div>
+            <div class="education-grid">
+                {% for edu in data.education %}
+                <div class="education-card">
+                    <h3 class="education-degree">{{ edu.degree }}</h3>
+                    <h4 class="education-institution">{{ edu.institution }}</h4>
+                    <p class="education-period">{{ edu.period }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects" class="projects animated-section">
         <div class="container">
@@ -144,9 +191,9 @@
                         <i class="fas fa-newspaper startup-icon"></i>
                         <h3 class="startup-title">Tech Blogs</h3>
                     </div>
-                    <p class="startup-description">A space for technical articles, tutorials, and thoughts on the latest trends in software development and artificial intelligence. Coming soon!</p>
+                    <p class="startup-description">Insights on AI, data science, and cutting-edge technology. Exploring abstract concepts and real-world applications.</p>
                     <div class="startup-details">
-                         <a href="#" class="btn btn-secondary disabled">Coming Soon</a>
+                         <a href="blogs.html" class="btn btn-secondary">Read Articles</a>
                     </div>
                 </div>
             </div>
