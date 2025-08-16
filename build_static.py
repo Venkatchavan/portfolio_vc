@@ -20,8 +20,14 @@ def build_static_site():
         shutil.rmtree(output_dir)
     output_dir.mkdir()
     
+    # Set environment for production build
+    os.environ.setdefault('FLASK_ENV', 'production')
+    os.environ.setdefault('SECRET_KEY', 'static-build-key')
+    os.environ.setdefault('GEMINI_API_KEY', 'demo-key')
+    
     # Create app and start test server
     app = create_app()
+    app.config['TESTING'] = True
     
     # Copy static files
     static_src = Path("app/static")
