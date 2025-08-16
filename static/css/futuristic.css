@@ -382,7 +382,128 @@ section {
 }
 
 /*================================================================
-  7. Experience Section
+  7. Education Section
+================================================================*/
+.education {
+    padding: 100px 0;
+    background: var(--background-color);
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.education-item {
+    background: var(--surface-color);
+    border-radius: 15px;
+    padding: 0;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed) ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.education-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 170, 255, 0.15);
+    border-color: var(--primary-color);
+}
+
+.education-content {
+    padding: 2.5rem;
+    position: relative;
+}
+
+.education-icon {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.3);
+}
+
+.education-icon i {
+    font-size: 1.5rem;
+    color: var(--background-color);
+}
+
+.degree-title {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.institution-name {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.education-period {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.education-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.education-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.highlight-tag {
+    background: rgba(0, 255, 127, 0.1);
+    color: var(--secondary-color);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    border: 1px solid rgba(0, 255, 127, 0.3);
+    transition: all var(--transition-speed) ease;
+}
+
+.highlight-tag:hover {
+    background: var(--secondary-color);
+    color: var(--background-color);
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Education Section */
+@media (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .education-content {
+        padding: 2rem;
+    }
+    
+    .degree-title {
+        font-size: 1.2rem;
+    }
+}
+
+/*================================================================
+  8. Experience Section
 ================================================================*/
 .experience {
     padding: 100px 0;
@@ -589,7 +710,7 @@ section {
 }
 
 /*================================================================
-  8. Projects Section
+  9. Projects Section
 ================================================================*/
 .projects-grid {
     display: grid;
@@ -622,7 +743,7 @@ section {
 }
 
 /*================================================================
-  9. Startup Ideas Section
+  10. Startup Ideas Section
 ================================================================*/
 .startup-ideas-grid {
     display: grid;
@@ -688,7 +809,7 @@ section {
 }
 
 /*================================================================
-  10. Contact Section
+  11. Contact Section
 ================================================================*/
 .contact-content {
     display: grid;
