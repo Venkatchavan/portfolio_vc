@@ -1,0 +1,182 @@
+/* Futuristic and Tech-inspired Project Detail Stylesheet */
+
+/*================================================================
+  1. Project Hero
+================================================================*/
+.project-hero {
+    padding-top: 150px;
+    padding-bottom: 80px;
+    text-align: center;
+    background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.9)), 
+                url('../images/project-bg-banner.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+.project-breadcrumb {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+.breadcrumb-link {
+    color: var(--accent-color);
+    transition: color var(--transition-speed) ease;
+}
+
+.breadcrumb-link:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumb-separator {
+    margin: 0 10px;
+}
+
+.breadcrumb-current {
+    color: var(--primary-color);
+}
+
+.project-hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
+}
+
+.project-hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.project-hero-links .btn {
+    margin: 0.5rem;
+}
+
+/*================================================================
+  2. Project Details Section
+================================================================*/
+.project-details {
+    padding: 80px 0;
+}
+
+.project-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 3rem;
+}
+
+.project-section {
+    margin-bottom: 3rem;
+}
+
+.project-section-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    display: inline-block;
+}
+
+/* Feature List */
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.feature-icon {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+/*================================================================
+  3. Sidebar
+================================================================*/
+.project-sidebar {
+    position: sticky;
+    top: 120px;
+}
+
+.sidebar-widget {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.widget-title {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Tech Tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-tag {
+    background: rgba(0, 170, 255, 0.1);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 170, 255, 0.3);
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.status-completed {
+    background: rgba(0, 255, 127, 0.1);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.status-in-progress {
+    background: rgba(255, 165, 0, 0.1);
+    color: #ffa500; /* Orange */
+    border: 1px solid #ffa500;
+}
+
+/*================================================================
+  4. Project Gallery
+================================================================*/
+.project-gallery {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.gallery-placeholder {
+    color: var(--accent-color);
+    font-style: italic;
+}
+
+.gallery-placeholder .fas {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}

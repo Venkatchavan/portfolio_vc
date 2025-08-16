@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrative Nexus - Venkat Chavan N</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./static/images/logo-portfolio.png">
+    
+    <link rel="stylesheet" href="./static/css/futuristic.css">
+    <link rel="stylesheet" href="./static/css/narrative.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="/" class="nav-logo">
+                <img src="./static/images/logo-portfolio.png" 
+                     alt="Venkat Chavan N Logo" 
+                     class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="/#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="narrative-container">
+        <header class="narrative-header">
+            <img src="./static/images/Narrative-Nexus-Logo.png" 
+                 alt="Narrative Nexus Logo" 
+                 class="narrative-logo">
+            <h1>Narrative Nexus</h1>
+            <p>Where technology meets poetry, and code becomes verse</p>
+        </header>
+
+        <div class="narrative-content">
+            <aside class="narrative-sidebar">
+                <div class="sidebar-widget ai-assistant-section">
+                    <h2 class="widget-title"><i class="fas fa-robot"></i> AI Companion</h2>
+                    <div class="ai-chat-container">
+                        <div class="ai-messages" id="ai-messages">
+                            <div class="ai-message bot-message">
+                                <p>Greetings. I am the guardian of this nexus. Ask me about the poems, or request a verse on a topic of your choosing.</p>
+                            </div>
+                        </div>
+                        <div class="ai-input-container">
+                            <input type="text" id="ai-input" placeholder="Converse with the AI...">
+                            <button id="ai-send-btn" class="btn btn-primary">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="poems-section">
+                <div class="poems-grid">
+                    
+                    <article class="poem-card">
+                        <h3 class="poem-title">Footprints in the Snow</h3>
+                        <div class="poem-preview">
+                            
+                            
+                                <p>The snow first fell—a silver dream,</p>
+                            
+                                <p>A wonderland in silent gleam.</p>
+                            
+                                <p>I stepped alone on frozen streets,</p>
+                            
+                                <p>And found in stillness, quiet beats.</p>
+                            
+                            ...
+                        </div>
+                        <button class="read-poem-btn btn btn-secondary" data-poem-title="Footprints in the Snow" data-poem-content="The snow first fell—a silver dream,&amp;#10;A wonderland in silent gleam.&amp;#10;I stepped alone on frozen streets,&amp;#10;And found in stillness, quiet beats.&amp;#10;&amp;#10;With bare feet pressed on icy stone,&amp;#10;I met myself, yet felt alone.&amp;#10;At markets bright with festive cheer,&amp;#10;I smiled through joy and held back fear.&amp;#10;&amp;#10;The lights, the cold, the world so wide,&amp;#10;Yet something empty stayed inside.&amp;#10;When New Year rang, I softly knew—&amp;#10;My heart was calling something true.&amp;#10;&amp;#10;So I booked my flight and let tears show,&amp;#10;Still kissed the snow before I&#39;d go.&amp;#10;Some winters hug, some winters bite,&amp;#10;But all must pass into the light.">
+                            Read Full Verse
+                        </button>
+                    </article>
+                    
+                    <article class="poem-card">
+                        <h3 class="poem-title">Snowfall on My Birthday</h3>
+                        <div class="poem-preview">
+                            
+                            
+                                <p>No candles lit, no crowded cheer,</p>
+                            
+                                <p>Just frost and silence drawing near.</p>
+                            
+                                <p>In foreign lands, my heart did sway,</p>
+                            
+                                <p>A birthday dawned—a quiet day.</p>
+                            
+                            ...
+                        </div>
+                        <button class="read-poem-btn btn btn-secondary" data-poem-title="Snowfall on My Birthday" data-poem-content="No candles lit, no crowded cheer,&amp;#10;Just frost and silence drawing near.&amp;#10;In foreign lands, my heart did sway,&amp;#10;A birthday dawned—a quiet day.&amp;#10;&amp;#10;No calls, no cake, no bursting sound,&amp;#10;Just snowflakes spinning on the ground.&amp;#10;I laughed, I wept, I stood alone,&amp;#10;And found a truth I now call my own:&amp;#10;&amp;#10;That joy and sorrow ebb and flow,&amp;#10;Like drifting snow, like winds that blow.&amp;#10;And even if no one may see—&amp;#10;I celebrate the strength in me.">
+                            Read Full Verse
+                        </button>
+                    </article>
+                    
+                    <article class="poem-card">
+                        <h3 class="poem-title">The Decision That Left Without Goodbye</h3>
+                        <div class="poem-preview">
+                            
+                            
+                                <p>No voices weighed, no counsel sought,</p>
+                            
+                                <p>Just one bold moment, a burning thought.</p>
+                            
+                                <p>A ticket booked, a world unknown,</p>
+                            
+                                <p>A journey I would walk alone.</p>
+                            
+                            ...
+                        </div>
+                        <button class="read-poem-btn btn btn-secondary" data-poem-title="The Decision That Left Without Goodbye" data-poem-content="No voices weighed, no counsel sought,&amp;#10;Just one bold moment, a burning thought.&amp;#10;A ticket booked, a world unknown,&amp;#10;A journey I would walk alone.&amp;#10;&amp;#10;Delays and doubts, the waiting spun,&amp;#10;The visa stalled, the loan undone.&amp;#10;But still I stood through fear and fire,&amp;#10;Fueled by quiet, growing desire.&amp;#10;&amp;#10;I landed here, the skies so wide,&amp;#10;For three sweet days, I walked with pride.&amp;#10;Then came the ache, the silent cries—&amp;#10;Of missing hands and teary eyes.&amp;#10;&amp;#10;Yet in that ache, I found my name,&amp;#10;In cooking flames and sweeping shame.&amp;#10;From solitude I shaped my core—&amp;#10;That one bold step became much more.">
+                            Read Full Verse
+                        </button>
+                    </article>
+                    
+                    <article class="poem-card">
+                        <h3 class="poem-title">The Roasts We Lived By</h3>
+                        <div class="poem-preview">
+                            
+                            
+                                <p>We once spoke flames with every line,</p>
+                            
+                                <p>Sarcasm seasoned, raw, divine.</p>
+                            
+                                <p>No feelings bruised, no hearts to mend,</p>
+                            
+                                <p>Just friendly fire that knew no end.</p>
+                            
+                            ...
+                        </div>
+                        <button class="read-poem-btn btn btn-secondary" data-poem-title="The Roasts We Lived By" data-poem-content="We once spoke flames with every line,&amp;#10;Sarcasm seasoned, raw, divine.&amp;#10;No feelings bruised, no hearts to mend,&amp;#10;Just friendly fire that knew no end.&amp;#10;&amp;#10;We laughed so hard we lost our breath,&amp;#10;Insults that loved more than they death.&amp;#10;Comebacks sharp as cricket swings,&amp;#10;We ruled the art of teasing things.&amp;#10;&amp;#10;But now the chats grow still and slow,&amp;#10;Life pulled us each where we must go.&amp;#10;Yet when I&#39;m down or feeling small,&amp;#10;I hear those jokes—and smile through all.">
+                            Read Full Verse
+                        </button>
+                    </article>
+                    
+                    <article class="poem-card">
+                        <h3 class="poem-title">The Sleepless Scholar</h3>
+                        <div class="poem-preview">
+                            
+                            
+                                <p>Once I napped at noon with ease,</p>
+                            
+                                <p>Chasing dreams in gentle breeze.</p>
+                            
+                                <p>Now I lie beneath the night,</p>
+                            
+                                <p>Eyes wide open, far from light.</p>
+                            
+                            ...
+                        </div>
+                        <button class="read-poem-btn btn btn-secondary" data-poem-title="The Sleepless Scholar" data-poem-content="Once I napped at noon with ease,&amp;#10;Chasing dreams in gentle breeze.&amp;#10;Now I lie beneath the night,&amp;#10;Eyes wide open, far from light.&amp;#10;&amp;#10;Five hours pass like whispered dust,&amp;#10;Each breath heavy, laced with rust.&amp;#10;The mirror shows what silence hides—&amp;#10;Blackened eyes and faded strides.&amp;#10;&amp;#10;Food feels foreign, thoughts run wild,&amp;#10;Hope lost somewhere in the piled.&amp;#10;But in this ache, a will survives,&amp;#10;A fire that still dares and strives.">
+                            Read Full Verse
+                        </button>
+                    </article>
+                    
+                    <article class="poem-card">
+                        <h3 class="poem-title">The Week After I Spoke</h3>
+                        <div class="poem-preview">
+                            
+                            
+                                <p>I spoke the truth, heart on sleeve,</p>
+                            
+                                <p>But heard a &#39;no&#39; I couldn&#39;t grieve.</p>
+                            
+                                <p>A week of silence, strange and still,</p>
+                            
+                                <p>Yet duty called, and so did will.</p>
+                            
+                            ...
+                        </div>
+                        <button class="read-poem-btn btn btn-secondary" data-poem-title="The Week After I Spoke" data-poem-content="I spoke the truth, heart on sleeve,&amp;#10;But heard a &#39;no&#39; I couldn&#39;t grieve.&amp;#10;A week of silence, strange and still,&amp;#10;Yet duty called, and so did will.&amp;#10;&amp;#10;Together we stood, not as I dreamed,&amp;#10;But sharper, calmer, so it seemed.&amp;#10;No love returned, yet strength was born—&amp;#10;We conquered doubts that Monday morn.">
+                            Read Full Verse
+                        </button>
+                    </article>
+                    
+                    <article class="poem-card">
+                        <h3 class="poem-title">Two Days, A Thousand Moments</h3>
+                        <div class="poem-preview">
+                            
+                            
+                                <p>In the golden breath of German skies,</p>
+                            
+                                <p>Two days danced before our eyes.</p>
+                            
+                                <p>An old 2 a.m. friend, still near, still true,</p>
+                            
+                                <p>With roads that whispered, &#34;It&#39;s just us two.&#34;</p>
+                            
+                            ...
+                        </div>
+                        <button class="read-poem-btn btn btn-secondary" data-poem-title="Two Days, A Thousand Moments" data-poem-content="In the golden breath of German skies,&amp;#10;Two days danced before our eyes.&amp;#10;An old 2 a.m. friend, still near, still true,&amp;#10;With roads that whispered, &amp;quot;It&#39;s just us two.&amp;quot;&amp;#10;&amp;#10;Deep talks that bent the edge of time,&amp;#10;Long walks in sync, a perfect rhyme.&amp;#10;Sunsets melting on Peacock Isle,&amp;#10;City scrapers watching us smile.&amp;#10;&amp;#10;We spoke of past, of dreams ahead,&amp;#10;Of roads we&#39;d walked, and words unsaid.&amp;#10;Sudden plans, the easy roasts,&amp;#10;The kind of joy a soul still boasts.&amp;#10;&amp;#10;Two days may fade, the maps may part—&amp;#10;But that connection lives in the heart.">
+                            Read Full Verse
+                        </button>
+                    </article>
+                    
+                    <article class="poem-card">
+                        <h3 class="poem-title">Echoes of Friendship</h3>
+                        <div class="poem-preview">
+                            
+                            
+                                <p>Seven stars once lit my skies,</p>
+                            
+                                <p>Three moons with laughter in their eyes.</p>
+                            
+                                <p>We danced through days, no need to say,</p>
+                            
+                                <p>That hearts were close though miles away.</p>
+                            
+                            ...
+                        </div>
+                        <button class="read-poem-btn btn btn-secondary" data-poem-title="Echoes of Friendship" data-poem-content="Seven stars once lit my skies,&amp;#10;Three moons with laughter in their eyes.&amp;#10;We danced through days, no need to say,&amp;#10;That hearts were close though miles away.&amp;#10;&amp;#10;But now the winds grow still and strange,&amp;#10;The calls grow rare, the seasons change.&amp;#10;Yet trust, like roots, runs deep below,&amp;#10;Though time may pause, true bonds still grow.&amp;#10;&amp;#10;I miss their voices, jokes and care,&amp;#10;Yet in my soul, they&#39;re always there.&amp;#10;This pause shall pass, the tides shall turn,&amp;#10;And fires of friendship once more burn.">
+                            Read Full Verse
+                        </button>
+                    </article>
+                    
+                    <article class="poem-card">
+                        <h3 class="poem-title">The Dawn of Narrative Nexus</h3>
+                        <div class="poem-preview">
+                            
+                            
+                                <p>In silence sparked a voice within,</p>
+                            
+                                <p>A dream to light where dark had been.</p>
+                            
+                                <p>With words that teach and thoughts that rise,</p>
+                            
+                                <p>You built a path beneath wide skies.</p>
+                            
+                            ...
+                        </div>
+                        <button class="read-poem-btn btn btn-secondary" data-poem-title="The Dawn of Narrative Nexus" data-poem-content="In silence sparked a voice within,&amp;#10;A dream to light where dark had been.&amp;#10;With words that teach and thoughts that rise,&amp;#10;You built a path beneath wide skies.&amp;#10;&amp;#10;Not just to speak, but stir the soul,&amp;#10;To make the broken pieces whole.&amp;#10;A nexus born of tale and tech,&amp;#10;To chart new worlds from wisdom&#39;s deck.&amp;#10;&amp;#10;So let the journey loud commence,&amp;#10;With passion, art, and eloquence.&amp;#10;Each word a torch, each thought a stream,&amp;#10;This venture flows—a living dream.">
+                            Read Full Verse
+                        </button>
+                    </article>
+                    
+                    <article class="poem-card">
+                        <h3 class="poem-title">The Pitch of Our Past</h3>
+                        <div class="poem-preview">
+                            
+                            
+                                <p>We played beneath the dusky skies,</p>
+                            
+                                <p>With broken bats and dreaming eyes.</p>
+                            
+                                <p>A taped-up ball, a field of dust,</p>
+                            
+                                <p>And rules we bent in boyhood trust.</p>
+                            
+                            ...
+                        </div>
+                        <button class="read-poem-btn btn btn-secondary" data-poem-title="The Pitch of Our Past" data-poem-content="We played beneath the dusky skies,&amp;#10;With broken bats and dreaming eyes.&amp;#10;A taped-up ball, a field of dust,&amp;#10;And rules we bent in boyhood trust.&amp;#10;&amp;#10;We laughed, we fought, we called each name,&amp;#10;Each match, a legend, not just a game.&amp;#10;From one old street, we grew apart,&amp;#10;But stitched the same within the heart.&amp;#10;&amp;#10;Now scattered wide, our lives unfold,&amp;#10;But when we meet—the past is gold.&amp;#10;For jokes revive and time stands still,&amp;#10;That bond of youth forever will.">
+                            Read Full Verse
+                        </button>
+                    </article>
+                    
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Poem Modal -->
+    <div class="poem-modal" id="poemModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalPoemTitle"></h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="poem-full-text" id="modalPoemContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./static/js/app.js"></script>
+    <script src="./static/js/narrative.js"></script>
+</body>
+</html>
