@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant - Venkat Chavan N</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/futuristic.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="{{ url_for('main.home') }}" class="nav-logo">
+                <img src="{{ url_for('static', filename='images/logo-portfolio.png') }}" 
+                     alt="Venkat Chavan N Logo" 
+                     class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="{{ url_for('main.home') }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.home') }}#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.home') }}#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{ url_for('chatbot.chatbot') }}" class="nav-link active">AI Assistant</a></li>
+                <li class="nav-item"><a href="{{ url_for('narrative.narrative_nexus') }}" class="nav-link">Narrative Nexus</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Chatbot Section -->
+    <section class="chatbot-section">
+        <div class="container">
+            <div class="chatbot-header">
+                <h1 class="chatbot-title">AI Assistant</h1>
+                <p class="chatbot-subtitle">Engage with my digital twin. Ask anything about my professional life.</p>
+            </div>
+            
+            <div class="chatbot-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Greetings. I am an AI construct representing Venkat. I have access to his professional data. How may I assist you?</p>
+                            <div class="suggested-questions">
+                                <button class="suggestion-btn">Tell me about his experience</button>
+                                <button class="suggestion-btn">What projects has he worked on?</button>
+                                <button class="suggestion-btn">What are his technical skills?</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <input type="text" id="chatInput" placeholder="Transmit your query..." autocomplete="off">
+                        <button id="sendButton">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="typing-indicator" id="typingIndicator">
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span>AI is processing...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+</body>
+</html>

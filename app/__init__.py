@@ -22,8 +22,8 @@ def create_app(config_name='development'):
     
     # Create Flask application instance
     app = Flask(__name__, 
-                template_folder='../templates',
-                static_folder='../static')
+                template_folder='templates',
+                static_folder='static')
     
     # Load configuration
     from config.settings import config

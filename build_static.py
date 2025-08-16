@@ -1,163 +1,80 @@
 """
-Static site builder for GitHub Pages deployment
-This script generates static HTML files from the Flask app
+Static site builder for GitHub Pages deployment.
+Generates a static version of the Flask portfolio.
 """
 
 import os
 import shutil
-from urllib.parse import urljoin
+from pathlib import Path
 from app import create_app
-from app.services.portfolio_service import get_portfolio_data
-
-# Create the Flask app
-app = create_app()
-
-def fix_paths(content, is_project_page=False):
-    """Fix paths in HTML content for static hosting"""
-    
-    # First, handle Flask url_for patterns more comprehensively
-    import re
-    
-    # Replace url_for patterns
-    content = re.sub(r'\{\{\s*url_for\(\'static\',\s*filename=\'([^\']+)\'\)\s*\}\}', r'static/\1', content)
-    content = re.sub(r'\{\{\s*url_for\(\'main\.home\'\)\s*\}\}', 'index.html', content)
-    content = re.sub(r'\{\{\s*url_for\(\'chatbot\.chatbot\'\)\s*\}\}', 'chatbot.html', content)
-    content = re.sub(r'\{\{\s*url_for\(\'narrative\.narrative_nexus\'\)\s*\}\}', 'narrative_nexus.html', content)
-    
-    if is_project_page:
-        # For project pages, need to go up one directory
-        replacements = [
-            ('href="/static/', 'href="../static/'),
-            ('src="/static/', 'src="../static/'),
-            ('href="static/', 'href="../static/'),
-            ('src="static/', 'src="../static/'),
-            ('href="/project/', 'href="../project/'),
-            ('href="/chat"', 'href="../chatbot.html"'),
-            ('href="/chat/"', 'href="../chatbot.html"'),
-            ('href="/chat/bot"', 'href="../chatbot.html"'),
-            ('href="/chatbot"', 'href="../chatbot.html"'),
-            ('href="/narrative/"', 'href="../narrative_nexus.html"'),
-            ('href="/narrative/nexus"', 'href="../narrative_nexus.html"'),
-            ('href="chatbot.html"', 'href="../chatbot.html"'),
-            ('href="narrative_nexus.html"', 'href="../narrative_nexus.html"'),
-            ('href="index.html"', 'href="../index.html"'),
-            ('href="/"', 'href="../index.html"'),
-            # Fix content attributes
-            ('content="/static/', 'content="../static/'),
-            ('content="static/', 'content="../static/'),
-        ]
-    else:
-        # For root pages
-        replacements = [
-            ('href="/static/', 'href="static/'),
-            ('src="/static/', 'src="static/'),
-            ('href="/project/', 'href="project/'),
-            ('href="/chat"', 'href="chatbot.html"'),
-            ('href="/chat/"', 'href="chatbot.html"'),
-            ('href="/chat/bot"', 'href="chatbot.html"'),
-            ('href="/chatbot"', 'href="chatbot.html"'),
-            ('href="/narrative_nexus"', 'href="narrative_nexus.html"'),
-            ('href="/narrative/"', 'href="narrative_nexus.html"'),
-            ('href="/narrative/nexus"', 'href="narrative_nexus.html"'),
-            ('href="/"', 'href="index.html"'),
-            # Fix content attributes
-            ('content="/static/', 'content="static/'),
-        ]
-    
-    # Apply all replacements
-    for old, new in replacements:
-        content = content.replace(old, new)
-    
-    return content
+from flask import url_for
+import requests
+import time
 
 def build_static_site():
-    """Build static HTML files for GitHub Pages"""
+    """Build static version of the portfolio for GitHub Pages."""
     
-    # Create dist directory
-    dist_dir = 'dist'
-    if os.path.exists(dist_dir):
-        shutil.rmtree(dist_dir)
-    os.makedirs(dist_dir)
+    # Create output directory
+    output_dir = Path("dist")
+    if output_dir.exists():
+        shutil.rmtree(output_dir)
+    output_dir.mkdir()
+    
+    # Create app and start test server
+    app = create_app()
     
     # Copy static files
-    if os.path.exists('static'):
-        shutil.copytree('static', os.path.join(dist_dir, 'static'))
+    static_src = Path("app/static")
+    static_dst = output_dir / "static"
+    if static_src.exists():
+        shutil.copytree(static_src, static_dst)
+        print(f"✅ Copied static files to {static_dst}")
     
-    # Get portfolio data
-    portfolio_data = get_portfolio_data()
-    
+    # Test server context
     with app.test_client() as client:
-        # Build home page
-        response = client.get('/')
-        with open(os.path.join(dist_dir, 'index.html'), 'w', encoding='utf-8') as f:
-            content = response.get_data(as_text=True)
-            f.write(fix_paths(content, is_project_page=False))
         
-        # Build project detail pages
-        for project in portfolio_data.projects:
-            project_dir = os.path.join(dist_dir, 'project')
-            os.makedirs(project_dir, exist_ok=True)
-            
-            response = client.get(f'/project/{project.id}')
-            project_file = os.path.join(project_dir, f'{project.id}.html')
-            with open(project_file, 'w', encoding='utf-8') as f:
-                content = response.get_data(as_text=True)
-                f.write(fix_paths(content, is_project_page=True))
+        # Routes to build
+        routes = [
+            ('/', 'index.html'),
+            ('/narrative/nexus', 'narrative_nexus.html'),
+        ]
         
-        # Build chatbot page (try main route first, fallback to /bot)
+        # Build each route
+        for route, filename in routes:
+            try:
+                response = client.get(route)
+                if response.status_code == 200:
+                    output_file = output_dir / filename
+                    with open(output_file, 'w', encoding='utf-8') as f:
+                        f.write(response.get_data(as_text=True))
+                    print(f"✅ Built {route} -> {filename}")
+                else:
+                    print(f"❌ Failed to build {route}: {response.status_code}")
+            except Exception as e:
+                print(f"❌ Error building {route}: {e}")
+        
+        # Create 404 page
         try:
-            response = client.get('/chat/')
-            if response.status_code != 200:
-                response = client.get('/chat')
-        except:
-            response = client.get('/chat')
-        
-        with open(os.path.join(dist_dir, 'chatbot.html'), 'w', encoding='utf-8') as f:
-            content = response.get_data(as_text=True)
-            f.write(fix_paths(content, is_project_page=False))
-            f.write(fix_paths(content, is_project_page=False))
-        
-        # Build Narrative Nexus page
-        response = client.get('/narrative/')
-        with open(os.path.join(dist_dir, 'narrative_nexus.html'), 'w', encoding='utf-8') as f:
-            content = response.get_data(as_text=True)
-            f.write(fix_paths(content, is_project_page=False))
+            # Use index as 404 fallback
+            response = client.get('/')
+            if response.status_code == 200:
+                output_file = output_dir / "404.html"
+                with open(output_file, 'w', encoding='utf-8') as f:
+                    f.write(response.get_data(as_text=True))
+                print("✅ Created 404.html")
+        except Exception as e:
+            print(f"❌ Error creating 404.html: {e}")
     
-    # Create .nojekyll file to prevent Jekyll processing
-    with open(os.path.join(dist_dir, '.nojekyll'), 'w') as f:
-        f.write('')
+    # Create .nojekyll file for GitHub Pages
+    nojekyll_file = output_dir / ".nojekyll"
+    nojekyll_file.touch()
+    print("✅ Created .nojekyll file")
     
-    # Create a simple 404 page
-    create_404_page(dist_dir)
-    
-    print("Static site built successfully in 'dist' directory!")
+    print(f"\n🎉 Static site built successfully in '{output_dir}' directory!")
+    print("📁 Contents:")
+    for item in output_dir.rglob("*"):
+        if item.is_file():
+            print(f"   {item.relative_to(output_dir)}")
 
-def create_404_page(dist_dir):
-    """Create a 404 error page"""
-    html_content = """
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Page Not Found - Venkat Chavan N</title>
-        <link rel="stylesheet" href="static/css/style.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    </head>
-    <body>
-        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 2rem;">
-            <i class="fas fa-exclamation-triangle" style="font-size: 4rem; color: #f59e0b; margin-bottom: 2rem;"></i>
-            <h1 style="font-size: 3rem; color: #1f2937; margin-bottom: 1rem;">404</h1>
-            <h2 style="font-size: 1.5rem; color: #6b7280; margin-bottom: 2rem;">Page Not Found</h2>
-            <p style="color: #6b7280; margin-bottom: 2rem;">The page you're looking for doesn't exist.</p>
-            <a href="/" style="background: #2563eb; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">Go Home</a>
-        </div>
-    </body>
-    </html>
-    """
-    
-    with open(os.path.join(dist_dir, '404.html'), 'w', encoding='utf-8') as f:
-        f.write(html_content)
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     build_static_site()

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.name }} - {{ data.headline }}</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/futuristic.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="{{ url_for('main.home') }}" class="nav-logo">
+                <img src="{{ url_for('static', filename='images/logo-portfolio.png') }}" 
+                     alt="{{ data.name }} Logo" 
+                     class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{ url_for('narrative.narrative_nexus') }}" class="nav-link">Narrative Nexus</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                I'm <span class="highlight">{{ data.name }}</span>
+            </h1>
+            <h2 class="hero-subtitle">{{ data.headline }}</h2>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#projects" class="btn btn-secondary">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about animated-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Innovator. Developer. Dreamer.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image-container">
+                    <div class="about-image-bg"></div>
+                    <img src="{{ url_for('static', filename='images/chavan-profile.jpg') }}" 
+                         alt="{{ data.name }}" 
+                         class="about-image">
+                </div>
+                <div class="about-text">
+                    <p>{{ data.bio }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills animated-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Arsenal</h2>
+                <p class="section-subtitle">The tools and technologies I command.</p>
+            </div>
+            <div class="skills-grid">
+                {% for category, skill_list in data.skills.items() %}
+                <div class="skill-category">
+                    <h3 class="skill-category-title">{{ category }}</h3>
+                    <div class="skill-tags">
+                        {% for skill in skill_list %}
+                        <span class="skill-tag">{{ skill }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects animated-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Creations</h2>
+                <p class="section-subtitle">A selection of my proudest work.</p>
+            </div>
+            <div class="projects-grid">
+                {% for project in data.projects %}
+                <div class="project-card">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-description">{{ project.description }}</p>
+                    <a href="{{ url_for('projects.project_detail', project_id=project.id) }}" class="btn btn-secondary">Learn More</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Narrative Nexus Section -->
+    <section id="narrative-nexus" class="startup-ideas animated-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Narrative Nexus</h2>
+                <p class="section-subtitle">Where technology meets poetry, and code becomes verse.</p>
+            </div>
+            <div class="startup-ideas-grid">
+                <div class="startup-card">
+                    <div class="startup-header">
+                        <i class="fas fa-feather-alt startup-icon"></i>
+                        <h3 class="startup-title">Poetry Collection</h3>
+                    </div>
+                    <p class="startup-description">A curated collection of poems that explore the intricate relationship between technology and human experience. Each verse is a reflection on the digital world we inhabit.</p>
+                    <div class="startup-details">
+                        <a href="{{ url_for('narrative.narrative_nexus') }}" class="btn btn-primary">Explore the Nexus</a>
+                    </div>
+                </div>
+                 <div class="startup-card">
+                    <div class="startup-header">
+                        <i class="fas fa-robot startup-icon"></i>
+                        <h3 class="startup-title">AI Assistant</h3>
+                    </div>
+                    <p class="startup-description">Engage with a creative AI companion. Ask for a poem on any topic, get help with your own writing, or simply explore the poetic capabilities of artificial intelligence.</p>
+                    <div class="startup-details">
+                         <a href="{{ url_for('chatbot.chatbot') }}" class="btn btn-secondary">Chat with the AI</a>
+                    </div>
+                </div>
+                <div class="startup-card">
+                    <div class="startup-header">
+                        <i class="fas fa-newspaper startup-icon"></i>
+                        <h3 class="startup-title">Tech Blogs</h3>
+                    </div>
+                    <p class="startup-description">A space for technical articles, tutorials, and thoughts on the latest trends in software development and artificial intelligence. Coming soon!</p>
+                    <div class="startup-details">
+                         <a href="#" class="btn btn-secondary disabled">Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact animated-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Collaborate</h2>
+                <p class="section-subtitle">Have a project in mind? I'm all ears.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:{{ data.email }}">{{ data.email }}</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fab fa-linkedin contact-icon"></i>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://{{ data.linkedin }}" target="_blank">linkedin.com/in/venkatchavan</a>
+                        </div>
+                    </div>
+                     <div class="contact-info-item">
+                        <i class="fab fa-github contact-icon"></i>
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://{{ data.github }}" target="_blank">github.com/venkatchavan</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-graduation-cap contact-icon"></i>
+                        <div>
+                            <h4>Google Scholar</h4>
+                            <a href="https://{{ data.google_scholar }}" target="_blank">Research Publications</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 {{ data.name }}. All rights reserved. Forged with code and passion.</p>
+            <div class="footer-social">
+                <a href="https://{{ data.github }}" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="https://{{ data.linkedin }}" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:{{ data.email }}" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,295 +1,224 @@
-# 🚀 Venkat Chavan Portfolio
+# Venkat Chavan - Portfolio
 
-A modern, AI-powered portfolio website showcasing data engineering expertise, machine learning projects, and creative writing. Built with Flask and featuring intelligent chatbot capabilities.
+A modern, futuristic portfolio showcasing my journey in AI, machine learning, and software development. Built with Flask and featuring dynamic animations, immersive backgrounds, and a comprehensive content management system.
 
-[![Deploy to GitHub Pages](https://github.com/Venkatchavan/portfolio_vc/actions/workflows/deploy.yml/badge.svg)](https://github.com/Venkatchavan/portfolio_vc/actions/workflows/deploy.yml)
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://venkatchavan.github.io/portfolio_vc)
+## 🚀 Live Demo
+
+**[Visit Portfolio](https://venkatchavan.github.io/portfolio_vc/)**
 
 ## ✨ Features
 
-### 🏗️ Modern Architecture
-- **Modular Flask Application** with blueprint-based structure
-- **Application Factory Pattern** for flexible configuration
-- **Service-Oriented Design** with dedicated modules
-- **Dynamic Content Management** from text files
+### 🎨 **Modern Design**
+- Futuristic dark theme with dynamic particle backgrounds
+- Electric Blue (#00aaff) and Neon Green (#00ff7f) accent colors
+- Orbitron and Roboto Mono typography for a tech-forward aesthetic
+- Responsive design optimized for all devices
 
-### 🤖 AI-Powered Assistant
-- **Gemini AI Integration** for intelligent conversations
-- **Poetry-Focused Responses** for creative writing discussions
-- **Context-Aware Chat** about projects and experience
-- **Fallback System** for offline functionality
+### 🤖 **AI Integration**
+- **AI Assistant**: Powered by Google Gemini AI for intelligent interactions
+- **Poetry Generator**: AI-powered poetry creation and display
+- **Smart Content Management**: Automated parsing of text-based content
 
-### 🎨 Beautiful Design
-- **Narrative Nexus**: Stunning poetry section with glass morphism
-- **Responsive Layout** optimized for all devices
-- **Interactive Elements**: modals, animations, and transitions
-- **Custom Logo Integration** and professional branding
+### 📝 **Content Management**
+- **Blog System**: Text file-based blog management (Coming Soon)
+- **Poetry Collection**: Dynamic poetry display with metadata parsing
+- **Project Showcase**: Comprehensive project portfolio with detailed descriptions
 
-### 📚 Content Features
-- **Dynamic Poetry Collection** with personal poems
-- **Project Showcase** with detailed technical information
-- **Professional Experience** timeline and achievements
-- **Skills Visualization** and technology stack
-
-## 🌐 Live Demo
-
-**🔗 Visit the live portfolio:** [https://venkatchavan.github.io/portfolio_vc](https://venkatchavan.github.io/portfolio_vc)
-
-### Key Sections:
-- **Home**: Professional introduction and overview
-- **Projects**: Detailed showcase of technical projects
-- **AI Assistant**: Intelligent chatbot for inquiries
-- **Narrative Nexus**: Personal poetry collection with beautiful UI
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Python 3.8+
-- pip (Python package manager)
-
-### Installation & Setup
-
-1. **Clone or download** the project to your local machine
-
-2. **Navigate to the project directory**:
-   ```bash
-   cd portfoliotest
-   ```
-
-3. **Run the setup script**:
-   ```bash
-   python setup_and_run.py
-   ```
-
-The setup script will automatically:
-- Check Python version compatibility
-- Install required packages from `requirements.txt`
-- Create necessary content directories
-- Verify application structure
-- Start the Flask development server
-
-### Manual Setup (Alternative)
-
-If you prefer manual setup:
-
-1. **Install requirements**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Create content directories**:
-   ```bash
-   mkdir -p content/poems content/blogs content/projects
-   ```
-
-3. **Run the application**:
-   ```bash
-   # For modular app structure
-   python -c "from app import create_app; app = create_app(); app.run(debug=True)"
-   
-   # Or if using monolithic app.py
-   python app.py
-   ```
-
-## 🧪 Testing
-
-Run the comprehensive test suite to verify all functionality:
-
-```bash
-python test_portfolio.py
-```
-
-The test suite will:
-- Start the Flask server automatically
-- Test all pages and API endpoints
-- Verify AI chat functionality
-- Check static file accessibility
-- Test project pages and content loading
-- Provide detailed results summary
-
-Made with ❤️ and Flask. Featuring beautiful UI design, AI integration, and modular architecture for scalability and maintainability.
-- **Hosting**: GitHub Pages (Static), Vercel (Dynamic)
-- **Environment**: Virtual Environment for dependency management
+### 🛠️ **Technical Stack**
+- **Backend**: Flask with Blueprint architecture
+- **Frontend**: Modern HTML5, CSS3, JavaScript with Particles.js
+- **AI Services**: Google Gemini AI integration
+- **Deployment**: GitHub Pages, Vercel, Netlify ready
 
 ## 📁 Project Structure
 
 ```
-portfolio_website/
-├── app.py                    # Main Flask application
-├── build_static.py          # Static site generator for GitHub Pages
-├── requirements.txt          # Python dependencies
-├── .env.example             # Environment variables template
-├── .github/
-│   └── workflows/
-│       └── deploy.yml       # GitHub Actions deployment workflow
-├── templates/
-│   ├── index.html          # Main portfolio page
-│   ├── project_detail.html # Project detail page template
-│   └── chatbot.html        # AI chatbot interface
-├── static/
-│   └── css/
-│       └── style.css       # Comprehensive CSS styles
-└── README.md               # This file
+portfolio_vc/
+├── app/                          # Main application package
+│   ├── static/                   # Static assets (CSS, JS, images)
+│   │   ├── css/                  # Stylesheets
+│   │   ├── js/                   # JavaScript files
+│   │   └── images/               # Image assets
+│   ├── templates/                # Jinja2 templates
+│   ├── blueprints/               # Flask blueprints
+│   │   ├── main.py              # Main routes
+│   │   ├── projects.py          # Project routes
+│   │   ├── narrative.py         # Narrative Nexus routes
+│   │   ├── chatbot.py           # AI chatbot routes
+│   │   └── api.py               # API endpoints
+│   ├── models/                   # Data models
+│   ├── services/                 # Business logic services
+│   │   ├── ai_service.py        # AI integration
+│   │   ├── poetry_service.py    # Poetry management
+│   │   ├── portfolio_service.py # Portfolio data
+│   │   └── content_manager.py   # Content management
+│   └── __init__.py              # Application factory
+├── config/                       # Configuration files
+│   └── settings.py              # App settings
+├── content/                      # Content storage
+│   ├── blogs/                   # Blog posts (text files)
+│   ├── poems/                   # Poetry collection
+│   └── projects/                # Project documentation
+├── .github/                      # GitHub Actions workflows
+│   └── workflows/               # Deployment automation
+├── run.py                       # Application entry point
+└── requirements.txt             # Python dependencies
 ```
 
 ## 🚀 Quick Start
 
 ### Local Development
 
-1. **Clone and setup**:
-   ```powershell
-   cd e:\Portfolio\portfolio_website
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Venkatchavan/portfolio_vc.git
+   cd portfolio_vc
+   ```
+
+2. **Set up virtual environment**
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate  # Windows
+   # source .venv/bin/activate  # macOS/Linux
+   ```
+
+3. **Install dependencies**
+   ```bash
    pip install -r requirements.txt
    ```
 
-2. **Set up Gemini API (Optional)**:
-   - Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
-   - Copy `.env.example` to `.env`
-   - Add your API key to the `.env` file
-
-3. **Run the application**:
-   ```powershell
-   python app.py
-   ```
-
-4. **View the website**:
-   Open your browser and go to: `http://127.0.0.1:5000`
-
-### GitHub Pages Deployment
-
-1. **Push to GitHub**:
+4. **Configure environment**
    ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/yourusername/your-portfolio.git
-   git push -u origin main
+   cp .env.example .env
+   # Add your API keys to .env file
    ```
 
-2. **Set up GitHub Secrets**:
-   - Go to your repository settings
-   - Add `GEMINI_API_KEY` to repository secrets
-   - GitHub Actions will automatically deploy to GitHub Pages
+5. **Run the application**
+   ```bash
+   python run.py
+   ```
 
-3. **Access your live site**:
-   Your portfolio will be available at: `https://yourusername.github.io/your-portfolio`
+6. **Open in browser**
+   Navigate to `http://localhost:5000`
 
-## 🎨 Website Sections
+### Environment Variables
 
-### 1. Hero Section
-- Professional introduction with name, title, and location
-- Call-to-action buttons for contact and projects
-- Social media links including Google Scholar
+Create a `.env` file with the following variables:
 
-### 2. About Section
-- Comprehensive professional summary
-- Statistics about experience and projects
-- Background information
+```env
+FLASK_ENV=development
+SECRET_KEY=your-secret-key-here
+GEMINI_API_KEY=your-gemini-api-key
+```
 
-### 3. Skills Showcase
-- **Programming Languages**: Python, SQL, Java, TypeScript, Bash
-- **Data Engineering & ETL**: ETL Pipelines, BigQuery, GCP, Azure
-- **Semantic Modeling & NLP**: TF-IDF, NER, Sentence-BERT, LangChain, RAG
-- **ML & Automation**: Classification, Clustering, Model Deployment
-- **Frameworks & Tools**: FAISS, Streamlit, Docker, FastAPI
-- **Collaboration**: Agile, Documentation, Project Management
-
-### 4. Professional Experience
-- **Ford Werke GmbH** - Data Engineering Intern (Sept 2024 - Mar 2025)
-- **AI Variant** - Data Science Intern (May 2023 - Aug 2023)
-- **Siemens** - Graduate Trainee Engineer (Aug 2022 - Mar 2023)
-
-### 5. Featured Projects
-- **CMARL for Autonomous Vehicles** (Masters Thesis)
-- **Divine Insights: NLP Analysis of Bhagavad Gita**
-- **Enhanced Data Augmentation with RAG**
-
-Each project includes:
-- Detailed description and technical overview
-- Technologies used
-- Key features and challenges
-- Implementation status
-- Links to code and demos
-
-### 6. Education
-- MSc in Big Data and AI - SRH University Berlin (2023-2025)
-- BE in Information Science - Global Academy of Technology (2018-2022)
-
-### 7. AI Assistant
-- Gemini-powered chatbot that can answer questions about:
-  - Professional background and experience
-  - Technical skills and expertise
-  - Project details and research
-  - Education and achievements
-  - Contact information
-
-## 🔧 Customization
-
-### Adding New Projects
-1. Update the `portfolio_data` in `app.py`
-2. Add project details including:
-   - Unique ID, title, and descriptions
-   - Technologies, features, and challenges
-   - GitHub and demo links
-   - Status information
-
-### Updating Personal Information
-- Modify the `portfolio_data` dictionary in `app.py`
-- Update contact information, bio, and social links
-- Add your actual Google Scholar profile ID
-
-### Customizing the AI Chatbot
-- Add your Gemini API key to enable AI responses
-- Modify the chatbot prompt in `generate_chatbot_response()`
-- Customize fallback responses for offline mode
-
-### Styling Changes
-- Edit `static/css/style.css` for design modifications
-- Update color schemes, fonts, and layouts
-- Add custom animations and transitions
-
-## 🌐 Deployment Options
+## 🌐 Deployment
 
 ### GitHub Pages (Recommended)
-- Free hosting with custom domain support
-- Automatic deployment via GitHub Actions
-- SSL certificate included
 
-### Alternative Platforms
-- **Vercel**: Excellent for Flask apps with serverless functions
-- **Netlify**: Good for static sites with form handling
-- **Heroku**: Full Flask app hosting with database support
-- **Railway**: Modern platform with simple deployment
+The portfolio includes automated GitHub Actions for deployment:
 
-## 📈 Performance Features
+1. **Push to main branch**
+   ```bash
+   git add .
+   git commit -m "Deploy portfolio"
+   git push origin main
+   ```
 
-- **Optimized Loading**: Efficient CSS and JavaScript loading
-- **Mobile Performance**: Responsive design for all screen sizes
-- **SEO Friendly**: Proper meta tags and semantic HTML
-- **Accessibility**: ARIA labels and keyboard navigation support
+2. **GitHub Actions will automatically**:
+   - Build the static site
+   - Deploy to GitHub Pages
+   - Update the live site
 
-## 🔒 Security Considerations
+### Alternative Deployments
 
-- API keys stored as environment variables
-- Input validation for chatbot queries
-- CORS protection for API endpoints
-- Secure deployment practices
+- **Vercel**: `vercel.json` configuration included
+- **Netlify**: `netlify.toml` configuration included
+- **Heroku**: Ready for container deployment
 
-## 📞 Contact Information
+## 📚 Content Management
 
-- **Email**: venkat.chavan.n@gmail.com
-- **Phone**: +49 15566360832
-- **GitHub**: github.com/Venkatchavan
-- **LinkedIn**: linkedin.com/in/venkatchavan16
-- **Location**: Berlin, Germany
+### Adding Blog Posts
+
+1. Create a new `.txt` file in `content/blogs/`
+2. Follow this format:
+   ```
+   Title: Your Blog Post Title
+   Date: YYYY-MM-DD
+   Author: Your Name
+   Tags: tag1, tag2, tag3
+   Category: Technology
+   Summary: Brief description
+   ---
+   Your blog content here with markdown support
+   ```
+
+### Adding Poems
+
+1. Create a new `.txt` file in `content/poems/`
+2. Follow this format:
+   ```
+   Title: Your Poem Title
+   Date: YYYY-MM-DD
+   Tags: tag1, tag2, tag3
+   ---
+   Your poem content here
+   Line by line
+   ```
+
+## 🛠️ Development
+
+### Project Architecture
+
+- **Flask Blueprints**: Modular route organization
+- **Service Layer**: Business logic separation
+- **Template Inheritance**: Consistent UI components
+- **Static Asset Management**: Optimized resource loading
+
+### Key Services
+
+- **AI Service**: Manages Gemini AI integration
+- **Poetry Service**: Handles poem parsing and display
+- **Portfolio Service**: Manages project and personal data
+- **Content Manager**: Text file parsing and management
+
+### Adding New Features
+
+1. Create new blueprint in `app/blueprints/`
+2. Add corresponding service in `app/services/`
+3. Create templates in `app/templates/`
+4. Register blueprint in `app/__init__.py`
+
+## 🎯 Features Roadmap
+
+- [x] **Portfolio Redesign**: Modern futuristic theme
+- [x] **AI Integration**: Gemini AI assistant
+- [x] **Project Restructuring**: Scalable architecture
+- [x] **Content Management**: Text file-based system
+- [ ] **Blog System**: Complete blog functionality
+- [ ] **Search Feature**: Content search and filtering
+- [ ] **Analytics**: Visitor tracking and insights
+- [ ] **Performance**: Advanced caching and optimization
+
+## 🤝 Contributing
+
+This is a personal portfolio, but suggestions and feedback are welcome!
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📧 Contact
+
+**Venkat Chavan**
+- **Portfolio**: [venkatchavan.github.io/portfolio_vc](https://venkatchavan.github.io/portfolio_vc/)
+- **Email**: [Contact via portfolio](https://venkatchavan.github.io/portfolio_vc/)
+- **LinkedIn**: [Connect with me](https://venkatchavan.github.io/portfolio_vc/)
 
 ## 📄 License
 
-This project is open source and available under the MIT License.
+This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-**Built with ❤️ by Venkat Chavan N**
-
-*A Data Engineer & AI Specialist passionate about creating intelligent solutions for real-world problems.*
+Built with ❤️ by Venkat Chavan using Flask, AI, and modern web technologies.

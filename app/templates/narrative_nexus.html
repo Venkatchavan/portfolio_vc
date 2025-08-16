@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrative Nexus - {{ data.name }}</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/futuristic.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/narrative.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="{{ url_for('main.home') }}" class="nav-logo">
+                <img src="{{ url_for('static', filename='images/logo-portfolio.png') }}" 
+                     alt="{{ data.name }} Logo" 
+                     class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="{{ url_for('main.home') }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.home') }}#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.home') }}#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.home') }}#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="narrative-container">
+        <header class="narrative-header">
+            <img src="{{ url_for('static', filename='images/Narrative-Nexus-Logo.png') }}" 
+                 alt="Narrative Nexus Logo" 
+                 class="narrative-logo">
+            <h1>Narrative Nexus</h1>
+            <p>Where technology meets poetry, and code becomes verse</p>
+        </header>
+
+        <div class="narrative-content">
+            <aside class="narrative-sidebar">
+                <div class="sidebar-widget ai-assistant-section">
+                    <h2 class="widget-title"><i class="fas fa-robot"></i> AI Companion</h2>
+                    <div class="ai-chat-container">
+                        <div class="ai-messages" id="ai-messages">
+                            <div class="ai-message bot-message">
+                                <p>Greetings. I am the guardian of this nexus. Ask me about the poems, or request a verse on a topic of your choosing.</p>
+                            </div>
+                        </div>
+                        <div class="ai-input-container">
+                            <input type="text" id="ai-input" placeholder="Converse with the AI...">
+                            <button id="ai-send-btn" class="btn btn-primary">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="poems-section">
+                <div class="poems-grid">
+                    {% for poem in poems %}
+                    <article class="poem-card">
+                        <h3 class="poem-title">{{ poem.title }}</h3>
+                        <div class="poem-preview">
+                            {% set first_stanza = poem.content.split('\n\n')[0] %}
+                            {% for line in first_stanza.split('\n')[:4] %}
+                                <p>{{ line }}</p>
+                            {% endfor %}
+                            ...
+                        </div>
+                        <button class="read-poem-btn btn btn-secondary" data-poem-title="{{ poem.title }}" data-poem-content="{{ poem.content|replace('"', '&quot;')|replace('\n', '&#10;') }}">
+                            Read Full Verse
+                        </button>
+                    </article>
+                    {% endfor %}
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Poem Modal -->
+    <div class="poem-modal" id="poemModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalPoemTitle"></h2>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="poem-full-text" id="modalPoemContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/narrative.js') }}"></script>
+</body>
+</html>

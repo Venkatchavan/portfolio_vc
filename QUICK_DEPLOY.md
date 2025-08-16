@@ -25,7 +25,7 @@ Your portfolio is now complete with:
    git init
    git add .
    git commit -m "Initial portfolio deployment"
-   git remote add origin https://github.com/YOUR_USERNAME/portfolio_vc.git
+   git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
    git push -u origin main
    ```
 
@@ -36,7 +36,7 @@ Your portfolio is now complete with:
 
 4. **Automatic Deployment**:
    - GitHub Actions will build and deploy automatically
-   - Site available at: `https://YOUR_USERNAME.github.io/portfolio_vc`
+   - Site available at: `https://YOUR_USERNAME.github.io/portfolio`
 
 ## 🎯 What You'll Get
 

@@ -1,31 +1,23 @@
 {
   "version": 2,
+  "name": "portfolio-vc",
   "builds": [
     {
-      "src": "app.py",
+      "src": "run.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
-      "src": "/project/(.*)",
-      "dest": "app.py"
+      "dest": "/app/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "app.py"
+      "dest": "/run.py"
     }
   ],
   "env": {
-    "GEMINI_API_KEY": "@gemini_api_key"
-  },
-  "functions": {
-    "app.py": {
-      "maxDuration": 30
-    }
+    "FLASK_ENV": "production"
   }
 }
