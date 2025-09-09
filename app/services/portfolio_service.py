@@ -74,6 +74,76 @@ def get_portfolio_data() -> PortfolioData:
     # Projects
     projects = [
         Project(
+            id='interactive-fiction',
+            title='Interactive Fiction Co-Author',
+            description='An AI-powered collaborative storytelling platform that helps users create engaging Choose Your Own Adventure narratives with cyberpunk-inspired design and local privacy-focused execution.',
+            detailed_description='An AI-powered collaborative storytelling platform that helps users create engaging Choose Your Own Adventure narratives. It features cyberpunk-inspired design, real-time AI agents for plot, world, and character building, and local privacy-focused execution with Ollama.',
+            technologies=['Python', 'Flask', 'Ollama', 'Phi-3-Mini-4k-Instruct', 'Bootstrap 5', 'jQuery', 'Custom CSS', 'Graph-based state management'],
+            features=[
+                'Multi-agent AI co-authoring (Plot Twister, World Builder, Character Developer, Dialogue Specialist)',
+                'Cyberpunk-inspired, fully responsive web UI with accessibility support',
+                'Story management: branching narratives, state persistence, save/load, export options',
+                'Privacy-first: local-only processing, offline support, data security'
+            ],
+            challenges=[
+                'Implementing real-time multi-agent coordination',
+                'Managing complex branching narrative states',
+                'Ensuring local-only AI processing for privacy',
+                'Creating intuitive collaborative storytelling interface'
+            ],
+            status='Completed',
+            github='',
+            demo='',
+            image='interactive-fiction.jpg'
+        ),
+        Project(
+            id='literary-analyst',
+            title='Literary Analyst Agent',
+            description='A next-generation AI platform for deep literary analysis with a futuristic UI, blending semantic AI models with interactive visualizations for academic research and education.',
+            detailed_description='A next-generation AI platform for deep literary analysis with a futuristic UI. It blends semantic AI models with interactive visualizations to support academic research, education, and professional manuscript evaluation.',
+            technologies=['Python', 'Ollama/Llama 3.1 8B', 'Chart.js', 'PWA', 'Voice Command Integration', 'Dark UI with neon accents'],
+            features=[
+                'Cyberpunk-inspired, responsive UI with voice commands and PWA capabilities',
+                'Real-time analysis: reading time, complexity metrics, interactive Chart.js visualizations',
+                'Dual modes: keyword-based detection + advanced AI semantic analysis (Ollama/Llama 3.1 8B)',
+                'Use cases: research, education, manuscript analysis, batch text processing'
+            ],
+            challenges=[
+                'Integrating voice commands with literary analysis workflow',
+                'Optimizing large language model performance for real-time analysis',
+                'Creating intuitive data visualizations for complex literary metrics',
+                'Ensuring accuracy in semantic analysis across different text types'
+            ],
+            status='Completed',
+            github='',
+            demo='',
+            image='literary-analyst.jpg'
+        ),
+        Project(
+            id='youtube-giveaway-bot',
+            title='YouTube Chat Giveaway Bot',
+            description='A Python-based desktop application for conducting giveaways from YouTube live chat with real-time monitoring, smart filtering, and random winner selection.',
+            detailed_description='A Python-based desktop application for conducting giveaways from YouTube live chat. It provides real-time monitoring, smart filtering, random winner selection, and exportable audit trails.',
+            technologies=['Python', 'Tkinter', 'YouTube Data API v3', 'CSV Export Tools'],
+            features=[
+                'Live mode: monitor YouTube chat with YouTube Data API v3',
+                'Offline mode: import chat logs from CSV/text files',
+                'Smart filtering: by keywords, blacklist, message count',
+                'Random winner selection with weighted options',
+                'Data export: winners and participant logs in CSV'
+            ],
+            challenges=[
+                'Managing real-time YouTube API rate limits',
+                'Implementing fair and transparent winner selection algorithms',
+                'Handling large chat volumes during popular streams',
+                'Creating user-friendly desktop interface for streamers'
+            ],
+            status='Completed',
+            github='',
+            demo='',
+            image='youtube-giveaway.jpg'
+        ),
+        Project(
             id='cmarl-thesis',
             title='Coordinated Multi-Agent Reinforcement Learning (Masters Thesis)',
             description='Designing a CMARL framework for autonomous vehicles to coordinate with human drivers in mixed-traffic environments using CARLA and PyTorch.',
