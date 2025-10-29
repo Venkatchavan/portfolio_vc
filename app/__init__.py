@@ -4,8 +4,12 @@ This module creates and configures the Flask application using the factory patte
 """
 
 from flask import Flask
+from flask_mail import Mail
 from dotenv import load_dotenv
 import os
+
+# Initialize Flask-Mail
+mail = Mail()
 
 def create_app(config_name='development'):
     """
@@ -28,6 +32,9 @@ def create_app(config_name='development'):
     # Load configuration
     from config.settings import config
     app.config.from_object(config[config_name])
+    
+    # Initialize Flask-Mail
+    mail.init_app(app)
     
     # Initialize services
     from app.services.ai_service import init_ai_service

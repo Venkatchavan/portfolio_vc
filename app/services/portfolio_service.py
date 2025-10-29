@@ -18,15 +18,15 @@ def get_portfolio_data() -> PortfolioData:
     # Personal Information
     personal_info = PersonalInfo(
         name='Venkat Chavan N',
-        headline='Data Engineer & AI Specialist',
-        location='Berlin, Germany',
+        headline='Aspiring Research Scientist & AI/ML Specialist',
+        location='Germany – Open to Relocation',
         email='venkat.chavan.n@gmail.com',
         phone='+49 15566360832',
         github='github.com/Venkatchavan',
         linkedin='linkedin.com/in/venkatchavan16',
         google_scholar='scholar.google.com/citations?user=8dLDVkcAAAAJ&hl=en',
         profile_image='images/Chavan-profile.jpg',
-        bio='A Master\'s student in Big Data and Artificial Intelligence at SRH Berlin, with strong hands-on experience in cloud-based ETL pipelines, open-source LLMs, and their real-world applications. Experienced in structuring data on the Google Cloud Platform using tools like BigQuery and Looker Studio. Passionate about developing interpretable AI solutions, particularly for autonomous systems and biomedical domains, and currently researching multi-agent learning.'
+        bio='A Master\'s student in Big Data and Artificial Intelligence at SRH Berlin, with strong hands-on experience in cloud-based ETL pipelines, open-source LLMs, and their real-world applications. Experienced in structuring data on the Google Cloud Platform using tools like BigQuery and Looker Studio. Passionate about developing interpretable AI solutions, particularly for autonomous systems and biomedical domains. Successfully completed Masters thesis on coordinated multi-agent reinforcement learning with an outstanding 1.0/4.0 (S-tier) grade.'
     )
     
     # Skills
@@ -146,15 +146,16 @@ def get_portfolio_data() -> PortfolioData:
         Project(
             id='cmarl-thesis',
             title='Coordinated Multi-Agent Reinforcement Learning (Masters Thesis)',
-            description='Designing a CMARL framework for autonomous vehicles to coordinate with human drivers in mixed-traffic environments using CARLA and PyTorch.',
-            detailed_description='This research focuses on developing a sophisticated Coordinated Multi-Agent Reinforcement Learning (CMARL) framework that enables autonomous vehicles to effectively coordinate with human drivers in complex mixed-traffic scenarios. The project utilizes the CARLA simulator for realistic traffic environment simulation and PyTorch for implementing deep reinforcement learning algorithms.',
+            description='Designed a CMARL framework for autonomous vehicles to coordinate with human drivers in mixed-traffic environments using CARLA and PyTorch. ✅ Completed with 1.0/4.0 S-tier Grade',
+            detailed_description='This research focuses on developing a sophisticated Coordinated Multi-Agent Reinforcement Learning (CMARL) framework that enables autonomous vehicles to effectively coordinate with human drivers in complex mixed-traffic scenarios. The project utilizes the CARLA simulator for realistic traffic environment simulation and PyTorch for implementing deep reinforcement learning algorithms. Successfully completed and defended with an exceptional grade of 1.0/4.0 (S-tier), demonstrating outstanding research quality and implementation.',
             technologies=['Python', 'PyTorch', 'CARLA Simulator', 'Multi-Agent RL', 'Computer Vision', 'Deep Learning'],
             features=[
                 'Real-time coordination between autonomous and human-driven vehicles',
                 'Advanced traffic scenario simulation using CARLA',
                 'Deep Q-Network (DQN) implementation for decision making',
                 'Safety-critical situation handling',
-                'Performance metrics evaluation and analysis'
+                'Performance metrics evaluation and analysis',
+                'Research paper with comprehensive experimental results'
             ],
             challenges=[
                 'Handling unpredictable human driver behavior',
@@ -162,7 +163,7 @@ def get_portfolio_data() -> PortfolioData:
                 'Balancing efficiency and safety in coordination strategies',
                 'Real-time processing requirements'
             ],
-            status='In Progress',
+            status='Completed - Grade: 1.0/4.0 (S-tier)',
             github='',
             demo='',
             image='cmarl-project.jpg'

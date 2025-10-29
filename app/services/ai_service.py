@@ -48,7 +48,7 @@ def generate_chatbot_response(user_message: str, context: str) -> str:
         try:
             # Create a comprehensive prompt for Gemini
             prompt = f"""
-You are an AI assistant representing Venkat Chavan N, a Data Engineer & AI Specialist. 
+You are an AI assistant representing Venkat Chavan N, an Aspiring Research Scientist & AI/ML Specialist. 
 You should answer questions about his background, experience, and projects in a professional yet friendly manner.
 Always respond in first person as if you are Venkat himself.
 
@@ -119,7 +119,7 @@ def _get_fallback_response(user_message: str) -> str:
         return "I have diverse experience in data engineering and AI, including current work at Ford Werke GmbH as a Data Engineering Intern, previous roles at AI Variant and Siemens. I specialize in GCP-based ETL workflows, machine learning, and cloud-native data pipelines."
     
     elif any(word in user_message_lower for word in ['project', 'research']):
-        return "I'm currently working on my Masters thesis on Coordinated Multi-Agent Reinforcement Learning for autonomous vehicles. I've also completed projects on NLP analysis of spiritual texts and data augmentation using RAG techniques."
+        return "I successfully completed my Masters thesis on Coordinated Multi-Agent Reinforcement Learning for autonomous vehicles with an exceptional grade of 1.0/4.0 (S-tier). I've also completed projects on NLP analysis of spiritual texts, RAG-based QA systems, and interactive fiction co-authoring using AI."
     
     elif any(word in user_message_lower for word in ['skill', 'technology', 'tech']):
         return "I specialize in Python, SQL, cloud platforms (GCP, Azure), machine learning frameworks (PyTorch, TensorFlow), and modern data tools like BigQuery, FAISS, and LangChain. I'm particularly experienced in ETL pipelines and NLP applications."
