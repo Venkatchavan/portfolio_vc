@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Chat Giveaway Bot - Venkat Chavan N</title>
+    <title>SanskritEval - Venkat Chavan N</title>
     
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
@@ -41,10 +41,10 @@
                 <a href="../index.html#projects" class="back-btn">
                     <i class="fas fa-arrow-left"></i> Back to Projects
                 </a>
-                <h1 class="project-title">YouTube Chat Giveaway Bot</h1>
-                <p class="project-subtitle">Desktop Application for YouTube Live Chat Giveaways</p>
+                <h1 class="project-title">SanskritEval — LM Linguistic Benchmark</h1>
+                <p class="project-subtitle">Probing Sandhi and Case Generalization in Language Models</p>
                 <div style="margin-top: 1rem;">
-                    <a href="https://github.com/Venkatchavan/Youtube_giveaway_bot" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <a href="https://github.com/Venkatchavan/SanskritEval" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
                         <i class="fab fa-github"></i> View on GitHub
                     </a>
                 </div>
@@ -53,7 +53,7 @@
             <div class="project-content">
                 <div class="project-overview">
                     <h2>Project Overview</h2>
-                    <p>A Python-based desktop application for conducting giveaways from YouTube live chat. It provides real-time monitoring via YouTube Data API v3, smart filtering, random/weighted winner selection, offline CSV/TXT import mode, and exportable audit trails with OAuth 2.0 authentication.</p>
+                    <p>A benchmark suite for evaluating how well language models handle Sanskrit-specific linguistic phenomena — sandhi (phonological fusion at word boundaries) and morphological case agreement (8 cases × 3 numbers × 3 genders). Built on 701 verses from the Bhagavad Gita, the benchmark includes sandhi segmentation (701 silver + 200 gold examples) and morphological acceptability contrast sets (500 minimal pairs). Evaluates 5 transformer models (mBERT, XLM-R Base/Large, IndicBERT, MuRIL) to probe whether language models learn genuine abstraction or surface-level patterns.</p>
                 </div>
                 
                 <div class="project-details">
@@ -61,42 +61,44 @@
                         <div class="detail-item">
                             <h3>Technologies Used</h3>
                             <ul>
-                                <li>Python 3.10+</li>
-                                <li>Tkinter GUI Framework</li>
-                                <li>YouTube Data API v3</li>
-                                <li>OAuth 2.0 Authentication</li>
-                                <li>CSV Export Tools</li>
+                                <li>Python 3.10+ &amp; PyTorch</li>
+                                <li>Hugging Face Transformers</li>
+                                <li>mBERT &amp; XLM-R (Base/Large)</li>
+                                <li>IndicBERT &amp; MuRIL</li>
+                                <li>Conda &amp; Makefile</li>
+                                <li>JSONL Data Formats</li>
                             </ul>
                         </div>
                         
                         <div class="detail-item">
                             <h3>Key Features</h3>
                             <ul>
-                                <li>Live mode: real-time YouTube chat monitoring with OAuth 2.0</li>
-                                <li>Offline mode: import chat logs from CSV/TXT files</li>
-                                <li>Smart filtering: keywords, blacklist, minimum message count</li>
-                                <li>Random and weighted winner selection algorithms</li>
-                                <li>Data export: winners and participant logs in CSV</li>
+                                <li>Sandhi segmentation: word boundary detection in fused Sanskrit text</li>
+                                <li>Morphological acceptability: 500 contrast pairs (case/number)</li>
+                                <li>5 transformer models: mBERT, XLM-R, IndicBERT, MuRIL (110M-550M params)</li>
+                                <li>Rule-based baseline achieving 1.000 F1 score</li>
+                                <li>Automated benchmark runner with plots and CSV export</li>
                             </ul>
                         </div>
                         
                         <div class="detail-item">
                             <h3>Technical Challenges</h3>
                             <ul>
-                                <li>Managing real-time YouTube API rate limits and quotas</li>
-                                <li>Implementing fair and transparent winner selection</li>
-                                <li>Handling large chat volumes during popular streams</li>
-                                <li>Creating user-friendly desktop interface for creators</li>
+                                <li>Sanskrit morphology: 8 cases × 3 numbers × 3 genders combinatorics</li>
+                                <li>Creating high-quality gold data requiring expert annotation</li>
+                                <li>Evaluating genuine abstraction vs. surface patterns</li>
+                                <li>Fair evaluation across models with different pretraining corpora</li>
                             </ul>
                         </div>
                         
                         <div class="detail-item">
-                            <h3>Applications</h3>
+                            <h3>Dataset &amp; Research</h3>
                             <ul>
-                                <li>YouTube content creator giveaways</li>
-                                <li>Live stream community engagement</li>
-                                <li>Fair and auditable prize distribution</li>
-                                <li>Offline giveaway management from exported chat logs</li>
+                                <li>Source corpus: 701 verses from Bhagavad Gita</li>
+                                <li>Sandhi: 701 silver training + 200 gold test examples</li>
+                                <li>Morphology: 500 contrast pairs (333 case + 167 number)</li>
+                                <li>Paper-style report with 6 phases of research</li>
+                                <li>4 visualization plot types for results analysis</li>
                             </ul>
                         </div>
                     </div>
@@ -104,7 +106,7 @@
                 
                 <div class="project-results">
                     <h2>Results &amp; Impact</h2>
-                    <p>The application provides content creators with a reliable, fair, and transparent tool for conducting YouTube live chat giveaways. The dual-mode design (live + offline) ensures flexibility, while the weighted selection and audit trail features guarantee fairness and accountability in every giveaway.</p>
+                    <p>The benchmark reveals critical insights about how language models handle low-resource languages with complex morphology. The rule-based baseline achieves perfect 1.000 F1 on sandhi segmentation, while transformer models are expected to achieve 60-85% accuracy on morphological acceptability — probing the gap between memorization and genuine linguistic abstraction. Sanskrit serves as a critical test case representing challenges faced by many of the world's 7,000+ languages.</p>
                 </div>
             </div>
         </div>

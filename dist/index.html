@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venkat Chavan N - Aspiring Research Scientist &amp; AI/ML Specialist</title>
+    <title>Venkat Chavan N - Masters Graduate | AI/ML Engineer &amp; Research Enthusiast</title>
     
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="./static/images/logo-portfolio.png">
@@ -28,9 +28,8 @@
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="./narrative_nexus.html" class="nav-link">Blogs</a></li>
                 <li class="nav-item"><a href="./chatbot.html" class="nav-link">AI Assistant</a></li>
                 <li class="nav-item"><a href="./narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
@@ -44,7 +43,7 @@
             <h1 class="hero-title">
                 I'm <span class="highlight">Venkat Chavan N</span>
             </h1>
-            <h2 class="hero-subtitle">Aspiring Research Scientist &amp; AI/ML Specialist</h2>
+            <h2 class="hero-subtitle">Masters Graduate | AI/ML Engineer &amp; Research Enthusiast</h2>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary">Get In Touch</a>
                 <a href="#projects" class="btn btn-secondary">View My Work</a>
@@ -67,7 +66,7 @@
                          class="about-image">
                 </div>
                 <div class="about-text">
-                    <p>A Master&#39;s student in Big Data and Artificial Intelligence at SRH Berlin, with strong hands-on experience in cloud-based ETL pipelines, open-source LLMs, and their real-world applications. Experienced in structuring data on the Google Cloud Platform using tools like BigQuery and Looker Studio. Passionate about developing interpretable AI solutions, particularly for autonomous systems and biomedical domains. Successfully completed Masters thesis on coordinated multi-agent reinforcement learning with an outstanding 1.0/4.0 (S-tier) grade.</p>
+                    <p>A Masters Graduate in Big Data and Artificial Intelligence from SRH Berlin, with strong hands-on experience in cloud-based ETL pipelines, open-source LLMs, and their real-world applications. Experienced in structuring data on the Google Cloud Platform using tools like BigQuery and Looker Studio. Passionate about developing interpretable AI solutions, particularly for autonomous systems and biomedical domains. Successfully completed Masters thesis on coordinated multi-agent reinforcement learning with an outstanding 1.0/4.0 (S-tier) grade.</p>
                 </div>
             </div>
         </div>
@@ -350,6 +349,36 @@
                     <a href="./project/data-augmentation.html" class="btn btn-secondary">Learn More</a>
                 </div>
                 
+                <div class="project-card">
+                    <h3 class="project-title">SocialMedia AD Agency — AI Ad Creation SaaS</h3>
+                    <p class="project-description">Production-grade SaaS platform for automated affiliate ad creation and multi-platform publishing using CrewAI multi-agent orchestration with 7 specialized AI agents.</p>
+                    <a href="./project/socialmedia-ad-agency.html" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">MV-Coach-Eval — HAR Benchmarking Platform</h3>
+                    <p class="project-description">Production-grade Human Activity Recognition benchmarking platform with accuracy/F1 evaluation, ECE calibration, robustness testing, LOSO generalization, and Monte Carlo Dropout uncertainty.</p>
+                    <a href="./project/mv-coach-eval.html" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">Procurement Anomaly Detection</h3>
+                    <p class="project-description">End-to-end data pipeline for analyzing public procurement data to promote transparency, detect anomalies with ML, and support anti-corruption efforts using Finnish open data.</p>
+                    <a href="./project/procurement-anomaly-detection.html" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">Onco-Variant-Guard — Neuro-Symbolic Cancer AI</h3>
+                    <p class="project-description">Neuro-symbolic cancer variant classification system with hallucination-free evidence-grounded LLM explanations, knowledge graph (3,101 nodes), and 300+ auto-extracted decision rules.</p>
+                    <a href="./project/llm-healthcare.html" class="btn btn-secondary">Learn More</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3 class="project-title">SanskritEval — LM Linguistic Benchmark</h3>
+                    <p class="project-description">Benchmark suite for evaluating language models on Sanskrit sandhi segmentation and morphological case agreement using mBERT, XLM-R, IndicBERT, and MuRIL.</p>
+                    <a href="./project/sanskrit-eval.html" class="btn btn-secondary">Learn More</a>
+                </div>
+                
             </div>
         </div>
     </section>
@@ -416,7 +445,7 @@
                         <i class="fab fa-linkedin contact-icon"></i>
                         <div>
                             <h4>LinkedIn</h4>
-                            <a href="https://linkedin.com/in/venkatchavan16" target="_blank">linkedin.com/in/venkatchavan</a>
+                            <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank">linkedin.com/in/venkatchavan16</a>
                         </div>
                     </div>
                      <div class="contact-info-item">
@@ -434,11 +463,16 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                <form id="contactForm" class="contact-form">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">Sending...</span>
+                    </button>
+                    <div id="formMessage" class="form-message" style="display: none;"></div>
                 </form>
             </div>
         </div>
@@ -447,10 +481,10 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Venkat Chavan N. All rights reserved. Forged with code and passion.</p>
+            <p>&copy; 2026 Venkat Chavan N. All rights reserved. Forged with code and passion.</p>
             <div class="footer-social">
                 <a href="https://github.com/Venkatchavan" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/venkatchavan16" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:venkat.chavan.n@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
             </div>
         </div>

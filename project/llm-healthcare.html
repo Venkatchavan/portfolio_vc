@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onco-Variant-Guard - Venkat Chavan N</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
+    
+    <link rel="stylesheet" href="../static/css/futuristic.css">
+    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../static/images/logo-portfolio.png" 
+                     alt="Venkat Chavan N Logo" 
+                     class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../blogs.html" class="nav-link">Blogs</a></li>
+                <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail-section">
+        <div class="container">
+            <div class="project-header">
+                <a href="../index.html#projects" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+                <h1 class="project-title">Onco-Variant-Guard — Neuro-Symbolic Cancer AI</h1>
+                <p class="project-subtitle">Neuro-Symbolic Cancer Variant Classification with Hallucination-Free LLM Explanations</p>
+                <div style="margin-top: 1rem;">
+                    <a href="https://github.com/Venkatchavan/LLM_Healthcare" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <p>An end-to-end neuro-symbolic AI system for cancer variant classification using the Kaggle Personalized Medicine dataset. Combines TF-IDF neural classification (59.3% accuracy) with 300+ automatically extracted symbolic rules, a knowledge graph (3,101 nodes, 25,908 edges), and a hallucination-free LLM system powered by Llama 3.2 3B. Features a 5-layer hallucination prevention system (RAG retrieval from 454K chunks, knowledge graph validation, rule-based validation, evidence-only prompts, response validation), PII redaction, prompt injection detection, and neuro-symbolic consensus predictions.</p>
+                    <p><em>⚠️ Research prototype for educational purposes only. Not intended for clinical use or medical diagnosis.</em></p>
+                </div>
+                
+                <div class="project-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <h3>Technologies Used</h3>
+                            <ul>
+                                <li>Python 3.10+ &amp; Scikit-learn</li>
+                                <li>FAISS (454K vector index)</li>
+                                <li>Sentence-BERT Embeddings</li>
+                                <li>Llama 3.2 3B via Ollama</li>
+                                <li>NetworkX Knowledge Graphs</li>
+                                <li>PyTorch &amp; RAG Pipeline</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3>Key Features</h3>
+                            <ul>
+                                <li>TF-IDF baseline at 59.3% accuracy with 300+ auto-extracted rules</li>
+                                <li>Knowledge graph: 3,101 nodes, 25,908 edges (Genes→Variants→Drugs→Cancers)</li>
+                                <li>5-layer hallucination prevention with evidence-only LLM generation</li>
+                                <li>RAG retrieval: 454,918 chunks with 0.80+ similarity scores</li>
+                                <li>Safety: PII redaction, prompt injection detection, 26 comprehensive tests</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3>Technical Challenges</h3>
+                            <ul>
+                                <li>Zero-hallucination LLM constrained to dataset-verified facts only</li>
+                                <li>Extracting 300+ interpretable rules from complex medical data</li>
+                                <li>Building knowledge graph from unstructured clinical literature</li>
+                                <li>Balancing neural accuracy with symbolic interpretability</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3>System Architecture</h3>
+                            <ul>
+                                <li>RAG retrieval → Knowledge Graph query → Rule retrieval</li>
+                                <li>Grounded LLM generation (evidence-only prompts)</li>
+                                <li>5-layer validation &amp; confidence assessment</li>
+                                <li>Neuro-symbolic consensus: Neural + Symbolic + Evidence</li>
+                                <li>245 gene rules + 31 keyword rules + 19 tree rules</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-results">
+                    <h2>Results &amp; Impact</h2>
+                    <p>The system achieves 59.3% validation accuracy on 9-class cancer variant classification (matching Kaggle baselines) while providing fully interpretable explanations through neuro-symbolic integration. The hallucination-free LLM system achieves &lt;5% hallucination rate with 100% citation coverage. The knowledge graph successfully maps 2,656 variants, 245 genes, 163 drugs, and 11 cancer types with their relationships, enabling evidence-grounded clinical queries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

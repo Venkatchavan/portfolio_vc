@@ -18,15 +18,15 @@ def get_portfolio_data() -> PortfolioData:
     # Personal Information
     personal_info = PersonalInfo(
         name='Venkat Chavan N',
-        headline='Aspiring Research Scientist & AI/ML Specialist',
+        headline='Masters Graduate | AI/ML Engineer & Research Enthusiast',
         location='Germany – Open to Relocation',
         email='venkat.chavan.n@gmail.com',
         phone='+49 15566360832',
         github='github.com/Venkatchavan',
-        linkedin='linkedin.com/in/venkatchavan16',
+        linkedin='www.linkedin.com/in/venkatchavan16',
         google_scholar='scholar.google.com/citations?user=8dLDVkcAAAAJ&hl=en',
         profile_image='images/Chavan-profile.jpg',
-        bio='A Master\'s student in Big Data and Artificial Intelligence at SRH Berlin, with strong hands-on experience in cloud-based ETL pipelines, open-source LLMs, and their real-world applications. Experienced in structuring data on the Google Cloud Platform using tools like BigQuery and Looker Studio. Passionate about developing interpretable AI solutions, particularly for autonomous systems and biomedical domains. Successfully completed Masters thesis on coordinated multi-agent reinforcement learning with an outstanding 1.0/4.0 (S-tier) grade.'
+        bio='A Masters Graduate in Big Data and Artificial Intelligence from SRH Berlin, with strong hands-on experience in cloud-based ETL pipelines, open-source LLMs, and their real-world applications. Experienced in structuring data on the Google Cloud Platform using tools like BigQuery and Looker Studio. Passionate about developing interpretable AI solutions, particularly for autonomous systems and biomedical domains. Successfully completed Masters thesis on coordinated multi-agent reinforcement learning with an outstanding 1.0/4.0 (S-tier) grade.'
     )
     
     # Skills
@@ -123,23 +123,23 @@ def get_portfolio_data() -> PortfolioData:
             id='youtube-giveaway-bot',
             title='YouTube Chat Giveaway Bot',
             description='A Python-based desktop application for conducting giveaways from YouTube live chat with real-time monitoring, smart filtering, and random winner selection.',
-            detailed_description='A Python-based desktop application for conducting giveaways from YouTube live chat. It provides real-time monitoring, smart filtering, random winner selection, and exportable audit trails.',
-            technologies=['Python', 'Tkinter', 'YouTube Data API v3', 'CSV Export Tools'],
+            detailed_description='A Python-based desktop application for conducting giveaways from YouTube live chat. It provides real-time monitoring via YouTube Data API v3, smart filtering, random/weighted winner selection, offline CSV/TXT import mode, and exportable audit trails with OAuth 2.0 authentication.',
+            technologies=['Python 3.10+', 'Tkinter', 'YouTube Data API v3', 'OAuth 2.0', 'CSV Export Tools'],
             features=[
-                'Live mode: monitor YouTube chat with YouTube Data API v3',
-                'Offline mode: import chat logs from CSV/text files',
-                'Smart filtering: by keywords, blacklist, message count',
-                'Random winner selection with weighted options',
-                'Data export: winners and participant logs in CSV'
+                'Live mode: real-time YouTube chat monitoring with YouTube Data API v3 and OAuth 2.0',
+                'Offline mode: import chat logs from CSV/TXT files for offline giveaways',
+                'Smart filtering: by keywords, blacklist, minimum message count thresholds',
+                'Random and weighted winner selection algorithms with transparency',
+                'Data export: winners and participant logs in CSV format for auditing'
             ],
             challenges=[
-                'Managing real-time YouTube API rate limits',
+                'Managing real-time YouTube API rate limits and quota management',
                 'Implementing fair and transparent winner selection algorithms',
-                'Handling large chat volumes during popular streams',
-                'Creating user-friendly desktop interface for streamers'
+                'Handling large chat volumes during popular live streams',
+                'Creating user-friendly desktop interface for content creators'
             ],
             status='Completed',
-            github='',
+            github='https://github.com/Venkatchavan/Youtube_giveaway_bot',
             demo='',
             image='youtube-giveaway.jpg'
         ),
@@ -317,6 +317,126 @@ def get_portfolio_data() -> PortfolioData:
             github='',
             demo='',
             image='data-augmentation.jpg'
+        ),
+        Project(
+            id='socialmedia-ad-agency',
+            title='SocialMedia AD Agency — AI Ad Creation SaaS',
+            description='Production-grade SaaS platform for automated affiliate ad creation and multi-platform publishing using CrewAI multi-agent orchestration with 7 specialized AI agents.',
+            detailed_description='A production-grade SaaS platform that automates the entire affiliate ad creation workflow using CrewAI multi-agent orchestration. Seven specialized AI agents handle market research, content strategy, copywriting, visual design, compliance review, A/B testing, and platform publishing. Built with FastAPI REST API, PostgreSQL with Alembic migrations, Redis caching, multi-tenancy, Stripe billing, and support for multiple LLM providers (OpenAI, Gemini, Anthropic, Mistral). Achieves 74% test coverage across 430 tests.',
+            technologies=['Python 3.12+', 'CrewAI', 'FastAPI', 'PostgreSQL', 'Redis', 'OpenAI', 'Google Gemini', 'Anthropic', 'Mistral', 'Docker', 'Stripe', 'Alembic'],
+            features=[
+                'Multi-agent orchestration: 7 CrewAI agents (Market Researcher, Content Strategist, Copywriter, Visual Designer, Compliance Reviewer, A/B Tester, Platform Publisher)',
+                'Multi-LLM support: OpenAI GPT-4, Google Gemini, Anthropic Claude, Mistral for flexible AI backends',
+                'Full SaaS infrastructure: multi-tenancy, Stripe billing, JWT auth, rate limiting, RBAC',
+                'Compliance engine: automated regulatory checks across platforms (Meta, Google, TikTok)',
+                'Production-ready: FastAPI REST API, PostgreSQL with Alembic, Redis caching, Docker, 430 tests at 74% coverage'
+            ],
+            challenges=[
+                'Orchestrating 7 autonomous AI agents with inter-agent dependency management',
+                'Ensuring ad compliance across multiple platform policies simultaneously',
+                'Building multi-tenant SaaS architecture with secure data isolation',
+                'Integrating and managing multiple LLM providers with fallback strategies'
+            ],
+            status='Completed',
+            github='https://github.com/Venkatchavan/SocialMedia_AD_Agency',
+            demo='',
+            image='socialmedia-ad-agency.jpg'
+        ),
+        Project(
+            id='mv-coach-eval',
+            title='MV-Coach-Eval — HAR Benchmarking Platform',
+            description='Production-grade Human Activity Recognition benchmarking platform with accuracy/F1 evaluation, ECE calibration, robustness testing, LOSO generalization, and Monte Carlo Dropout uncertainty.',
+            detailed_description='A Multimodal Virtual Coach Evaluation Harness — a production-grade benchmarking platform for Human Activity Recognition (HAR) systems. Features comprehensive evaluation including accuracy/F1 metrics, Expected Calibration Error (ECE), robustness testing with noise and missing data, Leave-One-Subject-Out (LOSO) generalization analysis, and Monte Carlo Dropout uncertainty quantification. Built with a config-driven architecture using Hydra, a pluggable model registry, Docker support, and targeting ≥80% test coverage with comprehensive CI/CD.',
+            technologies=['Python 3.10+', 'PyTorch', 'Hydra', 'Docker', 'Makefile', 'NumPy', 'Scikit-learn', 'Monte Carlo Dropout'],
+            features=[
+                'Comprehensive HAR evaluation: accuracy, F1, precision, recall, and Expected Calibration Error (ECE)',
+                'Robustness testing: noise injection, missing data simulation, adversarial perturbations',
+                'LOSO generalization: Leave-One-Subject-Out cross-validation for subject-independent analysis',
+                'Uncertainty quantification: Monte Carlo Dropout for prediction confidence estimation',
+                'Config-driven architecture: Hydra-based configuration with pluggable model registry and Docker support'
+            ],
+            challenges=[
+                'Designing a universal evaluation framework for diverse HAR model architectures',
+                'Implementing rigorous Monte Carlo Dropout uncertainty quantification at scale',
+                'Building config-driven pipelines with Hydra for reproducible experiments',
+                'Ensuring robust evaluation under noisy and incomplete sensor data conditions'
+            ],
+            status='Completed',
+            github='https://github.com/Venkatchavan/MV-Coach-Eval',
+            demo='',
+            image='mv-coach-eval.jpg'
+        ),
+        Project(
+            id='procurement-anomaly-detection',
+            title='Procurement Anomaly Detection',
+            description='End-to-end data pipeline for analyzing public procurement data to promote transparency, detect anomalies with ML, and support anti-corruption efforts using Finnish open data.',
+            detailed_description='An end-to-end pipeline for analyzing public procurement data to promote transparency, detect anomalies, and support anti-corruption efforts. Using Finnish public procurement data from avoindata.fi as a reference implementation, the system delivers interactive KPI dashboards via Streamlit, anomaly detection using Isolation Forest and Local Outlier Factor (LOF), SHAP-based explainability for audit support, and reproducible analysis with dbt transformations. Aligned with EU Directive 2014/24/EU for procurement transparency.',
+            technologies=['Python 3.9+', 'Streamlit', 'Scikit-learn', 'Isolation Forest', 'LOF', 'SHAP', 'dbt', 'Pandas', 'Makefile'],
+            features=[
+                'Interactive KPI dashboard: contract value distributions, vendor concentration, sustainability indicators via Streamlit',
+                'Anomaly detection: Isolation Forest for global outliers and LOF for local anomalies with configurable contamination rates',
+                'Explainability: SHAP values, rule-based explanations, feature importance analysis for audit-ready reports',
+                'EU compliance: aligned with EU Directive 2014/24/EU for public procurement transparency',
+                'Reproducible pipeline: dbt transformations, Makefile automation, modular source code architecture'
+            ],
+            challenges=[
+                'Handling incomplete and non-standardized public procurement datasets across EU sources',
+                'Tuning unsupervised anomaly detection thresholds to minimize false positives',
+                'Building interpretable SHAP explanations for non-technical auditors and policymakers',
+                'Designing adaptable pipeline for multiple EU procurement data formats (TED, national portals)'
+            ],
+            status='Completed',
+            github='https://github.com/Venkatchavan/Procurement_Anomaly_Detection',
+            demo='',
+            image='procurement-anomaly.jpg'
+        ),
+        Project(
+            id='llm-healthcare',
+            title='Onco-Variant-Guard — Neuro-Symbolic Cancer AI',
+            description='Neuro-symbolic cancer variant classification system with hallucination-free evidence-grounded LLM explanations, knowledge graph (3,101 nodes), and 300+ auto-extracted decision rules.',
+            detailed_description='An end-to-end neuro-symbolic AI system for cancer variant classification using the Kaggle Personalized Medicine dataset. Combines TF-IDF neural classification (59.3% accuracy) with 300+ automatically extracted symbolic rules, a knowledge graph (3,101 nodes, 25,908 edges), and a hallucination-free LLM system powered by Llama 3.2 3B. Features 5-layer hallucination prevention (RAG retrieval from 454K chunks, knowledge graph validation, rule-based validation, evidence-only prompts, response validation), PII redaction, prompt injection detection, and neuro-symbolic consensus predictions.',
+            technologies=['Python 3.10+', 'Scikit-learn', 'FAISS', 'Sentence-BERT', 'Llama 3.2 3B', 'Ollama', 'NetworkX', 'PyTorch', 'RAG', 'Knowledge Graphs'],
+            features=[
+                'Neuro-symbolic classification: TF-IDF baseline (59.3% accuracy) with 300+ auto-extracted decision rules for interpretability',
+                'Knowledge graph: 3,101 nodes and 25,908 edges mapping genes, variants, drugs, cancers, pathways, and classes',
+                'Hallucination-free LLM: 5-layer prevention system with evidence-only generation validated against knowledge graph',
+                'RAG retrieval: 454,918 indexed chunks from real clinical literature with 0.80+ similarity scores',
+                'Safety features: PII redaction, prompt injection detection, confidence thresholding, multi-layer validation, 26 comprehensive tests'
+            ],
+            challenges=[
+                'Building a zero-hallucination LLM system constrained to only report dataset-verified facts',
+                'Automatically extracting 300+ interpretable rules from complex medical variant data',
+                'Constructing a comprehensive knowledge graph from unstructured clinical literature',
+                'Balancing neural prediction accuracy with symbolic interpretability in medical domain'
+            ],
+            status='Completed',
+            github='https://github.com/Venkatchavan/LLM_Healthcare',
+            demo='',
+            image='llm-healthcare.jpg'
+        ),
+        Project(
+            id='sanskrit-eval',
+            title='SanskritEval — LM Linguistic Benchmark',
+            description='Benchmark suite for evaluating language models on Sanskrit sandhi segmentation and morphological case agreement using mBERT, XLM-R, IndicBERT, and MuRIL.',
+            detailed_description='A benchmark suite for evaluating how well language models handle Sanskrit-specific linguistic phenomena — sandhi (phonological fusion at word boundaries) and morphological case agreement (8 cases × 3 numbers × 3 genders). Built on 701 verses from the Bhagavad Gita, the benchmark includes sandhi segmentation (701 silver + 200 gold examples) and morphological acceptability contrast sets (500 minimal pairs). Evaluates 5 transformer models (mBERT, XLM-R Base/Large, IndicBERT, MuRIL) to probe whether LMs learn genuine abstraction or surface-level patterns.',
+            technologies=['Python 3.10+', 'PyTorch', 'Hugging Face Transformers', 'mBERT', 'XLM-R', 'IndicBERT', 'MuRIL', 'Conda', 'Makefile'],
+            features=[
+                'Sandhi segmentation task: detect word boundaries in phonologically fused Sanskrit text with P/R/F1 metrics',
+                'Morphological acceptability: 500 contrast minimal pairs testing case and number agreement patterns',
+                'Multi-model evaluation: mBERT (110M), XLM-R Base (270M), XLM-R Large (550M), IndicBERT (110M), MuRIL (235M)',
+                'Rule-based baseline achieving 1.000 F1, with transformer models expected at 60-85% accuracy',
+                'Paper-style reporting: automated benchmark results with 4 plot types and CSV summary export'
+            ],
+            challenges=[
+                'Handling complex Sanskrit morphology with 8 cases × 3 numbers × 3 genders combinatorics',
+                'Creating high-quality sandhi segmentation gold data requiring expert linguistic annotation',
+                'Evaluating whether transformer models learn genuine linguistic abstraction vs. surface patterns',
+                'Building a fair evaluation framework across models with vastly different pretraining corpora'
+            ],
+            status='Completed',
+            github='https://github.com/Venkatchavan/SanskritEval',
+            demo='',
+            image='sanskrit-eval.jpg'
         )
     ]
     

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Chat Giveaway Bot - Venkat Chavan N</title>
+    <title>Procurement Anomaly Detection - Venkat Chavan N</title>
     
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
@@ -41,10 +41,10 @@
                 <a href="../index.html#projects" class="back-btn">
                     <i class="fas fa-arrow-left"></i> Back to Projects
                 </a>
-                <h1 class="project-title">YouTube Chat Giveaway Bot</h1>
-                <p class="project-subtitle">Desktop Application for YouTube Live Chat Giveaways</p>
+                <h1 class="project-title">Procurement Anomaly Detection</h1>
+                <p class="project-subtitle">Data-Driven Approach to Anti-Corruption and Transparency in Public Procurement</p>
                 <div style="margin-top: 1rem;">
-                    <a href="https://github.com/Venkatchavan/Youtube_giveaway_bot" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <a href="https://github.com/Venkatchavan/Procurement_Anomaly_Detection" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
                         <i class="fab fa-github"></i> View on GitHub
                     </a>
                 </div>
@@ -53,7 +53,7 @@
             <div class="project-content">
                 <div class="project-overview">
                     <h2>Project Overview</h2>
-                    <p>A Python-based desktop application for conducting giveaways from YouTube live chat. It provides real-time monitoring via YouTube Data API v3, smart filtering, random/weighted winner selection, offline CSV/TXT import mode, and exportable audit trails with OAuth 2.0 authentication.</p>
+                    <p>An end-to-end pipeline for analyzing public procurement data to promote transparency, detect anomalies, and support anti-corruption efforts. Using Finnish public procurement data from avoindata.fi as a reference implementation, the system delivers interactive KPI dashboards via Streamlit, anomaly detection using Isolation Forest and Local Outlier Factor (LOF), SHAP-based explainability for audit support, and reproducible analysis with dbt transformations. Aligned with EU Directive 2014/24/EU for procurement transparency.</p>
                 </div>
                 
                 <div class="project-details">
@@ -61,42 +61,44 @@
                         <div class="detail-item">
                             <h3>Technologies Used</h3>
                             <ul>
-                                <li>Python 3.10+</li>
-                                <li>Tkinter GUI Framework</li>
-                                <li>YouTube Data API v3</li>
-                                <li>OAuth 2.0 Authentication</li>
-                                <li>CSV Export Tools</li>
+                                <li>Python 3.9+ &amp; Scikit-learn</li>
+                                <li>Isolation Forest &amp; Local Outlier Factor</li>
+                                <li>SHAP (Explainability)</li>
+                                <li>Streamlit Dashboard</li>
+                                <li>dbt (Data Build Tool)</li>
+                                <li>Pandas &amp; Makefile</li>
                             </ul>
                         </div>
                         
                         <div class="detail-item">
                             <h3>Key Features</h3>
                             <ul>
-                                <li>Live mode: real-time YouTube chat monitoring with OAuth 2.0</li>
-                                <li>Offline mode: import chat logs from CSV/TXT files</li>
-                                <li>Smart filtering: keywords, blacklist, minimum message count</li>
-                                <li>Random and weighted winner selection algorithms</li>
-                                <li>Data export: winners and participant logs in CSV</li>
+                                <li>Interactive KPI dashboard with contract value trends and vendor concentration</li>
+                                <li>Isolation Forest for global outlier detection with configurable contamination</li>
+                                <li>Local Outlier Factor for local anomaly identification</li>
+                                <li>SHAP-based explanations for audit-ready reports</li>
+                                <li>EU Directive 2014/24/EU compliance alignment</li>
                             </ul>
                         </div>
                         
                         <div class="detail-item">
                             <h3>Technical Challenges</h3>
                             <ul>
-                                <li>Managing real-time YouTube API rate limits and quotas</li>
-                                <li>Implementing fair and transparent winner selection</li>
-                                <li>Handling large chat volumes during popular streams</li>
-                                <li>Creating user-friendly desktop interface for creators</li>
+                                <li>Handling incomplete/non-standardized procurement datasets</li>
+                                <li>Threshold tuning to minimize false positives in anomaly detection</li>
+                                <li>Building interpretable SHAP explanations for non-technical auditors</li>
+                                <li>Designing adaptable pipeline for multiple EU data formats</li>
                             </ul>
                         </div>
                         
                         <div class="detail-item">
-                            <h3>Applications</h3>
+                            <h3>Use Cases &amp; Impact</h3>
                             <ul>
-                                <li>YouTube content creator giveaways</li>
-                                <li>Live stream community engagement</li>
-                                <li>Fair and auditable prize distribution</li>
-                                <li>Offline giveaway management from exported chat logs</li>
+                                <li>Audit firms identifying high-risk contracts</li>
+                                <li>Public agencies monitoring procurement patterns</li>
+                                <li>Researchers studying corruption indicators</li>
+                                <li>ESG &amp; anti-corruption compliance monitoring</li>
+                                <li>Sustainability indicator tracking (green suppliers)</li>
                             </ul>
                         </div>
                     </div>
@@ -104,7 +106,7 @@
                 
                 <div class="project-results">
                     <h2>Results &amp; Impact</h2>
-                    <p>The application provides content creators with a reliable, fair, and transparent tool for conducting YouTube live chat giveaways. The dual-mode design (live + offline) ensures flexibility, while the weighted selection and audit trail features guarantee fairness and accountability in every giveaway.</p>
+                    <p>The system successfully identifies irregular procurement patterns using unsupervised anomaly detection, providing transparent and explainable risk scores for each contract. The Streamlit dashboard enables interactive exploration of KPIs including contract value distributions, vendor concentration, and sustainability indicators, making it a powerful screening tool for public sector transparency and anti-corruption efforts aligned with EU regulations.</p>
                 </div>
             </div>
         </div>

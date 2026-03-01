@@ -545,6 +545,38 @@ section {
     box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
 }
 
+.form-message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-family: var(--font-secondary);
+    text-align: center;
+    animation: slideDown 0.3s ease-out;
+}
+
+.form-message.success {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.form-message.error {
+    background: rgba(255, 68, 68, 0.1);
+    border: 1px solid #ff4444;
+    color: #ff4444;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /*================================================================
   10. Footer
 ================================================================*/

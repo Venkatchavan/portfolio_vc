@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divine Insights: NLP Analysis of the Bhagavad Gita - Venkat Chavan N</title>
+    <title>SanskritEval — LM Linguistic Benchmark - Venkat Chavan N</title>
     
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
@@ -44,11 +44,15 @@
                     <span class="breadcrumb-separator">/</span>
                     <a href="../index.html#projects" class="breadcrumb-link">Projects</a>
                     <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">Divine Insights: NLP Analysis of the Bhagavad Gita</span>
+                    <span class="breadcrumb-current">SanskritEval — LM Linguistic Benchmark</span>
                 </div>
-                <h1 class="project-hero-title">Divine Insights: NLP Analysis of the Bhagavad Gita</h1>
-                <p class="project-hero-subtitle">Conducted NLP analysis using VADER for sentiment analysis and a TF-IDF based Q&amp;A system. Developed a RAG-based chatbot powered by Mistral 7B and LangChain.</p>
+                <h1 class="project-hero-title">SanskritEval — LM Linguistic Benchmark</h1>
+                <p class="project-hero-subtitle">Benchmark suite for evaluating language models on Sanskrit sandhi segmentation and morphological case agreement using mBERT, XLM-R, IndicBERT, and MuRIL.</p>
                 <div class="project-hero-links">
+                    
+                    <a href="https://github.com/Venkatchavan/SanskritEval" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
                     
                     
                 </div>
@@ -64,7 +68,7 @@
                 <div class="project-main-content">
                     <div class="project-section">
                         <h2 class="project-section-title">Project Overview</h2>
-                        <p>An innovative Natural Language Processing project that performs comprehensive analysis of the Bhagavad Gita, one of the most important spiritual texts. The project combines traditional NLP techniques with modern AI to create an intelligent system that can answer questions about the text and provide insights into its philosophical content.</p>
+                        <p>A benchmark suite for evaluating how well language models handle Sanskrit-specific linguistic phenomena — sandhi (phonological fusion at word boundaries) and morphological case agreement (8 cases × 3 numbers × 3 genders). Built on 701 verses from the Bhagavad Gita, the benchmark includes sandhi segmentation (701 silver + 200 gold examples) and morphological acceptability contrast sets (500 minimal pairs). Evaluates 5 transformer models (mBERT, XLM-R Base/Large, IndicBERT, MuRIL) to probe whether LMs learn genuine abstraction or surface-level patterns.</p>
                     </div>
 
                     <div class="project-section">
@@ -73,32 +77,27 @@
                             
                             <li class="feature-item">
                                 <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Sentiment analysis of verses using VADER</span>
+                                <span>Sandhi segmentation task: detect word boundaries in phonologically fused Sanskrit text with P/R/F1 metrics</span>
                             </li>
                             
                             <li class="feature-item">
                                 <i class="fas fa-check-circle feature-icon"></i>
-                                <span>TF-IDF based question-answering system</span>
+                                <span>Morphological acceptability: 500 contrast minimal pairs testing case and number agreement patterns</span>
                             </li>
                             
                             <li class="feature-item">
                                 <i class="fas fa-check-circle feature-icon"></i>
-                                <span>RAG-powered chatbot using Mistral 7B</span>
+                                <span>Multi-model evaluation: mBERT (110M), XLM-R Base (270M), XLM-R Large (550M), IndicBERT (110M), MuRIL (235M)</span>
                             </li>
                             
                             <li class="feature-item">
                                 <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Interactive web interface built with Streamlit</span>
+                                <span>Rule-based baseline achieving 1.000 F1, with transformer models expected at 60-85% accuracy</span>
                             </li>
                             
                             <li class="feature-item">
                                 <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Semantic search through verses and chapters</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Context-aware response generation</span>
+                                <span>Paper-style reporting: automated benchmark results with 4 plot types and CSV summary export</span>
                             </li>
                             
                         </ul>
@@ -110,22 +109,22 @@
                             
                             <li class="feature-item">
                                 <i class="fas fa-cog feature-icon"></i>
-                                <span>Handling Sanskrit transliterations and translations</span>
+                                <span>Handling complex Sanskrit morphology with 8 cases × 3 numbers × 3 genders combinatorics</span>
                             </li>
                             
                             <li class="feature-item">
                                 <i class="fas fa-cog feature-icon"></i>
-                                <span>Maintaining philosophical context accuracy</span>
+                                <span>Creating high-quality sandhi segmentation gold data requiring expert linguistic annotation</span>
                             </li>
                             
                             <li class="feature-item">
                                 <i class="fas fa-cog feature-icon"></i>
-                                <span>Optimizing RAG pipeline for spiritual content</span>
+                                <span>Evaluating whether transformer models learn genuine linguistic abstraction vs. surface patterns</span>
                             </li>
                             
                             <li class="feature-item">
                                 <i class="fas fa-cog feature-icon"></i>
-                                <span>Balancing technical accuracy with spiritual sensitivity</span>
+                                <span>Building a fair evaluation framework across models with vastly different pretraining corpora</span>
                             </li>
                             
                         </ul>
@@ -138,21 +137,23 @@
                         <h3 class="widget-title">Tech Stack</h3>
                         <div class="tech-tags">
                             
-                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Python 3.10+</span>
                             
-                            <span class="tech-tag">NLTK</span>
+                            <span class="tech-tag">PyTorch</span>
                             
-                            <span class="tech-tag">VADER</span>
+                            <span class="tech-tag">Hugging Face Transformers</span>
                             
-                            <span class="tech-tag">TF-IDF</span>
+                            <span class="tech-tag">mBERT</span>
                             
-                            <span class="tech-tag">Mistral 7B</span>
+                            <span class="tech-tag">XLM-R</span>
                             
-                            <span class="tech-tag">LangChain</span>
+                            <span class="tech-tag">IndicBERT</span>
                             
-                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">MuRIL</span>
                             
-                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Conda</span>
+                            
+                            <span class="tech-tag">Makefile</span>
                             
                         </div>
                     </div>
