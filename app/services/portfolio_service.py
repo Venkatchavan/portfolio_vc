@@ -4,7 +4,7 @@ Provides portfolio data using the structured data models.
 """
 
 from app.models.portfolio import (
-    PortfolioData, PersonalInfo, Experience, Project, Education
+    PortfolioData, PersonalInfo, Experience, Project, Education, Publication
 )
 
 def get_portfolio_data() -> PortfolioData:
@@ -42,6 +42,17 @@ def get_portfolio_data() -> PortfolioData:
     # Work Experience
     experience = [
         Experience(
+            title='Graduate Research Internship',
+            company='SRH University of Applied Sciences, Berlin',
+            period='Oct 2024 – Mar 2025',
+            responsibilities=[
+                'Research focus: Enabling AI to Understand and Process Abstract Concepts (Supervisor: Prof. Dr. Alexander Iliev).',
+                'Investigated structured representations and symbolic reasoning for abstract concept processing.',
+                'Designed controlled benchmarks, holdout splits, and error taxonomies to distinguish structural learning from surface-level pattern matching.',
+                'Focused on evaluation methodology to assess whether model behaviour reflects generalisable structure or dataset shortcuts.'
+            ]
+        ),
+        Experience(
             title='Data Engineering Intern',
             company='Ford Werke GmbH',
             period='Sept 2024 - Mar 2025',
@@ -67,6 +78,16 @@ def get_portfolio_data() -> PortfolioData:
             responsibilities=[
                 'Supported QA and conducted manual testing for industrial automation software (PCS Neo).',
                 'Wrote structured defect logs, improving traceability and quality documentation.'
+            ]
+        ),
+        Experience(
+            title='Guest Lecturer',
+            company='Bangalore Institute of Technology, Bengaluru, India',
+            period='2024',
+            responsibilities=[
+                'Delivered invited sessions for engineering students on Generative AI and Prompt Engineering.',
+                'Contributed practical academic outreach on LLM applications, prompting workflows, and responsible use of modern AI tools.',
+                'Received certificate of recognition for academic contribution.'
             ]
         )
     ]
@@ -453,11 +474,24 @@ def get_portfolio_data() -> PortfolioData:
             period='2018-2022'
         )
     ]
-    
+
+    # Publications
+    publications = [
+        Publication(
+            authors='D. V S, S. B, M. L and V. C. Nagabhushana',
+            title='Encrypted Vector Operations for Privacy-Preserving Machine Learning and Data Retrieval',
+            venue='2025 International Conference on Emerging Technologies in Electronics and Green Energy (ICETEG), Mysore, India',
+            year='2025',
+            doi='10.1109/ICETEG66194.2025.11473203',
+            keywords=['Data Privacy', 'Partially Homomorphic Encryption', 'Secure Data Retrieval', 'Biometric Authentication', 'Encrypted Vector Operations']
+        )
+    ]
+
     return PortfolioData(
         personal_info=personal_info,
         skills=skills,
         experience=experience,
         projects=projects,
-        education=education
+        education=education,
+        publications=publications
     )

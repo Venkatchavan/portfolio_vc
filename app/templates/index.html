@@ -28,6 +28,7 @@
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="{{ url_for('narrative.narrative_nexus') }}" class="nav-link">Blogs</a></li>
                 <li class="nav-item"><a href="{{ url_for('chatbot.chatbot') }}" class="nav-link">AI Assistant</a></li>
@@ -133,6 +134,29 @@
                     <h3 class="education-degree">{{ edu.degree }}</h3>
                     <h4 class="education-institution">{{ edu.institution }}</h4>
                     <p class="education-period">{{ edu.period }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications animated-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Publications</h2>
+                <p class="section-subtitle">Peer-reviewed research and academic contributions.</p>
+            </div>
+            <div class="publications-list">
+                {% for pub in data.publications %}
+                <div class="publication-item">
+                    <span class="publication-badge">IEEE {{ pub.year }}</span>
+                    <h3 class="publication-title">{{ pub.title }}</h3>
+                    <p class="publication-authors">{{ pub.authors }}</p>
+                    <p class="publication-venue"><em>{{ pub.venue }}</em></p>
+                    <a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener noreferrer" class="publication-doi">
+                        <i class="fas fa-external-link-alt"></i> DOI: {{ pub.doi }}
+                    </a>
                 </div>
                 {% endfor %}
             </div>

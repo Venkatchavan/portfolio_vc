@@ -51,6 +51,16 @@ class Education:
     period: str
 
 @dataclass
+class Publication:
+    """Publication data model."""
+    authors: str
+    title: str
+    venue: str
+    year: str
+    doi: str
+    keywords: List[str]
+
+@dataclass
 class PortfolioData:
     """Complete portfolio data model."""
     personal_info: PersonalInfo
@@ -58,6 +68,7 @@ class PortfolioData:
     experience: List[Experience]
     projects: List[Project]
     education: List[Education]
+    publications: List[Publication]
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert portfolio data to dictionary format for template rendering."""
@@ -102,6 +113,16 @@ class PortfolioData:
                     'institution': edu.institution,
                     'period': edu.period
                 } for edu in self.education
+            ],
+            'publications': [
+                {
+                    'authors': pub.authors,
+                    'title': pub.title,
+                    'venue': pub.venue,
+                    'year': pub.year,
+                    'doi': pub.doi,
+                    'keywords': pub.keywords
+                } for pub in self.publications
             ]
         }
     

@@ -778,6 +778,91 @@ section {
 }
 
 /*================================================================
+  Publications Section
+================================================================*/
+.publications {
+    padding: 5rem 0;
+    background: var(--surface-color);
+}
+
+.publications-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.publication-item {
+    background: var(--background-color);
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed);
+}
+
+.publication-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.2);
+    border-color: var(--primary-color);
+}
+
+.publication-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #000;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.publication-title {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+}
+
+.publication-authors {
+    color: var(--accent-color);
+    font-size: 0.88rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.85;
+}
+
+.publication-venue {
+    color: var(--secondary-color);
+    font-size: 0.92rem;
+    margin-bottom: 1.2rem;
+}
+
+.publication-doi {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--accent-color);
+    font-size: 0.82rem;
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    transition: all var(--transition-speed);
+    word-break: break-all;
+}
+
+.publication-doi:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.2);
+}
+
+/*================================================================
   Enhanced Responsive Design for All Screen Sizes
 ================================================================*/
 
