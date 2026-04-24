@@ -59,6 +59,8 @@ class Publication:
     year: str
     doi: str
     keywords: List[str]
+    badge: str = ''
+    url: str = ''
 
 @dataclass
 class PortfolioData:
@@ -121,7 +123,9 @@ class PortfolioData:
                     'venue': pub.venue,
                     'year': pub.year,
                     'doi': pub.doi,
-                    'keywords': pub.keywords
+                    'keywords': pub.keywords,
+                    'badge': pub.badge,
+                    'url': pub.url
                 } for pub in self.publications
             ]
         }

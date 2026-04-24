@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObserveML — Production Observability for LLM Apps - Venkat Chavan N</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
+    
+    <link rel="stylesheet" href="../static/css/futuristic.css">
+    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../static/images/logo-portfolio.png" 
+                     alt="Venkat Chavan N Logo" 
+                     class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../blogs.html" class="nav-link">Blogs</a></li>
+                <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail-section">
+        <div class="container">
+            <div class="project-header">
+                <a href="../index.html#projects" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+                <h1 class="project-title">ObserveML — Production Observability for LLM Apps</h1>
+                <p class="project-subtitle">Drop-in 3-line SDK for end-to-end LLM observability with real-time dashboard, multi-language SDKs, and Grafana plugin</p>
+                <div style="margin-top: 1rem;">
+                    <a href="https://github.com/Venkatchavan/ObserveML-Production-Observability" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <p>ObserveML is the observability layer that every LLM application is missing. Drop in 3 lines of middleware and every prompt, completion, tool call, and RAG retrieval is captured, traced, and surfaced on a React dashboard backed by ClickHouse. It fills the gap in the LLM tooling ecosystem: framework-agnostic, &lt;3 lines to integrate, works with any LLM provider, and answers: <em>"Is my AI working?"</em></p>
+                    <p>Built across 6 production sprints from architecture to an intelligence layer with root cause narration, 7-day cost forecasting, and a Grafana plugin. Deployed on Fly.io with full CI/CD via GitHub Actions, PyPI + npm + RubyGems + Maven package releases.</p>
+                </div>
+                
+                <div class="project-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <h3>Technologies Used</h3>
+                            <ul>
+                                <li>Python SDK (PyPI) + JS/TS SDK (npm)</li>
+                                <li>Java SDK (Maven/Gradle) + Ruby SDK (RubyGems)</li>
+                                <li>FastAPI + Uvicorn backend</li>
+                                <li>PostgreSQL (metadata) + ClickHouse (metrics, MergeTree, 90-day TTL)</li>
+                                <li>React 18 + Vite + Recharts dashboard</li>
+                                <li>Redis caching + Stripe billing</li>
+                                <li>Grafana plugin + Docker + Fly.io + GitHub Actions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3>What ObserveML Measures</h3>
+                            <ul>
+                                <li>Token cost per session — know your LLM bill per user</li>
+                                <li>p95 / p99 latency — SLA-grade monitoring per prompt version</li>
+                                <li>Prompt version drift — semantic similarity between prompt versions</li>
+                                <li>RAG retrieval quality — are retrieved chunks relevant to the query?</li>
+                                <li>Hallucination signals — confidence scoring + factual consistency</li>
+                                <li>Task completion rate — did the user get what they asked for?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3>Technical Challenges</h3>
+                            <ul>
+                                <li>Designing a framework-agnostic SDK that works with OpenAI, Anthropic, Gemini, Cohere, and custom LLMs</li>
+                                <li>Achieving &lt;5ms SDK overhead so observability never impacts production latency</li>
+                                <li>ClickHouse schema supporting high-cardinality trace queries at scale with TTL and materialized views</li>
+                                <li>Hallucination confidence scoring without ground truth labels in production</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3>Sprint Milestones</h3>
+                            <ul>
+                                <li>Sprint 0–1: Architecture, ClickHouse schema, Python + JS SDK v0.1</li>
+                                <li>Sprint 2: Alert rules, anomaly detection, dashboard v0.2</li>
+                                <li>Sprint 3: Multi-model comparison, regression detection, v1.0 production</li>
+                                <li>Sprint 4: Sampling, SSE live feed, percentiles, CSV export, token budget</li>
+                                <li>Sprint 5: Teams/RBAC, Stripe billing, GDPR deletion, Java SDK, API key rotation</li>
+                                <li>Sprint 6: Intelligence layer — root cause narration, 7-day cost forecast, Grafana plugin, Ruby SDK</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-results">
+                    <h2>Results &amp; Impact</h2>
+                    <p>ObserveML v2.0.0 delivers production-grade LLM observability at minimal integration cost. The platform covers the full observability spectrum — from raw infrastructure metrics to semantic hallucination detection — in a single SDK. The multi-language support and framework-agnostic design make it applicable across any LLM-powered application stack. The intelligence layer in v2.0.0 moves beyond dashboards to active insight: automatic root cause narration and predictive cost forecasting give engineering teams actionable signals, not just raw metrics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

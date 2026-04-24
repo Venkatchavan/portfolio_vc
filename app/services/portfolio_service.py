@@ -83,7 +83,7 @@ def get_portfolio_data() -> PortfolioData:
         Experience(
             title='Guest Lecturer',
             company='Bangalore Institute of Technology, Bengaluru, India',
-            period='2024',
+            period='2026',
             responsibilities=[
                 'Delivered invited sessions for engineering students on Generative AI and Prompt Engineering.',
                 'Contributed practical academic outreach on LLM applications, prompting workflows, and responsible use of modern AI tools.',
@@ -94,6 +94,53 @@ def get_portfolio_data() -> PortfolioData:
     
     # Projects
     projects = [
+        Project(
+            id='observeml',
+            title='ObserveML — Production Observability for LLM Apps',
+            description='Drop-in 3-line SDK that gives every LLM application production-grade observability: latency, cost, tokens, hallucination signals, and RAG quality — surfaced on a real-time React dashboard with multi-language SDKs and Grafana plugin.',
+            detailed_description='ObserveML is the observability layer that every LLM application is missing. Drop in 3 lines of middleware and every prompt, completion, tool call, and RAG retrieval is captured, traced, and surfaced on a React dashboard backed by ClickHouse. Supports Python, TypeScript, Java, and Ruby SDKs. Measures token cost per session, p95/p99 latency, prompt version drift, RAG retrieval quality, hallucination signals, and task completion rate. Built with FastAPI + PostgreSQL + ClickHouse + Stripe billing + RBAC. Deployed on Fly.io. Includes a Grafana plugin, Redis caching, GDPR deletion, API key rotation, and teams/multi-tenant support across 6 sprints.',
+            technologies=['Python', 'TypeScript', 'Java', 'Ruby', 'FastAPI', 'PostgreSQL', 'ClickHouse', 'React 18', 'Vite', 'Recharts', 'Stripe', 'Redis', 'Grafana', 'Docker', 'Fly.io', 'GitHub Actions'],
+            features=[
+                'Multi-language SDKs: Python (PyPI), JavaScript/TypeScript (npm), Java (Maven), Ruby (RubyGems) — 3-line drop-in integration',
+                'Measures token cost, p95/p99 latency, prompt version drift, RAG retrieval quality, hallucination confidence scores, and task completion rate',
+                'ClickHouse metrics store with MergeTree engine and 90-day TTL; PostgreSQL for metadata; Redis caching for dashboard queries',
+                'Full SaaS stack: teams/RBAC, Stripe billing (free tier), usage metering, API key rotation, GDPR deletion, and session grouping',
+                'Intelligence layer (v2.0.0): root cause narration, 7-day cost forecast, model selection assistant, Grafana plugin, multi-region runbook'
+            ],
+            challenges=[
+                'Designing a framework-agnostic SDK that works with OpenAI, Anthropic, Gemini, Cohere, and any custom LLM provider',
+                'Achieving <5ms SDK overhead so observability never impacts production latency',
+                'Building a ClickHouse schema supporting high-cardinality trace queries at scale with TTL and materialized views',
+                'Implementing hallucination confidence scoring without ground truth labels in production'
+            ],
+            status='Completed — v2.0.0',
+            github='https://github.com/Venkatchavan/ObserveML-Production-Observability',
+            demo='',
+            image='observeml.jpg'
+        ),
+        Project(
+            id='ipl-dts',
+            title='T20 Decision Intelligence Platform (IPL)',
+            description='Analyst-grade decision intelligence platform on IPL 2008–2025 ball-by-ball data featuring 12 custom metrics, 4 calibrated ML models, an offline RL batting strategy engine, and a 10-tab Streamlit dashboard with a live demo.',
+            detailed_description='A decision intelligence platform — not a fan dashboard — that answers analyst-grade questions about IPL T20 cricket. Built on 2008–2025 ball-by-ball data from Kaggle. Computes 12 custom per-delivery metrics (WPA, ESA, Pressure Index, Matchup Leverage Score, Death Suppression Index, and more). Trains 4 XGBoost models (Expected Final Score, Chase Win Probability, Ball-level Wicket Probability, Phase Collapse Risk) with time-aware train/val/test splits. Includes an offline RL Strategy Lab using Fitted Q-Iteration (FQI) that recommends batting actions based on historically associated outcomes. Deployed as a 10-tab Streamlit app on Streamlit Community Cloud.',
+            technologies=['Python', 'XGBoost', 'Scikit-learn', 'Streamlit', 'Pandas', 'NumPy', 'Fitted Q-Iteration (FQI)', 'Offline RL', 'Platt Calibration', 'Isotonic Calibration', 'Pytest'],
+            features=[
+                '12 custom per-delivery metrics: WPA (Win Probability Added), ESA (Expected Score Added), Pressure Index, Death Suppression Index, Matchup Leverage Score, Phase Collapse Risk, and more',
+                '4 calibrated XGBoost ML models: Expected Final Score (EFS), Chase Win Probability (CWP), Ball-level Wicket Probability (BWP), Phase Collapse Risk (PCR) — time-aware splits (train 2008–2022, val 2023, test 2024–2025)',
+                'Offline RL Strategy Lab: Fitted Q-Iteration (FQI) batting strategy recommender with honest framing — recommendations reflect historically associated outcomes, not causal optima',
+                '10-tab Streamlit dashboard: Match State Engine, Team DNA, Player Value, Pressure Profiles, Matchup Intelligence, Decision Audit, Scouting & Role Fit, Strategy Lab, and Methodology'
+            ],
+            challenges=[
+                'Reconstructing 30+ ball-by-ball state fields per delivery from raw deliveries.csv for metric computation',
+                'Designing time-aware train/val/test splits to prevent data leakage across seasons',
+                'Implementing honest offline RL framing — clearly communicating limits of batch RL recommendations in the dashboard',
+                'Scaling metric computation pipelines across 300,000+ deliveries without blowing memory'
+            ],
+            status='Completed',
+            github='https://github.com/Venkatchavan/IPL_DTS',
+            demo='https://ipl-ntelligence-system.streamlit.app/',
+            image='ipl-dts.jpg'
+        ),
         Project(
             id='interactive-fiction',
             title='Interactive Fiction Co-Author',
@@ -483,7 +530,29 @@ def get_portfolio_data() -> PortfolioData:
             venue='2025 International Conference on Emerging Technologies in Electronics and Green Energy (ICETEG), Mysore, India',
             year='2025',
             doi='10.1109/ICETEG66194.2025.11473203',
-            keywords=['Data Privacy', 'Partially Homomorphic Encryption', 'Secure Data Retrieval', 'Biometric Authentication', 'Encrypted Vector Operations']
+            keywords=['Data Privacy', 'Partially Homomorphic Encryption', 'Secure Data Retrieval', 'Biometric Authentication', 'Encrypted Vector Operations'],
+            badge='IEEE 2025',
+            url=''
+        ),
+        Publication(
+            authors='Deepthi V S, Venkat Chavan N, Sandhya Shanbhag, Sakshi S Dandappala',
+            title='Study on Crowd Density Estimation and Location Prediction in Public Transport System',
+            venue='International Journal of Innovative Research in Technology (IJIRT), Vol. 8, Issue 10, pp. 30–36',
+            year='2022',
+            doi='',
+            keywords=['Crowd Density Estimation', 'Location Prediction', 'Public Transport', 'Computer Vision'],
+            badge='IJIRT 2022',
+            url='https://ijirt.org/publishedpaper/IJIRT154092_PAPER.pdf'
+        ),
+        Publication(
+            authors='Deepthi V S, Venkat Chavan N, Sandhya Shanbhag, Sakshi S Dandappala',
+            title='Crowd Density Estimation and Location Prediction in Public Transport System',
+            venue='International Journal of Engineering Research & Technology (IJERT), Vol. 11, Issue 7',
+            year='2022',
+            doi='10.17577/IJERTV11IS070053',
+            keywords=['Crowd Density Estimation', 'Location Prediction', 'Public Transport', 'Computer Vision'],
+            badge='IJERT 2022',
+            url=''
         )
     ]
 

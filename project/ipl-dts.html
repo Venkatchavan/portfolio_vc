@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T20 Decision Intelligence Platform - Venkat Chavan N</title>
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
+    
+    <link rel="stylesheet" href="../static/css/futuristic.css">
+    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../static/images/logo-portfolio.png" 
+                     alt="Venkat Chavan N Logo" 
+                     class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../blogs.html" class="nav-link">Blogs</a></li>
+                <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail-section">
+        <div class="container">
+            <div class="project-header">
+                <a href="../index.html#projects" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+                <h1 class="project-title">T20 Decision Intelligence Platform (IPL)</h1>
+                <p class="project-subtitle">Analyst-grade sports analytics platform on IPL 2008–2025 ball-by-ball data with custom metrics, calibrated ML models, and offline RL strategy engine</p>
+                <div style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://github.com/Venkatchavan/IPL_DTS" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="https://ipl-ntelligence-system.streamlit.app/" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="project-content">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <p>This is not a fan dashboard — it is a decision intelligence platform built to answer analyst-grade questions about IPL T20 cricket. Using 2008–2025 ball-by-ball data, it computes 12 custom per-delivery metrics, trains 4 calibrated XGBoost models, and includes an offline RL Strategy Lab powered by Fitted Q-Iteration (FQI).</p>
+                    <p>Representative questions it answers: <em>Which batting actions in which match states were historically associated with better outcomes? How does a player's strike rate change under critical pressure vs neutral pressure? Was Team X's bowling allocation in death overs optimal given their WPA patterns?</em></p>
+                </div>
+                
+                <div class="project-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <h3>Technologies Used</h3>
+                            <ul>
+                                <li>Python + Pandas + NumPy (data pipeline)</li>
+                                <li>XGBoost with Platt + Isotonic calibration</li>
+                                <li>Fitted Q-Iteration (FQI) — offline batch RL</li>
+                                <li>Scikit-learn (feature engineering, cross-validation)</li>
+                                <li>Streamlit (10-tab interactive dashboard)</li>
+                                <li>Pytest (pipeline unit tests)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3>12 Custom Metrics</h3>
+                            <ul>
+                                <li>WPA — Win Probability Added (per delivery)</li>
+                                <li>ESA — Expected Score Added (per delivery)</li>
+                                <li>PI — Pressure Index (4-component score 0–100)</li>
+                                <li>SDS — State Difficulty Score</li>
+                                <li>CER — Contextual Economy Rate (bowler, venue-adjusted)</li>
+                                <li>DSI — Death Suppression Index (bowler composite)</li>
+                                <li>MLS — Matchup Leverage Score (batter vs bowler style)</li>
+                                <li>BCR — Boundary Conversion Rate + PCR, VSI, PRR, Control Rate</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3>ML Models</h3>
+                            <ul>
+                                <li>EFS — Expected Final Score (XGBoost Regressor)</li>
+                                <li>CWP — Chase Win Probability (XGBoost + Platt calibration)</li>
+                                <li>BWP — Ball-level Wicket Probability (XGBoost + Isotonic)</li>
+                                <li>PCR — Phase Collapse Risk (XGBoost + Platt)</li>
+                                <li>Time-aware split: Train 2008–2022, Val 2023, Test 2024–2025</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <h3>Offline RL Strategy Lab</h3>
+                            <ul>
+                                <li>Algorithm: Fitted Q-Iteration (FQI) — offline batch RL</li>
+                                <li>Actions inferred from historical ball-level behaviour</li>
+                                <li>Recommendations reflect historically associated outcomes, not causal optima</li>
+                                <li>Transparent framing: low-confidence states (&lt;20 obs) flagged</li>
+                                <li>10-tab Streamlit dashboard: Match State Engine, Team DNA, Player Value, Pressure Profiles, Matchup Intelligence, Decision Audit, Scouting &amp; Role Fit, Strategy Lab</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-results">
+                    <h2>Results &amp; Impact</h2>
+                    <p>The platform demonstrates how advanced sports analytics can surface genuinely novel insights beyond standard batting averages and economy rates. The per-delivery WPA and ESA metrics reveal which individual balls and decisions most changed match outcomes. The RL Strategy Lab shows what historically optimal batting looks like in specific game states — with honest framing about its limitations as a recommendation system. Deployed as a live Streamlit app with full methodology documentation inside the dashboard itself.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

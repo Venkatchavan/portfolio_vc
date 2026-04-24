@@ -150,13 +150,19 @@
             <div class="publications-list">
                 {% for pub in data.publications %}
                 <div class="publication-item">
-                    <span class="publication-badge">IEEE {{ pub.year }}</span>
+                    <span class="publication-badge">{{ pub.badge if pub.badge else pub.year }}</span>
                     <h3 class="publication-title">{{ pub.title }}</h3>
                     <p class="publication-authors">{{ pub.authors }}</p>
                     <p class="publication-venue"><em>{{ pub.venue }}</em></p>
+                    {% if pub.doi %}
                     <a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener noreferrer" class="publication-doi">
                         <i class="fas fa-external-link-alt"></i> DOI: {{ pub.doi }}
                     </a>
+                    {% elif pub.url %}
+                    <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer" class="publication-doi">
+                        <i class="fas fa-external-link-alt"></i> View Paper
+                    </a>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
