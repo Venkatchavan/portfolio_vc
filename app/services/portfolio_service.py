@@ -81,7 +81,7 @@ def get_portfolio_data() -> PortfolioData:
             ]
         ),
         Experience(
-            title='Guest Lecturer',
+            title='Resource Person',
             company='Bangalore Institute of Technology, Bengaluru, India',
             period='2026',
             responsibilities=[
