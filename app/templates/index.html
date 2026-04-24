@@ -158,9 +158,10 @@
                     <a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener noreferrer" class="publication-doi">
                         <i class="fas fa-external-link-alt"></i> DOI: {{ pub.doi }}
                     </a>
-                    {% elif pub.url %}
+                    {% endif %}
+                    {% if pub.url %}
                     <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer" class="publication-doi">
-                        <i class="fas fa-external-link-alt"></i> View Paper
+                        <i class="fas fa-external-link-alt"></i> View PDF
                     </a>
                     {% endif %}
                 </div>
