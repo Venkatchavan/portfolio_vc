@@ -549,7 +549,7 @@ def get_portfolio_data() -> PortfolioData:
             title='Crowd Density Estimation and Location Prediction in Public Transport System',
             venue='International Journal of Engineering Research & Technology (IJERT), Vol. 11, Issue 7',
             year='2022',
-            doi='10.17577/IJERTV11IS070053',
+            doi='10.5281/zenodo.18438235',
             keywords=['Crowd Density Estimation', 'Location Prediction', 'Public Transport', 'Computer Vision'],
             badge='IJERT 2022',
             url='https://www.ijert.org/research/crowd-density-estimation-and-location-prediction-in-public-transport-system-IJERTV11IS070053.pdf'
