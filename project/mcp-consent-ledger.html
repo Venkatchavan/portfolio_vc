@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mcp-consent-ledger — Authorization Proof for Defensive MCP Servers - Venkat Chavan N</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
+
+    <link rel="stylesheet" href="../static/css/futuristic.css">
+    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../static/images/logo-portfolio.png"
+                     alt="Venkat Chavan N Logo"
+                     class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#mcp-servers" class="nav-link">MCP Servers</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../blogs.html" class="nav-link">Blogs</a></li>
+                <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-detail-section">
+        <div class="container">
+            <div class="project-header">
+                <a href="../index.html#mcp-servers" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to MCP Servers
+                </a>
+                <h1 class="project-title">mcp-consent-ledger</h1>
+                <p class="project-subtitle">Reusable consent &amp; authorization-proof library for defensive MCP servers — verify that a caller actually owns or is authorized to test a target before running any audit.</p>
+                <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <a href="https://github.com/Venkatchavan/mcp-consent-ledger/archive/refs/heads/main.zip" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-download"></i> Download ZIP
+                    </a>
+                    <a href="https://github.com/Venkatchavan/mcp-consent-ledger/releases/latest" target="_blank" rel="noopener" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-tag"></i> Latest Release
+                    </a>
+                    <a href="https://github.com/Venkatchavan/mcp-consent-ledger" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <p><strong>mcp-consent-ledger</strong> gives any MCP tool a small, opinionated way to ask: <em>"Is the caller actually allowed to point me at this target?"</em> If you are building defensive MCP servers — vulnerability scanners, web auditors, repo health checkers, log triagers — you do not want to be the weapon. Before any tool starts probing a domain, URL, or repo, it should demand and verify proof of authorization, and remember it.</p>
+                    <p>Consent is explicit, scoped, time-stamped, locally stored, and easy to verify. There is no telemetry. There is no remote service. The library performs network requests only when you explicitly call a verification function. Tokens are SHA-256 hashed before persistence; well-known fetches are HTTPS-only, GET-only, no-redirect, 5s timeout, with an SSRF guard.</p>
+                </div>
+
+                <div class="project-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <h3>Quick Install</h3>
+                            <ul>
+                                <li>Add a <code>.npmrc</code>: <code>@venkatchavan:registry=https://npm.pkg.github.com</code></li>
+                                <li>Authenticate with a GitHub PAT (<code>read:packages</code> scope)</li>
+                                <li><code>npm install @venkatchavan/mcp-consent-ledger</code></li>
+                                <li>Or globally: <code>npm install -g @venkatchavan/mcp-consent-ledger</code> → ships <code>mcp-consent</code> CLI</li>
+                                <li>From source: <code>git clone</code> → <code>npm install</code> → <code>npm run build</code></li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>Proof Methods</h3>
+                            <ul>
+                                <li><code>dns-txt</code> — control of DNS via TXT record at <code>_mcp-consent.&lt;domain&gt;</code></li>
+                                <li><code>well-known-file</code> — control of a web origin via <code>/.well-known/mcp-consent.txt</code></li>
+                                <li><code>signed-statement</code> — caller-attested authorization recorded as evidence</li>
+                                <li><code>manual</code> — offline / internal approval with approver name &amp; reference</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>Public API</h3>
+                            <ul>
+                                <li><code>generateConsentToken()</code>, <code>verifyDnsProof()</code>, <code>verifyWellKnownProof()</code></li>
+                                <li><code>recordVerifiedConsent()</code>, <code>recordStatementConsent()</code>, <code>recordManualConsent()</code></li>
+                                <li><code>hasValidConsent()</code>, <code>requireConsentOrThrow()</code> — drop one line into your MCP tool handler</li>
+                                <li><code>listConsentRecords()</code>, <code>revokeConsent()</code>, <code>exportConsentLedger()</code></li>
+                                <li>CLI: <code>mcp-consent token | verify-dns | verify-file | statement | list | revoke | export | path</code></li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>Safety &amp; Privacy</h3>
+                            <ul>
+                                <li>Local-only storage at <code>~/.mcp-consent-ledger/consent.json</code> (mode <code>0600</code>)</li>
+                                <li>Tokens SHA-256 hashed before persistence</li>
+                                <li>No telemetry, no background network calls</li>
+                                <li>Well-known fetches: HTTPS-only, GET-only, no-redirect, 5s timeout, 16KB cap, SSRF-guarded</li>
+                                <li>TypeScript + Node 18+, zero runtime dependencies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-results">
+                    <h2>Why It Matters</h2>
+                    <p>"Defensive" MCP servers are only defensive if they refuse to run on targets the caller doesn't actually control. Hard-coding that check inside every server leads to inconsistent UX and subtle bypasses. <code>mcp-consent-ledger</code> centralises it: one library, one ledger, one <code>requireConsentOrThrow()</code> call. The companion server <a href="./safe-web-audit-mcp.html">safe-web-audit-mcp</a> is the worked example — it can swap its custom consent code for this library and immediately gain DNS, well-known, and signed-statement proof methods.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

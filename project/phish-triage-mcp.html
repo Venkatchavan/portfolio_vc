@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phish-triage-mcp — Local-First Phishing Triage MCP Server - Venkat Chavan N</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
+
+    <link rel="stylesheet" href="../static/css/futuristic.css">
+    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../static/images/logo-portfolio.png"
+                     alt="Venkat Chavan N Logo"
+                     class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#mcp-servers" class="nav-link">MCP Servers</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../blogs.html" class="nav-link">Blogs</a></li>
+                <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-detail-section">
+        <div class="container">
+            <div class="project-header">
+                <a href="../index.html#mcp-servers" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to MCP Servers
+                </a>
+                <h1 class="project-title">phish-triage-mcp</h1>
+                <p class="project-subtitle">A local-first MCP server for safely analyzing suspicious emails, SMS, and URLs — purely static, no link detonation, no telemetry, no external lookups.</p>
+                <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <a href="https://github.com/Venkatchavan/phish-triage-mcp/archive/refs/heads/main.zip" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-download"></i> Download ZIP
+                    </a>
+                    <a href="https://github.com/Venkatchavan/phish-triage-mcp/releases/latest" target="_blank" rel="noopener" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-tag"></i> Latest Release
+                    </a>
+                    <a href="https://github.com/Venkatchavan/phish-triage-mcp" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <p><strong>phish-triage-mcp</strong> is a defensive Model Context Protocol server that helps users safely analyze suspicious emails, messages, and URLs — without clicking links, detonating payloads, or contacting any external service. LLM assistants are increasingly asked questions like <em>"is this email real?"</em> or <em>"what is this SMS trying to do?"</em>; the naive answer involves the model fetching the URL, which is exactly what an attacker wants. This server exposes safe, purely static analysis tools that an MCP-capable client can call instead.</p>
+                    <p>All output URLs are defanged by default (<code>https://example.com</code> → <code>hxxps[://]example[.]com</code>) and PII is redacted (emails, phone numbers, OTPs, card numbers, Aadhaar, PAN, UPI). If the optional <code>@venkatchavan/safe-evidence-redactor</code> package is installed, it is automatically preferred for stronger redaction.</p>
+                </div>
+
+                <div class="project-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <h3>Quick Install</h3>
+                            <ul>
+                                <li>From GitHub Packages: <code>npm install -g @venkatchavan/phish-triage-mcp</code></li>
+                                <li>Run the server (stdio): <code>phish-triage-mcp</code></li>
+                                <li>From source: <code>git clone</code> → <code>npm install</code> → <code>npm run build</code> → <code>node dist/index.js</code></li>
+                                <li>Optional enhanced redaction: <code>npm install @venkatchavan/safe-evidence-redactor</code></li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>MCP Tools Exposed</h3>
+                            <ul>
+                                <li><code>triage_email</code> — static analysis of raw RFC 5322 email; parses headers, checks SPF/DKIM/DMARC, detects mismatches, lookalike domains, urgency language, anchor-vs-href tricks</li>
+                                <li><code>triage_message</code> — for SMS, WhatsApp, social DMs; detects OTP-theft, UPI/payment scams, fake courier, fake KYC/Aadhaar lures</li>
+                                <li><code>explain_headers</code> — plain-English explanation of email headers and SPF/DKIM/DMARC results</li>
+                                <li><code>defang_text</code> — defangs URLs/domains/emails/IPs and extracts structured indicators</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>Safety Guarantees</h3>
+                            <ul>
+                                <li>Never visits suspicious URLs or follows redirects</li>
+                                <li>Never submits forms, credentials, or attachments</li>
+                                <li>No remote reputation lookups, no external API calls</li>
+                                <li>No telemetry; all analysis happens locally</li>
+                                <li>Output URLs defanged by default; PII redacted by default</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>Tech Stack</h3>
+                            <ul>
+                                <li>TypeScript + Node.js 18+</li>
+                                <li>Vitest test suite</li>
+                                <li>MCP stdio transport — works with Claude Desktop, VS Code Copilot, and any MCP-capable client</li>
+                                <li>Published to GitHub Packages with automated release workflow</li>
+                                <li>Levenshtein-based lookalike domain scoring + curated brand list</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-results">
+                    <h2>Why It Matters</h2>
+                    <p>Phishing triage is one of the most common "can you help me with this?" requests aimed at AI assistants — and the riskiest. <code>phish-triage-mcp</code> turns it into a safe primitive: the agent can confidently answer <em>"this looks like a credential-harvesting attempt because the From / Reply-To don't match, the link is a shortened bit.ly, and the message uses urgency phrasing"</em> without ever touching the suspicious URL. Drop it into Claude Desktop or VS Code in two lines of config and your assistant can triage emails the safe way by default.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

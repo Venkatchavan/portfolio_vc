@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>safe-evidence-redactor — Privacy-First Redaction Library, CLI &amp; MCP Server - Venkat Chavan N</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
+
+    <link rel="stylesheet" href="../static/css/futuristic.css">
+    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../static/images/logo-portfolio.png"
+                     alt="Venkat Chavan N Logo"
+                     class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#mcp-servers" class="nav-link">MCP Servers</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../blogs.html" class="nav-link">Blogs</a></li>
+                <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-detail-section">
+        <div class="container">
+            <div class="project-header">
+                <a href="../index.html#mcp-servers" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to MCP Servers
+                </a>
+                <h1 class="project-title">safe-evidence-redactor</h1>
+                <p class="project-subtitle">Privacy-first redaction library, CLI, and MCP server for security reports, logs, AI outputs, MCP tool outputs, and bug reports — fully offline, zero telemetry.</p>
+                <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <a href="https://github.com/Venkatchavan/safe-evidence-redactor/archive/refs/heads/main.zip" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-download"></i> Download ZIP
+                    </a>
+                    <a href="https://github.com/Venkatchavan/safe-evidence-redactor/releases/latest" target="_blank" rel="noopener" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-tag"></i> Latest Release
+                    </a>
+                    <a href="https://github.com/Venkatchavan/safe-evidence-redactor" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <p><strong>@venkatchavan/safe-evidence-redactor</strong> removes sensitive evidence — PII, secrets, tokens — from text and JSON while preserving enough context to keep the output debuggable. Use it before pasting logs into a chat, attaching reports to a ticket, or returning data from an MCP tool. It walks nested JSON structures, preserves keys and shape, redacts only values, and reports the JSON paths that were touched.</p>
+                    <p>Three modes (<code>minimal</code>, <code>balanced</code>, <code>strict</code>) let you trade off coverage versus signal. Allowlists support specific domains, JSON field names, regex patterns, and entire categories. The package ships an MCP server (<code>safe-redact-mcp</code>) so any MCP-aware client can call the redactor as a tool over stdio.</p>
+                </div>
+
+                <div class="project-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <h3>Quick Install</h3>
+                            <ul>
+                                <li><code>npm login --registry=https://npm.pkg.github.com --scope=@venkatchavan</code></li>
+                                <li><code>npm install @venkatchavan/safe-evidence-redactor</code></li>
+                                <li>Globally for the CLI: <code>npm install -g @venkatchavan/safe-evidence-redactor</code></li>
+                                <li>CLI binaries: <code>safe-redact</code> (text/JSON) and <code>safe-redact-mcp</code> (MCP server)</li>
+                                <li>From source: <code>git clone</code> → <code>npm install</code> → <code>npm run build</code></li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>Categories Detected</h3>
+                            <ul>
+                                <li>Always: <code>AUTH_HEADER</code>, <code>COOKIE</code>, <code>BEARER</code>, <code>JWT</code>, <code>API_KEY</code> (vendor), <code>URL_SECRET</code></li>
+                                <li>Balanced &amp; strict: <code>EMAIL</code>, <code>UPI</code>, <code>AADHAAR</code>, <code>PAN</code>, Indian <code>PHONE</code>, <code>IPv4</code>, <code>IPv6</code></li>
+                                <li>Strict only: international phone, <code>GENERIC_SECRET</code></li>
+                                <li>JSON walker preserves keys, redacts values, reports JSON paths</li>
+                                <li>Stats output: <code>{ total, byCategory, paths }</code></li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>MCP Server Tools</h3>
+                            <ul>
+                                <li><code>redact_text</code> — input <code>{ input: string, mode?, allow? }</code>; returns redacted string + structured stats</li>
+                                <li><code>redact_json</code> — input <code>{ input: any, mode?, allow? }</code>; returns redacted JSON + structured stats</li>
+                                <li>Fully offline — no network calls, no telemetry</li>
+                                <li>Works with Claude Desktop, MCP Inspector, and any MCP-aware agent framework</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>CLI Examples</h3>
+                            <ul>
+                                <li><code>safe-redact file.txt</code></li>
+                                <li><code>safe-redact report.json --json --allow-domain example.com</code></li>
+                                <li><code>cat logs.txt | safe-redact</code></li>
+                                <li><code>safe-redact --mode strict --stats &lt; dump.log</code></li>
+                                <li>TypeScript + Node 18+, full type definitions, zero runtime dependencies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-results">
+                    <h2>Why It Matters</h2>
+                    <p>Whenever you paste a log, a stack trace, or an MCP tool output into a chat with an LLM, you risk leaking customer emails, IPs, JWTs, or vendor API keys into someone else's training pipeline. <code>safe-evidence-redactor</code> is the small, opinionated layer that sits between your evidence and your assistant — and because it ships as both a library and an MCP server, the assistant itself can call it: <em>"redact this and then tell me what's wrong with it"</em>. The companion server <a href="./phish-triage-mcp.html">phish-triage-mcp</a> auto-detects this package and uses it for stronger PII redaction when present.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>

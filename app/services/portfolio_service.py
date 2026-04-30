@@ -95,6 +95,102 @@ def get_portfolio_data() -> PortfolioData:
     # Projects
     projects = [
         Project(
+            id='safe-web-audit-mcp',
+            title='safe-web-audit-mcp — Defensive Website Security MCP Server',
+            description='Defensive Model Context Protocol server for consent-based website security audits — non-invasive checks for HTTPS, security headers, cookie flags, redirects, and basic info exposure. Ships with auth-proof flow, fix generator, and one-click VS Code Agent Plugin.',
+            detailed_description='A small, defensive MCP server that performs non-invasive, consent-based safety checks on a single URL. Designed for site owners and authorized testers who want a quick read on their own site\'s security headers, cookie flags, redirect chain, and TLS posture — without scanning, crawling, fuzzing, or any kind of active testing. Ships six MCP tools (audit_url, verify_authorization, generate_fixes, audit_history, generate_template, emergency_checklist), a one-click VS Code Agent Plugin, multi-arch GHCR Docker images, and stdio + Streamable HTTP transports. Refuses to run unless confirm_authorized is true; SSRF-guarded against loopback, RFC1918, link-local, and cloud-metadata IPs.',
+            technologies=['TypeScript', 'Node.js 18+', 'MCP SDK', 'Docker', 'GHCR', 'GitHub Actions', 'npm', 'stdio + Streamable HTTP'],
+            features=[
+                'Six MCP tools: audit_url, verify_authorization, generate_fixes, audit_history, generate_template, emergency_checklist',
+                'Authorization proof via DNS TXT, well-known file, or signed statement — recorded locally at ~/.safe-web-audit/',
+                'Fix generator returns ready-to-paste config snippets for Nginx, Apache, Caddy, Cloudflare, Vercel, Netlify, Express, Django, Rails, WordPress',
+                'Safe Evidence Mode redacts cookies, tokens, emails, IPs by default; SSRF-guarded redirect handling with 5-hop cap',
+                'One-click VS Code Agent Plugin (plugin.json + .mcp.json) and stdio + Streamable HTTP transports for any MCP client'
+            ],
+            challenges=[
+                'Designing a tool surface that is useful for security auditors yet impossible to weaponise as a scanner',
+                'Building a robust SSRF guard that rejects loopback, RFC1918, IPv6 ULA / link-local, IPv4-mapped IPv6, and cloud metadata IPs across redirect hops',
+                'Shipping multi-arch (amd64 + arm64) Docker images and npm provenance through automated GitHub Actions release pipelines',
+                'Making the consent flow feel lightweight while still demanding cryptographic-grade ownership proof'
+            ],
+            status='Released — v0.2.1',
+            github='https://github.com/Venkatchavan/safe-web-audit-mcp',
+            demo='https://github.com/Venkatchavan/safe-web-audit-mcp/archive/refs/heads/main.zip',
+            image=''
+        ),
+        Project(
+            id='phish-triage-mcp',
+            title='phish-triage-mcp — Local-First Phishing Triage MCP Server',
+            description='Local-first MCP server that helps users safely analyze suspicious emails, SMS, and URLs — without clicking links, detonating payloads, or contacting any external service. Defangs URLs, redacts PII, and returns low/medium/high risk bands with explanations.',
+            detailed_description='A defensive MCP server that exposes safe, purely static analysis tools for emails, SMS, WhatsApp, social DMs, and URLs. Parses RFC 5322 emails, reads Authentication-Results for SPF/DKIM/DMARC, detects From ↔ Reply-To and From ↔ Return-Path mismatches, lookalike sender domains (Levenshtein), display-name impersonation against a curated brand list, anchor-text-vs-href tricks, urgency phrasing, OTP-theft / UPI / fake-courier / fake-KYC scam patterns, URL shorteners, punycode, IP-literal URLs, embedded userinfo, and credential-shaped query parameters. All output URLs are defanged by default and PII is redacted. Auto-prefers @venkatchavan/safe-evidence-redactor when present for stronger redaction.',
+            technologies=['TypeScript', 'Node.js 18+', 'MCP SDK', 'Vitest', 'GitHub Packages', 'GitHub Actions'],
+            features=[
+                'Four MCP tools: triage_email, triage_message, explain_headers, defang_text',
+                'Static-only analysis — never visits suspicious URLs, never follows redirects, never submits forms',
+                'PII redaction (emails, phones, OTPs, card numbers, Aadhaar, PAN, UPI) and URL defanging by default',
+                'SPF/DKIM/DMARC parsing with plain-English explanations for non-technical users',
+                'Plug-and-play with Claude Desktop, VS Code Copilot, and any MCP-capable client'
+            ],
+            challenges=[
+                'Detecting phishing patterns purely statically without the safety net of remote reputation lookups',
+                'Building a precise lookalike-domain scorer that catches paypa1.com / xn-- punycode tricks without massive false-positive rates',
+                'Designing PII redaction that preserves debuggability while never leaking secrets back through tool responses',
+                'Curating an Indian-context scam library (UPI, Aadhaar, PAN, KYC, courier redelivery) alongside global brand impersonation'
+            ],
+            status='Released — v0.2.0',
+            github='https://github.com/Venkatchavan/phish-triage-mcp',
+            demo='https://github.com/Venkatchavan/phish-triage-mcp/archive/refs/heads/main.zip',
+            image=''
+        ),
+        Project(
+            id='mcp-consent-ledger',
+            title='mcp-consent-ledger — Authorization Proof Library for Defensive MCP Servers',
+            description='Reusable consent & authorization-proof library for defensive MCP servers. Verifies that a caller actually owns or is authorized to test a target via DNS TXT, well-known files, or signed statements — with an auditable, local-only ledger.',
+            detailed_description='A small, opinionated library that gives any MCP tool a single primitive: requireConsentOrThrow({ subject, scope, action }). Supports four proof methods (dns-txt, well-known-file, signed-statement, manual). Consent records are explicit, scoped, time-stamped, and stored locally at ~/.mcp-consent-ledger/consent.json (mode 0600). Tokens are SHA-256 hashed before persistence; well-known fetches are HTTPS-only, GET-only, no-redirect, 5s timeout, 16KB cap, with an SSRF guard. Ships a mcp-consent CLI (token, verify-dns, verify-file, statement, list, revoke, export, path) and a TypeScript library with zero runtime dependencies.',
+            technologies=['TypeScript', 'Node.js 18+', 'GitHub Packages (npm)', 'Zero runtime dependencies', 'SHA-256', 'DNS TXT', '.well-known'],
+            features=[
+                'Four proof methods: dns-txt, well-known-file, signed-statement, manual',
+                'Drop-in API: requireConsentOrThrow / hasValidConsent — one line in any MCP tool handler',
+                'Local-only ledger with SHA-256 token hashing, scoped allowed_actions, and revocation support',
+                'mcp-consent CLI for token issuance, verification, listing, revocation, and export',
+                'SSRF-guarded well-known fetcher; no telemetry; no background network calls'
+            ],
+            challenges=[
+                'Designing a consent record shape that is auditable yet small enough to read by hand',
+                'Implementing DNS TXT verification that handles multi-string TXT records and mcp-consent=<token> wrappers',
+                'Hardening the well-known fetcher against SSRF, redirect chains, and oversized response bodies',
+                'Keeping the public API surface small enough that any defensive MCP server can adopt it in a single PR'
+            ],
+            status='Released — v0.1.1',
+            github='https://github.com/Venkatchavan/mcp-consent-ledger',
+            demo='https://github.com/Venkatchavan/mcp-consent-ledger/archive/refs/heads/main.zip',
+            image=''
+        ),
+        Project(
+            id='safe-evidence-redactor',
+            title='safe-evidence-redactor — Privacy-First Redaction Library, CLI & MCP Server',
+            description='Privacy-first redaction library, CLI, and MCP server for security reports, logs, AI outputs, and bug reports. Redacts emails, phones, IPs, JWTs, Bearer tokens, vendor API keys, Aadhaar/PAN/UPI, and sensitive URL params — fully offline, zero telemetry.',
+            detailed_description='A library, CLI (safe-redact), and MCP server (safe-redact-mcp) that remove sensitive evidence from text and JSON while preserving enough context to keep the output debuggable. Walks nested JSON, preserves keys and structure, redacts only values, and reports JSON paths. Three modes (minimal, balanced, strict) trade off coverage vs signal. Allowlists support specific domains, JSON field names, regex patterns, and entire categories. The MCP server exposes redact_text and redact_json tools so any MCP-aware client (Claude Desktop, MCP Inspector, agent frameworks) can call the redactor as a tool over stdio. Fully offline — no network, no telemetry. Auto-detected by phish-triage-mcp for stronger PII redaction.',
+            technologies=['TypeScript', 'Node.js 18+', 'MCP SDK', 'GitHub Packages', 'Zero runtime dependencies'],
+            features=[
+                'Categories: AUTH_HEADER, COOKIE, BEARER, JWT, API_KEY (vendor), URL_SECRET, EMAIL, UPI, AADHAAR, PAN, PHONE, IPv4/IPv6, GENERIC_SECRET',
+                'Three modes (minimal / balanced / strict) and allowlists for domains, field names, regex patterns, and categories',
+                'JSON walker preserves keys and shape, redacts values, reports affected JSON paths and per-category stats',
+                'CLI (safe-redact) supports files, stdin, --json, --stats, --mode, --allow-domain, --allow-field',
+                'Built-in MCP server (safe-redact-mcp) with redact_text and redact_json tools — fully offline'
+            ],
+            challenges=[
+                'Designing redaction patterns precise enough to avoid mangling debuggable context (e.g. preserving safe URL paths while redacting token query params)',
+                'Building a JSON walker that reports stable paths through arrays and nested objects without copying large payloads',
+                'Curating an Indian-context category set (Aadhaar, PAN, UPI, Indian phone formats) alongside vendor API key shapes',
+                'Shipping the same engine as a library, a CLI, and an MCP server from one TypeScript codebase with zero runtime dependencies'
+            ],
+            status='Released — v0.1.2',
+            github='https://github.com/Venkatchavan/safe-evidence-redactor',
+            demo='https://github.com/Venkatchavan/safe-evidence-redactor/archive/refs/heads/main.zip',
+            image=''
+        ),
+        Project(
             id='observeml',
             title='ObserveML — Production Observability for LLM Apps',
             description='Drop-in 3-line SDK that gives every LLM application production-grade observability: latency, cost, tokens, hallucination signals, and RAG quality — surfaced on a real-time React dashboard with multi-language SDKs and Grafana plugin.',

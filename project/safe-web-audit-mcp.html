@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>safe-web-audit-mcp — Defensive Website Security MCP Server - Venkat Chavan N</title>
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
+
+    <link rel="stylesheet" href="../static/css/futuristic.css">
+    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="../index.html" class="nav-logo">
+                <img src="../static/images/logo-portfolio.png"
+                     alt="Venkat Chavan N Logo"
+                     class="nav-logo-img">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="../index.html#mcp-servers" class="nav-link">MCP Servers</a></li>
+                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../blogs.html" class="nav-link">Blogs</a></li>
+                <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
+                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Detail Section -->
+    <section class="project-detail-section">
+        <div class="container">
+            <div class="project-header">
+                <a href="../index.html#mcp-servers" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to MCP Servers
+                </a>
+                <h1 class="project-title">safe-web-audit-mcp</h1>
+                <p class="project-subtitle">A defensive Model Context Protocol server for consent-based website security header audits — non-invasive, local-first, and ready to plug into any MCP client.</p>
+                <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                    <a href="https://github.com/Venkatchavan/safe-web-audit-mcp/archive/refs/heads/main.zip" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-download"></i> Download ZIP
+                    </a>
+                    <a href="https://github.com/Venkatchavan/safe-web-audit-mcp/releases/latest" target="_blank" rel="noopener" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-tag"></i> Latest Release
+                    </a>
+                    <a href="https://github.com/Venkatchavan/safe-web-audit-mcp" target="_blank" rel="noopener" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <div class="project-overview">
+                    <h2>Project Overview</h2>
+                    <p><strong>safe-web-audit-mcp</strong> is a small, defensive Model Context Protocol server that performs non-invasive, consent-based safety checks on a single URL. It is designed for site owners and authorized testers who want a quick read on their own site's security headers, cookie flags, redirect chain, and TLS posture — without scanning, crawling, fuzzing, or any kind of active testing.</p>
+                    <p>It performs a single <code>HEAD</code> request (with <code>GET</code> fallback), validates every redirect hop, runs an SSRF guard against loopback and private IP ranges, and returns a structured report with severity-tagged findings, positive checks, and an ethical notice. All consent and history data stays local at <code>~/.safe-web-audit/</code>.</p>
+                </div>
+
+                <div class="project-details">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <h3>Quick Install</h3>
+                            <ul>
+                                <li><code>npx -y safe-web-audit</code> — recommended for local MCP clients</li>
+                                <li><code>npm install -g safe-web-audit</code> — global CLI</li>
+                                <li><code>docker run --rm -p 8787:8787 ghcr.io/Venkatchavan/safe-web-audit-mcp:latest</code></li>
+                                <li>VS Code: Command Palette → <em>Chat: Install Plugin From Source</em> → paste the repo URL</li>
+                                <li>From source: <code>git clone</code> → <code>npm install</code> → <code>npm run build</code> → <code>npm start</code></li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>MCP Tools Exposed</h3>
+                            <ul>
+                                <li><code>audit_url</code> — non-invasive defensive audit with compliance mapping (OWASP / CIS / ISO / privacy)</li>
+                                <li><code>verify_authorization</code> — DNS TXT, well-known file, or signed-statement consent proof</li>
+                                <li><code>generate_fixes</code> — ready-to-paste config snippets for Nginx, Apache, Caddy, Cloudflare, Vercel, Netlify, Express, Django, Rails, WordPress</li>
+                                <li><code>audit_history</code> — list and diff locally-saved audits</li>
+                                <li><code>generate_template</code> — security.txt, responsible-disclosure page, password policy, backup checklist</li>
+                                <li><code>emergency_checklist</code> — calm, defensive incident-response checklist</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>Defensive by Construction</h3>
+                            <ul>
+                                <li>No crawling, link-following, fuzzing, brute-forcing, login, or form submission</li>
+                                <li>No <code>POST</code> / <code>PUT</code> / <code>DELETE</code> / <code>PATCH</code> requests</li>
+                                <li>SSRF-guarded — blocks loopback, RFC1918, link-local, IPv6 ULA, and cloud metadata IPs</li>
+                                <li>Safe Evidence Mode redacts cookies, tokens, emails, IPs by default</li>
+                                <li>Refuses to run unless <code>confirm_authorized: true</code></li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item">
+                            <h3>Tech Stack</h3>
+                            <ul>
+                                <li>TypeScript + Node.js 18+ (20+ recommended)</li>
+                                <li>MCP stdio &amp; Streamable HTTP transports (port 8787)</li>
+                                <li>Multi-arch Docker images on GHCR (amd64 + arm64)</li>
+                                <li>GitHub Actions CI on Node 18 / 20 / 22 + automated release pipeline</li>
+                                <li>Plugin manifest (<code>plugin.json</code> + <code>.mcp.json</code>) for one-click VS Code Agent install</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-results">
+                    <h2>Why It Matters</h2>
+                    <p>Most "security scanners" you can give an LLM agent are too aggressive to run on production. <code>safe-web-audit-mcp</code> fills the gap: it gives any MCP-aware client (Claude Desktop, Claude Code, VS Code, Cursor, Continue, Cline, Windsurf, Zed) a tool that's safe to call by default. The auth-proof flow ensures the agent can only audit targets the caller actually controls, and the fix generator turns findings into copy-paste config — so the same agent that found the missing <code>Strict-Transport-Security</code> can hand you the exact Nginx snippet to fix it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../static/js/app.js"></script>
+</body>
+</html>
