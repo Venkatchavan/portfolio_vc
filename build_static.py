@@ -33,14 +33,21 @@ def fix_urls_for_static_site(content, filename, portfolio_data):
     # Fix Flask url_for patterns with regex
     # Main navigation patterns - more comprehensive matching
     content = re.sub(r'href="[^"]*url_for\([\'"]main\.home[\'"].*?\)"', 'href="./index.html"', content)
+    content = re.sub(r'href="[^"]*url_for\([\'"]main\.hobby[\'"].*?\)"', 'href="./hobby.html"', content)
+    content = re.sub(r'href="[^"]*url_for\([\'"]main\.archive[\'"].*?\)"', 'href="./hobby.html"', content)
     content = re.sub(r'href="[^"]*url_for\([\'"]chatbot\.chatbot[\'"].*?\)"', 'href="./chatbot.html"', content)
     content = re.sub(r'href="[^"]*url_for\([\'"]narrative\.narrative_nexus[\'"].*?\)"', 'href="./narrative_nexus.html"', content)
+    content = re.sub(r'action="[^"]*url_for\([\'"]main\.contact[\'"].*?\)"', 'action="#"', content)
     
     # Handle url_for with anchor links
     content = re.sub(r'href="[^"]*url_for\([\'"]main\.home[\'"][^)]*\)#([^"]*)"', r'href="./index.html#\1"', content)
     
     # Direct URL patterns - comprehensive handling
     content = content.replace('href="/"', 'href="./index.html"')
+    content = content.replace('href="/hobby"', 'href="./hobby.html"')
+    content = content.replace('href="/archive"', 'href="./hobby.html"')
+    content = content.replace('href="/contact"', 'href="#contact"')
+    content = content.replace('data-action="/contact"', 'data-action="#"')
     content = content.replace('href="/chat/bot"', 'href="./chatbot.html"')
     content = content.replace('href="/narrative/nexus"', 'href="./narrative_nexus.html"')
     
@@ -51,6 +58,13 @@ def fix_urls_for_static_site(content, filename, portfolio_data):
     content = content.replace('href="/#education"', 'href="./index.html#education"')
     content = content.replace('href="/#projects"', 'href="./index.html#projects"')
     content = content.replace('href="/#contact"', 'href="./index.html#contact"')
+    content = content.replace('href="/#research"', 'href="./index.html#research"')
+    content = content.replace('href="/#publications"', 'href="./index.html#publications"')
+    content = content.replace('href="/#agenda"', 'href="./index.html#agenda"')
+    content = content.replace('href="/#teaching"', 'href="./index.html#teaching"')
+    content = content.replace('href="/#home"', 'href="./index.html#home"')
+    # Generic catch-all for any /#anchor pattern still present
+    content = re.sub(r'href="/#([A-Za-z0-9_-]+)"', r'href="./index.html#\1"', content)
     
     # Project detail links - this fixes "Learn More" buttons
     for project in portfolio_data.projects:
@@ -79,6 +93,13 @@ def fix_urls_for_static_site(content, filename, portfolio_data):
 
 def build_static_site():
     """Build static version of the portfolio for GitHub Pages."""
+    
+    # Generate the CV PDF first so it ends up in dist/static/files/
+    try:
+        from build_cv import build_cv
+        build_cv()
+    except Exception as e:
+        print(f"⚠️  CV generation failed: {e}")
     
     # Create output directory
     output_dir = Path("dist")
@@ -126,6 +147,7 @@ def build_static_site():
         # Routes to build
         routes = [
             ('/', 'index.html'),
+            ('/hobby', 'hobby.html'),
             ('/narrative/nexus', 'narrative_nexus.html'),
             ('/chat/bot', 'chatbot.html'),
         ]
@@ -167,9 +189,12 @@ def build_static_site():
                     
                     # Additional fixes for project pages (in subdirectory)
                     content = content.replace('href="./index.html"', 'href="../index.html"')
+                    content = content.replace('href="./hobby.html"', 'href="../hobby.html"')
+                    content = content.replace('href="./archive.html"', 'href="../hobby.html"')
                     content = content.replace('href="./chatbot.html"', 'href="../chatbot.html"')
                     content = content.replace('href="./narrative_nexus.html"', 'href="../narrative_nexus.html"')
                     content = content.replace('href="./project/', 'href="../project/')
+                    content = content.replace('href="static/files/', 'href="../static/files/')
                     
                     # Fix anchor links for project pages - they should point back to index.html
                     content = re.sub(r'href="/#([^"]*)"', r'href="../index.html#\1"', content)

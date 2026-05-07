@@ -3,141 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MV-Coach-Eval — HAR Benchmarking Platform - Venkat Chavan N</title>
-    
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
-    
-    <link rel="stylesheet" href="../static/css/futuristic.css">
-    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <title>MV-Coach-Eval: HAR Benchmarking Platform: Venkat Chavan N</title>
+    <meta name="description" content="Benchmarking platform for Human Activity Recognition with calibration, robustness testing, LOSO generalisation, and Monte Carlo Dropout uncertainty.">
+    <link rel="icon" type="image/png" href="../static/images/logo-portfolio.png">
+    <link rel="stylesheet" href="../static/css/academic.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('vc-theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container container">
+        <div class="nav-container">
             <a href="../index.html" class="nav-logo">
-                <img src="../static/images/logo-portfolio.png" 
-                     alt="Venkat Chavan N Logo" 
-                     class="nav-logo-img">
+                <img src="../static/images/logo-portfolio.png" alt="Venkat Chavan N" class="nav-logo-img">
+                <span>Venkat Chavan N</span>
             </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="../index.html#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="../index.html#research" class="nav-link">Research</a></li>
+                <li class="nav-item"><a href="../index.html#publications" class="nav-link">Publications</a></li>
                 <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="../hobby.html" class="nav-link">Engg-Projects</a></li>
                 <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Project Hero Section -->
     <section class="project-hero">
         <div class="container">
-            <div class="project-hero-content">
-                <div class="project-breadcrumb">
-                    <a href="../index.html" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <a href="../index.html#projects" class="breadcrumb-link">Projects</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">MV-Coach-Eval — HAR Benchmarking Platform</span>
-                </div>
-                <h1 class="project-hero-title">MV-Coach-Eval — HAR Benchmarking Platform</h1>
-                <p class="project-hero-subtitle">Production-grade Human Activity Recognition benchmarking platform with accuracy/F1 evaluation, ECE calibration, robustness testing, LOSO generalization, and Monte Carlo Dropout uncertainty.</p>
-                <div class="project-hero-links">
-                    
-                    <a href="https://github.com/Venkatchavan/MV-Coach-Eval" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                    
-                    
-                </div>
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                
+                <a href="../index.html#projects">Research Projects</a>
+                
+                <span class="breadcrumb-separator">/</span>
+                <span>MV-Coach-Eval: HAR Benchmarking Platform</span>
+            </div>
+            <h1 class="project-hero-title">MV-Coach-Eval: HAR Benchmarking Platform</h1>
+            <p class="project-hero-subtitle">Benchmarking platform for Human Activity Recognition with calibration, robustness testing, LOSO generalisation, and Monte Carlo Dropout uncertainty.</p>
+            
+            <div class="project-tags">
+                <span class="project-tag">Evaluation</span><span class="project-tag">HAR</span><span class="project-tag">Calibration</span><span class="project-tag">Uncertainty</span>
+            </div>
+            
+            <div class="project-hero-links" style="margin-top: 16px;">
+                <a href="https://github.com/Venkatchavan/MV-Coach-Eval" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a>
+                
+                
+                
             </div>
         </div>
     </section>
 
-    <!-- Project Details -->
-    <section class="project-details">
+    <section>
         <div class="container">
             <div class="project-content-grid">
-                <!-- Left Column: Overview, Features, Challenges -->
-                <div class="project-main-content">
+                <div>
                     <div class="project-section">
-                        <h2 class="project-section-title">Project Overview</h2>
-                        <p>A Multimodal Virtual Coach Evaluation Harness — a production-grade benchmarking platform for Human Activity Recognition (HAR) systems. Features comprehensive evaluation including accuracy/F1 metrics, Expected Calibration Error (ECE), robustness testing with noise and missing data, Leave-One-Subject-Out (LOSO) generalization analysis, and Monte Carlo Dropout uncertainty quantification. Built with a config-driven architecture using Hydra, a pluggable model registry, Docker support, and targeting ≥80% test coverage with comprehensive CI/CD.</p>
+                        <h2 class="project-section-title">Overview</h2>
+                        <p>A config-driven evaluation harness for HAR systems. Reports accuracy, F1, precision/recall and Expected Calibration Error (ECE); evaluates robustness under noise and missing data; runs Leave-One-Subject-Out cross-validation for subject generalisation; and quantifies prediction uncertainty via Monte Carlo Dropout. Built with Hydra, a pluggable model registry, and Docker for reproducibility.</p>
                     </div>
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Key Features</h2>
+                        <h2 class="project-section-title">Methods</h2>
+                        <p>ECE, LOSO cross-validation, Monte Carlo Dropout, robustness testing.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Evaluation</h2>
+                        <p>Internal benchmark coverage with Hydra-based reproducible runs.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Key Contributions</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Comprehensive HAR evaluation: accuracy, F1, precision, recall, and Expected Calibration Error (ECE)</span>
-                            </li>
+                            <li>Accuracy / F1 / precision / recall / Expected Calibration Error.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Robustness testing: noise injection, missing data simulation, adversarial perturbations</span>
-                            </li>
+                            <li>Robustness testing with noise injection and missing-data simulation.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>LOSO generalization: Leave-One-Subject-Out cross-validation for subject-independent analysis</span>
-                            </li>
+                            <li>Leave-One-Subject-Out (LOSO) generalisation analysis.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Uncertainty quantification: Monte Carlo Dropout for prediction confidence estimation</span>
-                            </li>
+                            <li>Monte Carlo Dropout for uncertainty quantification.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Config-driven architecture: Hydra-based configuration with pluggable model registry and Docker support</span>
-                            </li>
+                            <li>Config-driven, Hydra-based, with a pluggable model registry.</li>
                             
                         </ul>
                     </div>
+                    
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Technical Challenges</h2>
+                        <h2 class="project-section-title">Research &amp; Engineering Challenges</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Designing a universal evaluation framework for diverse HAR model architectures</span>
-                            </li>
+                            <li>Designing a universal evaluation harness across HAR architectures.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Implementing rigorous Monte Carlo Dropout uncertainty quantification at scale</span>
-                            </li>
+                            <li>Implementing rigorous Monte Carlo Dropout uncertainty at scale.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Building config-driven pipelines with Hydra for reproducible experiments</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Ensuring robust evaluation under noisy and incomplete sensor data conditions</span>
-                            </li>
+                            <li>Ensuring robust evaluation under noisy and incomplete sensor data.</li>
                             
                         </ul>
                     </div>
+                    
                 </div>
 
-                <!-- Right Column: Tech Stack, Status -->
                 <aside class="project-sidebar">
+                    
                     <div class="sidebar-widget">
                         <h3 class="widget-title">Tech Stack</h3>
                         <div class="tech-tags">
                             
-                            <span class="tech-tag">Python 3.10+</span>
+                            <span class="tech-tag">Python</span>
                             
                             <span class="tech-tag">PyTorch</span>
                             
@@ -145,47 +139,38 @@
                             
                             <span class="tech-tag">Docker</span>
                             
-                            <span class="tech-tag">Makefile</span>
-                            
-                            <span class="tech-tag">NumPy</span>
-                            
                             <span class="tech-tag">Scikit-learn</span>
-                            
-                            <span class="tech-tag">Monte Carlo Dropout</span>
                             
                         </div>
                     </div>
+                    
+                    
                     <div class="sidebar-widget">
-                        <h3 class="widget-title">Project Status</h3>
-                        <span class="status-badge status-completed">
-                            Completed
-                        </span>
+                        <h3 class="widget-title">Status</h3>
+                        <span class="status-badge">Completed</span>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Author</h3>
+                        <p style="font-size: 0.92rem;">Venkat Chavan N<br>
+                        <a href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com</a></p>
                     </div>
                 </aside>
-            </div>
-
-            <!-- Project Gallery -->
-            <div class="project-section">
-                <h2 class="project-section-title">Project Gallery</h2>
-                <div class="project-gallery">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Project screenshots and diagrams will be added here.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Venkat Chavan N. All rights reserved.</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Venkat Chavan N.</p>
+            <div class="footer-social">
+                <a href="https://github.com/Venkatchavan" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:venkat.chavan.n@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="../static/js/app.js"></script>
-    <script src="../static/js/static-site.js"></script>
+    <script src="../static/js/academic.js"></script>
 </body>
 </html>

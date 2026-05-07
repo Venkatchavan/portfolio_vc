@@ -3,187 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>safe-evidence-redactor — Privacy-First Redaction Library, CLI &amp; MCP Server - Venkat Chavan N</title>
-    
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
-    
-    <link rel="stylesheet" href="../static/css/futuristic.css">
-    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <title>safe-evidence-redactor: Privacy-First Redaction Library and MCP Server: Venkat Chavan N</title>
+    <meta name="description" content="Defensive AI tooling for offline PII redaction in security reports, logs, and AI outputs, exposed as a library, CLI, and MCP server.">
+    <link rel="icon" type="image/png" href="../static/images/logo-portfolio.png">
+    <link rel="stylesheet" href="../static/css/academic.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('vc-theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container container">
+        <div class="nav-container">
             <a href="../index.html" class="nav-logo">
-                <img src="../static/images/logo-portfolio.png" 
-                     alt="Venkat Chavan N Logo" 
-                     class="nav-logo-img">
+                <img src="../static/images/logo-portfolio.png" alt="Venkat Chavan N" class="nav-logo-img">
+                <span>Venkat Chavan N</span>
             </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="../index.html#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="../index.html#research" class="nav-link">Research</a></li>
+                <li class="nav-item"><a href="../index.html#publications" class="nav-link">Publications</a></li>
                 <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="../hobby.html" class="nav-link">Engg-Projects</a></li>
                 <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Project Hero Section -->
     <section class="project-hero">
         <div class="container">
-            <div class="project-hero-content">
-                <div class="project-breadcrumb">
-                    <a href="../index.html" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <a href="../index.html#projects" class="breadcrumb-link">Projects</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">safe-evidence-redactor — Privacy-First Redaction Library, CLI &amp; MCP Server</span>
-                </div>
-                <h1 class="project-hero-title">safe-evidence-redactor — Privacy-First Redaction Library, CLI &amp; MCP Server</h1>
-                <p class="project-hero-subtitle">Privacy-first redaction library, CLI, and MCP server for security reports, logs, AI outputs, and bug reports. Redacts emails, phones, IPs, JWTs, Bearer tokens, vendor API keys, Aadhaar/PAN/UPI, and sensitive URL params — fully offline, zero telemetry.</p>
-                <div class="project-hero-links">
-                    
-                    <a href="https://github.com/Venkatchavan/safe-evidence-redactor" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                    
-                    
-                    <a href="https://github.com/Venkatchavan/safe-evidence-redactor/archive/refs/heads/main.zip" target="_blank" class="btn btn-secondary">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    
-                </div>
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                
+                <a href="../index.html#projects">Research Projects</a>
+                
+                <span class="breadcrumb-separator">/</span>
+                <span>safe-evidence-redactor: Privacy-First Redaction Library and MCP Server</span>
+            </div>
+            <h1 class="project-hero-title">safe-evidence-redactor: Privacy-First Redaction Library and MCP Server</h1>
+            <p class="project-hero-subtitle">Defensive AI tooling for offline PII redaction in security reports, logs, and AI outputs, exposed as a library, CLI, and MCP server.</p>
+            
+            <div class="project-tags">
+                <span class="project-tag">Privacy</span><span class="project-tag">Defensive AI</span><span class="project-tag">PII Redaction</span><span class="project-tag">MCP</span>
+            </div>
+            
+            <div class="project-hero-links" style="margin-top: 16px;">
+                <a href="https://github.com/Venkatchavan/safe-evidence-redactor" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a>
+                
+                
+                
             </div>
         </div>
     </section>
 
-    <!-- Project Details -->
-    <section class="project-details">
+    <section>
         <div class="container">
             <div class="project-content-grid">
-                <!-- Left Column: Overview, Features, Challenges -->
-                <div class="project-main-content">
+                <div>
                     <div class="project-section">
-                        <h2 class="project-section-title">Project Overview</h2>
-                        <p>A library, CLI (safe-redact), and MCP server (safe-redact-mcp) that remove sensitive evidence from text and JSON while preserving enough context to keep the output debuggable. Walks nested JSON, preserves keys and structure, redacts only values, and reports JSON paths. Three modes (minimal, balanced, strict) trade off coverage vs signal. Allowlists support specific domains, JSON field names, regex patterns, and entire categories. The MCP server exposes redact_text and redact_json tools so any MCP-aware client (Claude Desktop, MCP Inspector, agent frameworks) can call the redactor as a tool over stdio. Fully offline — no network, no telemetry. Auto-detected by phish-triage-mcp for stronger PII redaction.</p>
+                        <h2 class="project-section-title">Overview</h2>
+                        <p>Library, CLI, and MCP server that remove sensitive evidence from text and JSON while preserving enough context for debugging. Walks nested JSON, redacts only values, and reports JSON paths. Supports three modes (minimal, balanced, strict) and category-, domain-, and field-level allowlists. Fully offline with zero telemetry. Used by phish-triage-mcp for stronger PII redaction.</p>
                     </div>
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Key Features</h2>
+                        <h2 class="project-section-title">Methods</h2>
+                        <p>Pattern-based redaction with category allowlists, JSON path tracking, MCP integration.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Evaluation</h2>
+                        <p>Internal pattern-coverage benchmarks; integrated and validated by phish-triage-mcp.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Key Contributions</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Categories: AUTH_HEADER, COOKIE, BEARER, JWT, API_KEY (vendor), URL_SECRET, EMAIL, UPI, AADHAAR, PAN, PHONE, IPv4/IPv6, GENERIC_SECRET</span>
-                            </li>
+                            <li>Redaction categories: AUTH_HEADER, BEARER, JWT, API_KEY, EMAIL, UPI, PII, IPs.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Three modes (minimal / balanced / strict) and allowlists for domains, field names, regex patterns, and categories</span>
-                            </li>
+                            <li>Three redaction modes (minimal / balanced / strict) with allowlists.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>JSON walker preserves keys and shape, redacts values, reports affected JSON paths and per-category stats</span>
-                            </li>
+                            <li>JSON walker that preserves structure and reports redacted paths.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>CLI (safe-redact) supports files, stdin, --json, --stats, --mode, --allow-domain, --allow-field</span>
-                            </li>
+                            <li>CLI (safe-redact) and MCP server (safe-redact-mcp) over stdio.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Built-in MCP server (safe-redact-mcp) with redact_text and redact_json tools — fully offline</span>
-                            </li>
+                            <li>Fully offline, no telemetry, no network calls at runtime.</li>
                             
                         </ul>
                     </div>
+                    
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Technical Challenges</h2>
+                        <h2 class="project-section-title">Research &amp; Engineering Challenges</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Designing redaction patterns precise enough to avoid mangling debuggable context (e.g. preserving safe URL paths while redacting token query params)</span>
-                            </li>
+                            <li>Designing redaction that preserves debuggability without leaking secrets.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Building a JSON walker that reports stable paths through arrays and nested objects without copying large payloads</span>
-                            </li>
+                            <li>Building a JSON walker reporting stable paths through nested arrays/objects.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Curating an Indian-context category set (Aadhaar, PAN, UPI, Indian phone formats) alongside vendor API key shapes</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Shipping the same engine as a library, a CLI, and an MCP server from one TypeScript codebase with zero runtime dependencies</span>
-                            </li>
+                            <li>Curating Indian-context categories alongside global vendor API key shapes.</li>
                             
                         </ul>
                     </div>
+                    
                 </div>
 
-                <!-- Right Column: Tech Stack, Status -->
                 <aside class="project-sidebar">
+                    
                     <div class="sidebar-widget">
                         <h3 class="widget-title">Tech Stack</h3>
                         <div class="tech-tags">
                             
                             <span class="tech-tag">TypeScript</span>
                             
-                            <span class="tech-tag">Node.js 18+</span>
+                            <span class="tech-tag">Node.js</span>
                             
                             <span class="tech-tag">MCP SDK</span>
                             
                             <span class="tech-tag">GitHub Packages</span>
                             
-                            <span class="tech-tag">Zero runtime dependencies</span>
-                            
                         </div>
                     </div>
+                    
+                    
                     <div class="sidebar-widget">
-                        <h3 class="widget-title">Project Status</h3>
-                        <span class="status-badge status-released-—-v0.1.2">
-                            Released — v0.1.2
-                        </span>
+                        <h3 class="widget-title">Status</h3>
+                        <span class="status-badge">Released: v0.1.2</span>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Author</h3>
+                        <p style="font-size: 0.92rem;">Venkat Chavan N<br>
+                        <a href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com</a></p>
                     </div>
                 </aside>
-            </div>
-
-            <!-- Project Gallery -->
-            <div class="project-section">
-                <h2 class="project-section-title">Project Gallery</h2>
-                <div class="project-gallery">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Project screenshots and diagrams will be added here.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Venkat Chavan N. All rights reserved.</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Venkat Chavan N.</p>
+            <div class="footer-social">
+                <a href="https://github.com/Venkatchavan" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:venkat.chavan.n@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="../static/js/app.js"></script>
-    <script src="../static/js/static-site.js"></script>
+    <script src="../static/js/academic.js"></script>
 </body>
 </html>

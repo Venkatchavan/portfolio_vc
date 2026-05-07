@@ -38,7 +38,13 @@ def project_detail(project_id):
         'status': project.status,
         'github': project.github,
         'demo': project.demo,
-        'image': project.image
+        'image': project.image,
+        'category': project.category,
+        'tags': project.tags,
+        'methods': project.methods,
+        'evaluation': project.evaluation,
+        'paper': project.paper,
+        'report': project.report,
     }
     
     return render_template('project_detail.html', 

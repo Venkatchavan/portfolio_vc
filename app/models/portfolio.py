@@ -1,14 +1,14 @@
 """
 Portfolio data model.
-Contains all portfolio-related data including personal info, experience, projects, and education.
+Academic research portfolio for Venkat Chavan N.
 """
 
-from dataclasses import dataclass
-from typing import List, Dict, Any
+from dataclasses import dataclass, field
+from typing import List, Dict, Any, Optional
+
 
 @dataclass
 class PersonalInfo:
-    """Personal information data model."""
     name: str
     headline: str
     location: str
@@ -19,18 +19,19 @@ class PersonalInfo:
     google_scholar: str
     profile_image: str
     bio: str
+    cv_url: str = ''
+
 
 @dataclass
 class Experience:
-    """Work experience data model."""
     title: str
     company: str
     period: str
     responsibilities: List[str]
 
+
 @dataclass
 class Project:
-    """Project data model."""
     id: str
     title: str
     description: str
@@ -42,17 +43,26 @@ class Project:
     github: str
     demo: str
     image: str
+    # Research-portfolio additions
+    category: str = 'research'  # 'research' | 'archive'
+    tags: List[str] = field(default_factory=list)
+    methods: str = ''
+    evaluation: str = ''
+    paper: str = ''
+    report: str = ''
+
 
 @dataclass
 class Education:
-    """Education data model."""
     degree: str
     institution: str
     period: str
+    thesis_title: str = ''
+    thesis_grade: str = ''
+
 
 @dataclass
 class Publication:
-    """Publication data model."""
     authors: str
     title: str
     venue: str
@@ -61,19 +71,59 @@ class Publication:
     keywords: List[str]
     badge: str = ''
     url: str = ''
+    status: str = 'Published'  # Published | Accepted | Submitted | Under review | Submitted (Yet to be Published)
+    summary: str = ''
+    github: str = ''
+
+
+@dataclass
+class ResearchInterest:
+    title: str
+    focus: str
+
+
+@dataclass
+class TeachingItem:
+    role: str
+    venue: str
+    period: str
+    description: str
+
 
 @dataclass
 class PortfolioData:
-    """Complete portfolio data model."""
     personal_info: PersonalInfo
     skills: Dict[str, List[str]]
     experience: List[Experience]
     projects: List[Project]
     education: List[Education]
     publications: List[Publication]
-    
+    research_interests: List[ResearchInterest] = field(default_factory=list)
+    research_agenda: str = ''
+    teaching: List[TeachingItem] = field(default_factory=list)
+
+    def selected_projects(self) -> List[Project]:
+        return [p for p in self.projects if p.category == 'research']
+
+    def archive_projects(self) -> List[Project]:
+        return [p for p in self.projects if p.category != 'research']
+
+    def hobby_projects(self) -> List[Project]:
+        return self.archive_projects()
+
     def to_dict(self) -> Dict[str, Any]:
-        """Convert portfolio data to dictionary format for template rendering."""
+        def proj_to_dict(p: Project) -> Dict[str, Any]:
+            return {
+                'id': p.id, 'title': p.title, 'description': p.description,
+                'detailed_description': p.detailed_description,
+                'technologies': p.technologies, 'features': p.features,
+                'challenges': p.challenges, 'status': p.status,
+                'github': p.github, 'demo': p.demo, 'image': p.image,
+                'category': p.category, 'tags': p.tags,
+                'methods': p.methods, 'evaluation': p.evaluation,
+                'paper': p.paper, 'report': p.report,
+            }
+
         return {
             'name': self.personal_info.name,
             'headline': self.personal_info.headline,
@@ -85,53 +135,41 @@ class PortfolioData:
             'google_scholar': self.personal_info.google_scholar,
             'profile_image': self.personal_info.profile_image,
             'bio': self.personal_info.bio,
+            'cv_url': self.personal_info.cv_url,
             'skills': self.skills,
             'experience': [
-                {
-                    'title': exp.title,
-                    'company': exp.company,
-                    'period': exp.period,
-                    'responsibilities': exp.responsibilities
-                } for exp in self.experience
+                {'title': e.title, 'company': e.company, 'period': e.period,
+                 'responsibilities': e.responsibilities}
+                for e in self.experience
             ],
-            'projects': [
-                {
-                    'id': proj.id,
-                    'title': proj.title,
-                    'description': proj.description,
-                    'detailed_description': proj.detailed_description,
-                    'technologies': proj.technologies,
-                    'features': proj.features,
-                    'challenges': proj.challenges,
-                    'status': proj.status,
-                    'github': proj.github,
-                    'demo': proj.demo,
-                    'image': proj.image
-                } for proj in self.projects
-            ],
+            'projects': [proj_to_dict(p) for p in self.projects],
+            'selected_projects': [proj_to_dict(p) for p in self.selected_projects()],
+            'archive_projects': [proj_to_dict(p) for p in self.archive_projects()],
+            'hobby_projects': [proj_to_dict(p) for p in self.archive_projects()],
             'education': [
-                {
-                    'degree': edu.degree,
-                    'institution': edu.institution,
-                    'period': edu.period
-                } for edu in self.education
+                {'degree': e.degree, 'institution': e.institution, 'period': e.period,
+                 'thesis_title': e.thesis_title, 'thesis_grade': e.thesis_grade}
+                for e in self.education
             ],
             'publications': [
-                {
-                    'authors': pub.authors,
-                    'title': pub.title,
-                    'venue': pub.venue,
-                    'year': pub.year,
-                    'doi': pub.doi,
-                    'keywords': pub.keywords,
-                    'badge': pub.badge,
-                    'url': pub.url
-                } for pub in self.publications
-            ]
+                {'authors': p.authors, 'title': p.title, 'venue': p.venue,
+                 'year': p.year, 'doi': p.doi, 'keywords': p.keywords,
+                 'badge': p.badge, 'url': p.url, 'status': p.status,
+                 'summary': p.summary, 'github': p.github}
+                for p in self.publications
+            ],
+            'research_interests': [
+                {'title': r.title, 'focus': r.focus} for r in self.research_interests
+            ],
+            'research_agenda': self.research_agenda,
+            'teaching': [
+                {'role': t.role, 'venue': t.venue, 'period': t.period,
+                 'description': t.description}
+                for t in self.teaching
+            ],
         }
-    
-    def get_project_by_id(self, project_id: str) -> Project:
-        """Get a specific project by its ID."""
+
+    def get_project_by_id(self, project_id: str) -> Optional[Project]:
         for project in self.projects:
             if project.id == project_id:
                 return project

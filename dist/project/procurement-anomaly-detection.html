@@ -3,141 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procurement Anomaly Detection - Venkat Chavan N</title>
-    
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
-    
-    <link rel="stylesheet" href="../static/css/futuristic.css">
-    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <title>Procurement Anomaly Detection: Venkat Chavan N</title>
+    <meta name="description" content="Applied ML system for anomaly detection in public procurement data, combining unsupervised methods with explainability for civic transparency.">
+    <link rel="icon" type="image/png" href="../static/images/logo-portfolio.png">
+    <link rel="stylesheet" href="../static/css/academic.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('vc-theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container container">
+        <div class="nav-container">
             <a href="../index.html" class="nav-logo">
-                <img src="../static/images/logo-portfolio.png" 
-                     alt="Venkat Chavan N Logo" 
-                     class="nav-logo-img">
+                <img src="../static/images/logo-portfolio.png" alt="Venkat Chavan N" class="nav-logo-img">
+                <span>Venkat Chavan N</span>
             </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="../index.html#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="../index.html#research" class="nav-link">Research</a></li>
+                <li class="nav-item"><a href="../index.html#publications" class="nav-link">Publications</a></li>
                 <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="../hobby.html" class="nav-link">Engg-Projects</a></li>
                 <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Project Hero Section -->
     <section class="project-hero">
         <div class="container">
-            <div class="project-hero-content">
-                <div class="project-breadcrumb">
-                    <a href="../index.html" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <a href="../index.html#projects" class="breadcrumb-link">Projects</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">Procurement Anomaly Detection</span>
-                </div>
-                <h1 class="project-hero-title">Procurement Anomaly Detection</h1>
-                <p class="project-hero-subtitle">End-to-end data pipeline for analyzing public procurement data to promote transparency, detect anomalies with ML, and support anti-corruption efforts using Finnish open data.</p>
-                <div class="project-hero-links">
-                    
-                    <a href="https://github.com/Venkatchavan/Procurement_Anomaly_Detection" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                    
-                    
-                </div>
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                
+                <a href="../index.html#projects">Research Projects</a>
+                
+                <span class="breadcrumb-separator">/</span>
+                <span>Procurement Anomaly Detection</span>
+            </div>
+            <h1 class="project-hero-title">Procurement Anomaly Detection</h1>
+            <p class="project-hero-subtitle">Applied ML system for anomaly detection in public procurement data, combining unsupervised methods with explainability for civic transparency.</p>
+            
+            <div class="project-tags">
+                <span class="project-tag">Anomaly Detection</span><span class="project-tag">Explainability</span><span class="project-tag">Civic AI</span><span class="project-tag">Public Sector</span>
+            </div>
+            
+            <div class="project-hero-links" style="margin-top: 16px;">
+                <a href="https://github.com/Venkatchavan/Procurement_Anomaly_Detection" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a>
+                
+                
+                
             </div>
         </div>
     </section>
 
-    <!-- Project Details -->
-    <section class="project-details">
+    <section>
         <div class="container">
             <div class="project-content-grid">
-                <!-- Left Column: Overview, Features, Challenges -->
-                <div class="project-main-content">
+                <div>
                     <div class="project-section">
-                        <h2 class="project-section-title">Project Overview</h2>
-                        <p>An end-to-end pipeline for analyzing public procurement data to promote transparency, detect anomalies, and support anti-corruption efforts. Using Finnish public procurement data from avoindata.fi as a reference implementation, the system delivers interactive KPI dashboards via Streamlit, anomaly detection using Isolation Forest and Local Outlier Factor (LOF), SHAP-based explainability for audit support, and reproducible analysis with dbt transformations. Aligned with EU Directive 2014/24/EU for procurement transparency.</p>
+                        <h2 class="project-section-title">Overview</h2>
+                        <p>End-to-end pipeline for analysing public procurement data using Finnish open data from avoindata.fi. Combines Isolation Forest and Local Outlier Factor for anomaly detection with SHAP-based explainability and rule-based audit reports. Includes a Streamlit KPI dashboard and dbt-based reproducible transformations, aligned with EU Directive 2014/24/EU.</p>
                     </div>
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Key Features</h2>
+                        <h2 class="project-section-title">Methods</h2>
+                        <p>Isolation Forest, LOF, SHAP, rule-based auditing, dbt transformations.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Evaluation</h2>
+                        <p>Empirical evaluation on Finnish procurement data with audit-aligned thresholds.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Key Contributions</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Interactive KPI dashboard: contract value distributions, vendor concentration, sustainability indicators via Streamlit</span>
-                            </li>
+                            <li>Isolation Forest and LOF anomaly detection with configurable contamination.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Anomaly detection: Isolation Forest for global outliers and LOF for local anomalies with configurable contamination rates</span>
-                            </li>
+                            <li>SHAP-based explainability and rule-based audit explanations.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Explainability: SHAP values, rule-based explanations, feature importance analysis for audit-ready reports</span>
-                            </li>
+                            <li>Interactive KPI dashboard for vendor concentration and contract distributions.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>EU compliance: aligned with EU Directive 2014/24/EU for public procurement transparency</span>
-                            </li>
+                            <li>Reproducible pipeline via dbt and Makefile orchestration.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Reproducible pipeline: dbt transformations, Makefile automation, modular source code architecture</span>
-                            </li>
+                            <li>Aligned with EU Directive 2014/24/EU for procurement transparency.</li>
                             
                         </ul>
                     </div>
+                    
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Technical Challenges</h2>
+                        <h2 class="project-section-title">Research &amp; Engineering Challenges</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Handling incomplete and non-standardized public procurement datasets across EU sources</span>
-                            </li>
+                            <li>Tuning unsupervised thresholds to minimise false positives in audit settings.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Tuning unsupervised anomaly detection thresholds to minimize false positives</span>
-                            </li>
+                            <li>Building interpretable SHAP explanations for non-technical auditors.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Building interpretable SHAP explanations for non-technical auditors and policymakers</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Designing adaptable pipeline for multiple EU procurement data formats (TED, national portals)</span>
-                            </li>
+                            <li>Adapting the pipeline to heterogeneous EU procurement data formats.</li>
                             
                         </ul>
                     </div>
+                    
                 </div>
 
-                <!-- Right Column: Tech Stack, Status -->
                 <aside class="project-sidebar">
+                    
                     <div class="sidebar-widget">
                         <h3 class="widget-title">Tech Stack</h3>
                         <div class="tech-tags">
                             
-                            <span class="tech-tag">Python 3.9+</span>
+                            <span class="tech-tag">Python</span>
                             
                             <span class="tech-tag">Streamlit</span>
                             
@@ -151,43 +145,36 @@
                             
                             <span class="tech-tag">dbt</span>
                             
-                            <span class="tech-tag">Pandas</span>
-                            
-                            <span class="tech-tag">Makefile</span>
-                            
                         </div>
                     </div>
+                    
+                    
                     <div class="sidebar-widget">
-                        <h3 class="widget-title">Project Status</h3>
-                        <span class="status-badge status-completed">
-                            Completed
-                        </span>
+                        <h3 class="widget-title">Status</h3>
+                        <span class="status-badge">Completed</span>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Author</h3>
+                        <p style="font-size: 0.92rem;">Venkat Chavan N<br>
+                        <a href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com</a></p>
                     </div>
                 </aside>
-            </div>
-
-            <!-- Project Gallery -->
-            <div class="project-section">
-                <h2 class="project-section-title">Project Gallery</h2>
-                <div class="project-gallery">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Project screenshots and diagrams will be added here.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Venkat Chavan N. All rights reserved.</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Venkat Chavan N.</p>
+            <div class="footer-social">
+                <a href="https://github.com/Venkatchavan" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:venkat.chavan.n@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="../static/js/app.js"></script>
-    <script src="../static/js/static-site.js"></script>
+    <script src="../static/js/academic.js"></script>
 </body>
 </html>

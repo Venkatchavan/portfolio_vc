@@ -3,141 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SocialMedia AD Agency — AI Ad Creation SaaS - Venkat Chavan N</title>
-    
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
-    
-    <link rel="stylesheet" href="../static/css/futuristic.css">
-    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <title>SocialMedia AD Agency: AI Ad Creation SaaS: Venkat Chavan N</title>
+    <meta name="description" content="Production-grade SaaS for automated ad creation using CrewAI multi-agent orchestration with seven specialised agents.">
+    <link rel="icon" type="image/png" href="../static/images/logo-portfolio.png">
+    <link rel="stylesheet" href="../static/css/academic.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('vc-theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container container">
+        <div class="nav-container">
             <a href="../index.html" class="nav-logo">
-                <img src="../static/images/logo-portfolio.png" 
-                     alt="Venkat Chavan N Logo" 
-                     class="nav-logo-img">
+                <img src="../static/images/logo-portfolio.png" alt="Venkat Chavan N" class="nav-logo-img">
+                <span>Venkat Chavan N</span>
             </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="../index.html#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="../index.html#research" class="nav-link">Research</a></li>
+                <li class="nav-item"><a href="../index.html#publications" class="nav-link">Publications</a></li>
                 <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="../hobby.html" class="nav-link">Engg-Projects</a></li>
                 <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Project Hero Section -->
     <section class="project-hero">
         <div class="container">
-            <div class="project-hero-content">
-                <div class="project-breadcrumb">
-                    <a href="../index.html" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <a href="../index.html#projects" class="breadcrumb-link">Projects</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">SocialMedia AD Agency — AI Ad Creation SaaS</span>
-                </div>
-                <h1 class="project-hero-title">SocialMedia AD Agency — AI Ad Creation SaaS</h1>
-                <p class="project-hero-subtitle">Production-grade SaaS platform for automated affiliate ad creation and multi-platform publishing using CrewAI multi-agent orchestration with 7 specialized AI agents.</p>
-                <div class="project-hero-links">
-                    
-                    <a href="https://github.com/Venkatchavan/SocialMedia_AD_Agency" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                    
-                    
-                </div>
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                
+                <a href="../hobby.html">Engg-Projects</a>
+                
+                <span class="breadcrumb-separator">/</span>
+                <span>SocialMedia AD Agency: AI Ad Creation SaaS</span>
+            </div>
+            <h1 class="project-hero-title">SocialMedia AD Agency: AI Ad Creation SaaS</h1>
+            <p class="project-hero-subtitle">Production-grade SaaS for automated ad creation using CrewAI multi-agent orchestration with seven specialised agents.</p>
+            
+            <div class="project-tags">
+                <span class="project-tag">Multi-Agent</span><span class="project-tag">SaaS</span><span class="project-tag">Engineering</span>
+            </div>
+            
+            <div class="project-hero-links" style="margin-top: 16px;">
+                <a href="https://github.com/Venkatchavan/SocialMedia_AD_Agency" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a>
+                
+                
+                
             </div>
         </div>
     </section>
 
-    <!-- Project Details -->
-    <section class="project-details">
+    <section>
         <div class="container">
             <div class="project-content-grid">
-                <!-- Left Column: Overview, Features, Challenges -->
-                <div class="project-main-content">
+                <div>
                     <div class="project-section">
-                        <h2 class="project-section-title">Project Overview</h2>
-                        <p>A production-grade SaaS platform that automates the entire affiliate ad creation workflow using CrewAI multi-agent orchestration. Seven specialized AI agents handle market research, content strategy, copywriting, visual design, compliance review, A/B testing, and platform publishing. Built with FastAPI REST API, PostgreSQL with Alembic migrations, Redis caching, multi-tenancy, Stripe billing, and support for multiple LLM providers (OpenAI, Gemini, Anthropic, Mistral). Achieves 74% test coverage across 430 tests.</p>
+                        <h2 class="project-section-title">Overview</h2>
+                        <p>SaaS platform that automates affiliate-ad creation via CrewAI. Seven agents handle market research, content strategy, copywriting, visual design, compliance review, A/B testing, and platform publishing. Built with FastAPI, PostgreSQL with Alembic, Redis, multi-tenancy, Stripe billing, and multi-LLM support.</p>
                     </div>
 
+                    
+
+                    
+
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Key Features</h2>
+                        <h2 class="project-section-title">Key Contributions</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Multi-agent orchestration: 7 CrewAI agents (Market Researcher, Content Strategist, Copywriter, Visual Designer, Compliance Reviewer, A/B Tester, Platform Publisher)</span>
-                            </li>
+                            <li>Seven CrewAI agents covering the affiliate-ad creation workflow.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Multi-LLM support: OpenAI GPT-4, Google Gemini, Anthropic Claude, Mistral for flexible AI backends</span>
-                            </li>
+                            <li>Multi-LLM support across OpenAI, Gemini, Anthropic, and Mistral.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Full SaaS infrastructure: multi-tenancy, Stripe billing, JWT auth, rate limiting, RBAC</span>
-                            </li>
+                            <li>Full SaaS infrastructure with multi-tenancy, billing, and RBAC.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Compliance engine: automated regulatory checks across platforms (Meta, Google, TikTok)</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Production-ready: FastAPI REST API, PostgreSQL with Alembic, Redis caching, Docker, 430 tests at 74% coverage</span>
-                            </li>
+                            <li>Compliance engine for cross-platform regulatory checks.</li>
                             
                         </ul>
                     </div>
+                    
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Technical Challenges</h2>
+                        <h2 class="project-section-title">Research &amp; Engineering Challenges</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Orchestrating 7 autonomous AI agents with inter-agent dependency management</span>
-                            </li>
+                            <li>Orchestrating multiple autonomous agents with inter-agent dependencies.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Ensuring ad compliance across multiple platform policies simultaneously</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Building multi-tenant SaaS architecture with secure data isolation</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Integrating and managing multiple LLM providers with fallback strategies</span>
-                            </li>
+                            <li>Building secure multi-tenant SaaS architecture.</li>
                             
                         </ul>
                     </div>
+                    
                 </div>
 
-                <!-- Right Column: Tech Stack, Status -->
                 <aside class="project-sidebar">
+                    
                     <div class="sidebar-widget">
                         <h3 class="widget-title">Tech Stack</h3>
                         <div class="tech-tags">
                             
-                            <span class="tech-tag">Python 3.12+</span>
+                            <span class="tech-tag">Python</span>
                             
                             <span class="tech-tag">CrewAI</span>
                             
@@ -147,53 +127,38 @@
                             
                             <span class="tech-tag">Redis</span>
                             
-                            <span class="tech-tag">OpenAI</span>
-                            
-                            <span class="tech-tag">Google Gemini</span>
-                            
-                            <span class="tech-tag">Anthropic</span>
-                            
-                            <span class="tech-tag">Mistral</span>
-                            
-                            <span class="tech-tag">Docker</span>
-                            
                             <span class="tech-tag">Stripe</span>
-                            
-                            <span class="tech-tag">Alembic</span>
                             
                         </div>
                     </div>
+                    
+                    
                     <div class="sidebar-widget">
-                        <h3 class="widget-title">Project Status</h3>
-                        <span class="status-badge status-completed">
-                            Completed
-                        </span>
+                        <h3 class="widget-title">Status</h3>
+                        <span class="status-badge">Completed</span>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Author</h3>
+                        <p style="font-size: 0.92rem;">Venkat Chavan N<br>
+                        <a href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com</a></p>
                     </div>
                 </aside>
-            </div>
-
-            <!-- Project Gallery -->
-            <div class="project-section">
-                <h2 class="project-section-title">Project Gallery</h2>
-                <div class="project-gallery">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Project screenshots and diagrams will be added here.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Venkat Chavan N. All rights reserved.</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Venkat Chavan N.</p>
+            <div class="footer-social">
+                <a href="https://github.com/Venkatchavan" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:venkat.chavan.n@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="../static/js/app.js"></script>
-    <script src="../static/js/static-site.js"></script>
+    <script src="../static/js/academic.js"></script>
 </body>
 </html>

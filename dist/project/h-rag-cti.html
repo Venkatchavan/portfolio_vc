@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T20 Decision Intelligence Platform (IPL): Venkat Chavan N</title>
-    <meta name="description" content="Analyst-grade decision intelligence platform on IPL 2008–2025 ball-by-ball data with 12 custom metrics, calibrated ML models, and an offline RL strategy lab.">
+    <title>H-RAG for Cyber Threat Intelligence: Venkat Chavan N</title>
+    <meta name="description" content="A hierarchical retrieval-augmented generation system for cyber threat intelligence analysis, designed to preserve document structure across executive summaries, technical details, and atomic evidence units.">
     <link rel="icon" type="image/png" href="../static/images/logo-portfolio.png">
     <link rel="stylesheet" href="../static/css/academic.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -46,21 +46,21 @@
                 <a href="../index.html">Home</a>
                 <span class="breadcrumb-separator">/</span>
                 
-                <a href="../hobby.html">Engg-Projects</a>
+                <a href="../index.html#projects">Research Projects</a>
                 
                 <span class="breadcrumb-separator">/</span>
-                <span>T20 Decision Intelligence Platform (IPL)</span>
+                <span>H-RAG for Cyber Threat Intelligence</span>
             </div>
-            <h1 class="project-hero-title">T20 Decision Intelligence Platform (IPL)</h1>
-            <p class="project-hero-subtitle">Analyst-grade decision intelligence platform on IPL 2008–2025 ball-by-ball data with 12 custom metrics, calibrated ML models, and an offline RL strategy lab.</p>
+            <h1 class="project-hero-title">H-RAG for Cyber Threat Intelligence</h1>
+            <p class="project-hero-subtitle">A hierarchical retrieval-augmented generation system for cyber threat intelligence analysis, designed to preserve document structure across executive summaries, technical details, and atomic evidence units.</p>
             
             <div class="project-tags">
-                <span class="project-tag">Applied ML</span><span class="project-tag">Sports Analytics</span><span class="project-tag">Offline RL</span>
+                <span class="project-tag">RAG</span><span class="project-tag">Knowledge Graphs</span><span class="project-tag">CTI</span><span class="project-tag">LLM Evaluation</span><span class="project-tag">Hallucination Control</span>
             </div>
             
             <div class="project-hero-links" style="margin-top: 16px;">
-                <a href="https://github.com/Venkatchavan/IPL_DTS" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a>
-                <a href="https://ipl-ntelligence-system.streamlit.app/" class="btn btn-secondary" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Live demo</a>
+                <a href="https://github.com/Venkatchavan" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a>
+                
                 
                 
             </div>
@@ -73,11 +73,21 @@
                 <div>
                     <div class="project-section">
                         <h2 class="project-section-title">Overview</h2>
-                        <p>A decision-intelligence platform built on IPL ball-by-ball data. Computes 12 custom per-delivery metrics, trains four calibrated XGBoost models (expected final score, chase win probability, ball-level wicket probability, phase collapse risk) with time-aware splits, and includes an offline RL strategy lab using Fitted Q-Iteration. Deployed as a 10-tab Streamlit application.</p>
+                        <p>Hierarchical RAG pipeline for analyst-grade cyber threat intelligence reasoning. Combines structure-preserving document segmentation, FAISS-based vector retrieval, a lightweight CTI knowledge graph, and local LLM inference, with citation-grounded response generation and explicit hallucination controls. The system is designed to separate evidence-grounded answers from speculative reasoning, and to make the chain of retrieved evidence inspectable.</p>
                     </div>
 
                     
+                    <div class="project-section">
+                        <h2 class="project-section-title">Methods</h2>
+                        <p>FAISS IVF, Sentence-Transformers, hierarchical chunking, lightweight CTI knowledge graph, local LLM inference, citation-grounded generation.</p>
+                    </div>
+                    
 
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Evaluation</h2>
+                        <p>Internal evaluation across factual accuracy, citation accuracy, retrieval performance, hallucination rate, and latency.</p>
+                    </div>
                     
 
                     
@@ -85,13 +95,15 @@
                         <h2 class="project-section-title">Key Contributions</h2>
                         <ul class="feature-list">
                             
-                            <li>12 custom per-delivery metrics including WPA, ESA, and Pressure Index.</li>
+                            <li>Hierarchical document segmentation across executive, technical, and atomic evidence layers.</li>
                             
-                            <li>Four calibrated XGBoost models with time-aware train/val/test splits.</li>
+                            <li>FAISS IVF vector retrieval combined with knowledge-graph traversal.</li>
                             
-                            <li>Offline RL Strategy Lab via Fitted Q-Iteration.</li>
+                            <li>Local LLM inference with citation-grounded response generation.</li>
                             
-                            <li>10-tab Streamlit dashboard for analyst-style exploration.</li>
+                            <li>Explicit evidence linking to reduce hallucination in CTI reasoning.</li>
+                            
+                            <li>Designed for analyst-grade workflows rather than end-user chat.</li>
                             
                         </ul>
                     </div>
@@ -102,11 +114,11 @@
                         <h2 class="project-section-title">Research &amp; Engineering Challenges</h2>
                         <ul class="feature-list">
                             
-                            <li>Reconstructing 30+ ball-by-ball state fields per delivery.</li>
+                            <li>Preserving structural information across heterogeneous CTI document formats.</li>
                             
-                            <li>Designing time-aware splits to prevent leakage across seasons.</li>
+                            <li>Balancing retrieval recall with citation precision for evidence-grounded answers.</li>
                             
-                            <li>Communicating limits of batch RL recommendations honestly.</li>
+                            <li>Designing evaluation that distinguishes hallucinations from defensible inference.</li>
                             
                         </ul>
                     </div>
@@ -121,13 +133,17 @@
                             
                             <span class="tech-tag">Python</span>
                             
-                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">FAISS IVF</span>
                             
-                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Sentence-Transformers</span>
                             
-                            <span class="tech-tag">Offline RL</span>
+                            <span class="tech-tag">Ollama / Local LLM</span>
                             
-                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Knowledge Graphs</span>
+                            
+                            <span class="tech-tag">Hierarchical chunking</span>
+                            
+                            <span class="tech-tag">RAG</span>
                             
                         </div>
                     </div>
@@ -135,7 +151,7 @@
                     
                     <div class="sidebar-widget">
                         <h3 class="widget-title">Status</h3>
-                        <span class="status-badge">Completed</span>
+                        <span class="status-badge">Accepted at international conference, 2026</span>
                     </div>
                     
                     <div class="sidebar-widget">

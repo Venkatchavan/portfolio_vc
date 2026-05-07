@@ -3,137 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divine Insights: NLP Analysis of the Bhagavad Gita - Venkat Chavan N</title>
-    
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
-    
-    <link rel="stylesheet" href="../static/css/futuristic.css">
-    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <title>Divine Insights: NLP Analysis of the Bhagavad Gita: Venkat Chavan N</title>
+    <meta name="description" content="Sentiment analysis and RAG-based Q&amp;A on the Bhagavad Gita.">
+    <link rel="icon" type="image/png" href="../static/images/logo-portfolio.png">
+    <link rel="stylesheet" href="../static/css/academic.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('vc-theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container container">
+        <div class="nav-container">
             <a href="../index.html" class="nav-logo">
-                <img src="../static/images/logo-portfolio.png" 
-                     alt="Venkat Chavan N Logo" 
-                     class="nav-logo-img">
+                <img src="../static/images/logo-portfolio.png" alt="Venkat Chavan N" class="nav-logo-img">
+                <span>Venkat Chavan N</span>
             </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="../index.html#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="../index.html#research" class="nav-link">Research</a></li>
+                <li class="nav-item"><a href="../index.html#publications" class="nav-link">Publications</a></li>
                 <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="../hobby.html" class="nav-link">Engg-Projects</a></li>
                 <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Project Hero Section -->
     <section class="project-hero">
         <div class="container">
-            <div class="project-hero-content">
-                <div class="project-breadcrumb">
-                    <a href="../index.html" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <a href="../index.html#projects" class="breadcrumb-link">Projects</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">Divine Insights: NLP Analysis of the Bhagavad Gita</span>
-                </div>
-                <h1 class="project-hero-title">Divine Insights: NLP Analysis of the Bhagavad Gita</h1>
-                <p class="project-hero-subtitle">Conducted NLP analysis using VADER for sentiment analysis and a TF-IDF based Q&amp;A system. Developed a RAG-based chatbot powered by Mistral 7B and LangChain.</p>
-                <div class="project-hero-links">
-                    
-                    
-                </div>
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                
+                <a href="../hobby.html">Engg-Projects</a>
+                
+                <span class="breadcrumb-separator">/</span>
+                <span>Divine Insights: NLP Analysis of the Bhagavad Gita</span>
+            </div>
+            <h1 class="project-hero-title">Divine Insights: NLP Analysis of the Bhagavad Gita</h1>
+            <p class="project-hero-subtitle">Sentiment analysis and RAG-based Q&amp;A on the Bhagavad Gita.</p>
+            
+            <div class="project-tags">
+                <span class="project-tag">NLP</span><span class="project-tag">Applied ML</span>
+            </div>
+            
+            <div class="project-hero-links" style="margin-top: 16px;">
+                
+                
+                
+                
             </div>
         </div>
     </section>
 
-    <!-- Project Details -->
-    <section class="project-details">
+    <section>
         <div class="container">
             <div class="project-content-grid">
-                <!-- Left Column: Overview, Features, Challenges -->
-                <div class="project-main-content">
+                <div>
                     <div class="project-section">
-                        <h2 class="project-section-title">Project Overview</h2>
-                        <p>An innovative Natural Language Processing project that performs comprehensive analysis of the Bhagavad Gita, one of the most important spiritual texts. The project combines traditional NLP techniques with modern AI to create an intelligent system that can answer questions about the text and provide insights into its philosophical content.</p>
+                        <h2 class="project-section-title">Overview</h2>
+                        <p>NLP project on the Bhagavad Gita combining VADER sentiment analysis, a TF-IDF Q&amp;A system, and a RAG-based chatbot powered by Mistral 7B and LangChain. Largely superseded by SanskritEval as a research artefact.</p>
                     </div>
 
+                    
+
+                    
+
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Key Features</h2>
+                        <h2 class="project-section-title">Key Contributions</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Sentiment analysis of verses using VADER</span>
-                            </li>
+                            <li>Sentiment analysis of verses</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>TF-IDF based question-answering system</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>RAG-powered chatbot using Mistral 7B</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Interactive web interface built with Streamlit</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Semantic search through verses and chapters</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Context-aware response generation</span>
-                            </li>
+                            <li>TF-IDF Q&amp;A and RAG chatbot</li>
                             
                         </ul>
                     </div>
+                    
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Technical Challenges</h2>
+                        <h2 class="project-section-title">Research &amp; Engineering Challenges</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Handling Sanskrit transliterations and translations</span>
-                            </li>
+                            <li>Handling Sanskrit transliteration</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Maintaining philosophical context accuracy</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Optimizing RAG pipeline for spiritual content</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Balancing technical accuracy with spiritual sensitivity</span>
-                            </li>
+                            <li>Optimising RAG for spiritual content</li>
                             
                         </ul>
                     </div>
+                    
                 </div>
 
-                <!-- Right Column: Tech Stack, Status -->
                 <aside class="project-sidebar">
+                    
                     <div class="sidebar-widget">
                         <h3 class="widget-title">Tech Stack</h3>
                         <div class="tech-tags">
@@ -146,47 +121,40 @@
                             
                             <span class="tech-tag">TF-IDF</span>
                             
-                            <span class="tech-tag">Mistral 7B</span>
-                            
                             <span class="tech-tag">LangChain</span>
                             
-                            <span class="tech-tag">RAG</span>
-                            
-                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Mistral 7B</span>
                             
                         </div>
                     </div>
+                    
+                    
                     <div class="sidebar-widget">
-                        <h3 class="widget-title">Project Status</h3>
-                        <span class="status-badge status-completed">
-                            Completed
-                        </span>
+                        <h3 class="widget-title">Status</h3>
+                        <span class="status-badge">Completed</span>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Author</h3>
+                        <p style="font-size: 0.92rem;">Venkat Chavan N<br>
+                        <a href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com</a></p>
                     </div>
                 </aside>
-            </div>
-
-            <!-- Project Gallery -->
-            <div class="project-section">
-                <h2 class="project-section-title">Project Gallery</h2>
-                <div class="project-gallery">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Project screenshots and diagrams will be added here.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Venkat Chavan N. All rights reserved.</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Venkat Chavan N.</p>
+            <div class="footer-social">
+                <a href="https://github.com/Venkatchavan" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:venkat.chavan.n@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="../static/js/app.js"></script>
-    <script src="../static/js/static-site.js"></script>
+    <script src="../static/js/academic.js"></script>
 </body>
 </html>

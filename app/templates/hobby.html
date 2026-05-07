@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engg-Projects: {{ data.name }}</title>
+    <meta name="description" content="Engineering and side projects by {{ data.name }}, including engineering tools, applied-ML, and creative AI experiments.">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/academic.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('vc-theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('main.home') }}" class="nav-logo">
+                <img src="{{ url_for('static', filename='images/logo-portfolio.png') }}" alt="{{ data.name }}" class="nav-logo-img">
+                <span>{{ data.name }}</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="{{ url_for('main.home') }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.home') }}#research" class="nav-link">Research</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.home') }}#publications" class="nav-link">Publications</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.home') }}#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.home') }}#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.hobby') }}" class="nav-link active">Engg-Projects</a></li>
+                <li class="nav-item"><a href="{{ url_for('narrative.narrative_nexus') }}" class="nav-link">Narrative Nexus</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.home') }}#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero hero-compact">
+        <div class="container">
+            <p class="hero-eyebrow">Engg-Projects</p>
+            <h1 class="hero-title">Engineering &amp; Side Projects</h1>
+            <p class="hero-subtitle">Older engineering tools, applied-ML exercises, and creative-AI experiments outside the research line.</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="prose-block hobby-intro">
+                <p>This page collects projects kept for completeness but outside my research portfolio. They include engineering tools, applied-ML exercises, creative-AI experiments, and earlier coursework. For research-aligned work, see <a href="{{ url_for('main.home') }}#projects">Research Projects</a>.</p>
+            </div>
+
+            <div class="projects-grid">
+                {% for project in data.hobby_projects %}
+                <article class="project-card">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    {% if project.tags %}
+                    <div class="project-tags">
+                        {% for tag in project.tags %}<span class="project-tag">{{ tag }}</span>{% endfor %}
+                    </div>
+                    {% endif %}
+                    <p class="project-description">{{ project.description }}</p>
+                    {% if project.status %}<p class="project-meta"><strong>Status:</strong> {{ project.status }}</p>{% endif %}
+                    <div class="project-links">
+                        <a href="{{ url_for('projects.project_detail', project_id=project.id) }}"><i class="fas fa-arrow-right"></i> Details</a>
+                        {% if project.github %}<a href="{{ project.github }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>{% endif %}
+                        {% if project.demo %}<a href="{{ project.demo }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Demo</a>{% endif %}
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 {{ data.name }}. Research portfolio.</p>
+            <div class="footer-social">
+                <a href="https://{{ data.github }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://{{ data.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:{{ data.email }}" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/academic.js') }}"></script>
+</body>
+</html>

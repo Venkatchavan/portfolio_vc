@@ -3,189 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>phish-triage-mcp — Local-First Phishing Triage MCP Server - Venkat Chavan N</title>
-    
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
-    
-    <link rel="stylesheet" href="../static/css/futuristic.css">
-    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <title>phish-triage-mcp: Local-First Phishing Triage MCP Server: Venkat Chavan N</title>
+    <meta name="description" content="Local-first MCP server that performs static analysis of suspicious emails, SMS, and URLs without contacting external services.">
+    <link rel="icon" type="image/png" href="../static/images/logo-portfolio.png">
+    <link rel="stylesheet" href="../static/css/academic.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('vc-theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container container">
+        <div class="nav-container">
             <a href="../index.html" class="nav-logo">
-                <img src="../static/images/logo-portfolio.png" 
-                     alt="Venkat Chavan N Logo" 
-                     class="nav-logo-img">
+                <img src="../static/images/logo-portfolio.png" alt="Venkat Chavan N" class="nav-logo-img">
+                <span>Venkat Chavan N</span>
             </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="../index.html#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="../index.html#research" class="nav-link">Research</a></li>
+                <li class="nav-item"><a href="../index.html#publications" class="nav-link">Publications</a></li>
                 <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="../hobby.html" class="nav-link">Engg-Projects</a></li>
                 <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Project Hero Section -->
     <section class="project-hero">
         <div class="container">
-            <div class="project-hero-content">
-                <div class="project-breadcrumb">
-                    <a href="../index.html" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <a href="../index.html#projects" class="breadcrumb-link">Projects</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">phish-triage-mcp — Local-First Phishing Triage MCP Server</span>
-                </div>
-                <h1 class="project-hero-title">phish-triage-mcp — Local-First Phishing Triage MCP Server</h1>
-                <p class="project-hero-subtitle">Local-first MCP server that helps users safely analyze suspicious emails, SMS, and URLs — without clicking links, detonating payloads, or contacting any external service. Defangs URLs, redacts PII, and returns low/medium/high risk bands with explanations.</p>
-                <div class="project-hero-links">
-                    
-                    <a href="https://github.com/Venkatchavan/phish-triage-mcp" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                    
-                    
-                    <a href="https://github.com/Venkatchavan/phish-triage-mcp/archive/refs/heads/main.zip" target="_blank" class="btn btn-secondary">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    
-                </div>
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                
+                <a href="../index.html#projects">Research Projects</a>
+                
+                <span class="breadcrumb-separator">/</span>
+                <span>phish-triage-mcp: Local-First Phishing Triage MCP Server</span>
+            </div>
+            <h1 class="project-hero-title">phish-triage-mcp: Local-First Phishing Triage MCP Server</h1>
+            <p class="project-hero-subtitle">Local-first MCP server that performs static analysis of suspicious emails, SMS, and URLs without contacting external services.</p>
+            
+            <div class="project-tags">
+                <span class="project-tag">Defensive AI</span><span class="project-tag">MCP</span><span class="project-tag">Phishing Triage</span><span class="project-tag">Privacy</span>
+            </div>
+            
+            <div class="project-hero-links" style="margin-top: 16px;">
+                <a href="https://github.com/Venkatchavan/phish-triage-mcp" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a>
+                
+                
+                
             </div>
         </div>
     </section>
 
-    <!-- Project Details -->
-    <section class="project-details">
+    <section>
         <div class="container">
             <div class="project-content-grid">
-                <!-- Left Column: Overview, Features, Challenges -->
-                <div class="project-main-content">
+                <div>
                     <div class="project-section">
-                        <h2 class="project-section-title">Project Overview</h2>
-                        <p>A defensive MCP server that exposes safe, purely static analysis tools for emails, SMS, WhatsApp, social DMs, and URLs. Parses RFC 5322 emails, reads Authentication-Results for SPF/DKIM/DMARC, detects From ↔ Reply-To and From ↔ Return-Path mismatches, lookalike sender domains (Levenshtein), display-name impersonation against a curated brand list, anchor-text-vs-href tricks, urgency phrasing, OTP-theft / UPI / fake-courier / fake-KYC scam patterns, URL shorteners, punycode, IP-literal URLs, embedded userinfo, and credential-shaped query parameters. All output URLs are defanged by default and PII is redacted. Auto-prefers @venkatchavan/safe-evidence-redactor when present for stronger redaction.</p>
+                        <h2 class="project-section-title">Overview</h2>
+                        <p>A defensive MCP server with purely static analysis tools for emails, SMS, and URLs. Parses RFC 5322 headers, reads Authentication-Results for SPF/DKIM/DMARC, detects lookalike domains, anchor-vs-href tricks, urgency phrasing, and OTP / UPI / KYC scam patterns. URLs are defanged and PII redacted by default. Auto-prefers safe-evidence-redactor when present.</p>
                     </div>
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Key Features</h2>
+                        <h2 class="project-section-title">Methods</h2>
+                        <p>Static header parsing, lookalike-domain detection, PII redaction, MCP tooling.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Evaluation</h2>
+                        <p>Released open-source with unit-tested detection rules.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Key Contributions</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Four MCP tools: triage_email, triage_message, explain_headers, defang_text</span>
-                            </li>
+                            <li>Static-only analysis: never visits suspicious URLs or follows redirects.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Static-only analysis — never visits suspicious URLs, never follows redirects, never submits forms</span>
-                            </li>
+                            <li>SPF/DKIM/DMARC parsing with plain-language explanations.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>PII redaction (emails, phones, OTPs, card numbers, Aadhaar, PAN, UPI) and URL defanging by default</span>
-                            </li>
+                            <li>PII redaction (emails, phones, OTPs, card numbers, UPI) and URL defanging.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>SPF/DKIM/DMARC parsing with plain-English explanations for non-technical users</span>
-                            </li>
+                            <li>Indian-context scam pattern library (UPI, Aadhaar, KYC, courier).</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Plug-and-play with Claude Desktop, VS Code Copilot, and any MCP-capable client</span>
-                            </li>
+                            <li>Plug-and-play with Claude Desktop, VS Code Copilot, and other MCP clients.</li>
                             
                         </ul>
                     </div>
+                    
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Technical Challenges</h2>
+                        <h2 class="project-section-title">Research &amp; Engineering Challenges</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Detecting phishing patterns purely statically without the safety net of remote reputation lookups</span>
-                            </li>
+                            <li>Detecting phishing patterns purely statically without remote reputation lookups.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Building a precise lookalike-domain scorer that catches paypa1.com / xn-- punycode tricks without massive false-positive rates</span>
-                            </li>
+                            <li>Building a precise lookalike-domain scorer with low false-positive rates.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Designing PII redaction that preserves debuggability while never leaking secrets back through tool responses</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Curating an Indian-context scam library (UPI, Aadhaar, PAN, KYC, courier redelivery) alongside global brand impersonation</span>
-                            </li>
+                            <li>Designing PII redaction that preserves debuggability while never leaking secrets.</li>
                             
                         </ul>
                     </div>
+                    
                 </div>
 
-                <!-- Right Column: Tech Stack, Status -->
                 <aside class="project-sidebar">
+                    
                     <div class="sidebar-widget">
                         <h3 class="widget-title">Tech Stack</h3>
                         <div class="tech-tags">
                             
                             <span class="tech-tag">TypeScript</span>
                             
-                            <span class="tech-tag">Node.js 18+</span>
+                            <span class="tech-tag">Node.js</span>
                             
                             <span class="tech-tag">MCP SDK</span>
                             
                             <span class="tech-tag">Vitest</span>
                             
-                            <span class="tech-tag">GitHub Packages</span>
-                            
-                            <span class="tech-tag">GitHub Actions</span>
-                            
                         </div>
                     </div>
+                    
+                    
                     <div class="sidebar-widget">
-                        <h3 class="widget-title">Project Status</h3>
-                        <span class="status-badge status-released-—-v0.2.0">
-                            Released — v0.2.0
-                        </span>
+                        <h3 class="widget-title">Status</h3>
+                        <span class="status-badge">Released: v0.2.0</span>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Author</h3>
+                        <p style="font-size: 0.92rem;">Venkat Chavan N<br>
+                        <a href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com</a></p>
                     </div>
                 </aside>
-            </div>
-
-            <!-- Project Gallery -->
-            <div class="project-section">
-                <h2 class="project-section-title">Project Gallery</h2>
-                <div class="project-gallery">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Project screenshots and diagrams will be added here.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Venkat Chavan N. All rights reserved.</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Venkat Chavan N.</p>
+            <div class="footer-social">
+                <a href="https://github.com/Venkatchavan" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:venkat.chavan.n@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="../static/js/app.js"></script>
-    <script src="../static/js/static-site.js"></script>
+    <script src="../static/js/academic.js"></script>
 </body>
 </html>

@@ -3,82 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ data.name }} - {{ data.headline }}</title>
-    
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
+    <title>{{ data.name }} | AI/ML Researcher</title>
+    <meta name="description" content="Research portfolio of Venkat Chavan N, MSc Big Data & AI, focused on trustworthy LLM systems, neuro-symbolic AI, retrieval-augmented generation, multi-agent reinforcement learning, Sanskrit NLP, and privacy-preserving AI.">
+    <meta name="keywords" content="AI researcher, machine learning researcher, neuro-symbolic AI, LLM evaluation, RAG, multi-agent reinforcement learning, autonomous driving, Sanskrit NLP, trustworthy AI, privacy-preserving machine learning, research engineer">
+    <meta name="author" content="{{ data.name }}">
+    <meta property="og:title" content="{{ data.name }} | AI/ML Researcher">
+    <meta property="og:description" content="Research portfolio focused on trustworthy LLM systems, neuro-symbolic AI, RAG, MARL, Sanskrit NLP, and privacy-preserving AI.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/futuristic.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/academic.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('vc-theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
-    <div id="particles-js"></div>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container container">
+        <div class="nav-container">
             <a href="{{ url_for('main.home') }}" class="nav-logo">
-                <img src="{{ url_for('static', filename='images/logo-portfolio.png') }}" 
-                     alt="{{ data.name }} Logo" 
-                     class="nav-logo-img">
+                <img src="{{ url_for('static', filename='images/logo-portfolio.png') }}" alt="{{ data.name }}" class="nav-logo-img">
+                <span>{{ data.name }}</span>
             </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
                 <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="{{ url_for('narrative.narrative_nexus') }}" class="nav-link">Blogs</a></li>
-                <li class="nav-item"><a href="{{ url_for('chatbot.chatbot') }}" class="nav-link">AI Assistant</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="{{ data.cv_url }}" class="nav-link" target="_blank" rel="noopener">CV</a></li>
+                <li class="nav-item"><a href="{{ url_for('main.hobby') }}" class="nav-link">Engg-Projects</a></li>
                 <li class="nav-item"><a href="{{ url_for('narrative.narrative_nexus') }}" class="nav-link">Narrative Nexus</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                I'm <span class="highlight">{{ data.name }}</span>
-            </h1>
-            <h2 class="hero-subtitle">{{ data.headline }}</h2>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#projects" class="btn btn-secondary">View My Work</a>
+    <!-- Hero / Identity -->
+    <header id="home" class="hero">
+        <div class="container hero-grid">
+            <div>
+                <p class="hero-eyebrow">AI/ML Research</p>
+                <h1 class="hero-title">{{ data.name }}</h1>
+                <p class="hero-subtitle">{{ data.headline }}</p>
+                <div class="hero-text">
+                    <p>I am an AI/ML researcher with an MSc in Big Data and Artificial Intelligence from SRH University of Applied Sciences, Berlin. My work focuses on building and evaluating AI systems that move beyond surface-level pattern matching toward structured reasoning, retrieval-grounded generation, and safety-aware decision-making.</p>
+                    <p>My research spans neuro-symbolic AI, LLM evaluation, hierarchical retrieval-augmented generation, multi-agent reinforcement learning for autonomous driving, Sanskrit NLP, and privacy-preserving AI systems.</p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#publications" class="btn btn-primary"><i class="fas fa-book"></i> Publications</a>
+                    <a href="#projects" class="btn btn-secondary"><i class="fas fa-flask"></i> Research Projects</a>
+                    <a href="{{ data.cv_url }}" class="btn btn-secondary" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Download CV</a>
+                    <a href="https://{{ data.github }}" class="btn btn-ghost" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://{{ data.linkedin }}" class="btn btn-ghost" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+                <div class="hero-meta">
+                    <span><i class="fas fa-map-marker-alt"></i>{{ data.location }}</span>
+                    <span><i class="fas fa-envelope"></i><a href="mailto:{{ data.email }}">{{ data.email }}</a></span>
+                    <span><i class="fas fa-graduation-cap"></i><a href="https://{{ data.google_scholar }}" target="_blank" rel="noopener">Google Scholar</a></span>
+                </div>
+            </div>
+            <div class="hero-portrait">
+                <img src="{{ url_for('static', filename=data.profile_image) }}" alt="{{ data.name }}">
+            </div>
+        </div>
+    </header>
+
+    <!-- Research Interests -->
+    <section id="research">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research Interests</h2>
+                <p class="section-subtitle">Active research clusters across reasoning, evaluation, and trustworthy AI.</p>
+            </div>
+            <div class="interests-grid">
+                {% for interest in data.research_interests %}
+                <div class="interest-card">
+                    <h3>{{ interest.title }}</h3>
+                    <p>{{ interest.focus }}</p>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about animated-section">
+    <!-- Publications -->
+    <section id="publications">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Innovator. Developer. Dreamer.</p>
+                <h2 class="section-title">Publications &amp; Scholarly Work</h2>
+                <p class="section-subtitle">Peer-reviewed publications, theses, and manuscripts in preparation. Status is conservative; only externally verified work is marked as published.</p>
             </div>
-            <div class="about-content">
-                <div class="about-image-container">
-                    <div class="about-image-bg"></div>
-                    <img src="{{ url_for('static', filename=data.profile_image) }}" 
-                         alt="{{ data.name }}" 
-                         class="about-image">
-                </div>
-                <div class="about-text">
-                    <p>{{ data.bio }}</p>
-                </div>
+            <div class="pub-list">
+                {% for pub in data.publications %}
+                <article class="pub-item">
+                    {% set status_class = 'pub-status-prep' %}
+                    {% if pub.status == 'Published' or pub.status == 'Accepted' %}{% set status_class = 'pub-status-published' %}{% endif %}
+                    {% if pub.status == 'Submitted' or pub.status == 'Under review' %}{% set status_class = 'pub-status-preprint' %}{% endif %}
+                    <span class="pub-badge {{ status_class }}">{{ pub.status }}<br>{{ pub.year }}</span>
+                    <div>
+                        <h3 class="pub-title">{{ pub.title }}</h3>
+                        <p class="pub-authors">{{ pub.authors }}</p>
+                        <p class="pub-venue">{{ pub.venue }}</p>
+                        {% if pub.summary %}<p class="pub-summary">{{ pub.summary }}</p>{% endif %}
+                        <div class="pub-links">
+                            {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI: {{ pub.doi }}</a>{% endif %}
+                            {% if pub.url %}<a href="{{ pub.url }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>{% endif %}
+                            {% if pub.github %}<a href="{{ pub.github }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>{% endif %}
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills animated-section">
+    <!-- Selected Research Projects -->
+    <section id="projects">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Arsenal</h2>
-                <p class="section-subtitle">The tools and technologies I command.</p>
+                <h2 class="section-title">Research Projects</h2>
+                <p class="section-subtitle">Research-aligned projects across reasoning, evaluation, multi-agent learning, and trustworthy AI. Engineering and creative side projects are listed under <a href="{{ url_for('main.hobby') }}">Engg-Projects</a>.</p>
+            </div>
+            <div class="projects-grid">
+                {% for project in data.selected_projects %}
+                <article class="project-card">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    {% if project.tags %}
+                    <div class="project-tags">
+                        {% for tag in project.tags %}<span class="project-tag">{{ tag }}</span>{% endfor %}
+                    </div>
+                    {% endif %}
+                    <p class="project-description">{{ project.description }}</p>
+                    {% if project.methods %}<p class="project-meta"><strong>Methods:</strong> {{ project.methods }}</p>{% endif %}
+                    {% if project.evaluation %}<p class="project-meta"><strong>Evaluation:</strong> {{ project.evaluation }}</p>{% endif %}
+                    {% if project.status %}<p class="project-meta"><strong>Status:</strong> {{ project.status }}</p>{% endif %}
+                    <div class="project-links">
+                        <a href="{{ url_for('projects.project_detail', project_id=project.id) }}"><i class="fas fa-arrow-right"></i> Details</a>
+                        {% if project.github %}<a href="{{ project.github }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>{% endif %}
+                        {% if project.demo %}<a href="{{ project.demo }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Demo</a>{% endif %}
+                        {% if project.paper %}<a href="{{ project.paper }}" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Paper</a>{% endif %}
+                        {% if project.report %}<a href="{{ project.report }}" target="_blank" rel="noopener"><i class="fas fa-file-alt"></i> Report</a>{% endif %}
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Agenda -->
+    <section id="agenda">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research Agenda</h2>
+                <p class="section-subtitle">Long-term research direction and motivation.</p>
+            </div>
+            <div class="prose-block">
+                {% for paragraph in data.research_agenda.split('\n\n') %}
+                <p>{{ paragraph }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Professional Experience -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research &amp; Professional Experience</h2>
+                <p class="section-subtitle">Research, applied AI, and data-systems experience.</p>
+            </div>
+            <div class="experience-list">
+                {% for exp in data.experience %}
+                <div class="experience-item">
+                    <h3 class="experience-title">{{ exp.title }}</h3>
+                    <p class="experience-company">{{ exp.company }}</p>
+                    <p class="experience-period">{{ exp.period }}</p>
+                    <ul>
+                        {% for item in exp.responsibilities %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-grid">
+                {% for edu in data.education %}
+                <div class="education-card">
+                    <h3 class="education-degree">{{ edu.degree }}</h3>
+                    <p class="education-institution">{{ edu.institution }}</p>
+                    <p class="education-period">{{ edu.period }}</p>
+                    {% if edu.thesis_title %}
+                    <p class="education-thesis"><strong>Thesis:</strong> {{ edu.thesis_title }}</p>
+                    {% endif %}
+                    {% if edu.thesis_grade %}
+                    <p class="education-thesis"><strong>Grade:</strong> {{ edu.thesis_grade }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Methods & Technical Toolkit -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Methods &amp; Technical Toolkit</h2>
+                <p class="section-subtitle">Methods grouped by research area, not by icons.</p>
             </div>
             <div class="skills-grid">
                 {% for category, skill_list in data.skills.items() %}
@@ -95,189 +246,46 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience animated-section">
+    <!-- Teaching, Talks & Academic Outreach -->
+    {% if data.teaching %}
+    <section id="teaching">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Work Experience</h2>
-                <p class="section-subtitle">Building expertise through real-world challenges.</p>
+                <h2 class="section-title">Teaching, Talks &amp; Academic Outreach</h2>
             </div>
-            <div class="experience-timeline">
-                {% for exp in data.experience %}
-                <div class="experience-item">
-                    <div class="experience-content">
-                        <h3 class="experience-title">{{ exp.title }}</h3>
-                        <h4 class="experience-company">{{ exp.company }}</h4>
-                        <p class="experience-period">{{ exp.period }}</p>
-                        <ul class="experience-responsibilities">
-                            {% for responsibility in exp.responsibilities %}
-                            <li>{{ responsibility }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
+            <ul class="teaching-list">
+                {% for item in data.teaching %}
+                <li>
+                    <strong>{{ item.role }}</strong>: {{ item.venue }} <span class="text-muted">({{ item.period }})</span><br>
+                    {{ item.description }}
+                </li>
                 {% endfor %}
-            </div>
+            </ul>
         </div>
     </section>
+    {% endif %}
 
-    <!-- Education Section -->
-    <section id="education" class="education animated-section">
+    <!-- Contact -->
+    <section id="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Education</h2>
-                <p class="section-subtitle">Academic foundation for innovation.</p>
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">Open to PhD, research-assistant, research-internship, and research-engineer roles.</p>
             </div>
-            <div class="education-grid">
-                {% for edu in data.education %}
-                <div class="education-card">
-                    <h3 class="education-degree">{{ edu.degree }}</h3>
-                    <h4 class="education-institution">{{ edu.institution }}</h4>
-                    <p class="education-period">{{ edu.period }}</p>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="publications animated-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Publications</h2>
-                <p class="section-subtitle">Peer-reviewed research and academic contributions.</p>
-            </div>
-            <div class="publications-list">
-                {% for pub in data.publications %}
-                <div class="publication-item">
-                    <span class="publication-badge">{{ pub.badge if pub.badge else pub.year }}</span>
-                    <h3 class="publication-title">{{ pub.title }}</h3>
-                    <p class="publication-authors">{{ pub.authors }}</p>
-                    <p class="publication-venue"><em>{{ pub.venue }}</em></p>
-                    {% if pub.doi %}
-                    <a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener noreferrer" class="publication-doi">
-                        <i class="fas fa-external-link-alt"></i> DOI: {{ pub.doi }}
-                    </a>
-                    {% endif %}
-                    {% if pub.url %}
-                    <a href="{{ pub.url }}" target="_blank" rel="noopener noreferrer" class="publication-doi">
-                        <i class="fas fa-external-link-alt"></i> View PDF
-                    </a>
-                    {% endif %}
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects animated-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">My Creations</h2>
-                <p class="section-subtitle">A selection of my proudest work.</p>
-            </div>
-            <div class="projects-grid">
-                {% for project in data.projects %}
-                <div class="project-card">
-                    <h3 class="project-title">{{ project.title }}</h3>
-                    <p class="project-description">{{ project.description }}</p>
-                    <a href="{{ url_for('projects.project_detail', project_id=project.id) }}" class="btn btn-secondary">Learn More</a>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Narrative Nexus Section -->
-    <section id="narrative-nexus" class="startup-ideas animated-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Narrative Nexus</h2>
-                <p class="section-subtitle">Where technology meets poetry, and code becomes verse.</p>
-            </div>
-            <div class="startup-ideas-grid">
-                <div class="startup-card">
-                    <div class="startup-header">
-                        <i class="fas fa-feather-alt startup-icon"></i>
-                        <h3 class="startup-title">Poetry Collection</h3>
-                    </div>
-                    <p class="startup-description">A curated collection of poems that explore the intricate relationship between technology and human experience. Each verse is a reflection on the digital world we inhabit.</p>
-                    <div class="startup-details">
-                        <a href="{{ url_for('narrative.narrative_nexus') }}" class="btn btn-primary">Explore the Nexus</a>
-                    </div>
-                </div>
-                 <div class="startup-card">
-                    <div class="startup-header">
-                        <i class="fas fa-robot startup-icon"></i>
-                        <h3 class="startup-title">AI Assistant</h3>
-                    </div>
-                    <p class="startup-description">Engage with a creative AI companion. Ask for a poem on any topic, get help with your own writing, or simply explore the poetic capabilities of artificial intelligence.</p>
-                    <div class="startup-details">
-                         <a href="{{ url_for('chatbot.chatbot') }}" class="btn btn-secondary">Chat with the AI</a>
-                    </div>
-                </div>
-                <div class="startup-card">
-                    <div class="startup-header">
-                        <i class="fas fa-newspaper startup-icon"></i>
-                        <h3 class="startup-title">Tech Blogs</h3>
-                    </div>
-                    <p class="startup-description">Insights on AI, data science, and cutting-edge technology. Exploring abstract concepts and real-world applications.</p>
-                    <div class="startup-details">
-                         <a href="{{ url_for('narrative.narrative_nexus') }}" class="btn btn-secondary">Read Articles</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact animated-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Collaborate</h2>
-                <p class="section-subtitle">Have a project in mind? I'm all ears.</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-info-item">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:{{ data.email }}">{{ data.email }}</a>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <i class="fab fa-linkedin contact-icon"></i>
-                        <div>
-                            <h4>LinkedIn</h4>
-                            <a href="https://{{ data.linkedin }}" target="_blank">linkedin.com/in/venkatchavan16</a>
-                        </div>
-                    </div>
-                     <div class="contact-info-item">
-                        <i class="fab fa-github contact-icon"></i>
-                        <div>
-                            <h4>GitHub</h4>
-                            <a href="https://{{ data.github }}" target="_blank">github.com/venkatchavan</a>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <i class="fas fa-graduation-cap contact-icon"></i>
-                        <div>
-                            <h4>Google Scholar</h4>
-                            <a href="https://{{ data.google_scholar }}" target="_blank">Research Publications</a>
-                        </div>
-                    </div>
-                </div>
-                <form id="contactForm" class="contact-form">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">
-                        <span class="btn-text">Send Message</span>
-                        <span class="btn-loading" style="display: none;">Sending...</span>
-                    </button>
+            <div class="contact-grid">
+                <ul class="contact-info-list">
+                    <li><i class="fas fa-envelope"></i><span><strong>Email</strong><a href="mailto:{{ data.email }}">{{ data.email }}</a></span></li>
+                    <li><i class="fab fa-linkedin"></i><span><strong>LinkedIn</strong><a href="https://{{ data.linkedin }}" target="_blank" rel="noopener">{{ data.linkedin }}</a></span></li>
+                    <li><i class="fab fa-github"></i><span><strong>GitHub</strong><a href="https://{{ data.github }}" target="_blank" rel="noopener">{{ data.github }}</a></span></li>
+                    <li><i class="fas fa-graduation-cap"></i><span><strong>Google Scholar</strong><a href="https://{{ data.google_scholar }}" target="_blank" rel="noopener">Profile</a></span></li>
+                    <li><i class="fas fa-map-marker-alt"></i><span><strong>Location</strong>{{ data.location }}</span></li>
+                </ul>
+                <form id="contactForm" class="contact-form" data-action="{{ url_for('main.contact') }}">
+                    <input type="text" name="name" placeholder="Your name" required>
+                    <input type="email" name="email" placeholder="Your email" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send message</button>
                     <div id="formMessage" class="form-message" style="display: none;"></div>
                 </form>
             </div>
@@ -286,19 +294,17 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 {{ data.name }}. All rights reserved. Forged with code and passion.</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 {{ data.name }}. Research portfolio.</p>
             <div class="footer-social">
-                <a href="https://{{ data.github }}" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="https://{{ data.linkedin }}" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:{{ data.email }}" class="social-link"><i class="fas fa-envelope"></i></a>
+                <a href="https://{{ data.github }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://{{ data.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://{{ data.google_scholar }}" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="mailto:{{ data.email }}" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/static-site.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/academic.js') }}"></script>
 </body>
 </html>

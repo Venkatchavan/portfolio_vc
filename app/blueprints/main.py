@@ -15,14 +15,17 @@ main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/')
 def home():
-    """
-    Display the main portfolio page.
-    
-    Returns:
-        str: Rendered HTML template
-    """
+    """Display the main academic portfolio page."""
     portfolio_data = get_portfolio_data()
     return render_template('index.html', data=portfolio_data.to_dict())
+
+
+@main_bp.route('/hobby')
+@main_bp.route('/archive')
+def hobby():
+    """Display the hobby projects page (engineering, applied-ML, creative AI)."""
+    portfolio_data = get_portfolio_data()
+    return render_template('hobby.html', data=portfolio_data.to_dict())
 
 
 @main_bp.route('/contact', methods=['POST'])

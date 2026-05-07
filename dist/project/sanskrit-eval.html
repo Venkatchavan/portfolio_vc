@@ -3,141 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SanskritEval — LM Linguistic Benchmark - Venkat Chavan N</title>
-    
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
-    
-    <link rel="stylesheet" href="../static/css/futuristic.css">
-    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <title>SanskritEval: A Benchmark for Linguistic Generalisation in Sanskrit NLP: Venkat Chavan N</title>
+    <meta name="description" content="Benchmark suite for evaluating language models on Sanskrit sandhi segmentation and morphological case agreement using mBERT, XLM-R, IndicBERT, and MuRIL.">
+    <link rel="icon" type="image/png" href="../static/images/logo-portfolio.png">
+    <link rel="stylesheet" href="../static/css/academic.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('vc-theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container container">
+        <div class="nav-container">
             <a href="../index.html" class="nav-logo">
-                <img src="../static/images/logo-portfolio.png" 
-                     alt="Venkat Chavan N Logo" 
-                     class="nav-logo-img">
+                <img src="../static/images/logo-portfolio.png" alt="Venkat Chavan N" class="nav-logo-img">
+                <span>Venkat Chavan N</span>
             </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="../index.html#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="../index.html#research" class="nav-link">Research</a></li>
+                <li class="nav-item"><a href="../index.html#publications" class="nav-link">Publications</a></li>
                 <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="../hobby.html" class="nav-link">Engg-Projects</a></li>
                 <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Project Hero Section -->
     <section class="project-hero">
         <div class="container">
-            <div class="project-hero-content">
-                <div class="project-breadcrumb">
-                    <a href="../index.html" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <a href="../index.html#projects" class="breadcrumb-link">Projects</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">SanskritEval — LM Linguistic Benchmark</span>
-                </div>
-                <h1 class="project-hero-title">SanskritEval — LM Linguistic Benchmark</h1>
-                <p class="project-hero-subtitle">Benchmark suite for evaluating language models on Sanskrit sandhi segmentation and morphological case agreement using mBERT, XLM-R, IndicBERT, and MuRIL.</p>
-                <div class="project-hero-links">
-                    
-                    <a href="https://github.com/Venkatchavan/SanskritEval" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                    
-                    
-                </div>
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                
+                <a href="../index.html#projects">Research Projects</a>
+                
+                <span class="breadcrumb-separator">/</span>
+                <span>SanskritEval: A Benchmark for Linguistic Generalisation in Sanskrit NLP</span>
+            </div>
+            <h1 class="project-hero-title">SanskritEval: A Benchmark for Linguistic Generalisation in Sanskrit NLP</h1>
+            <p class="project-hero-subtitle">Benchmark suite for evaluating language models on Sanskrit sandhi segmentation and morphological case agreement using mBERT, XLM-R, IndicBERT, and MuRIL.</p>
+            
+            <div class="project-tags">
+                <span class="project-tag">LM Evaluation</span><span class="project-tag">Low-resource NLP</span><span class="project-tag">Morphology</span><span class="project-tag">Benchmark Design</span>
+            </div>
+            
+            <div class="project-hero-links" style="margin-top: 16px;">
+                <a href="https://github.com/Venkatchavan/SanskritEval" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a>
+                
+                
+                
             </div>
         </div>
     </section>
 
-    <!-- Project Details -->
-    <section class="project-details">
+    <section>
         <div class="container">
             <div class="project-content-grid">
-                <!-- Left Column: Overview, Features, Challenges -->
-                <div class="project-main-content">
+                <div>
                     <div class="project-section">
-                        <h2 class="project-section-title">Project Overview</h2>
-                        <p>A benchmark suite for evaluating how well language models handle Sanskrit-specific linguistic phenomena — sandhi (phonological fusion at word boundaries) and morphological case agreement (8 cases × 3 numbers × 3 genders). Built on 701 verses from the Bhagavad Gita, the benchmark includes sandhi segmentation (701 silver + 200 gold examples) and morphological acceptability contrast sets (500 minimal pairs). Evaluates 5 transformer models (mBERT, XLM-R Base/Large, IndicBERT, MuRIL) to probe whether LMs learn genuine abstraction or surface-level patterns.</p>
+                        <h2 class="project-section-title">Overview</h2>
+                        <p>A benchmark for probing whether multilingual transformers learn genuine linguistic abstraction or surface-level patterns in Sanskrit. Built on 701 verses from the Bhagavad Gita with sandhi segmentation tasks (701 silver + 200 gold examples) and morphological acceptability contrast sets (500 minimal pairs over 8 cases × 3 numbers × 3 genders). Evaluates five transformer backbones and reports against a rule-based baseline.</p>
                     </div>
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Key Features</h2>
+                        <h2 class="project-section-title">Methods</h2>
+                        <p>Sandhi segmentation, morphological acceptability minimal pairs, transformer fine-tuning, rule-based baselines.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Evaluation</h2>
+                        <p>Rule-based baseline reaches 1.000 F1; transformer models evaluated under controlled splits.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Key Contributions</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Sandhi segmentation task: detect word boundaries in phonologically fused Sanskrit text with P/R/F1 metrics</span>
-                            </li>
+                            <li>Sandhi segmentation task with P/R/F1 metrics on silver and gold splits.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Morphological acceptability: 500 contrast minimal pairs testing case and number agreement patterns</span>
-                            </li>
+                            <li>Morphological acceptability with 500 minimal pairs over case/number/gender.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Multi-model evaluation: mBERT (110M), XLM-R Base (270M), XLM-R Large (550M), IndicBERT (110M), MuRIL (235M)</span>
-                            </li>
+                            <li>Multi-model evaluation across mBERT, XLM-R Base/Large, IndicBERT, and MuRIL.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Rule-based baseline achieving 1.000 F1, with transformer models expected at 60-85% accuracy</span>
-                            </li>
+                            <li>Rule-based baseline for grounding transformer evaluation.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Paper-style reporting: automated benchmark results with 4 plot types and CSV summary export</span>
-                            </li>
+                            <li>Paper-style automated reporting and CSV summary export.</li>
                             
                         </ul>
                     </div>
+                    
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Technical Challenges</h2>
+                        <h2 class="project-section-title">Research &amp; Engineering Challenges</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Handling complex Sanskrit morphology with 8 cases × 3 numbers × 3 genders combinatorics</span>
-                            </li>
+                            <li>Constructing high-quality sandhi gold annotations requiring expert linguistic input.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Creating high-quality sandhi segmentation gold data requiring expert linguistic annotation</span>
-                            </li>
+                            <li>Designing minimal-pair contrast sets that isolate morphological structure.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Evaluating whether transformer models learn genuine linguistic abstraction vs. surface patterns</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Building a fair evaluation framework across models with vastly different pretraining corpora</span>
-                            </li>
+                            <li>Comparing models with vastly different pretraining corpora on a fair footing.</li>
                             
                         </ul>
                     </div>
+                    
                 </div>
 
-                <!-- Right Column: Tech Stack, Status -->
                 <aside class="project-sidebar">
+                    
                     <div class="sidebar-widget">
                         <h3 class="widget-title">Tech Stack</h3>
                         <div class="tech-tags">
                             
-                            <span class="tech-tag">Python 3.10+</span>
+                            <span class="tech-tag">Python</span>
                             
                             <span class="tech-tag">PyTorch</span>
                             
@@ -151,43 +145,36 @@
                             
                             <span class="tech-tag">MuRIL</span>
                             
-                            <span class="tech-tag">Conda</span>
-                            
-                            <span class="tech-tag">Makefile</span>
-                            
                         </div>
                     </div>
+                    
+                    
                     <div class="sidebar-widget">
-                        <h3 class="widget-title">Project Status</h3>
-                        <span class="status-badge status-completed">
-                            Completed
-                        </span>
+                        <h3 class="widget-title">Status</h3>
+                        <span class="status-badge">Completed</span>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Author</h3>
+                        <p style="font-size: 0.92rem;">Venkat Chavan N<br>
+                        <a href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com</a></p>
                     </div>
                 </aside>
-            </div>
-
-            <!-- Project Gallery -->
-            <div class="project-section">
-                <h2 class="project-section-title">Project Gallery</h2>
-                <div class="project-gallery">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Project screenshots and diagrams will be added here.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Venkat Chavan N. All rights reserved.</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Venkat Chavan N.</p>
+            <div class="footer-social">
+                <a href="https://github.com/Venkatchavan" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:venkat.chavan.n@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="../static/js/app.js"></script>
-    <script src="../static/js/static-site.js"></script>
+    <script src="../static/js/academic.js"></script>
 </body>
 </html>

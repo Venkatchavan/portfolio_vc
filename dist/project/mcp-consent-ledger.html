@@ -3,191 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mcp-consent-ledger — Authorization Proof Library for Defensive MCP Servers - Venkat Chavan N</title>
-    
-    <!-- Favicon and App Icons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/logo-portfolio.png">
-    
-    <link rel="stylesheet" href="../static/css/futuristic.css">
-    <link rel="stylesheet" href="../static/css/project_detail.css">
+    <title>mcp-consent-ledger: Authorisation Proof Library for Defensive MCP Servers: Venkat Chavan N</title>
+    <meta name="description" content="Reusable consent and authorisation-proof library for defensive MCP servers, with an auditable, local-only ledger.">
+    <link rel="icon" type="image/png" href="../static/images/logo-portfolio.png">
+    <link rel="stylesheet" href="../static/css/academic.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('vc-theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved || (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
-    <div id="particles-js"></div>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container container">
+        <div class="nav-container">
             <a href="../index.html" class="nav-logo">
-                <img src="../static/images/logo-portfolio.png" 
-                     alt="Venkat Chavan N Logo" 
-                     class="nav-logo-img">
+                <img src="../static/images/logo-portfolio.png" alt="Venkat Chavan N" class="nav-logo-img">
+                <span>Venkat Chavan N</span>
             </a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="../index.html#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="../index.html#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="../index.html#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="../index.html#research" class="nav-link">Research</a></li>
+                <li class="nav-item"><a href="../index.html#publications" class="nav-link">Publications</a></li>
                 <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="../hobby.html" class="nav-link">Engg-Projects</a></li>
                 <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
                 <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Project Hero Section -->
     <section class="project-hero">
         <div class="container">
-            <div class="project-hero-content">
-                <div class="project-breadcrumb">
-                    <a href="../index.html" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <a href="../index.html#projects" class="breadcrumb-link">Projects</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span class="breadcrumb-current">mcp-consent-ledger — Authorization Proof Library for Defensive MCP Servers</span>
-                </div>
-                <h1 class="project-hero-title">mcp-consent-ledger — Authorization Proof Library for Defensive MCP Servers</h1>
-                <p class="project-hero-subtitle">Reusable consent &amp; authorization-proof library for defensive MCP servers. Verifies that a caller actually owns or is authorized to test a target via DNS TXT, well-known files, or signed statements — with an auditable, local-only ledger.</p>
-                <div class="project-hero-links">
-                    
-                    <a href="https://github.com/Venkatchavan/mcp-consent-ledger" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                    
-                    
-                    <a href="https://github.com/Venkatchavan/mcp-consent-ledger/archive/refs/heads/main.zip" target="_blank" class="btn btn-secondary">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                    
-                </div>
+            <div class="project-breadcrumb">
+                <a href="../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                
+                <a href="../index.html#projects">Research Projects</a>
+                
+                <span class="breadcrumb-separator">/</span>
+                <span>mcp-consent-ledger: Authorisation Proof Library for Defensive MCP Servers</span>
+            </div>
+            <h1 class="project-hero-title">mcp-consent-ledger: Authorisation Proof Library for Defensive MCP Servers</h1>
+            <p class="project-hero-subtitle">Reusable consent and authorisation-proof library for defensive MCP servers, with an auditable, local-only ledger.</p>
+            
+            <div class="project-tags">
+                <span class="project-tag">Defensive AI</span><span class="project-tag">MCP</span><span class="project-tag">Consent</span><span class="project-tag">Authorisation</span>
+            </div>
+            
+            <div class="project-hero-links" style="margin-top: 16px;">
+                <a href="https://github.com/Venkatchavan/mcp-consent-ledger" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a>
+                
+                
+                
             </div>
         </div>
     </section>
 
-    <!-- Project Details -->
-    <section class="project-details">
+    <section>
         <div class="container">
             <div class="project-content-grid">
-                <!-- Left Column: Overview, Features, Challenges -->
-                <div class="project-main-content">
+                <div>
                     <div class="project-section">
-                        <h2 class="project-section-title">Project Overview</h2>
-                        <p>A small, opinionated library that gives any MCP tool a single primitive: requireConsentOrThrow({ subject, scope, action }). Supports four proof methods (dns-txt, well-known-file, signed-statement, manual). Consent records are explicit, scoped, time-stamped, and stored locally at ~/.mcp-consent-ledger/consent.json (mode 0600). Tokens are SHA-256 hashed before persistence; well-known fetches are HTTPS-only, GET-only, no-redirect, 5s timeout, 16KB cap, with an SSRF guard. Ships a mcp-consent CLI (token, verify-dns, verify-file, statement, list, revoke, export, path) and a TypeScript library with zero runtime dependencies.</p>
+                        <h2 class="project-section-title">Overview</h2>
+                        <p>A small library that gives any MCP tool a single primitive: requireConsentOrThrow({ subject, scope, action }). Supports four proof methods (dns-txt, well-known-file, signed-statement, manual). Consent records are explicit, scoped, time-stamped, and stored locally with SHA-256 hashed tokens. Well-known fetches are SSRF-guarded; ships a CLI and a TypeScript library with zero runtime dependencies.</p>
                     </div>
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Key Features</h2>
+                        <h2 class="project-section-title">Methods</h2>
+                        <p>SHA-256 token hashing, DNS TXT and well-known proof, SSRF-guarded fetcher.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Evaluation</h2>
+                        <p>Released library; verification logic validated against multi-string TXT records.</p>
+                    </div>
+                    
+
+                    
+                    <div class="project-section">
+                        <h2 class="project-section-title">Key Contributions</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Four proof methods: dns-txt, well-known-file, signed-statement, manual</span>
-                            </li>
+                            <li>Four proof methods: dns-txt, well-known-file, signed-statement, manual.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Drop-in API: requireConsentOrThrow / hasValidConsent — one line in any MCP tool handler</span>
-                            </li>
+                            <li>Drop-in API: requireConsentOrThrow / hasValidConsent.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>Local-only ledger with SHA-256 token hashing, scoped allowed_actions, and revocation support</span>
-                            </li>
+                            <li>Local-only ledger with SHA-256 hashing and revocation.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>mcp-consent CLI for token issuance, verification, listing, revocation, and export</span>
-                            </li>
+                            <li>mcp-consent CLI for token issuance, verification, and listing.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-check-circle feature-icon"></i>
-                                <span>SSRF-guarded well-known fetcher; no telemetry; no background network calls</span>
-                            </li>
+                            <li>SSRF-guarded well-known fetcher; no telemetry.</li>
                             
                         </ul>
                     </div>
+                    
 
+                    
                     <div class="project-section">
-                        <h2 class="project-section-title">Technical Challenges</h2>
+                        <h2 class="project-section-title">Research &amp; Engineering Challenges</h2>
                         <ul class="feature-list">
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Designing a consent record shape that is auditable yet small enough to read by hand</span>
-                            </li>
+                            <li>Designing a consent record shape that is auditable yet small enough to read by hand.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Implementing DNS TXT verification that handles multi-string TXT records and mcp-consent=&lt;token&gt; wrappers</span>
-                            </li>
+                            <li>Implementing DNS TXT verification across multi-string and wrapped records.</li>
                             
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Hardening the well-known fetcher against SSRF, redirect chains, and oversized response bodies</span>
-                            </li>
-                            
-                            <li class="feature-item">
-                                <i class="fas fa-cog feature-icon"></i>
-                                <span>Keeping the public API surface small enough that any defensive MCP server can adopt it in a single PR</span>
-                            </li>
+                            <li>Hardening the fetcher against SSRF, redirects, and oversized response bodies.</li>
                             
                         </ul>
                     </div>
+                    
                 </div>
 
-                <!-- Right Column: Tech Stack, Status -->
                 <aside class="project-sidebar">
+                    
                     <div class="sidebar-widget">
                         <h3 class="widget-title">Tech Stack</h3>
                         <div class="tech-tags">
                             
                             <span class="tech-tag">TypeScript</span>
                             
-                            <span class="tech-tag">Node.js 18+</span>
+                            <span class="tech-tag">Node.js</span>
                             
-                            <span class="tech-tag">GitHub Packages (npm)</span>
-                            
-                            <span class="tech-tag">Zero runtime dependencies</span>
-                            
-                            <span class="tech-tag">SHA-256</span>
-                            
-                            <span class="tech-tag">DNS TXT</span>
-                            
-                            <span class="tech-tag">.well-known</span>
+                            <span class="tech-tag">GitHub Packages</span>
                             
                         </div>
                     </div>
+                    
+                    
                     <div class="sidebar-widget">
-                        <h3 class="widget-title">Project Status</h3>
-                        <span class="status-badge status-released-—-v0.1.1">
-                            Released — v0.1.1
-                        </span>
+                        <h3 class="widget-title">Status</h3>
+                        <span class="status-badge">Released: v0.1.1</span>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Author</h3>
+                        <p style="font-size: 0.92rem;">Venkat Chavan N<br>
+                        <a href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com</a></p>
                     </div>
                 </aside>
-            </div>
-
-            <!-- Project Gallery -->
-            <div class="project-section">
-                <h2 class="project-section-title">Project Gallery</h2>
-                <div class="project-gallery">
-                    <div class="gallery-placeholder">
-                        <i class="fas fa-image"></i>
-                        <p>Project screenshots and diagrams will be added here.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Venkat Chavan N. All rights reserved.</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Venkat Chavan N.</p>
+            <div class="footer-social">
+                <a href="https://github.com/Venkatchavan" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:venkat.chavan.n@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="../static/js/app.js"></script>
-    <script src="../static/js/static-site.js"></script>
+    <script src="../static/js/academic.js"></script>
 </body>
 </html>
