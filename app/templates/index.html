@@ -38,6 +38,7 @@
                 <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
                 <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
+                <li class="nav-item"><a href="#independent-research" class="nav-link">Ind. Research</a></li>
                 <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
                 <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
                 <li class="nav-item"><a href="{{ data.cv_url }}" class="nav-link" target="_blank" rel="noopener">CV</a></li>
@@ -127,6 +128,48 @@
             </div>
         </div>
     </section>
+
+    <!-- Independent Research -->
+    {% if data.independent_research %}
+    <section id="independent-research">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Independent Research</h2>
+                <p class="section-subtitle">Self-directed research conducted outside institutional projects. Preprints and working papers.</p>
+            </div>
+            <div class="indres-list">
+                {% for paper in data.independent_research %}
+                <article class="indres-card">
+                    <div class="indres-meta">
+                        <span class="indres-badge indres-badge-{{ paper.status | lower | replace(' ', '-') | replace('(', '') | replace(')', '') }}">{{ paper.status }}</span>
+                        <span class="indres-year">{{ paper.year }}</span>
+                    </div>
+                    <h3 class="indres-title">{{ paper.title }}</h3>
+                    <p class="indres-authors">{{ paper.authors }}</p>
+                    <p class="indres-abstract">{{ paper.abstract }}</p>
+                    {% if paper.key_results %}
+                    <ul class="indres-results">
+                        {% for result in paper.key_results %}
+                        <li>{{ result }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% if paper.keywords %}
+                    <div class="project-tags" style="margin-top: 12px;">
+                        {% for kw in paper.keywords %}<span class="project-tag">{{ kw }}</span>{% endfor %}
+                    </div>
+                    {% endif %}
+                    <div class="pub-links" style="margin-top: 14px;">
+                        {% if paper.arxiv_url %}<a href="{{ paper.arxiv_url }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> arXiv</a>{% endif %}
+                        {% if paper.github %}<a href="{{ paper.github }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>{% endif %}
+                        {% if not paper.arxiv_url %}<span class="indres-forthcoming"><i class="fas fa-clock"></i> Preprint forthcoming on arXiv</span>{% endif %}
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
 
     <!-- Selected Research Projects -->
     <section id="projects">

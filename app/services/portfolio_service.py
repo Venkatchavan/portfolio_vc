@@ -11,7 +11,7 @@ labelled "Submitted (Yet to be Published)" rather than "Published".
 
 from app.models.portfolio import (
     PortfolioData, PersonalInfo, Experience, Project, Education, Publication,
-    ResearchInterest, TeachingItem,
+    ResearchInterest, TeachingItem, IndependentResearch,
 )
 
 
@@ -999,6 +999,42 @@ def get_portfolio_data() -> PortfolioData:
         ),
     ]
 
+    # ------------------------------------------------------------------
+    # Independent research
+    # ------------------------------------------------------------------
+    independent_research = [
+        IndependentResearch(
+            title='Can Silent Placeholders Replace Chain-of-Thought? A Token-Efficiency Study of Prompted Latent Reasoning',
+            authors='Venkat Chavan Nagabhushana',
+            abstract=(
+                'Chain-of-thought (CoT) prompting improves reasoning accuracy by making models emit '
+                'intermediate natural-language steps, but these visible traces can dominate output '
+                'length and latency. We study a lightweight alternative: prompted latent reasoning, '
+                'where a model receives a short sequence of placeholder slots such as <latent_1> and '
+                'is instructed to use them internally while emitting only the final answer. This '
+                'mechanism does not train new latent tokens; instead, it tests whether existing '
+                'instruction-tuned local models can approximate silent reasoning through prompting '
+                'alone. Across 13,000 de-duplicated model calls on five reasoning datasets, latent '
+                'prompting reduces visible output tokens by 93.5% and latency by 88.7% relative to '
+                'CoT, while trailing CoT by only 6.8 absolute accuracy points overall. The '
+                'trade-off is strongly task-dependent: CoT remains essential for arithmetic, while '
+                'latent prompting matches or exceeds CoT on ARC-Challenge and PrOntoQA-style tasks.'
+            ),
+            keywords=['Chain-of-Thought', 'Latent Reasoning', 'Token Efficiency', 'LLM Inference',
+                      'Reasoning Benchmarks', 'Prompt Engineering'],
+            status='Preprint forthcoming',
+            year='2026',
+            arxiv_url='',   # update once submitted to arXiv
+            github='',
+            key_results=[
+                '93.5% reduction in visible output tokens vs. CoT across 5 models and 5 datasets',
+                '88.7% latency reduction with only 6.8pp accuracy drop overall',
+                'Latent prompting matches or exceeds CoT on ARC-Challenge and PrOntoQA-style tasks',
+                'CoT remains essential for arithmetic; latent prompting is a strong inference-time baseline for other task types',
+            ],
+        ),
+    ]
+
     return PortfolioData(
         personal_info=personal_info,
         skills=skills,
@@ -1009,4 +1045,5 @@ def get_portfolio_data() -> PortfolioData:
         research_interests=research_interests,
         research_agenda=research_agenda,
         teaching=teaching,
+        independent_research=independent_research,
     )

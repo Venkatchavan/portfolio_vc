@@ -83,6 +83,19 @@ class ResearchInterest:
 
 
 @dataclass
+class IndependentResearch:
+    title: str
+    authors: str
+    abstract: str
+    keywords: List[str]
+    status: str          # e.g. 'Preprint forthcoming' | 'Under review' | 'Published'
+    year: str
+    arxiv_url: str = ''  # fill once on arXiv
+    github: str = ''
+    key_results: List[str] = field(default_factory=list)
+
+
+@dataclass
 class TeachingItem:
     role: str
     venue: str
@@ -101,6 +114,7 @@ class PortfolioData:
     research_interests: List[ResearchInterest] = field(default_factory=list)
     research_agenda: str = ''
     teaching: List[TeachingItem] = field(default_factory=list)
+    independent_research: List[IndependentResearch] = field(default_factory=list)
 
     def selected_projects(self) -> List[Project]:
         return [p for p in self.projects if p.category == 'research']
@@ -166,6 +180,13 @@ class PortfolioData:
                 {'role': t.role, 'venue': t.venue, 'period': t.period,
                  'description': t.description}
                 for t in self.teaching
+            ],
+            'independent_research': [
+                {'title': r.title, 'authors': r.authors, 'abstract': r.abstract,
+                 'keywords': r.keywords, 'status': r.status, 'year': r.year,
+                 'arxiv_url': r.arxiv_url, 'github': r.github,
+                 'key_results': r.key_results}
+                for r in self.independent_research
             ],
         }
 

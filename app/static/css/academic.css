@@ -487,6 +487,101 @@ section:last-of-type { border-bottom: none; }
 .pub-links a { color: var(--accent); }
 .pub-links i { margin-right: 5px; }
 
+/* ---------- Independent Research ---------- */
+.indres-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.indres-card {
+    background: var(--paper-tint);
+    border: 1px solid var(--paper-edge);
+    border-left: 3px solid var(--accent);
+    padding: 24px 28px;
+    border-radius: 2px;
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.indres-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+.indres-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+.indres-badge {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 9px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+}
+.indres-badge-preprint-forthcoming {
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+    color: var(--accent);
+    border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.indres-badge-under-review {
+    background: color-mix(in srgb, #4a90d9 10%, transparent);
+    color: #4a90d9;
+    border-color: color-mix(in srgb, #4a90d9 30%, transparent);
+}
+.indres-badge-published {
+    background: color-mix(in srgb, #2e7d32 10%, transparent);
+    color: #2e7d32;
+    border-color: color-mix(in srgb, #2e7d32 30%, transparent);
+}
+.indres-year {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+}
+.indres-title {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+    line-height: 1.45;
+}
+.indres-authors {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+    font-style: italic;
+}
+.indres-abstract {
+    font-family: var(--font-serif);
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+.indres-results {
+    margin: 0 0 4px 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.indres-results li {
+    font-family: var(--font-sans);
+    font-size: 0.84rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+}
+.indres-forthcoming {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+}
+.indres-forthcoming i { margin-right: 4px; }
+
 /* ---------- Projects ---------- */
 .projects-grid {
     display: grid;
