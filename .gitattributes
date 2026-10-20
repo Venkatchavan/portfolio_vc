@@ -1,0 +1,8 @@
+*.pdf binary
+*.png binary
+*.jpg binary
+*.woff2 binary
+
+# Preserve third-party distribution files verbatim.
+app/static/vendor/** -whitespace
+dist/static/vendor/** -whitespace

@@ -1,0 +1,9 @@
+{% if project.id == 'h-rag-cti' %}
+<div class="project-visual visual-rag" aria-hidden="true"><div class="diagram-label">QUESTION → CONTEXT → EVIDENCE</div><div class="rag-layers"><span>Executive context</span><span>Technical detail</span><span>Atomic evidence <b>↗</b></span></div><span class="visual-caption">Hierarchical retrieval</span></div>
+{% elif project.id == 'cmarl-thesis' %}
+<div class="project-visual visual-agents" aria-hidden="true"><div class="diagram-label">OBSERVE → COMMUNICATE → ACT</div><div class="road"><span class="car car-a">A</span><span class="car car-b">B</span><span class="car car-c">C</span><svg viewBox="0 0 400 120"><path d="M80 80Q200 0 300 80M80 80H300"/></svg></div><span class="visual-caption">Coordinated decisions</span></div>
+{% elif project.id == 'sanskrit-eval' %}
+<div class="project-visual visual-sanskrit" aria-hidden="true"><div class="diagram-label">LANGUAGE → STRUCTURE → GENERALISATION</div><div class="linguistic-bench"><div><span>Sandhi segmentation</span><strong>701 <small>silver examples</small></strong><strong>200 <small>gold examples</small></strong></div><div><span>Morphological acceptability</span><strong>500 <small>minimal pairs</small></strong><p>8 cases × 3 numbers × 3 genders</p></div></div><span class="visual-caption">Benchmark composition, not model performance</span></div>
+{% else %}
+<div class="project-visual visual-type" aria-hidden="true"><div class="diagram-label">QUESTION → METHOD → EVALUATION</div><span class="visual-word">{{ project.tags[0] if project.tags else 'Experiment' }}</span><span class="visual-caption">{{ project.technologies[:3] | join(' / ') }}</span></div>
+{% endif %}

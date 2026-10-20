@@ -133,3 +133,7 @@ personal_notes.txt
 TODO_private.md
 deployment_secrets.yaml
 smtp_config.py
+
+# Local visual QA evidence
+.shots/
+.qa/

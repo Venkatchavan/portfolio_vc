@@ -1,180 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procurement Anomaly Detection: Venkat Chavan N</title>
-    <meta name="description" content="Applied ML system for anomaly detection in public procurement data, combining unsupervised methods with explainability for civic transparency.">
-    <link rel="icon" type="image/png" href="../static/images/logo-portfolio.png">
-    <link rel="stylesheet" href="../static/css/academic.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script>
-        (function () {
-            try {
-                var saved = localStorage.getItem('vc-theme');
-                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                var theme = saved || (prefersDark ? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', theme);
-            } catch (e) {}
-        })();
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Procurement Anomaly Detection | Venkat Chavan N</title>
+  <meta name="description" content="Applied ML system for anomaly detection in public procurement data, combining unsupervised methods with explainability for civic transparency.">
+  <meta name="author" content="Venkat Chavan N">
+  <meta name="theme-color" content="#f4f6f3">
+  <link rel="canonical" href="https://venkatchavan.github.io/portfolio_vc/project/procurement-anomaly-detection.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Procurement Anomaly Detection | Venkat Chavan N">
+  <meta property="og:description" content="Applied ML system for anomaly detection in public procurement data, combining unsupervised methods with explainability for civic transparency.">
+  <meta property="og:url" content="https://venkatchavan.github.io/portfolio_vc/project/procurement-anomaly-detection.html">
+  <meta property="og:image" content="https://venkatchavan.github.io/portfolio_vc/static/images/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Procurement Anomaly Detection | Venkat Chavan N">
+  <meta name="twitter:description" content="Applied ML system for anomaly detection in public procurement data, combining unsupervised methods with explainability for civic transparency.">
+  <meta name="twitter:image" content="https://venkatchavan.github.io/portfolio_vc/static/images/og.png">
+  <link rel="icon" type="image/svg+xml" href="../static/images/mark.svg">
+  <link rel="apple-touch-icon" href="../static/images/logo-portfolio.png">
+  <link rel="preload" href="../static/fonts/space-grotesk-400_700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../static/fonts/dm-sans-400_700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../static/css/academic.css">
+  <script>
+    try { document.documentElement.dataset.theme=localStorage.getItem('vc-theme')||'light'; } catch(e) {}
+    try {
+      if(sessionStorage.getItem('vc-transition')==='1' && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('page-entering');
+        setTimeout(function(){document.documentElement.classList.remove('page-entering');},1400);
+      }
+    } catch(e) {}
+  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "image": "https://venkatchavan.github.io/portfolio_vc/static/images/Chavan-profile.jpg", "jobTitle": "AI/ML researcher", "name": "Venkat Chavan N", "sameAs": ["https://github.com/Venkatchavan", "https://www.linkedin.com/in/venkatchavan16", "https://scholar.google.com/citations?user=8dLDVkcAAAAJ\u0026hl=en"], "url": "https://venkatchavan.github.io/portfolio_vc/"}</script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="../index.html" class="nav-logo">
-                <img src="../static/images/logo-portfolio.png" alt="Venkat Chavan N" class="nav-logo-img">
-                <span>Venkat Chavan N</span>
-            </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="../index.html#research" class="nav-link">Research</a></li>
-                <li class="nav-item"><a href="../index.html#publications" class="nav-link">Publications</a></li>
-                <li class="nav-item"><a href="../index.html#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="../index.html#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="../hobby.html" class="nav-link">Engg-Projects</a></li>
-                <li class="nav-item"><a href="../narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
-                <li class="nav-item"><a href="../index.html#contact" class="nav-link">Contact</a></li>
-                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
-            </ul>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="transition-panel" aria-hidden="true"><span>Following the question. ↗</span></div>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="identity" href="../index.html" aria-label="Venkat Chavan N, home"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="M3 5h7l6 19L22 5h7L19 29h-6Z" fill="currentColor"/><circle cx="26" cy="26" r="3" fill="var(--accent)"/></svg><span>Venkat Chavan<span class="identity-suffix"> N.</span></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a class="nav-link" href="../index.html#projects">Research</a>
+        <a class="nav-link" href="../index.html#publications">Publications</a>
+        <a class="nav-link" href="../index.html#experience">About</a>
+        <a class="nav-link" href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-actions"><a class="cv-link" href="../static/files/Venkat_Chavan_CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a><button class="theme-toggle" type="button" aria-label="Switch to dark theme"><span aria-hidden="true">◐</span></button><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu <span aria-hidden="true">+</span></button></div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+      <a href="../index.html#projects">Research</a><a href="../index.html#publications">Publications</a><a href="../index.html#experience">About</a><a href="../index.html#contact">Contact</a><a href="../hobby.html">Engineering projects</a><a href="../narrative_nexus.html">Narrative Nexus</a>
     </nav>
-
-    <section class="project-hero">
-        <div class="container">
-            <div class="project-breadcrumb">
-                <a href="../index.html">Home</a>
-                <span class="breadcrumb-separator">/</span>
-                
-                <a href="../index.html#projects">Research Projects</a>
-                
-                <span class="breadcrumb-separator">/</span>
-                <span>Procurement Anomaly Detection</span>
-            </div>
-            <h1 class="project-hero-title">Procurement Anomaly Detection</h1>
-            <p class="project-hero-subtitle">Applied ML system for anomaly detection in public procurement data, combining unsupervised methods with explainability for civic transparency.</p>
-            
-            <div class="project-tags">
-                <span class="project-tag">Anomaly Detection</span><span class="project-tag">Explainability</span><span class="project-tag">Civic AI</span><span class="project-tag">Public Sector</span>
-            </div>
-            
-            <div class="project-hero-links" style="margin-top: 16px;">
-                <a href="https://github.com/Venkatchavan/Procurement_Anomaly_Detection" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-github"></i> View code</a>
-                
-                
-                
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="project-content-grid">
-                <div>
-                    <div class="project-section">
-                        <h2 class="project-section-title">Overview</h2>
-                        <p>End-to-end pipeline for analysing public procurement data using Finnish open data from avoindata.fi. Combines Isolation Forest and Local Outlier Factor for anomaly detection with SHAP-based explainability and rule-based audit reports. Includes a Streamlit KPI dashboard and dbt-based reproducible transformations, aligned with EU Directive 2014/24/EU.</p>
-                    </div>
-
-                    
-                    <div class="project-section">
-                        <h2 class="project-section-title">Methods</h2>
-                        <p>Isolation Forest, LOF, SHAP, rule-based auditing, dbt transformations.</p>
-                    </div>
-                    
-
-                    
-                    <div class="project-section">
-                        <h2 class="project-section-title">Evaluation</h2>
-                        <p>Empirical evaluation on Finnish procurement data with audit-aligned thresholds.</p>
-                    </div>
-                    
-
-                    
-                    <div class="project-section">
-                        <h2 class="project-section-title">Key Contributions</h2>
-                        <ul class="feature-list">
-                            
-                            <li>Isolation Forest and LOF anomaly detection with configurable contamination.</li>
-                            
-                            <li>SHAP-based explainability and rule-based audit explanations.</li>
-                            
-                            <li>Interactive KPI dashboard for vendor concentration and contract distributions.</li>
-                            
-                            <li>Reproducible pipeline via dbt and Makefile orchestration.</li>
-                            
-                            <li>Aligned with EU Directive 2014/24/EU for procurement transparency.</li>
-                            
-                        </ul>
-                    </div>
-                    
-
-                    
-                    <div class="project-section">
-                        <h2 class="project-section-title">Research &amp; Engineering Challenges</h2>
-                        <ul class="feature-list">
-                            
-                            <li>Tuning unsupervised thresholds to minimise false positives in audit settings.</li>
-                            
-                            <li>Building interpretable SHAP explanations for non-technical auditors.</li>
-                            
-                            <li>Adapting the pipeline to heterogeneous EU procurement data formats.</li>
-                            
-                        </ul>
-                    </div>
-                    
-                </div>
-
-                <aside class="project-sidebar">
-                    
-                    <div class="sidebar-widget">
-                        <h3 class="widget-title">Tech Stack</h3>
-                        <div class="tech-tags">
-                            
-                            <span class="tech-tag">Python</span>
-                            
-                            <span class="tech-tag">Streamlit</span>
-                            
-                            <span class="tech-tag">Scikit-learn</span>
-                            
-                            <span class="tech-tag">Isolation Forest</span>
-                            
-                            <span class="tech-tag">LOF</span>
-                            
-                            <span class="tech-tag">SHAP</span>
-                            
-                            <span class="tech-tag">dbt</span>
-                            
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="sidebar-widget">
-                        <h3 class="widget-title">Status</h3>
-                        <span class="status-badge">Completed</span>
-                    </div>
-                    
-                    <div class="sidebar-widget">
-                        <h3 class="widget-title">Author</h3>
-                        <p style="font-size: 0.92rem;">Venkat Chavan N<br>
-                        <a href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com</a></p>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container footer-inner">
-            <p>&copy; 2026 Venkat Chavan N.</p>
-            <div class="footer-social">
-                <a href="https://github.com/Venkatchavan" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:venkat.chavan.n@gmail.com"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../static/js/academic.js"></script>
+  </header>
+  <noscript><nav class="noscript-nav container" aria-label="Navigation without JavaScript"><a href="../index.html#projects">Research</a><a href="../index.html#publications">Publications</a><a href="../index.html#contact">Contact</a><a href="../hobby.html">Engineering</a><a href="../narrative_nexus.html">Writing</a></nav><style>.menu-toggle,.theme-toggle,.motion-toggle,.network-tabs,.filter-bar,[data-dialog]{display:none!important}</style></noscript>
+  <main id="main" tabindex="-1">
+<section class="section case-hero" id="home"><div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../index.html#projects">Research projects</a></nav><p class="eyebrow">Research in practice</p><h1>Procurement Anomaly Detection</h1><p class="case-description">Applied ML system for anomaly detection in public procurement data, combining unsupervised methods with explainability for civic transparency.</p><div class="case-meta"><span class="pub-status">Completed</span><span>Anomaly Detection · Explainability · Civic AI · Public Sector</span></div><div class="case-links"><a class="button button-primary" href="https://github.com/Venkatchavan/Procurement_Anomaly_Detection" target="_blank" rel="noopener">Explore the code <span aria-hidden="true">↗</span></a></div></div></section>
+<div class="container case-visual">
+<div class="project-visual visual-type" aria-hidden="true"><div class="diagram-label">QUESTION → METHOD → EVALUATION</div><span class="visual-word">Anomaly Detection</span><span class="visual-caption">Python / Streamlit / Scikit-learn</span></div>
+<p class="diagram-caption">Conceptual illustration of the project, not a measurement or product screenshot.</p></div>
+<section class="section"><div class="container case-grid"><div class="case-body"><section><h2>The question &amp; approach</h2><p>End-to-end pipeline for analysing public procurement data using Finnish open data from avoindata.fi. Combines Isolation Forest and Local Outlier Factor for anomaly detection with SHAP-based explainability and rule-based audit reports. Includes a Streamlit KPI dashboard and dbt-based reproducible transformations, aligned with EU Directive 2014/24/EU.</p></section><section><h2>Methods</h2><p>Isolation Forest, LOF, SHAP, rule-based auditing, dbt transformations.</p></section><section class="evidence-block"><p class="eyebrow">Evidence &amp; evaluation</p><h2>How it was assessed</h2><p>Empirical evaluation on Finnish procurement data with audit-aligned thresholds.</p><p class="micro">Project-reported evaluation. See the source repository for implementation and experimental context.</p></section><section><h2>Contributions</h2><ul class="case-list"><li>Isolation Forest and LOF anomaly detection with configurable contamination.</li><li>SHAP-based explainability and rule-based audit explanations.</li><li>Interactive KPI dashboard for vendor concentration and contract distributions.</li><li>Reproducible pipeline via dbt and Makefile orchestration.</li><li>Aligned with EU Directive 2014/24/EU for procurement transparency.</li></ul></section><section><h2>The hard parts</h2><ul class="case-list"><li>Tuning unsupervised thresholds to minimise false positives in audit settings.</li><li>Building interpretable SHAP explanations for non-technical auditors.</li><li>Adapting the pipeline to heterogeneous EU procurement data formats.</li></ul></section></div><aside class="case-sidebar"><h2>Built with</h2><div class="tech-tags"><span>Python</span><span>Streamlit</span><span>Scikit-learn</span><span>Isolation Forest</span><span>LOF</span><span>SHAP</span><span>dbt</span></div><h2>Researcher</h2><p>Venkat Chavan N</p><a class="text-link" href="mailto:venkat.chavan.n@gmail.com">Get in touch ↗</a></aside></div></section>
+<section class="case-next"><div class="container"><p class="eyebrow">Follow another question</p><h2>More to explore.</h2><a class="button button-primary" href="../index.html#projects">Back to research <span aria-hidden="true">↗</span></a></div></section>
+</main>
+  <footer class="site-footer"><div class="container footer-top"><a class="identity" href="../index.html">Venkat Chavan N.</a><p>Questions. Experiments. Evidence.</p><a class="text-link" href="../index.html#home">Back to top <span aria-hidden="true">↑</span></a></div><div class="container footer-bottom"><p>© 2026 Venkat Chavan N</p><nav aria-label="More from Venkat"><a href="../hobby.html">Engineering projects</a><a href="../narrative_nexus.html">Narrative Nexus</a><a href="https://github.com/Venkatchavan" target="_blank" rel="noopener">GitHub ↗</a></nav><span>Built with curiosity.</span></div></footer>
+  <script defer src="../static/vendor/gsap.min.js"></script>
+  <script defer src="../static/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="../static/vendor/lenis.js"></script>
+  <script defer src="../static/js/academic.js"></script>
 </body>
 </html>

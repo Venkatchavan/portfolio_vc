@@ -1,857 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venkat Chavan N | AI/ML Researcher</title>
-    <meta name="description" content="Research portfolio of Venkat Chavan N, MSc Big Data & AI, focused on trustworthy LLM systems, neuro-symbolic AI, retrieval-augmented generation, multi-agent reinforcement learning, Sanskrit NLP, and privacy-preserving AI.">
-    <meta name="keywords" content="AI researcher, machine learning researcher, neuro-symbolic AI, LLM evaluation, RAG, multi-agent reinforcement learning, autonomous driving, Sanskrit NLP, trustworthy AI, privacy-preserving machine learning, research engineer">
-    <meta name="author" content="Venkat Chavan N">
-    <meta property="og:title" content="Venkat Chavan N | AI/ML Researcher">
-    <meta property="og:description" content="Research portfolio focused on trustworthy LLM systems, neuro-symbolic AI, RAG, MARL, Sanskrit NLP, and privacy-preserving AI.">
-    <meta property="og:type" content="website">
-
-    <link rel="icon" type="image/png" href="./static/images/logo-portfolio.png">
-    <link rel="apple-touch-icon" href="./static/images/logo-portfolio.png">
-    <link rel="stylesheet" href="./static/css/academic.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script>
-        (function () {
-            try {
-                var saved = localStorage.getItem('vc-theme');
-                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                var theme = saved || (prefersDark ? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', theme);
-            } catch (e) {}
-        })();
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Venkat Chavan N | AI/ML researcher</title>
+  <meta name="description" content="Venkat Chavan N researches trustworthy AI, structured reasoning and multi-agent learning. Explore research projects, publications and experiments.">
+  <meta name="author" content="Venkat Chavan N">
+  <meta name="theme-color" content="#f4f6f3">
+  <link rel="canonical" href="https://venkatchavan.github.io/portfolio_vc/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Venkat Chavan N | AI/ML researcher">
+  <meta property="og:description" content="Venkat Chavan N researches trustworthy AI, structured reasoning and multi-agent learning. Explore research projects, publications and experiments.">
+  <meta property="og:url" content="https://venkatchavan.github.io/portfolio_vc/">
+  <meta property="og:image" content="https://venkatchavan.github.io/portfolio_vc/static/images/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Venkat Chavan N | AI/ML researcher">
+  <meta name="twitter:description" content="Venkat Chavan N researches trustworthy AI, structured reasoning and multi-agent learning. Explore research projects, publications and experiments.">
+  <meta name="twitter:image" content="https://venkatchavan.github.io/portfolio_vc/static/images/og.png">
+  <link rel="icon" type="image/svg+xml" href="./static/images/mark.svg">
+  <link rel="apple-touch-icon" href="./static/images/logo-portfolio.png">
+  <link rel="preload" href="./static/fonts/space-grotesk-400_700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./static/fonts/dm-sans-400_700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./static/css/academic.css">
+  <script>
+    try { document.documentElement.dataset.theme=localStorage.getItem('vc-theme')||'light'; } catch(e) {}
+    try {
+      if(sessionStorage.getItem('vc-transition')==='1' && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('page-entering');
+        setTimeout(function(){document.documentElement.classList.remove('page-entering');},1400);
+      }
+    } catch(e) {}
+  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "image": "https://venkatchavan.github.io/portfolio_vc/static/images/Chavan-profile.jpg", "jobTitle": "AI/ML researcher", "name": "Venkat Chavan N", "sameAs": ["https://github.com/Venkatchavan", "https://www.linkedin.com/in/venkatchavan16", "https://scholar.google.com/citations?user=8dLDVkcAAAAJ\u0026hl=en"], "url": "https://venkatchavan.github.io/portfolio_vc/"}</script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="./index.html" class="nav-logo">
-                <img src="./static/images/logo-portfolio.png" alt="Venkat Chavan N" class="nav-logo-img">
-                <span>Venkat Chavan N</span>
-            </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="#research" class="nav-link">Research</a></li>
-                <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
-                <li class="nav-item"><a href="#independent-research" class="nav-link">Ind. Research</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="static/files/Venkat_Chavan_CV.pdf" class="nav-link" target="_blank" rel="noopener">CV</a></li>
-                <li class="nav-item"><a href="./hobby.html" class="nav-link">Engg-Projects</a></li>
-                <li class="nav-item"><a href="./narrative_nexus.html" class="nav-link">Narrative Nexus</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                <li class="nav-item"><button type="button" class="theme-toggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button></li>
-            </ul>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="transition-panel" aria-hidden="true"><span>Following the question. ↗</span></div>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="identity" href="./index.html" aria-label="Venkat Chavan N, home"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="M3 5h7l6 19L22 5h7L19 29h-6Z" fill="currentColor"/><circle cx="26" cy="26" r="3" fill="var(--accent)"/></svg><span>Venkat Chavan<span class="identity-suffix"> N.</span></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a class="nav-link" href="./index.html#projects">Research</a>
+        <a class="nav-link" href="./index.html#publications">Publications</a>
+        <a class="nav-link" href="./index.html#experience">About</a>
+        <a class="nav-link" href="./index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-actions"><a class="cv-link" href="./static/files/Venkat_Chavan_CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a><button class="theme-toggle" type="button" aria-label="Switch to dark theme"><span aria-hidden="true">◐</span></button><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu <span aria-hidden="true">+</span></button></div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+      <a href="./index.html#projects">Research</a><a href="./index.html#publications">Publications</a><a href="./index.html#experience">About</a><a href="./index.html#contact">Contact</a><a href="./hobby.html">Engineering projects</a><a href="./narrative_nexus.html">Narrative Nexus</a>
     </nav>
-
-    <!-- Hero / Identity -->
-    <header id="home" class="hero">
-        <div class="container hero-grid">
-            <div>
-                <p class="hero-eyebrow">AI/ML Research</p>
-                <h1 class="hero-title">Venkat Chavan N</h1>
-                <p class="hero-subtitle">AI/ML Researcher | Neuro-Symbolic AI, LLM Evaluation &amp; Multi-Agent Learning</p>
-                <div class="hero-text">
-                    <p>I am an AI/ML researcher with an MSc in Big Data and Artificial Intelligence from SRH University of Applied Sciences, Berlin. My work focuses on building and evaluating AI systems that move beyond surface-level pattern matching toward structured reasoning, retrieval-grounded generation, and safety-aware decision-making.</p>
-                    <p>My research spans neuro-symbolic AI, LLM evaluation, hierarchical retrieval-augmented generation, multi-agent reinforcement learning for autonomous driving, Sanskrit NLP, and privacy-preserving AI systems.</p>
-                </div>
-                <div class="hero-buttons">
-                    <a href="#publications" class="btn btn-primary"><i class="fas fa-book"></i> Publications</a>
-                    <a href="#projects" class="btn btn-secondary"><i class="fas fa-flask"></i> Research Projects</a>
-                    <a href="static/files/Venkat_Chavan_CV.pdf" class="btn btn-secondary" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Download CV</a>
-                    <a href="https://github.com/Venkatchavan" class="btn btn-ghost" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://www.linkedin.com/in/venkatchavan16" class="btn btn-ghost" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                </div>
-                <div class="hero-meta">
-                    <span><i class="fas fa-map-marker-alt"></i>Berlin, Germany: open to relocation</span>
-                    <span><i class="fas fa-envelope"></i><a href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com</a></span>
-                    <span><i class="fas fa-graduation-cap"></i><a href="https://scholar.google.com/citations?user=8dLDVkcAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></span>
-                </div>
-            </div>
-            <div class="hero-portrait">
-                <img src="./static/images/Chavan-profile.jpg" alt="Venkat Chavan N">
-            </div>
-        </div>
-    </header>
-
-    <!-- Research Interests -->
-    <section id="research">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Research Interests</h2>
-                <p class="section-subtitle">Active research clusters across reasoning, evaluation, and trustworthy AI.</p>
-            </div>
-            <div class="interests-grid">
-                
-                <div class="interest-card">
-                    <h3>Trustworthy LLM Systems</h3>
-                    <p>Hallucination control, evidence grounding, RAG evaluation, citation accuracy, and adversarial robustness of retrieval-augmented language models.</p>
-                </div>
-                
-                <div class="interest-card">
-                    <h3>Neuro-Symbolic AI &amp; Structured Reasoning</h3>
-                    <p>Knowledge graphs, symbolic constraints, rule-based reasoning, and structured representations as a route to reasoning beyond surface-level pattern matching.</p>
-                </div>
-                
-                <div class="interest-card">
-                    <h3>Multi-Agent Reinforcement Learning</h3>
-                    <p>Coordinated autonomous driving in mixed-traffic environments, zero-shot transfer, safety-rule evaluation, and GNN/GAT-enhanced agent coordination.</p>
-                </div>
-                
-                <div class="interest-card">
-                    <h3>Language Model Evaluation</h3>
-                    <p>SanskritEval, sandhi segmentation, morphological generalisation, low-resource NLP, and benchmark design that separates linguistic structure from surface patterns.</p>
-                </div>
-                
-                <div class="interest-card">
-                    <h3>Privacy-Preserving &amp; Security-Aware AI</h3>
-                    <p>Encrypted vector operations, privacy-preserving retrieval, cyber threat intelligence, defensive AI tooling, and PII-aware evidence handling.</p>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications -->
-    <section id="publications">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Publications &amp; Scholarly Work</h2>
-                <p class="section-subtitle">Peer-reviewed publications, theses, and manuscripts in preparation. Status is conservative; only externally verified work is marked as published.</p>
-            </div>
-            <div class="pub-list">
-                
-                <article class="pub-item">
-                    
-                    
-                    
-                    <span class="pub-badge pub-status-published">Published<br>2025</span>
-                    <div>
-                        <h3 class="pub-title">Encrypted Vector Operations for Privacy-Preserving Machine Learning and Data Retrieval</h3>
-                        <p class="pub-authors">D. V S, S. B, M. L and V. C. Nagabhushana</p>
-                        <p class="pub-venue">2025 International Conference on Emerging Technologies in Electronics and Green Energy (ICETEG), Mysore, India</p>
-                        <p class="pub-summary">Encrypted vector operations supporting privacy-preserving similarity search and biometric authentication.</p>
-                        <div class="pub-links">
-                            <a href="https://doi.org/10.1109/ICETEG66194.2025.11473203" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI: 10.1109/ICETEG66194.2025.11473203</a>
-                            
-                            
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="pub-item">
-                    
-                    
-                    
-                    <span class="pub-badge pub-status-published">Published<br>2022</span>
-                    <div>
-                        <h3 class="pub-title">Study on Crowd Density Estimation and Location Prediction in Public Transport System</h3>
-                        <p class="pub-authors">Deepthi V S, Venkat Chavan N, Sandhya Shanbhag, Sakshi S Dandappala</p>
-                        <p class="pub-venue">International Journal of Innovative Research in Technology (IJIRT), Vol. 8, Issue 10, pp. 30–36</p>
-                        <p class="pub-summary">Survey and design study on computer-vision-based crowd density estimation for public-transport systems.</p>
-                        <div class="pub-links">
-                            
-                            <a href="https://ijirt.org/publishedpaper/IJIRT154092_PAPER.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
-                            
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="pub-item">
-                    
-                    
-                    
-                    <span class="pub-badge pub-status-published">Published<br>2022</span>
-                    <div>
-                        <h3 class="pub-title">Crowd Density Estimation and Location Prediction in Public Transport System</h3>
-                        <p class="pub-authors">Deepthi V S, Venkat Chavan N, Sandhya Shanbhag, Sakshi S Dandappala</p>
-                        <p class="pub-venue">International Journal of Engineering Research &amp; Technology (IJERT), Vol. 11, Issue 7</p>
-                        <p class="pub-summary">Implementation and evaluation of crowd density estimation and location prediction for public transport.</p>
-                        <div class="pub-links">
-                            <a href="https://doi.org/10.5281/zenodo.18438235" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> DOI: 10.5281/zenodo.18438235</a>
-                            <a href="https://www.ijert.org/research/crowd-density-estimation-and-location-prediction-in-public-transport-system-IJERTV11IS070053.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> PDF</a>
-                            
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="pub-item">
-                    
-                    
-                    
-                    <span class="pub-badge pub-status-prep">Submitted (Yet to be Published)<br>2025</span>
-                    <div>
-                        <h3 class="pub-title">Coordinated Multi-Agent Reinforcement Learning for Autonomous Vehicles in Mixed-Traffic Environments</h3>
-                        <p class="pub-authors">Venkat Chavan N</p>
-                        <p class="pub-venue">MSc thesis, SRH University of Applied Sciences, Berlin</p>
-                        <p class="pub-summary">MSc thesis on CMARL with GNN/GAT-enhanced coordination and safety-rule evaluation. Defended with grade 1.0/4.0.</p>
-                        <div class="pub-links">
-                            
-                            
-                            
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="pub-item">
-                    
-                    
-                    
-                    <span class="pub-badge pub-status-published">Accepted<br>2026</span>
-                    <div>
-                        <h3 class="pub-title">Hierarchical Retrieval-Augmented Generation for Cyber Threat Intelligence</h3>
-                        <p class="pub-authors">Venkat Chavan N</p>
-                        <p class="pub-venue">Accepted at international conference (venue and proceedings to be added)</p>
-                        <p class="pub-summary">Hierarchical RAG system for analyst-grade cyber threat intelligence with citation-grounded reasoning. Accepted and presented at an international conference; full proceedings reference to be added.</p>
-                        <div class="pub-links">
-                            
-                            
-                            
-                        </div>
-                    </div>
-                </article>
-                
-                <article class="pub-item">
-                    
-                    
-                    
-                    <span class="pub-badge pub-status-prep">Submitted (Yet to be Published)<br>2026</span>
-                    <div>
-                        <h3 class="pub-title">TinyML and Edge AI (book chapter)</h3>
-                        <p class="pub-authors">Venkat Chavan N</p>
-                        <p class="pub-venue">Edited volume: to be confirmed</p>
-                        <p class="pub-summary">Book chapter on TinyML and Edge AI; details to be confirmed once contract is finalised.</p>
-                        <div class="pub-links">
-                            
-                            
-                            
-                        </div>
-                    </div>
-                </article>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Independent Research -->
-    
-    <section id="independent-research">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Independent Research</h2>
-                <p class="section-subtitle">Self-directed research conducted outside institutional projects. Preprints and working papers.</p>
-            </div>
-            <div class="indres-list">
-                
-                <article class="indres-card">
-                    <div class="indres-meta">
-                        <span class="indres-badge indres-badge-preprint-forthcoming">Preprint forthcoming</span>
-                        <span class="indres-year">2026</span>
-                    </div>
-                    <h3 class="indres-title">Can Silent Placeholders Replace Chain-of-Thought? A Token-Efficiency Study of Prompted Latent Reasoning</h3>
-                    <p class="indres-authors">Venkat Chavan Nagabhushana</p>
-                    <p class="indres-abstract">Chain-of-thought (CoT) prompting improves reasoning accuracy by making models emit intermediate natural-language steps, but these visible traces can dominate output length and latency. We study a lightweight alternative: prompted latent reasoning, where a model receives a short sequence of placeholder slots such as &lt;latent_1&gt; and is instructed to use them internally while emitting only the final answer. This mechanism does not train new latent tokens; instead, it tests whether existing instruction-tuned local models can approximate silent reasoning through prompting alone. Across 13,000 de-duplicated model calls on five reasoning datasets, latent prompting reduces visible output tokens by 93.5% and latency by 88.7% relative to CoT, while trailing CoT by only 6.8 absolute accuracy points overall. The trade-off is strongly task-dependent: CoT remains essential for arithmetic, while latent prompting matches or exceeds CoT on ARC-Challenge and PrOntoQA-style tasks.</p>
-                    
-                    <ul class="indres-results">
-                        
-                        <li>93.5% reduction in visible output tokens vs. CoT across 5 models and 5 datasets</li>
-                        
-                        <li>88.7% latency reduction with only 6.8pp accuracy drop overall</li>
-                        
-                        <li>Latent prompting matches or exceeds CoT on ARC-Challenge and PrOntoQA-style tasks</li>
-                        
-                        <li>CoT remains essential for arithmetic; latent prompting is a strong inference-time baseline for other task types</li>
-                        
-                    </ul>
-                    
-                    
-                    <div class="project-tags" style="margin-top: 12px;">
-                        <span class="project-tag">Chain-of-Thought</span><span class="project-tag">Latent Reasoning</span><span class="project-tag">Token Efficiency</span><span class="project-tag">LLM Inference</span><span class="project-tag">Reasoning Benchmarks</span><span class="project-tag">Prompt Engineering</span>
-                    </div>
-                    
-                    <div class="pub-links" style="margin-top: 14px;">
-                        
-                        
-                        <span class="indres-forthcoming"><i class="fas fa-clock"></i> Preprint forthcoming on arXiv</span>
-                    </div>
-                </article>
-                
-            </div>
-        </div>
-    </section>
-    
-
-    <!-- Selected Research Projects -->
-    <section id="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Research Projects</h2>
-                <p class="section-subtitle">Research-aligned projects across reasoning, evaluation, multi-agent learning, and trustworthy AI. Engineering and creative side projects are listed under <a href="./hobby.html">Engg-Projects</a>.</p>
-            </div>
-            <div class="projects-grid">
-                
-                <article class="project-card">
-                    <h3 class="project-title">H-RAG for Cyber Threat Intelligence</h3>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">RAG</span><span class="project-tag">Knowledge Graphs</span><span class="project-tag">CTI</span><span class="project-tag">LLM Evaluation</span><span class="project-tag">Hallucination Control</span>
-                    </div>
-                    
-                    <p class="project-description">A hierarchical retrieval-augmented generation system for cyber threat intelligence analysis, designed to preserve document structure across executive summaries, technical details, and atomic evidence units.</p>
-                    <p class="project-meta"><strong>Methods:</strong> FAISS IVF, Sentence-Transformers, hierarchical chunking, lightweight CTI knowledge graph, local LLM inference, citation-grounded generation.</p>
-                    <p class="project-meta"><strong>Evaluation:</strong> Internal evaluation across factual accuracy, citation accuracy, retrieval performance, hallucination rate, and latency.</p>
-                    <p class="project-meta"><strong>Status:</strong> Accepted at international conference, 2026</p>
-                    <div class="project-links">
-                        <a href="./project/h-rag-cti.html"><i class="fas fa-arrow-right"></i> Details</a>
-                        <a href="https://github.com/Venkatchavan" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                        
-                        
-                        
-                    </div>
-                </article>
-                
-                <article class="project-card">
-                    <h3 class="project-title">Coordinated Multi-Agent Reinforcement Learning for Autonomous Driving</h3>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">MARL</span><span class="project-tag">Autonomous Driving</span><span class="project-tag">GNNs</span><span class="project-tag">Safety</span><span class="project-tag">Zero-shot Transfer</span>
-                    </div>
-                    
-                    <p class="project-description">MSc thesis research on coordinated multi-agent reinforcement learning in mixed-traffic autonomous driving environments. Defended with grade 1.0/4.0 (S-tier).</p>
-                    <p class="project-meta"><strong>Methods:</strong> MADDPG / MADDPG++, GAT-based coordination, CARLA mixed-traffic scenarios, safety-rule evaluators.</p>
-                    <p class="project-meta"><strong>Evaluation:</strong> Thesis grade 1.0/4.0; internal evaluation under safety rules and zero-shot transfer scenarios.</p>
-                    <p class="project-meta"><strong>Status:</strong> Completed: Thesis grade 1.0/4.0 (S-tier)</p>
-                    <div class="project-links">
-                        <a href="./project/cmarl-thesis.html"><i class="fas fa-arrow-right"></i> Details</a>
-                        
-                        
-                        
-                        
-                    </div>
-                </article>
-                
-                <article class="project-card">
-                    <h3 class="project-title">SanskritEval: A Benchmark for Linguistic Generalisation in Sanskrit NLP</h3>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">LM Evaluation</span><span class="project-tag">Low-resource NLP</span><span class="project-tag">Morphology</span><span class="project-tag">Benchmark Design</span>
-                    </div>
-                    
-                    <p class="project-description">Benchmark suite for evaluating language models on Sanskrit sandhi segmentation and morphological case agreement using mBERT, XLM-R, IndicBERT, and MuRIL.</p>
-                    <p class="project-meta"><strong>Methods:</strong> Sandhi segmentation, morphological acceptability minimal pairs, transformer fine-tuning, rule-based baselines.</p>
-                    <p class="project-meta"><strong>Evaluation:</strong> Rule-based baseline reaches 1.000 F1; transformer models evaluated under controlled splits.</p>
-                    <p class="project-meta"><strong>Status:</strong> Completed</p>
-                    <div class="project-links">
-                        <a href="./project/sanskrit-eval.html"><i class="fas fa-arrow-right"></i> Details</a>
-                        <a href="https://github.com/Venkatchavan/SanskritEval" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                        
-                        
-                        
-                    </div>
-                </article>
-                
-                <article class="project-card">
-                    <h3 class="project-title">Onco-Variant-Guard: Neuro-Symbolic Cancer Variant Classification</h3>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">Neuro-Symbolic AI</span><span class="project-tag">Biomedical NLP</span><span class="project-tag">Knowledge Graphs</span><span class="project-tag">Hallucination Control</span>
-                    </div>
-                    
-                    <p class="project-description">Neuro-symbolic biomedical AI system for cancer variant classification combining evidence-grounded LLM explanations, an automatically extracted rule base, and a knowledge graph.</p>
-                    <p class="project-meta"><strong>Methods:</strong> TF-IDF baseline, automatic rule extraction, knowledge-graph reasoning, RAG, evidence-only generation.</p>
-                    <p class="project-meta"><strong>Evaluation:</strong> Baseline classifier at 59.3% accuracy; multi-layer hallucination prevention with knowledge-graph validation.</p>
-                    <p class="project-meta"><strong>Status:</strong> Completed</p>
-                    <div class="project-links">
-                        <a href="./project/llm-healthcare.html"><i class="fas fa-arrow-right"></i> Details</a>
-                        <a href="https://github.com/Venkatchavan/LLM_Healthcare" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                        
-                        
-                        
-                    </div>
-                </article>
-                
-                <article class="project-card">
-                    <h3 class="project-title">ObserveML: Observability Framework for LLM Applications</h3>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">LLM Evaluation</span><span class="project-tag">Observability</span><span class="project-tag">Reliability</span><span class="project-tag">RAG Quality</span>
-                    </div>
-                    
-                    <p class="project-description">Observability layer for LLM applications: latency, token cost, hallucination markers, RAG retrieval quality, and semantic drift, surfaced through a real-time dashboard.</p>
-                    <p class="project-meta"><strong>Methods:</strong> ClickHouse trace storage, semantic-drift monitoring, hallucination confidence scoring, multi-language SDKs.</p>
-                    <p class="project-meta"><strong>Evaluation:</strong> Engineering benchmarks for SDK overhead and trace-query throughput.</p>
-                    <p class="project-meta"><strong>Status:</strong> Completed</p>
-                    <div class="project-links">
-                        <a href="./project/observeml.html"><i class="fas fa-arrow-right"></i> Details</a>
-                        <a href="https://github.com/Venkatchavan/ObserveML-Production-Observability" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                        
-                        
-                        
-                    </div>
-                </article>
-                
-                <article class="project-card">
-                    <h3 class="project-title">Procurement Anomaly Detection</h3>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">Anomaly Detection</span><span class="project-tag">Explainability</span><span class="project-tag">Civic AI</span><span class="project-tag">Public Sector</span>
-                    </div>
-                    
-                    <p class="project-description">Applied ML system for anomaly detection in public procurement data, combining unsupervised methods with explainability for civic transparency.</p>
-                    <p class="project-meta"><strong>Methods:</strong> Isolation Forest, LOF, SHAP, rule-based auditing, dbt transformations.</p>
-                    <p class="project-meta"><strong>Evaluation:</strong> Empirical evaluation on Finnish procurement data with audit-aligned thresholds.</p>
-                    <p class="project-meta"><strong>Status:</strong> Completed</p>
-                    <div class="project-links">
-                        <a href="./project/procurement-anomaly-detection.html"><i class="fas fa-arrow-right"></i> Details</a>
-                        <a href="https://github.com/Venkatchavan/Procurement_Anomaly_Detection" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                        
-                        
-                        
-                    </div>
-                </article>
-                
-                <article class="project-card">
-                    <h3 class="project-title">safe-evidence-redactor: Privacy-First Redaction Library and MCP Server</h3>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">Privacy</span><span class="project-tag">Defensive AI</span><span class="project-tag">PII Redaction</span><span class="project-tag">MCP</span>
-                    </div>
-                    
-                    <p class="project-description">Defensive AI tooling for offline PII redaction in security reports, logs, and AI outputs, exposed as a library, CLI, and MCP server.</p>
-                    <p class="project-meta"><strong>Methods:</strong> Pattern-based redaction with category allowlists, JSON path tracking, MCP integration.</p>
-                    <p class="project-meta"><strong>Evaluation:</strong> Internal pattern-coverage benchmarks; integrated and validated by phish-triage-mcp.</p>
-                    <p class="project-meta"><strong>Status:</strong> Released: v0.1.2</p>
-                    <div class="project-links">
-                        <a href="./project/safe-evidence-redactor.html"><i class="fas fa-arrow-right"></i> Details</a>
-                        <a href="https://github.com/Venkatchavan/safe-evidence-redactor" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                        
-                        
-                        
-                    </div>
-                </article>
-                
-                <article class="project-card">
-                    <h3 class="project-title">safe-web-audit-mcp: Consent-Based Defensive Web Audit</h3>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">Defensive AI</span><span class="project-tag">MCP</span><span class="project-tag">Consent-based Auditing</span><span class="project-tag">Security</span>
-                    </div>
-                    
-                    <p class="project-description">Defensive Model Context Protocol server for consent-based, non-invasive website security audits.</p>
-                    <p class="project-meta"><strong>Methods:</strong> MCP tooling, consent verification, SSRF guards, defensive audit checks.</p>
-                    <p class="project-meta"><strong>Evaluation:</strong> Released open-source; consent and SSRF guards validated against test scenarios.</p>
-                    <p class="project-meta"><strong>Status:</strong> Released: v0.2.1</p>
-                    <div class="project-links">
-                        <a href="./project/safe-web-audit-mcp.html"><i class="fas fa-arrow-right"></i> Details</a>
-                        <a href="https://github.com/Venkatchavan/safe-web-audit-mcp" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                        
-                        
-                        
-                    </div>
-                </article>
-                
-                <article class="project-card">
-                    <h3 class="project-title">phish-triage-mcp: Local-First Phishing Triage MCP Server</h3>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">Defensive AI</span><span class="project-tag">MCP</span><span class="project-tag">Phishing Triage</span><span class="project-tag">Privacy</span>
-                    </div>
-                    
-                    <p class="project-description">Local-first MCP server that performs static analysis of suspicious emails, SMS, and URLs without contacting external services.</p>
-                    <p class="project-meta"><strong>Methods:</strong> Static header parsing, lookalike-domain detection, PII redaction, MCP tooling.</p>
-                    <p class="project-meta"><strong>Evaluation:</strong> Released open-source with unit-tested detection rules.</p>
-                    <p class="project-meta"><strong>Status:</strong> Released: v0.2.0</p>
-                    <div class="project-links">
-                        <a href="./project/phish-triage-mcp.html"><i class="fas fa-arrow-right"></i> Details</a>
-                        <a href="https://github.com/Venkatchavan/phish-triage-mcp" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                        
-                        
-                        
-                    </div>
-                </article>
-                
-                <article class="project-card">
-                    <h3 class="project-title">mcp-consent-ledger: Authorisation Proof Library for Defensive MCP Servers</h3>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">Defensive AI</span><span class="project-tag">MCP</span><span class="project-tag">Consent</span><span class="project-tag">Authorisation</span>
-                    </div>
-                    
-                    <p class="project-description">Reusable consent and authorisation-proof library for defensive MCP servers, with an auditable, local-only ledger.</p>
-                    <p class="project-meta"><strong>Methods:</strong> SHA-256 token hashing, DNS TXT and well-known proof, SSRF-guarded fetcher.</p>
-                    <p class="project-meta"><strong>Evaluation:</strong> Released library; verification logic validated against multi-string TXT records.</p>
-                    <p class="project-meta"><strong>Status:</strong> Released: v0.1.1</p>
-                    <div class="project-links">
-                        <a href="./project/mcp-consent-ledger.html"><i class="fas fa-arrow-right"></i> Details</a>
-                        <a href="https://github.com/Venkatchavan/mcp-consent-ledger" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                        
-                        
-                        
-                    </div>
-                </article>
-                
-                <article class="project-card">
-                    <h3 class="project-title">MV-Coach-Eval: HAR Benchmarking Platform</h3>
-                    
-                    <div class="project-tags">
-                        <span class="project-tag">Evaluation</span><span class="project-tag">HAR</span><span class="project-tag">Calibration</span><span class="project-tag">Uncertainty</span>
-                    </div>
-                    
-                    <p class="project-description">Benchmarking platform for Human Activity Recognition with calibration, robustness testing, LOSO generalisation, and Monte Carlo Dropout uncertainty.</p>
-                    <p class="project-meta"><strong>Methods:</strong> ECE, LOSO cross-validation, Monte Carlo Dropout, robustness testing.</p>
-                    <p class="project-meta"><strong>Evaluation:</strong> Internal benchmark coverage with Hydra-based reproducible runs.</p>
-                    <p class="project-meta"><strong>Status:</strong> Completed</p>
-                    <div class="project-links">
-                        <a href="./project/mv-coach-eval.html"><i class="fas fa-arrow-right"></i> Details</a>
-                        <a href="https://github.com/Venkatchavan/MV-Coach-Eval" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-                        
-                        
-                        
-                    </div>
-                </article>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Research Agenda -->
-    <section id="agenda">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Research Agenda</h2>
-                <p class="section-subtitle">Long-term research direction and motivation.</p>
-            </div>
-            <div class="prose-block">
-                
-                <p>My long-term research goal is to develop AI systems that are not only accurate, but also interpretable, evidence-grounded, and robust under distribution shift. Across my work, I am interested in the gap between pattern recognition and reasoning: when does a model truly learn structure, and when is it exploiting shortcuts in data?</p>
-                
-                <p>My recent projects approach this question from multiple directions: hierarchical RAG for cyber threat intelligence, benchmark design for Sanskrit linguistic generalisation, neuro-symbolic biomedical reasoning, and coordinated multi-agent learning for autonomous driving. A common theme across these projects is evaluation: building systems whose outputs can be traced, tested, compared, and challenged.</p>
-                
-                <p>I am particularly interested in PhD and research roles involving trustworthy LLMs, neuro-symbolic AI, retrieval-augmented generation, multi-agent learning, causal representation learning, and AI evaluation methodology.</p>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Research & Professional Experience -->
-    <section id="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Research &amp; Professional Experience</h2>
-                <p class="section-subtitle">Research, applied AI, and data-systems experience.</p>
-            </div>
-            <div class="experience-list">
-                
-                <div class="experience-item">
-                    <h3 class="experience-title">Graduate Research Intern</h3>
-                    <p class="experience-company">SRH University of Applied Sciences, Berlin</p>
-                    <p class="experience-period">Oct 2024 – Mar 2025</p>
-                    <ul>
-                        
-                        <li>Research focus: Enabling AI to Understand and Process Abstract Concepts (Supervisor: Prof. Dr. Alexander Iliev).</li>
-                        
-                        <li>Investigated structured representations and symbolic reasoning for abstract-concept processing.</li>
-                        
-                        <li>Designed controlled benchmarks, holdout splits, and error taxonomies to distinguish structural learning from surface-level pattern matching.</li>
-                        
-                        <li>Developed evaluation methodology to assess whether model behaviour reflects generalisable structure or dataset shortcuts.</li>
-                        
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3 class="experience-title">Master&#39;s Thesis Research: CMARL for Autonomous Driving</h3>
-                    <p class="experience-company">SRH University of Applied Sciences, Berlin</p>
-                    <p class="experience-period">2024 – 2025</p>
-                    <ul>
-                        
-                        <li>Designed a Coordinated Multi-Agent Reinforcement Learning framework for autonomous vehicles in mixed-traffic environments using CARLA and PyTorch.</li>
-                        
-                        <li>Investigated MADDPG-style coordination with GNN/GAT-enhanced communication and safety-rule evaluation.</li>
-                        
-                        <li>Built training, evaluation, and zero-shot generalisation pipelines with controlled traffic scenarios.</li>
-                        
-                        <li>Defended thesis with grade 1.0/4.0 (S-tier).</li>
-                        
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3 class="experience-title">Data Engineering Intern</h3>
-                    <p class="experience-company">Ford Werke GmbH</p>
-                    <p class="experience-period">Sept 2024 – Mar 2025</p>
-                    <ul>
-                        
-                        <li>Built GCP-based ETL workflows and cloud-native pipelines in BigQuery for CRM and marketing data systems.</li>
-                        
-                        <li>Designed analyst-facing dashboards in Looker Studio for sales and marketing analytics.</li>
-                        
-                        <li>Collaborated with analytics teams on quality checks, schema validation, and reproducible data pipelines.</li>
-                        
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3 class="experience-title">Data Science Intern</h3>
-                    <p class="experience-company">AI Variant</p>
-                    <p class="experience-period">May 2023 – Aug 2023</p>
-                    <ul>
-                        
-                        <li>Conducted exploratory data analysis and applied forecasting techniques to crude-oil price modelling.</li>
-                        
-                        <li>Developed data-visualisation interfaces using Streamlit for analytical reporting.</li>
-                        
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3 class="experience-title">Graduate Trainee Engineer</h3>
-                    <p class="experience-company">Siemens</p>
-                    <p class="experience-period">Aug 2022 – Mar 2023</p>
-                    <ul>
-                        
-                        <li>Supported QA and conducted manual testing for industrial automation software (PCS Neo).</li>
-                        
-                        <li>Wrote structured defect logs and contributed to traceability and quality documentation.</li>
-                        
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3 class="experience-title">Resource Person / Guest Speaker</h3>
-                    <p class="experience-company">Bangalore Institute of Technology, Bengaluru, India</p>
-                    <p class="experience-period">2026</p>
-                    <ul>
-                        
-                        <li>Delivered invited sessions for engineering students on Generative AI and Prompt Engineering.</li>
-                        
-                        <li>Contributed practical academic outreach on LLM applications, prompting workflows, and responsible use of modern AI tools.</li>
-                        
-                        <li>Received certificate of recognition for academic contribution.</li>
-                        
-                    </ul>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Education</h2>
-            </div>
-            <div class="education-grid">
-                
-                <div class="education-card">
-                    <h3 class="education-degree">MSc Big Data and Artificial Intelligence</h3>
-                    <p class="education-institution">SRH University of Applied Sciences, Berlin</p>
-                    <p class="education-period">2023 – 2025</p>
-                    
-                    <p class="education-thesis"><strong>Thesis:</strong> Coordinated Multi-Agent Reinforcement Learning for Autonomous Vehicles in Mixed-Traffic Environments</p>
-                    
-                    
-                    <p class="education-thesis"><strong>Grade:</strong> 1.0/4.0 (S-tier)</p>
-                    
-                </div>
-                
-                <div class="education-card">
-                    <h3 class="education-degree">BE Information Science and Engineering</h3>
-                    <p class="education-institution">Global Academy of Technology, Bengaluru</p>
-                    <p class="education-period">2018 – 2022</p>
-                    
-                    
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Methods & Technical Toolkit -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Methods &amp; Technical Toolkit</h2>
-                <p class="section-subtitle">Methods grouped by research area, not by icons.</p>
-            </div>
-            <div class="skills-grid">
-                
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Machine Learning &amp; Deep Learning</h3>
-                    <div class="skill-tags">
-                        
-                        <span class="skill-tag">PyTorch</span>
-                        
-                        <span class="skill-tag">TensorFlow</span>
-                        
-                        <span class="skill-tag">scikit-learn</span>
-                        
-                        <span class="skill-tag">Hugging Face</span>
-                        
-                        <span class="skill-tag">MLflow</span>
-                        
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3 class="skill-category-title">LLMs &amp; Retrieval</h3>
-                    <div class="skill-tags">
-                        
-                        <span class="skill-tag">RAG</span>
-                        
-                        <span class="skill-tag">LangChain</span>
-                        
-                        <span class="skill-tag">FAISS</span>
-                        
-                        <span class="skill-tag">Sentence-Transformers</span>
-                        
-                        <span class="skill-tag">Ollama</span>
-                        
-                        <span class="skill-tag">Vector search</span>
-                        
-                        <span class="skill-tag">Prompt evaluation</span>
-                        
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Neuro-Symbolic &amp; Knowledge-Based AI</h3>
-                    <div class="skill-tags">
-                        
-                        <span class="skill-tag">Knowledge graphs</span>
-                        
-                        <span class="skill-tag">Rule-based reasoning</span>
-                        
-                        <span class="skill-tag">Structured representations</span>
-                        
-                        <span class="skill-tag">Evidence-grounded explanations</span>
-                        
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Multi-Agent Learning</h3>
-                    <div class="skill-tags">
-                        
-                        <span class="skill-tag">MADDPG</span>
-                        
-                        <span class="skill-tag">GAT / GNNs</span>
-                        
-                        <span class="skill-tag">MARL evaluation</span>
-                        
-                        <span class="skill-tag">Autonomous driving simulation</span>
-                        
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Data Engineering</h3>
-                    <div class="skill-tags">
-                        
-                        <span class="skill-tag">Python</span>
-                        
-                        <span class="skill-tag">SQL</span>
-                        
-                        <span class="skill-tag">BigQuery</span>
-                        
-                        <span class="skill-tag">ETL pipelines</span>
-                        
-                        <span class="skill-tag">GCP</span>
-                        
-                        <span class="skill-tag">Looker Studio</span>
-                        
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Research Engineering</h3>
-                    <div class="skill-tags">
-                        
-                        <span class="skill-tag">Git</span>
-                        
-                        <span class="skill-tag">Docker</span>
-                        
-                        <span class="skill-tag">Linux</span>
-                        
-                        <span class="skill-tag">Reproducible experiments</span>
-                        
-                        <span class="skill-tag">Benchmarking</span>
-                        
-                        <span class="skill-tag">Ablation studies</span>
-                        
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Teaching, Talks & Academic Outreach -->
-    
-    <section id="teaching">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Teaching, Talks &amp; Academic Outreach</h2>
-            </div>
-            <ul class="teaching-list">
-                
-                <li>
-                    <strong>Resource Person / Guest Speaker</strong>: Bangalore Institute of Technology, Bengaluru, India <span class="text-muted">(2026)</span><br>
-                    Invited sessions on Generative AI and Prompt Engineering for engineering students, covering LLM applications, prompting workflows, and responsible use of modern AI tools. Received a certificate of recognition for academic contribution.
-                </li>
-                
-            </ul>
-        </div>
-    </section>
-    
-
-    <!-- Contact -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Contact</h2>
-                <p class="section-subtitle">Open to PhD, research-assistant, research-internship, and research-engineer roles.</p>
-            </div>
-            <div class="contact-grid">
-                <ul class="contact-info-list">
-                    <li><i class="fas fa-envelope"></i><span><strong>Email</strong><a href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com</a></span></li>
-                    <li><i class="fab fa-linkedin"></i><span><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener">www.linkedin.com/in/venkatchavan16</a></span></li>
-                    <li><i class="fab fa-github"></i><span><strong>GitHub</strong><a href="https://github.com/Venkatchavan" target="_blank" rel="noopener">github.com/Venkatchavan</a></span></li>
-                    <li><i class="fas fa-graduation-cap"></i><span><strong>Google Scholar</strong><a href="https://scholar.google.com/citations?user=8dLDVkcAAAAJ&amp;hl=en" target="_blank" rel="noopener">Profile</a></span></li>
-                    <li><i class="fas fa-map-marker-alt"></i><span><strong>Location</strong>Berlin, Germany: open to relocation</span></li>
-                </ul>
-                <form id="contactForm" class="contact-form" data-action="#">
-                    <input type="text" name="name" placeholder="Your name" required>
-                    <input type="email" name="email" placeholder="Your email" required>
-                    <input type="text" name="subject" placeholder="Subject" required>
-                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Send message</button>
-                    <div id="formMessage" class="form-message" style="display: none;"></div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-inner">
-            <p>&copy; 2026 Venkat Chavan N. Research portfolio.</p>
-            <div class="footer-social">
-                <a href="https://github.com/Venkatchavan" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://scholar.google.com/citations?user=8dLDVkcAAAAJ&amp;hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                <a href="mailto:venkat.chavan.n@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="./static/js/academic.js"></script>
+  </header>
+  <noscript><nav class="noscript-nav container" aria-label="Navigation without JavaScript"><a href="./index.html#projects">Research</a><a href="./index.html#publications">Publications</a><a href="./index.html#contact">Contact</a><a href="./hobby.html">Engineering</a><a href="./narrative_nexus.html">Writing</a></nav><style>.menu-toggle,.theme-toggle,.motion-toggle,.network-tabs,.filter-bar,[data-dialog]{display:none!important}</style></noscript>
+  <main id="main" tabindex="-1">
+<section id="home" class="hero section"><div class="container hero-grid">
+  <div class="hero-copy"><p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Venkat Chavan N · AI/ML researcher</p><h1><span>Making AI</span><span>worth <em>trusting.</em></span></h1><p class="hero-description">I build and evaluate AI systems that connect their answers to evidence, reason with structure, and learn to work together.</p><div class="hero-buttons"><a class="button button-primary" href="#projects">Explore the research <span aria-hidden="true">↗</span></a><a class="text-link" href="#contact">Let’s connect <span aria-hidden="true">↗</span></a></div><p class="hero-location">MSc Big Data &amp; AI · SRH Berlin<br> Berlin, Germany: open to relocation</p></div>
+  <div class="network-card" data-network>
+  <div class="network-header"><span class="micro">Research, connected</span><button class="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button></div>
+  <div class="network-stage">
+    <svg viewBox="0 0 540 350" role="img" aria-labelledby="network-title network-desc">
+      <title id="network-title">A map of connected research questions</title><desc id="network-desc">Trustworthy AI connects evidence, structured reasoning and coordinated decisions. Select a research direction below to explore.</desc>
+      <defs><pattern id="dot-grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor" opacity=".18"/></pattern></defs>
+      <rect width="540" height="350" fill="url(#dot-grid)"/>
+      <g class="network-paths" fill="none" stroke="currentColor" stroke-width="1.4"><path data-path="llm" d="M270 175C200 175 185 70 102 70"/><path data-path="reasoning" d="M270 175C340 175 340 65 438 65"/><path data-path="agents" d="M270 175C340 175 350 280 438 280"/><path d="M270 175C200 175 185 285 102 285"/><path d="M102 70C55 160 58 224 102 285" stroke-dasharray="4 6"/><path d="M438 65C490 160 490 230 438 280" stroke-dasharray="4 6"/></g>
+      <g class="network-flow" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="4 210"><path data-flow="llm" d="M102 70C185 70 200 175 270 175"/><path data-flow="reasoning" d="M438 65C340 65 340 175 270 175"/><path data-flow="agents" d="M438 280C350 280 340 175 270 175"/></g>
+      <g class="network-node" data-node="llm"><rect x="35" y="47" width="134" height="46" rx="5"/><circle cx="53" cy="70" r="3"/><text x="67" y="75">Evidence</text></g>
+      <g class="network-node" data-node="reasoning"><rect x="370" y="42" width="135" height="46" rx="5"/><circle cx="388" cy="65" r="3"/><text x="402" y="70">Reasoning</text></g>
+      <g class="network-node" data-node="agents"><rect x="366" y="257" width="142" height="46" rx="5"/><circle cx="384" cy="280" r="3"/><text x="398" y="285">Coordination</text></g>
+      <g class="network-node"><rect x="35" y="262" width="134" height="46" rx="5"/><circle cx="53" cy="285" r="3"/><text x="67" y="290">Evaluation</text></g>
+      <g class="network-core"><circle cx="270" cy="175" r="56" class="core-ring"/><circle cx="270" cy="175" r="47"/><text x="270" y="170" text-anchor="middle">Trustworthy</text><text x="270" y="190" text-anchor="middle">AI</text></g>
+    </svg>
+  </div>
+  <div class="network-tabs" role="group" aria-label="Explore a research direction"><button type="button" data-focus="llm" aria-pressed="true">Ground it</button><button type="button" data-focus="reasoning" aria-pressed="false">Reason with it</button><button type="button" data-focus="agents" aria-pressed="false">Coordinate it</button></div>
+  <p class="network-note" aria-live="polite">Trace a generated answer back to its source. Hierarchical RAG preserves context and supporting evidence.</p>
+  <a class="network-project-link text-link" href="./project/h-rag-cti.html" data-project-llm="./project/h-rag-cti.html" data-project-reasoning="./project/sanskrit-eval.html" data-project-agents="./project/cmarl-thesis.html">Explore H-RAG <span aria-hidden="true">↗</span></a>
+  <span class="diagram-caption">Conceptual map of research directions</span>
+</div>
+</div></section>
+<div class="container research-totals"><p>Research in practice.<br> <span>From questions to working systems.</span></p><div><strong>11</strong><span>Research projects</span></div><div><strong>6</strong><span>Scholarly entries</span></div><div><strong>11</strong><span>Engineering projects</span></div></div>
+<section id="projects" class="section work-section"><div class="container">
+  <div class="section-heading"><div><p class="eyebrow">Research &amp; experiments</p><h2>Ideas, put to the test.</h2></div><p>Retrieval, reasoning, coordination.<br> Each project starts with a question.</p></div>
+  <div class="featured-grid"><article class="featured-project"><div class="visual-link">
+<div class="project-visual visual-rag" aria-hidden="true"><div class="diagram-label">QUESTION → CONTEXT → EVIDENCE</div><div class="rag-layers"><span>Executive context</span><span>Technical detail</span><span>Atomic evidence <b>↗</b></span></div><span class="visual-caption">Hierarchical retrieval</span></div>
+<a class="visual-link-arrow" href="./project/h-rag-cti.html" aria-label="Explore H-RAG for Cyber Threat Intelligence"><span aria-hidden="true">↗</span></a></div><div class="featured-meta"><span>LLMs &amp; retrieval</span><span>Conference accepted</span></div><h3><a href="./project/h-rag-cti.html">H-RAG for cyber threat intelligence</a></h3><p>Can retrieval preserve the structure of the evidence it finds? A hierarchical approach to analyst-grade threat intelligence.</p><a class="text-link" href="./project/h-rag-cti.html">Read the project <span aria-hidden="true">↗</span></a></article><article class="featured-project"><div class="visual-link">
+<div class="project-visual visual-agents" aria-hidden="true"><div class="diagram-label">OBSERVE → COMMUNICATE → ACT</div><div class="road"><span class="car car-a">A</span><span class="car car-b">B</span><span class="car car-c">C</span><svg viewBox="0 0 400 120"><path d="M80 80Q200 0 300 80M80 80H300"/></svg></div><span class="visual-caption">Coordinated decisions</span></div>
+<a class="visual-link-arrow" href="./project/cmarl-thesis.html" aria-label="Explore Coordinated Multi-Agent Reinforcement Learning for Autonomous Driving"><span aria-hidden="true">↗</span></a></div><div class="featured-meta"><span>Multi-agent learning</span><span>MSc thesis</span></div><h3><a href="./project/cmarl-thesis.html">Learning to drive, together.</a></h3><p>How can autonomous vehicles coordinate in mixed traffic? Multi-agent reinforcement learning with graph-based communication.</p><a class="text-link" href="./project/cmarl-thesis.html">Read the project <span aria-hidden="true">↗</span></a></article></div>
+  <div class="work-index-header"><h3>The research index</h3><span id="project-count" aria-live="polite">11 projects</span></div>
+  <div class="filter-bar" role="group" aria-label="Filter research projects"><button data-filter="all" aria-pressed="true" type="button">All research</button><button data-filter="llm" aria-pressed="false" type="button">LLMs &amp; retrieval</button><button data-filter="reasoning" aria-pressed="false" type="button">Reasoning</button><button data-filter="agents" aria-pressed="false" type="button">Multi-agent</button><button data-filter="privacy" aria-pressed="false" type="button">Privacy &amp; security</button><button data-filter="evaluation" aria-pressed="false" type="button">Evaluation</button></div>
+  <div class="project-index"><article class="project-row" data-category="llm"><div><h4><a href="./project/h-rag-cti.html">H-RAG for cyber threat intelligence</a></h4><p>Preserve document structure while retrieving source-grounded threat intelligence.</p></div><span class="project-field">RAG</span><a class="row-arrow" href="./project/h-rag-cti.html" aria-label="Read H-RAG for Cyber Threat Intelligence"><span aria-hidden="true">↗</span></a></article><article class="project-row" data-category="agents"><div><h4><a href="./project/cmarl-thesis.html">CMARL for autonomous driving</a></h4><p>Coordinate vehicles in mixed traffic through graph-based communication.</p></div><span class="project-field">MARL</span><a class="row-arrow" href="./project/cmarl-thesis.html" aria-label="Read Coordinated Multi-Agent Reinforcement Learning for Autonomous Driving"><span aria-hidden="true">↗</span></a></article><article class="project-row" data-category="reasoning"><div><h4><a href="./project/sanskrit-eval.html">SanskritEval</a></h4><p>Test linguistic generalisation through Sanskrit sandhi and morphology.</p></div><span class="project-field">LM Evaluation</span><a class="row-arrow" href="./project/sanskrit-eval.html" aria-label="Read SanskritEval: A Benchmark for Linguistic Generalisation in Sanskrit NLP"><span aria-hidden="true">↗</span></a></article><article class="project-row" data-category="reasoning"><div><h4><a href="./project/llm-healthcare.html">Onco-Variant-Guard</a></h4><p>Combine rules, knowledge graphs and evidence-only generation for cancer variants.</p></div><span class="project-field">Neuro-Symbolic AI</span><a class="row-arrow" href="./project/llm-healthcare.html" aria-label="Read Onco-Variant-Guard: Neuro-Symbolic Cancer Variant Classification"><span aria-hidden="true">↗</span></a></article><article class="project-row" data-category="llm"><div><h4><a href="./project/observeml.html">ObserveML</a></h4><p>Observe retrieval quality, hallucination signals, latency and semantic drift.</p></div><span class="project-field">LLM Evaluation</span><a class="row-arrow" href="./project/observeml.html" aria-label="Read ObserveML: Observability Framework for LLM Applications"><span aria-hidden="true">↗</span></a></article><article class="project-row" data-category="evaluation"><div><h4><a href="./project/procurement-anomaly-detection.html">Procurement anomaly detection</a></h4><p>Surface unusual public procurement patterns with explainable, unsupervised ML.</p></div><span class="project-field">Anomaly Detection</span><a class="row-arrow" href="./project/procurement-anomaly-detection.html" aria-label="Read Procurement Anomaly Detection"><span aria-hidden="true">↗</span></a></article><article class="project-row" data-category="privacy"><div><h4><a href="./project/safe-evidence-redactor.html">safe-evidence-redactor</a></h4><p>Redact sensitive evidence from text and JSON while preserving useful context.</p></div><span class="project-field">Privacy</span><a class="row-arrow" href="./project/safe-evidence-redactor.html" aria-label="Read safe-evidence-redactor: Privacy-First Redaction Library and MCP Server"><span aria-hidden="true">↗</span></a></article><article class="project-row" data-category="privacy"><div><h4><a href="./project/safe-web-audit-mcp.html">safe-web-audit-mcp</a></h4><p>Inspect web security posture with scoped consent and defensive checks.</p></div><span class="project-field">Defensive AI</span><a class="row-arrow" href="./project/safe-web-audit-mcp.html" aria-label="Read safe-web-audit-mcp: Consent-Based Defensive Web Audit"><span aria-hidden="true">↗</span></a></article><article class="project-row" data-category="privacy"><div><h4><a href="./project/phish-triage-mcp.html">phish-triage-mcp</a></h4><p>Analyse suspicious messages locally, without visiting their links.</p></div><span class="project-field">Defensive AI</span><a class="row-arrow" href="./project/phish-triage-mcp.html" aria-label="Read phish-triage-mcp: Local-First Phishing Triage MCP Server"><span aria-hidden="true">↗</span></a></article><article class="project-row" data-category="privacy"><div><h4><a href="./project/mcp-consent-ledger.html">mcp-consent-ledger</a></h4><p>Give defensive MCP tools explicit, auditable authorisation records.</p></div><span class="project-field">Defensive AI</span><a class="row-arrow" href="./project/mcp-consent-ledger.html" aria-label="Read mcp-consent-ledger: Authorisation Proof Library for Defensive MCP Servers"><span aria-hidden="true">↗</span></a></article><article class="project-row" data-category="evaluation"><div><h4><a href="./project/mv-coach-eval.html">MV-Coach-Eval</a></h4><p>Evaluate human activity recognition for calibration, robustness and uncertainty.</p></div><span class="project-field">Evaluation</span><a class="row-arrow" href="./project/mv-coach-eval.html" aria-label="Read MV-Coach-Eval: HAR Benchmarking Platform"><span aria-hidden="true">↗</span></a></article></div>
+  <a class="text-link index-outro" href="./hobby.html">Looking for engineering and side projects? <span aria-hidden="true">↗</span></a>
+</div></section>
+<section id="independent-research" class="study-section section"><div class="container">
+  <div class="study-grid"><div class="study-copy"><p class="eyebrow">Inside an experiment</p><span class="status-label">Preprint forthcoming · 2026</span><h2>Less output.<br> How much reasoning?</h2><p>Can silent placeholders replace visible chain-of-thought? My study tests prompted latent reasoning across 13,000 model calls, 5 models and 5 datasets.</p><a class="text-link" href="#study-details">Read the findings <span aria-hidden="true">↓</span></a></div><figure class="study-chart"><figcaption><strong>What changes when reasoning stays silent?</strong><span>Resource use relative to chain-of-thought. Lower is better.</span></figcaption><div class="chart-legend"><span><i class="legend-baseline"></i> Chain-of-thought</span><span><i class="legend-latent"></i> Latent prompting</span></div><div class="comparison"><div class="comparison-label"><span>Visible output tokens</span><strong>93.5% less</strong></div><div class="bar-row"><span>CoT</span><div class="bar-track"><div class="bar bar-baseline" style="--bar-size: 1" data-bar></div></div><span>100%</span></div><div class="bar-row"><span>Latent</span><div class="bar-track"><div class="bar bar-latent" style="--bar-size: 0.065" data-bar></div></div><span>6.5%</span></div></div><div class="comparison"><div class="comparison-label"><span>Response latency</span><strong>88.7% less</strong></div><div class="bar-row"><span>CoT</span><div class="bar-track"><div class="bar bar-baseline" style="--bar-size: 1" data-bar></div></div><span>100%</span></div><div class="bar-row"><span>Latent</span><div class="bar-track"><div class="bar bar-latent" style="--bar-size: 0.113" data-bar></div></div><span>11.3%</span></div></div><p class="chart-note">CoT normalized to 100%. Aggregate results reported by the author; not independently reproduced.</p></figure></div>
+  <div class="study-tradeoff"><span class="tradeoff-number">−6.8<small>pp</small></span><div><h3>The trade-off matters.</h3><p>Overall accuracy trails chain-of-thought by 6.8 absolute percentage points. Results vary by task; arithmetic still benefits from explicit reasoning.</p></div></div>
+  <details id="study-details" class="study-details"><summary>Study abstract, scope &amp; key findings <span aria-hidden="true">+</span></summary><div class="study-abstract"><h3>Can Silent Placeholders Replace Chain-of-Thought? A Token-Efficiency Study of Prompted Latent Reasoning</h3><p>Chain-of-thought (CoT) prompting improves reasoning accuracy by making models emit intermediate natural-language steps, but these visible traces can dominate output length and latency. We study a lightweight alternative: prompted latent reasoning, where a model receives a short sequence of placeholder slots such as &lt;latent_1&gt; and is instructed to use them internally while emitting only the final answer. This mechanism does not train new latent tokens; instead, it tests whether existing instruction-tuned local models can approximate silent reasoning through prompting alone. Across 13,000 de-duplicated model calls on five reasoning datasets, latent prompting reduces visible output tokens by 93.5% and latency by 88.7% relative to CoT, while trailing CoT by only 6.8 absolute accuracy points overall. The trade-off is strongly task-dependent: CoT remains essential for arithmetic, while latent prompting matches or exceeds CoT on ARC-Challenge and PrOntoQA-style tasks.</p><ul><li>93.5% reduction in visible output tokens vs. CoT across 5 models and 5 datasets</li><li>88.7% latency reduction with only 6.8pp accuracy drop overall</li><li>Latent prompting matches or exceeds CoT on ARC-Challenge and PrOntoQA-style tasks</li><li>CoT remains essential for arithmetic; latent prompting is a strong inference-time baseline for other task types</li></ul><p class="chart-note">Venkat Chavan Nagabhushana · 2026 · Preprint forthcoming. Public paper and code links will appear when available.</p></div></details>
+</div></section>
+<section id="publications" class="section"><div class="container publications-grid"><div class="publication-intro"><p class="eyebrow">Publications &amp; scholarly work</p><h2>Written.<br> Reviewed.<br> Still questioning.</h2><p>Published papers, a defended thesis and ongoing work. Each entry carries its current status.</p><a class="text-link" href="https://scholar.google.com/citations?user=8dLDVkcAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar <span aria-hidden="true">↗</span></a><div class="publication-key"><span class="status-dot"></span><span>3 published · 1 accepted<br> Other entries are labelled below.</span></div></div><div class="publication-list"><article class="publication"><div class="publication-meta"><span class="pub-status is-published">Published</span><span>2025</span></div><h3>Encrypted Vector Operations for Privacy-Preserving Machine Learning and Data Retrieval</h3><p class="pub-authors">D. V S, S. B, M. L and V. C. Nagabhushana</p><p class="pub-venue">2025 International Conference on Emerging Technologies in Electronics and Green Energy (ICETEG), Mysore, India</p><p>Encrypted vector operations supporting privacy-preserving similarity search and biometric authentication.</p><div class="publication-links"><a class="text-link" href="https://doi.org/10.1109/ICETEG66194.2025.11473203" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a></div></article><article class="publication"><div class="publication-meta"><span class="pub-status is-published">Published</span><span>2022</span></div><h3>Study on Crowd Density Estimation and Location Prediction in Public Transport System</h3><p class="pub-authors">Deepthi V S, Venkat Chavan N, Sandhya Shanbhag, Sakshi S Dandappala</p><p class="pub-venue">International Journal of Innovative Research in Technology (IJIRT), Vol. 8, Issue 10, pp. 30-36</p><p>Survey and design study on computer-vision-based crowd density estimation for public-transport systems.</p><div class="publication-links"><a class="text-link" href="https://ijirt.org/publishedpaper/IJIRT154092_PAPER.pdf" target="_blank" rel="noopener">Read paper <span aria-hidden="true">↗</span></a></div></article><article class="publication"><div class="publication-meta"><span class="pub-status is-published">Published</span><span>2022</span></div><h3>Crowd Density Estimation and Location Prediction in Public Transport System</h3><p class="pub-authors">Deepthi V S, Venkat Chavan N, Sandhya Shanbhag, Sakshi S Dandappala</p><p class="pub-venue">International Journal of Engineering Research &amp; Technology (IJERT), Vol. 11, Issue 7</p><p>Implementation and evaluation of crowd density estimation and location prediction for public transport.</p><div class="publication-links"><a class="text-link" href="https://doi.org/10.5281/zenodo.18438235" target="_blank" rel="noopener">DOI <span aria-hidden="true">↗</span></a><a class="text-link" href="https://www.ijert.org/research/crowd-density-estimation-and-location-prediction-in-public-transport-system-IJERTV11IS070053.pdf" target="_blank" rel="noopener">Read paper <span aria-hidden="true">↗</span></a></div></article><article class="publication"><div class="publication-meta"><span class="pub-status ">Submitted (Yet to be Published)</span><span>2025</span></div><h3>Coordinated Multi-Agent Reinforcement Learning for Autonomous Vehicles in Mixed-Traffic Environments</h3><p class="pub-authors">Venkat Chavan N</p><p class="pub-venue">MSc thesis, SRH University of Applied Sciences, Berlin</p><p>MSc thesis on CMARL with GNN/GAT-enhanced coordination and safety-rule evaluation. Defended with grade 1.0/4.0.</p><div class="publication-links"></div></article><article class="publication"><div class="publication-meta"><span class="pub-status is-published">Accepted</span><span>2026</span></div><h3>Hierarchical Retrieval-Augmented Generation for Cyber Threat Intelligence</h3><p class="pub-authors">Venkat Chavan N</p><p class="pub-venue">Accepted at international conference (venue and proceedings to be added)</p><p>Hierarchical RAG system for analyst-grade cyber threat intelligence with citation-grounded reasoning. Accepted and presented at an international conference; full proceedings reference to be added.</p><div class="publication-links"></div></article><article class="publication"><div class="publication-meta"><span class="pub-status ">Submitted (Yet to be Published)</span><span>2026</span></div><h3>TinyML and Edge AI (book chapter)</h3><p class="pub-authors">Venkat Chavan N</p><p class="pub-venue">Edited volume: to be confirmed</p><p>Book chapter on TinyML and Edge AI; details to be confirmed once contract is finalised.</p><div class="publication-links"></div></article></div></div></section>
+<section id="experience" class="section about-section"><div class="container about-grid"><div class="about-copy"><p class="eyebrow">The person behind the questions</p><h2>Structure over<br> shortcuts.</h2><div class="portrait-line"><img src="./static/images/Chavan-profile.jpg" alt="Portrait of Venkat Chavan N" width="144" height="164" loading="lazy"><p>Venkat Chavan N<br> <span>MSc Big Data &amp; AI<br> SRH University, Berlin</span><a class="text-link" href="./static/files/Venkat_Chavan_CV.pdf" target="_blank" rel="noopener">Download CV ↗</a></p></div><p>My work asks when a model learns structure, and when it takes a shortcut. I explore this through retrieval-grounded systems, linguistic benchmarks and coordinated learning.</p><details class="plain-details" id="agenda"><summary>My research agenda <span aria-hidden="true">+</span></summary><p>My long-term research goal is to develop AI systems that are not only accurate, but also interpretable, evidence-grounded, and robust under distribution shift. Across my work, I am interested in the gap between pattern recognition and reasoning: when does a model truly learn structure, and when is it exploiting shortcuts in data?</p><p>My recent projects approach this question from multiple directions: hierarchical RAG for cyber threat intelligence, benchmark design for Sanskrit linguistic generalisation, neuro-symbolic biomedical reasoning, and coordinated multi-agent learning for autonomous driving. A common theme across these projects is evaluation: building systems whose outputs can be traced, tested, compared, and challenged.</p><p>I am particularly interested in PhD and research roles involving trustworthy LLMs, neuro-symbolic AI, retrieval-augmented generation, multi-agent learning, causal representation learning, and AI evaluation methodology.</p></details><details class="plain-details" id="research"><summary>Five connected research interests <span aria-hidden="true">+</span></summary><h3>Trustworthy LLM Systems</h3><p>Hallucination control, evidence grounding, RAG evaluation, citation accuracy, and adversarial robustness of retrieval-augmented language models.</p><h3>Neuro-Symbolic AI &amp; Structured Reasoning</h3><p>Knowledge graphs, symbolic constraints, rule-based reasoning, and structured representations as a route to reasoning beyond surface-level pattern matching.</p><h3>Multi-Agent Reinforcement Learning</h3><p>Coordinated autonomous driving in mixed-traffic environments, zero-shot transfer, safety-rule evaluation, and GNN/GAT-enhanced agent coordination.</p><h3>Language Model Evaluation</h3><p>SanskritEval, sandhi segmentation, morphological generalisation, low-resource NLP, and benchmark design that separates linguistic structure from surface patterns.</p><h3>Privacy-Preserving &amp; Security-Aware AI</h3><p>Encrypted vector operations, privacy-preserving retrieval, cyber threat intelligence, defensive AI tooling, and PII-aware evidence handling.</p></details></div><div class="experience-list"><h3 class="list-title">Research &amp; professional experience</h3><article class="experience-item"><span class="experience-period">Oct 2024 to Mar 2025</span><h4>Graduate Research Intern</h4><p class="experience-company">SRH University of Applied Sciences, Berlin</p><details><summary>Work &amp; contributions <span aria-hidden="true">+</span></summary><ul><li>Research focus: Enabling AI to Understand and Process Abstract Concepts (Supervisor: Prof. Dr. Alexander Iliev).</li><li>Investigated structured representations and symbolic reasoning for abstract-concept processing.</li><li>Designed controlled benchmarks, holdout splits, and error taxonomies to distinguish structural learning from surface-level pattern matching.</li><li>Developed evaluation methodology to assess whether model behaviour reflects generalisable structure or dataset shortcuts.</li></ul></details></article><article class="experience-item"><span class="experience-period">2024 to 2025</span><h4>Master&#39;s Thesis Research: CMARL for Autonomous Driving</h4><p class="experience-company">SRH University of Applied Sciences, Berlin</p><details><summary>Work &amp; contributions <span aria-hidden="true">+</span></summary><ul><li>Designed a Coordinated Multi-Agent Reinforcement Learning framework for autonomous vehicles in mixed-traffic environments using CARLA and PyTorch.</li><li>Investigated MADDPG-style coordination with GNN/GAT-enhanced communication and safety-rule evaluation.</li><li>Built training, evaluation, and zero-shot generalisation pipelines with controlled traffic scenarios.</li><li>Defended thesis with grade 1.0/4.0 (S-tier).</li></ul></details></article><article class="experience-item"><span class="experience-period">Sept 2024 to Mar 2025</span><h4>Data Engineering Intern</h4><p class="experience-company">Ford Werke GmbH</p><details><summary>Work &amp; contributions <span aria-hidden="true">+</span></summary><ul><li>Built GCP-based ETL workflows and cloud-native pipelines in BigQuery for CRM and marketing data systems.</li><li>Designed analyst-facing dashboards in Looker Studio for sales and marketing analytics.</li><li>Collaborated with analytics teams on quality checks, schema validation, and reproducible data pipelines.</li></ul></details></article><article class="experience-item"><span class="experience-period">May 2023 to Aug 2023</span><h4>Data Science Intern</h4><p class="experience-company">AI Variant</p><details><summary>Work &amp; contributions <span aria-hidden="true">+</span></summary><ul><li>Conducted exploratory data analysis and applied forecasting techniques to crude-oil price modelling.</li><li>Developed data-visualisation interfaces using Streamlit for analytical reporting.</li></ul></details></article><article class="experience-item"><span class="experience-period">Aug 2022 to Mar 2023</span><h4>Graduate Trainee Engineer</h4><p class="experience-company">Siemens</p><details><summary>Work &amp; contributions <span aria-hidden="true">+</span></summary><ul><li>Supported QA and conducted manual testing for industrial automation software (PCS Neo).</li><li>Wrote structured defect logs and contributed to traceability and quality documentation.</li></ul></details></article><article class="experience-item"><span class="experience-period">2026</span><h4>Resource Person / Guest Speaker</h4><p class="experience-company">Bangalore Institute of Technology, Bengaluru, India</p><details><summary>Work &amp; contributions <span aria-hidden="true">+</span></summary><ul><li>Delivered invited sessions for engineering students on Generative AI and Prompt Engineering.</li><li>Contributed practical academic outreach on LLM applications, prompting workflows, and responsible use of modern AI tools.</li><li>Received certificate of recognition for academic contribution.</li></ul></details></article></div></div></section>
+<section id="skills" class="section toolkit-section"><div class="container"><div class="section-heading"><div><p class="eyebrow">Methods &amp; foundations</p><h2>A practical toolkit.</h2></div><p>Methods chosen for the question.<br> Experiments built to be repeated.</p></div><div class="toolkit-grid"><div class="toolkit-item"><h3>Machine Learning &amp; Deep Learning</h3><p>PyTorch · TensorFlow · scikit-learn · Hugging Face · MLflow</p></div><div class="toolkit-item"><h3>LLMs &amp; Retrieval</h3><p>RAG · LangChain · FAISS · Sentence-Transformers · Ollama · Vector search · Prompt evaluation</p></div><div class="toolkit-item"><h3>Neuro-Symbolic &amp; Knowledge-Based AI</h3><p>Knowledge graphs · Rule-based reasoning · Structured representations · Evidence-grounded explanations</p></div><div class="toolkit-item"><h3>Multi-Agent Learning</h3><p>MADDPG · GAT / GNNs · MARL evaluation · Autonomous driving simulation</p></div><div class="toolkit-item"><h3>Data Engineering</h3><p>Python · SQL · BigQuery · ETL pipelines · GCP · Looker Studio</p></div><div class="toolkit-item"><h3>Research Engineering</h3><p>Git · Docker · Linux · Reproducible experiments · Benchmarking · Ablation studies</p></div></div><div class="foundations"><div id="education"><h3>Education</h3><article class="education-item"><span class="micro">2023 to 2025</span><h4>MSc Big Data and Artificial Intelligence</h4><p>SRH University of Applied Sciences, Berlin</p><p>Thesis grade: 1.0/4.0 (S-tier)</p></article><article class="education-item"><span class="micro">2018 to 2022</span><h4>BE Information Science and Engineering</h4><p>Global Academy of Technology, Bengaluru</p></article></div><div id="teaching"><h3>Teaching &amp; outreach</h3><article class="education-item"><span class="micro">2026</span><h4>Resource Person / Guest Speaker</h4><p>Bangalore Institute of Technology, Bengaluru, India</p><p>Invited sessions on Generative AI and Prompt Engineering for engineering students, covering LLM applications, prompting workflows, and responsible use of modern AI tools. Received a certificate of recognition for academic contribution.</p></article></div></div></div></section>
+<section id="contact" class="section contact-section"><div class="container"><p class="eyebrow">A good question is a good start.</p><div class="contact-heading"><h2>Let’s figure<br> something out.</h2><span class="contact-arrow" aria-hidden="true">↗</span></div><div class="contact-bottom"><p>Open to PhD opportunities, research collaborations<br> and research engineering roles.</p><a class="contact-email" href="mailto:venkat.chavan.n@gmail.com">venkat.chavan.n@gmail.com <span aria-hidden="true">↗</span></a></div><div class="contact-links"><a href="https://github.com/Venkatchavan" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/venkatchavan16" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://scholar.google.com/citations?user=8dLDVkcAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar ↗</a></div></div></section>
+</main>
+  <footer class="site-footer"><div class="container footer-top"><a class="identity" href="./index.html">Venkat Chavan N.</a><p>Questions. Experiments. Evidence.</p><a class="text-link" href="./index.html#home">Back to top <span aria-hidden="true">↑</span></a></div><div class="container footer-bottom"><p>© 2026 Venkat Chavan N</p><nav aria-label="More from Venkat"><a href="./hobby.html">Engineering projects</a><a href="./narrative_nexus.html">Narrative Nexus</a><a href="https://github.com/Venkatchavan" target="_blank" rel="noopener">GitHub ↗</a></nav><span>Built with curiosity.</span></div></footer>
+  <script defer src="./static/vendor/gsap.min.js"></script>
+  <script defer src="./static/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="./static/vendor/lenis.js"></script>
+  <script defer src="./static/js/academic.js"></script>
 </body>
 </html>

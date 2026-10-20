@@ -133,7 +133,7 @@ section {
     z-index: -1;
     background-color: var(--background-color);
     /* Add a subtle background image here */
-    /* background-image: url('../images/tech-background.jpg'); */
+    /* background-image: none; */
     background-size: cover;
     background-position: center;
 }

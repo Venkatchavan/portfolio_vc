@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ data.name }} | AI/ML researcher{% endblock %}</title>
+  <meta name="description" content="{% block description %}Venkat Chavan N researches trustworthy AI, structured reasoning and multi-agent learning. Explore research projects, publications and experiments.{% endblock %}">
+  <meta name="author" content="{{ data.name }}">
+  <meta name="theme-color" content="#f4f6f3">
+  <link rel="canonical" href="{{ site_url }}/{% block canonical %}{% endblock %}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ self.title() | striptags }}">
+  <meta property="og:description" content="{{ self.description() | striptags }}">
+  <meta property="og:url" content="{{ site_url }}/{{ self.canonical() }}">
+  <meta property="og:image" content="{{ site_url }}/static/images/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ self.title() | striptags }}">
+  <meta name="twitter:description" content="{{ self.description() | striptags }}">
+  <meta name="twitter:image" content="{{ site_url }}/static/images/og.png">
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/mark.svg') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/logo-portfolio.png') }}">
+  <link rel="preload" href="{{ url_for('static', filename='fonts/space-grotesk-400_700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ url_for('static', filename='fonts/dm-sans-400_700-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/academic.css') }}">
+  <script>
+    try { document.documentElement.dataset.theme=localStorage.getItem('vc-theme')||'light'; } catch(e) {}
+    try {
+      if(sessionStorage.getItem('vc-transition')==='1' && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('page-entering');
+        setTimeout(function(){document.documentElement.classList.remove('page-entering');},1400);
+      }
+    } catch(e) {}
+  </script>
+  <script type="application/ld+json">{{ {'@context': 'https://schema.org', '@type': 'Person', 'name': data.name, 'jobTitle': 'AI/ML researcher', 'url': site_url + '/', 'image': site_url + '/static/' + data.profile_image, 'sameAs': ['https://' + data.github, 'https://' + data.linkedin, 'https://' + data.google_scholar]} | tojson }}</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="transition-panel" aria-hidden="true"><span>Following the question. ↗</span></div>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a class="identity" href="{{ url_for('main.home') }}" aria-label="{{ data.name }}, home"><svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="M3 5h7l6 19L22 5h7L19 29h-6Z" fill="currentColor"/><circle cx="26" cy="26" r="3" fill="var(--accent)"/></svg><span>Venkat Chavan<span class="identity-suffix"> N.</span></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a class="nav-link" href="{{ url_for('main.home') }}#projects">Research</a>
+        <a class="nav-link" href="{{ url_for('main.home') }}#publications">Publications</a>
+        <a class="nav-link" href="{{ url_for('main.home') }}#experience">About</a>
+        <a class="nav-link" href="{{ url_for('main.home') }}#contact">Contact</a>
+      </nav>
+      <div class="nav-actions"><a class="cv-link" href="{{ url_for('static', filename='files/Venkat_Chavan_CV.pdf') }}" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a><button class="theme-toggle" type="button" aria-label="Switch to dark theme"><span aria-hidden="true">◐</span></button><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">Menu <span aria-hidden="true">+</span></button></div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation" hidden>
+      <a href="{{ url_for('main.home') }}#projects">Research</a><a href="{{ url_for('main.home') }}#publications">Publications</a><a href="{{ url_for('main.home') }}#experience">About</a><a href="{{ url_for('main.home') }}#contact">Contact</a><a href="{{ url_for('main.hobby') }}">Engineering projects</a><a href="{{ url_for('narrative.narrative_nexus') }}">Narrative Nexus</a>
+    </nav>
+  </header>
+  <noscript><nav class="noscript-nav container" aria-label="Navigation without JavaScript"><a href="{{ url_for('main.home') }}#projects">Research</a><a href="{{ url_for('main.home') }}#publications">Publications</a><a href="{{ url_for('main.home') }}#contact">Contact</a><a href="{{ url_for('main.hobby') }}">Engineering</a><a href="{{ url_for('narrative.narrative_nexus') }}">Writing</a></nav><style>.menu-toggle,.theme-toggle,.motion-toggle,.network-tabs,.filter-bar,[data-dialog]{display:none!important}</style></noscript>
+  <main id="main" tabindex="-1">{% block content %}{% endblock %}</main>
+  <footer class="site-footer"><div class="container footer-top"><a class="identity" href="{{ url_for('main.home') }}">Venkat Chavan N.</a><p>Questions. Experiments. Evidence.</p><a class="text-link" href="{{ url_for('main.home') }}#home">Back to top <span aria-hidden="true">↑</span></a></div><div class="container footer-bottom"><p>© 2026 {{ data.name }}</p><nav aria-label="More from Venkat"><a href="{{ url_for('main.hobby') }}">Engineering projects</a><a href="{{ url_for('narrative.narrative_nexus') }}">Narrative Nexus</a><a href="https://{{ data.github }}" target="_blank" rel="noopener">GitHub ↗</a></nav><span>Built with curiosity.</span></div></footer>
+  <script defer src="{{ url_for('static', filename='vendor/gsap.min.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='vendor/ScrollTrigger.min.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='vendor/lenis.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='js/academic.js') }}"></script>
+</body>
+</html>

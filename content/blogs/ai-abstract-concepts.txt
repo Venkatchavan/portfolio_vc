@@ -1,8 +1,8 @@
 📘 Blog 1: Enabling AI to Understand and Process Abstract Concepts
 
-Based on Internship Research 
+Research note from my master's internship at SRH University, Berlin.
 
-Artificial Intelligence has made great progress in recognizing images, speech, and text—but teaching AI to understand abstract concepts such as justice, fairness, or creativity is still a major challenge. My research project, conducted during my Master's at SRH Berlin, explored this frontier.
+How can AI represent an abstract concept rather than recognise a surface pattern? My master's research at SRH Berlin explored this question by comparing neural, margin-based and object/emotion classification approaches.
 
 I experimented with different approaches:
 

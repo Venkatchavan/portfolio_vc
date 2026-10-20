@@ -1,0 +1,21 @@
+<div class="network-card" data-network>
+  <div class="network-header"><span class="micro">Research, connected</span><button class="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button></div>
+  <div class="network-stage">
+    <svg viewBox="0 0 540 350" role="img" aria-labelledby="network-title network-desc">
+      <title id="network-title">A map of connected research questions</title><desc id="network-desc">Trustworthy AI connects evidence, structured reasoning and coordinated decisions. Select a research direction below to explore.</desc>
+      <defs><pattern id="dot-grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor" opacity=".18"/></pattern></defs>
+      <rect width="540" height="350" fill="url(#dot-grid)"/>
+      <g class="network-paths" fill="none" stroke="currentColor" stroke-width="1.4"><path data-path="llm" d="M270 175C200 175 185 70 102 70"/><path data-path="reasoning" d="M270 175C340 175 340 65 438 65"/><path data-path="agents" d="M270 175C340 175 350 280 438 280"/><path d="M270 175C200 175 185 285 102 285"/><path d="M102 70C55 160 58 224 102 285" stroke-dasharray="4 6"/><path d="M438 65C490 160 490 230 438 280" stroke-dasharray="4 6"/></g>
+      <g class="network-flow" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="4 210"><path data-flow="llm" d="M102 70C185 70 200 175 270 175"/><path data-flow="reasoning" d="M438 65C340 65 340 175 270 175"/><path data-flow="agents" d="M438 280C350 280 340 175 270 175"/></g>
+      <g class="network-node" data-node="llm"><rect x="35" y="47" width="134" height="46" rx="5"/><circle cx="53" cy="70" r="3"/><text x="67" y="75">Evidence</text></g>
+      <g class="network-node" data-node="reasoning"><rect x="370" y="42" width="135" height="46" rx="5"/><circle cx="388" cy="65" r="3"/><text x="402" y="70">Reasoning</text></g>
+      <g class="network-node" data-node="agents"><rect x="366" y="257" width="142" height="46" rx="5"/><circle cx="384" cy="280" r="3"/><text x="398" y="285">Coordination</text></g>
+      <g class="network-node"><rect x="35" y="262" width="134" height="46" rx="5"/><circle cx="53" cy="285" r="3"/><text x="67" y="290">Evaluation</text></g>
+      <g class="network-core"><circle cx="270" cy="175" r="56" class="core-ring"/><circle cx="270" cy="175" r="47"/><text x="270" y="170" text-anchor="middle">Trustworthy</text><text x="270" y="190" text-anchor="middle">AI</text></g>
+    </svg>
+  </div>
+  <div class="network-tabs" role="group" aria-label="Explore a research direction"><button type="button" data-focus="llm" aria-pressed="true">Ground it</button><button type="button" data-focus="reasoning" aria-pressed="false">Reason with it</button><button type="button" data-focus="agents" aria-pressed="false">Coordinate it</button></div>
+  <p class="network-note" aria-live="polite">Trace a generated answer back to its source. Hierarchical RAG preserves context and supporting evidence.</p>
+  <a class="network-project-link text-link" href="{{ url_for('projects.project_detail', project_id='h-rag-cti') }}" data-project-llm="{{ url_for('projects.project_detail', project_id='h-rag-cti') }}" data-project-reasoning="{{ url_for('projects.project_detail', project_id='sanskrit-eval') }}" data-project-agents="{{ url_for('projects.project_detail', project_id='cmarl-thesis') }}">Explore H-RAG <span aria-hidden="true">↗</span></a>
+  <span class="diagram-caption">Conceptual map of research directions</span>
+</div>

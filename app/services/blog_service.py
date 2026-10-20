@@ -57,7 +57,7 @@ def get_blogs() -> List[BlogPost]:
             
             blog = BlogPost(
                 title=title,
-                content=content,
+                content="\n".join(content.splitlines()[1:]).lstrip(),
                 excerpt=excerpt,
                 filename=filename
             )

@@ -42,6 +42,19 @@ def create_app(config_name='development'):
     
     # Register blueprints
     register_blueprints(app)
+
+    from app.services.presentation import presentation_context
+    app.context_processor(presentation_context)
+
+    @app.template_filter('readable')
+    def readable(value):
+        return str(value).replace(' – ', ' to ').replace('—', ': ').replace('–', '-')
+
+    @app.errorhandler(404)
+    def not_found(error):
+        from flask import render_template
+        from app.services.portfolio_service import get_portfolio_data
+        return render_template('404.html', data=get_portfolio_data().to_dict()), 404
     
     return app
 

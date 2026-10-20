@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://venkatchavan.github.io/portfolio_vc/sitemap.xml

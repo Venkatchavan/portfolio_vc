@@ -1,245 +1,88 @@
-"""
-Static site builder for GitHub Pages deployment.
-Generates a static version of the Flask portfolio.
-"""
-
+"""Render the Flask portfolio to a validated, portable GitHub Pages site."""
 import os
-import shutil
-from pathlib import Path
-from app import create_app
-from flask import url_for
-import requests
-import time
 import re
+import shutil
+import posixpath
+from pathlib import Path
+from urllib.parse import urlsplit
+from xml.sax.saxutils import escape
+
+from app import create_app
+from app.services.portfolio_service import get_portfolio_data
+from app.services.presentation import SITE_URL
+
 
 def fix_urls_for_static_site(content, filename, portfolio_data):
-    """
-    Fix all Flask URLs to work with static HTML deployment.
-    
-    Args:
-        content (str): HTML content to fix
-        filename (str): Name of the current file being processed
-        portfolio_data: Portfolio data containing project information
-    
-    Returns:
-        str: Fixed HTML content
-    """
-    
-    # Fix static asset paths
-    content = content.replace('href="/static/', 'href="./static/')
-    content = content.replace('src="/static/', 'src="./static/')
-    content = content.replace('url(/static/', 'url(./static/')
-    
-    # Fix Flask url_for patterns with regex
-    # Main navigation patterns - more comprehensive matching
-    content = re.sub(r'href="[^"]*url_for\([\'"]main\.home[\'"].*?\)"', 'href="./index.html"', content)
-    content = re.sub(r'href="[^"]*url_for\([\'"]main\.hobby[\'"].*?\)"', 'href="./hobby.html"', content)
-    content = re.sub(r'href="[^"]*url_for\([\'"]main\.archive[\'"].*?\)"', 'href="./hobby.html"', content)
-    content = re.sub(r'href="[^"]*url_for\([\'"]chatbot\.chatbot[\'"].*?\)"', 'href="./chatbot.html"', content)
-    content = re.sub(r'href="[^"]*url_for\([\'"]narrative\.narrative_nexus[\'"].*?\)"', 'href="./narrative_nexus.html"', content)
-    content = re.sub(r'action="[^"]*url_for\([\'"]main\.contact[\'"].*?\)"', 'action="#"', content)
-    
-    # Handle url_for with anchor links
-    content = re.sub(r'href="[^"]*url_for\([\'"]main\.home[\'"][^)]*\)#([^"]*)"', r'href="./index.html#\1"', content)
-    
-    # Direct URL patterns - comprehensive handling
-    content = content.replace('href="/"', 'href="./index.html"')
-    content = content.replace('href="/hobby"', 'href="./hobby.html"')
-    content = content.replace('href="/archive"', 'href="./hobby.html"')
-    content = content.replace('href="/contact"', 'href="#contact"')
-    content = content.replace('data-action="/contact"', 'data-action="#"')
-    content = content.replace('href="/chat/bot"', 'href="./chatbot.html"')
-    content = content.replace('href="/narrative/nexus"', 'href="./narrative_nexus.html"')
-    
-    # Handle root-relative anchor links specifically  
-    content = content.replace('href="/#about"', 'href="./index.html#about"')
-    content = content.replace('href="/#skills"', 'href="./index.html#skills"')
-    content = content.replace('href="/#experience"', 'href="./index.html#experience"')
-    content = content.replace('href="/#education"', 'href="./index.html#education"')
-    content = content.replace('href="/#projects"', 'href="./index.html#projects"')
-    content = content.replace('href="/#contact"', 'href="./index.html#contact"')
-    content = content.replace('href="/#research"', 'href="./index.html#research"')
-    content = content.replace('href="/#publications"', 'href="./index.html#publications"')
-    content = content.replace('href="/#agenda"', 'href="./index.html#agenda"')
-    content = content.replace('href="/#teaching"', 'href="./index.html#teaching"')
-    content = content.replace('href="/#home"', 'href="./index.html#home"')
-    # Generic catch-all for any /#anchor pattern still present
-    content = re.sub(r'href="/#([A-Za-z0-9_-]+)"', r'href="./index.html#\1"', content)
-    
-    # Project detail links - this fixes "Learn More" buttons
-    for project in portfolio_data.projects:
-        project_id = project.id
-        
-        # Flask url_for patterns for projects
-        flask_project_pattern = rf'href="[^"]*url_for\([\'"]projects\.project_detail[\'"],\s*project_id=[\'"]?{project_id}[\'"]?\)[^"]*"'
-        content = re.sub(flask_project_pattern, f'href="./project/{project_id}.html"', content)
-        
-        # Direct URL patterns for projects
-        content = content.replace(f'href="/project/{project_id}"', f'href="./project/{project_id}.html"')
-    
-    # Fix anchor links based on current file
-    if filename == 'index.html':
-        # On index page, anchor links stay as # (same page navigation)
-        pass
-    else:
-        # On other pages, anchor links should navigate back to index.html
-        content = re.sub(r'href="(#[^"]*)"', r'href="./index.html\1"', content)
-        content = re.sub(r'href="[^"]*main\.home[^"]*#([^"]*)"', r'href="./index.html#\1"', content)
-    
-    # Disable API endpoints for static deployment
-    content = content.replace('/api/chat', '#')
-    
-    return content
+    routes = {'/': 'index.html', '/hobby': 'hobby.html', '/archive': 'hobby.html',
+              '/narrative/nexus': 'narrative_nexus.html', '/narrative/': 'narrative_nexus.html',
+              '/chat/bot': 'chatbot.html', '/chat/': 'chatbot.html'}
+    routes.update({f'/project/{p.id}': f'project/{p.id}.html' for p in portfolio_data.projects})
+    folder = posixpath.dirname(filename) or '.'
+
+    def rewrite(match):
+        attr, quote, raw = match.groups()
+        if not raw.startswith('/') or raw.startswith('//'):
+            return match.group(0)
+        url = urlsplit(raw)
+        target = routes.get(url.path)
+        if url.path.startswith('/static/'):
+            target = url.path.lstrip('/')
+        if not target:
+            return match.group(0)
+        # 404.html can be served at any depth on GitHub Pages.
+        if filename == '404.html':
+            result = urlsplit(SITE_URL).path + '/' + target
+        else:
+            result = posixpath.relpath(target, folder)
+            if not result.startswith('.'):
+                result = './' + result
+        if url.query:
+            result += '?' + url.query
+        if url.fragment:
+            result += '#' + ('experience' if url.fragment == 'about' else url.fragment)
+        return f'{attr}={quote}{result}{quote}'
+
+    return re.sub(r'\b(href|src|action|data-action|data-project-llm|data-project-reasoning|data-project-agents)=([\"\'])(.*?)\2', rewrite, content).replace('index.html#about', 'index.html#experience')
+
 
 def build_static_site():
-    """Build static version of the portfolio for GitHub Pages."""
-    
-    # Generate the CV PDF first so it ends up in dist/static/files/
-    try:
-        from build_cv import build_cv
-        build_cv()
-    except Exception as e:
-        print(f"⚠️  CV generation failed: {e}")
-    
-    # Create output directory
-    output_dir = Path("dist")
-    if output_dir.exists():
-        shutil.rmtree(output_dir)
-    output_dir.mkdir()
-    
-    # Set environment for production build
-    os.environ.setdefault('FLASK_ENV', 'production')
     os.environ.setdefault('SECRET_KEY', 'static-build-key')
-    os.environ.setdefault('GEMINI_API_KEY', 'demo-key')
-    
-    # Create app and start test server
-    app = create_app()
+    from build_cv import build_cv
+    build_cv()
+    output = Path('dist')
+    if output.exists():
+        shutil.rmtree(output)
+    output.mkdir()
+    shutil.copytree('app/static', output / 'static')
+    app = create_app('production')
     app.config['TESTING'] = True
-    
-    # Copy static files
-    static_src = Path("app/static")
-    static_dst = output_dir / "static"
-    if static_src.exists():
-        shutil.copytree(static_src, static_dst)
-        print(f"✅ Copied static files to {static_dst}")
-    
-    # Copy additional static HTML files (like blogs.html)
-    additional_files = ['blogs.html']
-    for file in additional_files:
-        if Path(file).exists():
-            shutil.copy2(file, output_dir / file)
-            print(f"✅ Copied {file} to {output_dir}")
-    
-    # Copy project directory for project detail pages
-    project_src = Path("project")
-    if project_src.exists():
-        project_dst = output_dir / "project"
-        shutil.copytree(project_src, project_dst)
-        print(f"✅ Copied project files to {project_dst}")
-    
-    # Get portfolio data for URL fixing
-    from app.services.portfolio_service import get_portfolio_data
-    portfolio_data = get_portfolio_data()
-    
-    # Test server context
+    portfolio = get_portfolio_data()
+    routes = [('/', 'index.html'), ('/hobby', 'hobby.html'),
+              ('/narrative/nexus', 'narrative_nexus.html'), ('/chat/bot', 'chatbot.html')]
+    routes += [(f'/project/{p.id}', f'project/{p.id}.html') for p in portfolio.projects]
+    routes.append(('/__not_found__', '404.html'))
     with app.test_client() as client:
-        
-        # Routes to build
-        routes = [
-            ('/', 'index.html'),
-            ('/hobby', 'hobby.html'),
-            ('/narrative/nexus', 'narrative_nexus.html'),
-            ('/chat/bot', 'chatbot.html'),
-        ]
-        
-        # Build each route
         for route, filename in routes:
-            try:
-                response = client.get(route)
-                if response.status_code == 200:
-                    content = response.get_data(as_text=True)
-                    
-                    # Fix all URLs for static deployment
-                    content = fix_urls_for_static_site(content, filename, portfolio_data)
-                    
-                    output_file = output_dir / filename
-                    with open(output_file, 'w', encoding='utf-8') as f:
-                        f.write(content)
-                    print(f"✅ Built {route} -> {filename}")
-                else:
-                    print(f"❌ Failed to build {route}: {response.status_code}")
-            except Exception as e:
-                print(f"❌ Error building {route}: {e}")
-        
-        # Build individual project pages
-        for project in portfolio_data.projects:
-            try:
-                route = f'/project/{project.id}'
-                response = client.get(route)
-                if response.status_code == 200:
-                    content = response.get_data(as_text=True)
-                    
-                    # Fix static paths for project pages (they're in a subdirectory)
-                    content = content.replace('href="/static/', 'href="../static/')
-                    content = content.replace('src="/static/', 'src="../static/')
-                    content = content.replace('url(/static/', 'url(../static/')
-                    
-                    # Fix navigation links for project pages
-                    content = fix_urls_for_static_site(content, f"project/{project.id}.html", portfolio_data)
-                    
-                    # Additional fixes for project pages (in subdirectory)
-                    content = content.replace('href="./index.html"', 'href="../index.html"')
-                    content = content.replace('href="./hobby.html"', 'href="../hobby.html"')
-                    content = content.replace('href="./archive.html"', 'href="../hobby.html"')
-                    content = content.replace('href="./chatbot.html"', 'href="../chatbot.html"')
-                    content = content.replace('href="./narrative_nexus.html"', 'href="../narrative_nexus.html"')
-                    content = content.replace('href="./project/', 'href="../project/')
-                    content = content.replace('href="static/files/', 'href="../static/files/')
-                    
-                    # Fix anchor links for project pages - they should point back to index.html
-                    content = re.sub(r'href="/#([^"]*)"', r'href="../index.html#\1"', content)
-                    content = re.sub(r'href="\.\/index\.html#([^"]*)"', r'href="../index.html#\1"', content)
-                    
-                    # Create project directory
-                    project_dir = output_dir / "project"
-                    project_dir.mkdir(exist_ok=True)
-                    
-                    output_file = project_dir / f"{project.id}.html"
-                    with open(output_file, 'w', encoding='utf-8') as f:
-                        f.write(content)
-                    print(f"✅ Built {route} -> project/{project.id}.html")
-                else:
-                    print(f"❌ Failed to build {route}: {response.status_code}")
-            except Exception as e:
-                print(f"❌ Error building {route}: {e}")
-        
-        # Create 404 page
-        try:
-            # Use index as 404 fallback
-            response = client.get('/')
-            if response.status_code == 200:
-                content = response.get_data(as_text=True)
-                
-                # Fix all URLs for 404 page
-                content = fix_urls_for_static_site(content, '404.html', portfolio_data)
-                
-                output_file = output_dir / "404.html"
-                with open(output_file, 'w', encoding='utf-8') as f:
-                    f.write(content)
-                print("✅ Created 404.html")
-        except Exception as e:
-            print(f"❌ Error creating 404.html: {e}")
-    
-    # Create .nojekyll file for GitHub Pages
-    nojekyll_file = output_dir / ".nojekyll"
-    nojekyll_file.touch()
-    print("✅ Created .nojekyll file")
-    
-    print(f"\n🎉 Static site built successfully in '{output_dir}' directory!")
-    print("📁 Contents:")
-    for item in output_dir.rglob("*"):
-        if item.is_file():
-            print(f"   {item.relative_to(output_dir)}")
+            response = client.get(route)
+            expected = 404 if filename == '404.html' else 200
+            if response.status_code != expected:
+                raise RuntimeError(f'{route}: expected {expected}, got {response.status_code}')
+            html = fix_urls_for_static_site(response.get_data(as_text=True), filename, portfolio)
+            target = output / filename
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text('\n'.join(line.rstrip() for line in html.splitlines()) + '\n', encoding='utf-8')
+            print(f'Built {filename}')
+    # Preserve this previously public standalone essay page.
+    if Path('blogs.html').exists():
+        html = fix_urls_for_static_site(Path('blogs.html').read_text(), 'blogs.html', portfolio)
+        (output / 'blogs.html').write_text('\n'.join(line.rstrip() for line in html.splitlines()) + '\n', encoding='utf-8')
+    (output / '.nojekyll').touch()
+    (output / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n')
+    urls = [SITE_URL + '/' + name for _, name in routes if name not in {'404.html', 'chatbot.html'}]
+    entries = ''.join(f'<url><loc>{escape(url)}</loc></url>' for url in urls)
+    (output / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + entries + '</urlset>')
+    print(f'Built {len(routes)} pages in dist/')
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     build_static_site()
