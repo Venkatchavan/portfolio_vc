@@ -1,7 +1,7 @@
 """
 Portfolio data service: academic research portfolio.
 
-Returns curated content for Venkat Chavan N: AI/ML researcher focused on
+Returns curated content for VENKAT CHAVAN NAGABHUSHANA: AI/ML researcher focused on
 neuro-symbolic AI, LLM evaluation, retrieval-augmented generation, multi-agent
 reinforcement learning, Sanskrit NLP, and privacy-preserving AI.
 
@@ -11,7 +11,7 @@ labelled "Submitted (Yet to be Published)" rather than "Published".
 
 from app.models.portfolio import (
     PortfolioData, PersonalInfo, Experience, Project, Education, Publication,
-    ResearchInterest, TeachingItem, IndependentResearch,
+    ResearchInterest, TeachingItem, IndependentResearch, PatentApplication,
 )
 
 
@@ -22,9 +22,9 @@ def get_portfolio_data() -> PortfolioData:
     # Identity
     # ------------------------------------------------------------------
     personal_info = PersonalInfo(
-        name='Venkat Chavan N',
-        headline='AI/ML Researcher | Neuro-Symbolic AI, LLM Evaluation & Multi-Agent Learning',
-        location='Berlin, Germany: open to relocation',
+        name='VENKAT CHAVAN NAGABHUSHANA',
+        headline='Incoming PhD Research Fellow in ICT | University of Agder | Starting 1 November 2026',
+        location='Norway',
         email='venkat.chavan.n@gmail.com',
         phone='+49 15566360832',
         github='github.com/Venkatchavan',
@@ -32,11 +32,13 @@ def get_portfolio_data() -> PortfolioData:
         google_scholar='scholar.google.com/citations?user=8dLDVkcAAAAJ&hl=en',
         profile_image='images/Chavan-profile.jpg',
         cv_url='static/files/Venkat_Chavan_CV.pdf',
+        orcid='https://orcid.org/0009-0001-1673-1225',
         bio=(
-            "I am an AI/ML researcher with an MSc in Big Data and Artificial Intelligence from "
-            "SRH University of Applied Sciences, Berlin. My work focuses on building and evaluating "
-            "AI systems that move beyond surface-level pattern matching toward structured reasoning, "
-            "retrieval-grounded generation, and safety-aware decision-making."
+            "I am an AI researcher based in Norway, joining the University of Agder at Campus "
+            "Grimstad as a PhD Research Fellow in ICT on 1 November 2026. My doctoral research "
+            "will focus on multimodal agentic AI for a virtual coaching assistant, with an emphasis "
+            "on robust benchmarking, trustworthy behaviour, uncertainty and reproducible evaluation. "
+            "I hold an MSc in Big Data and Artificial Intelligence from SRH University, Berlin."
         ),
     )
 
@@ -102,9 +104,10 @@ def get_portfolio_data() -> PortfolioData:
         "neuro-symbolic biomedical reasoning, and coordinated multi-agent learning for autonomous "
         "driving. A common theme across these projects is evaluation: building systems whose outputs "
         "can be traced, tested, compared, and challenged.\n\n"
-        "I am particularly interested in PhD and research roles involving trustworthy LLMs, "
-        "neuro-symbolic AI, retrieval-augmented generation, multi-agent learning, causal "
-        "representation learning, and AI evaluation methodology."
+        "From 1 November 2026, my PhD research at the University of Agder will extend this "
+        "evaluation focus to multimodal agentic AI for virtual coaching. I will investigate "
+        "robustness, reliability, uncertainty and failure modes across heterogeneous data, "
+        "combining quantitative benchmarks with expert assessment in sports and health contexts."
     )
 
     # ------------------------------------------------------------------
@@ -137,6 +140,17 @@ def get_portfolio_data() -> PortfolioData:
     # Research & Professional Experience
     # ------------------------------------------------------------------
     experience = [
+        Experience(
+            title='Incoming PhD Research Fellow in ICT',
+            company='University of Agder, Campus Grimstad, Norway',
+            period='Starting 1 November 2026',
+            responsibilities=[
+                'Research focus: Multimodal Agentic AI for a Virtual Coaching Assistant (Jobbnorge ID: 295004).',
+                'Planned work: benchmark personalised AI agents using multimodal inputs, with attention to robustness, reliability and trustworthiness.',
+                'Develop evaluation methods that combine quantitative metrics with expert assessment of behaviour, uncertainty and failure modes.',
+                'Research context: the Centre for Artificial Intelligence Research (CAIR), with project partners Initial Force AS and NTNU, in sports and health contexts.',
+            ],
+        ),
         Experience(
             title='Graduate Research Intern',
             company='SRH University of Applied Sciences, Berlin',
@@ -910,7 +924,7 @@ def get_portfolio_data() -> PortfolioData:
     # ------------------------------------------------------------------
     publications = [
         Publication(
-            authors='D. V S, S. B, M. L and V. C. Nagabhushana',
+            authors='Deepthi V S, Sahana B, Mangala L, Venkat Chavan Nagabhushana',
             title='Encrypted Vector Operations for Privacy-Preserving Machine Learning and Data Retrieval',
             venue='2025 International Conference on Emerging Technologies in Electronics and Green Energy (ICETEG), Mysore, India',
             year='2025',
@@ -919,7 +933,7 @@ def get_portfolio_data() -> PortfolioData:
             badge='IEEE 2025',
             url='',
             status='Published',
-            summary='Encrypted vector operations supporting privacy-preserving similarity search and biometric authentication.',
+            summary='Paillier-based vector computation with accuracy close to the unencrypted baseline and lower computational overhead than fully homomorphic encryption, as reported in the publisher abstract.',
         ),
         Publication(
             authors='Deepthi V S, Venkat Chavan N, Sandhya Shanbhag, Sakshi S Dandappala',
@@ -943,7 +957,18 @@ def get_portfolio_data() -> PortfolioData:
             badge='IJERT 2022',
             url='https://www.ijert.org/research/crowd-density-estimation-and-location-prediction-in-public-transport-system-IJERTV11IS070053.pdf',
             status='Published',
-            summary='Implementation and evaluation of crowd density estimation and location prediction for public transport.',
+            summary='An IR-sensor and cloud prototype for passenger counting, with a four-model travel-time comparison. Table 4 reports the highest accuracy value for XGBoost: 96.22%.',
+        ),
+        Publication(
+            authors='Sandhya Shanbhag, Venkat Chavan N',
+            title='Peer to Peer Networks: A Bit Torrent Case Study',
+            venue='International Research Journal of Engineering and Technology (IRJET), Vol. 8, Issue 6, pp. 650-656',
+            year='2021', doi='',
+            keywords=['Peer-to-peer Networks', 'BitTorrent', 'Distributed Systems'],
+            badge='IRJET 2021',
+            url='https://www.irjet.net/archives/V8/i6/IRJET-V8I6117.pdf',
+            status='Published',
+            summary='A descriptive study of BitTorrent architecture, peer coordination and distributed file sharing, including its benefits and limitations.',
         ),
         Publication(
             authors='Venkat Chavan N',
@@ -1046,4 +1071,12 @@ def get_portfolio_data() -> PortfolioData:
         research_agenda=research_agenda,
         teaching=teaching,
         independent_research=independent_research,
+        patent_applications=[
+            PatentApplication(title='A Digital Twin-Driven Predictive Cyber Threat Intelligence Platform'),
+            PatentApplication(title=(
+                'Evidence-Grounded Multi-Agent Cyber Threat Intelligence Automation System and Method '
+                'with Assertion Lifecycle Enforcement, Contradiction-Triggered State Regression, '
+                'and Policy-Gated Export'
+            )),
+        ],
     )

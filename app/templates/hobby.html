@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Engineering &amp; side projects | {{ data.name }}{% endblock %}
-{% block description %}Engineering tools, applied machine learning and creative AI experiments by Venkat Chavan N. Explore source code, methods and project details.{% endblock %}
+{% block description %}Engineering tools, applied machine learning and creative AI experiments by {{ data.name }}. Explore source code, methods and project details.{% endblock %}
 {% block canonical %}hobby.html{% endblock %}
 {% block content %}
 <section class="section inner-hero" id="home"><div class="container"><p class="eyebrow">Engineering &amp; experiments</p><h1>Built to find out.</h1><p class="case-description">Applied machine learning, useful tools and creative detours. A collection of {{ data.hobby_projects | length }} projects beyond the main research line.</p><a class="text-link" href="{{ url_for('main.home') }}#projects">Explore the research portfolio ↗</a></div></section>

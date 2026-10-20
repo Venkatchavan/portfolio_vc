@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
 {% block title %}Page not found | {{ data.name }}{% endblock %}
-{% block description %}This evidence path does not lead to a page. Return to Venkat Chavan's research portfolio.{% endblock %}
+{% block description %}This evidence path does not lead to a page. Return to {{ data.name }}'s research portfolio.{% endblock %}
 {% block canonical %}404.html{% endblock %}
 {% block content %}<section class="section error-page"><div class="container"><p class="eyebrow">404 / No connection found</p><div class="error-path" aria-hidden="true"><span></span><i></i><b>?</b></div><h1>This path<br>ends here.</h1><p>The page may have moved, or the address may be incomplete.<br>There are still plenty of questions to explore.</p><a class="button button-primary" href="{{ url_for('main.home') }}">Back to the research <span aria-hidden="true">↗</span></a></div></section>{% endblock %}

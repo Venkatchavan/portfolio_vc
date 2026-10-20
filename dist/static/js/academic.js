@@ -168,6 +168,12 @@
         document.querySelectorAll('[data-bar]').forEach(bar => {
           gsap.fromTo(bar, { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: '.study-chart', start: 'top 85%', once: true } });
         });
+        document.querySelectorAll('[data-result-bar]').forEach(bar => {
+          gsap.fromTo(bar, {clipPath:'inset(0 100% 0 0)'}, {
+            clipPath:'inset(0 0% 0 0)', duration:1.1, ease:'power3.out',
+            scrollTrigger:{trigger:'.published-chart',start:'top 85%',once:true}
+          });
+        });
         const navs = [...document.querySelectorAll('.desktop-nav a')];
         ['projects', 'publications', 'experience', 'contact'].forEach(id => {
           const section = document.getElementById(id);

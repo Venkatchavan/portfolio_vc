@@ -73,6 +73,14 @@ def main():
     for fact in ('93.5', '88.7', '6.8', '6.5%', '11.3%', 'Preprint forthcoming'):
         if fact not in home:
             errors.append(f'Study context missing: {fact}')
+    for fact in ('VENKAT CHAVAN NAGABHUSHANA', '1 November 2026',
+                 'University of Agder', '0009-0001-1673-1225',
+                 '73.51%', '96.01%', '94.31%', '96.22%',
+                 'acceptance pending', '20 October 2026'):
+        if fact not in home:
+            errors.append(f'Profile or published-evidence context missing: {fact}')
+    if 'images/mark.svg' in home or 'open to relocation' in home or 'Open to PhD opportunities' in home:
+        errors.append('Outdated identity, logo or role copy')
     if errors:
         raise SystemExit('\n'.join(errors))
     print(f'PASS: {len(pages)} HTML pages, local links and anchors, CSS assets, chart context and deployment files.')

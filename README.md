@@ -1,7 +1,8 @@
-# Venkat Chavan N · Research portfolio
+# VENKAT CHAVAN NAGABHUSHANA · Research portfolio
 
-Research, engineering and writing by Venkat Chavan N, with an MSc in Big Data
-and Artificial Intelligence from SRH University, Berlin.
+Research, engineering and writing by VENKAT CHAVAN NAGABHUSHANA, based in Norway.
+Incoming PhD Research Fellow in ICT at the University of Agder, Campus Grimstad,
+starting 1 November 2026. MSc Big Data and AI, SRH University, Berlin.
 
 **Live site:** https://venkatchavan.github.io/portfolio_vc/
 
@@ -102,6 +103,20 @@ book-chapter and preprint links remain described as pending in their entries.
 ## Contact
 
 - venkat.chavan.n@gmail.com
+- https://orcid.org/0009-0001-1673-1225
 - https://github.com/Venkatchavan
 - https://www.linkedin.com/in/venkatchavan16
 - https://scholar.google.com/citations?user=8dLDVkcAAAAJ&hl=en
+
+## Profile and publication evidence update (20 October 2026)
+
+The original proprietary VC logo is used unchanged in the header and favicon.
+The profile includes a concise future doctoral scope based on Jobbnorge 295004,
+ORCID, two inventor-supplied patent application titles with acceptance pending,
+and a dated Google Scholar snapshot of 2 citations. This is not a live counter.
+
+Published findings have explicit source links: the IJERT 2022 comparison is
+reproduced from Table 4, while IEEE, IJIRT and IRJET findings are described at
+the level their accessible sources support. Survey results from cited studies
+are not attributed as the author's own experiments. Source notes live in
+PUBLICATION_EVIDENCE.md and the chart data in app/services/presentation.py.

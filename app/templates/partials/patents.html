@@ -1,0 +1,17 @@
+{% if data.patent_applications %}
+<section id="patents" class="section patent-section">
+  <div class="container">
+    <div class="section-heading"><div><p class="eyebrow">Inventions &amp; intellectual property</p><h2>Patent applications.</h2></div><p>Two filed applications.<br> Acceptance is pending.</p></div>
+    <div class="patent-list">
+      {% for patent in data.patent_applications %}
+      <article class="patent-item">
+        <span class="pub-status">{{ patent.status }}</span>
+        <h3>{{ patent.title }}</h3>
+        {% if patent.application_number or patent.jurisdiction or patent.filing_date %}<p class="patent-meta">{% if patent.application_number %}{{ patent.application_number }}{% endif %}{% if patent.jurisdiction %} · {{ patent.jurisdiction }}{% endif %}{% if patent.filing_date %} · {{ patent.filing_date }}{% endif %}</p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+    <p class="patent-note">Titles and filing status supplied by the inventor. Full filing details will be added when available. These applications have not been accepted or granted.</p>
+  </div>
+</section>
+{% endif %}

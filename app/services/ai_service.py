@@ -48,7 +48,7 @@ def generate_chatbot_response(user_message: str, context: str) -> str:
         try:
             # Create a comprehensive prompt for Gemini
             prompt = f"""
-You are an AI assistant representing Venkat Chavan N, an Aspiring Research Scientist & AI/ML Specialist. 
+You are an AI assistant representing VENKAT CHAVAN NAGABHUSHANA, a Norway-based AI researcher joining the University of Agder as a PhD Research Fellow in ICT on 1 November 2026.
 You should answer questions about his background, experience, and projects in a professional yet friendly manner.
 Always respond in first person as if you are Venkat himself.
 
@@ -116,7 +116,7 @@ def _get_fallback_response(user_message: str) -> str:
         return random.choice(greeting_responses)
     
     elif any(word in user_message_lower for word in ['experience', 'work', 'job']):
-        return "I have diverse experience in data engineering and AI, including current work at Ford Werke GmbH as a Data Engineering Intern, previous roles at AI Variant and Siemens. I specialize in GCP-based ETL workflows, machine learning, and cloud-native data pipelines."
+        return "I have diverse experience in data engineering and AI, including a completed Data Engineering Internship at Ford Werke GmbH and roles at AI Variant and Siemens. I am joining the University of Agder in Grimstad for PhD research in multimodal agentic AI on 1 November 2026. I specialize in GCP-based ETL workflows, machine learning, and cloud-native data pipelines."
     
     elif any(word in user_message_lower for word in ['project', 'research']):
         return "I successfully completed my Masters thesis on Coordinated Multi-Agent Reinforcement Learning for autonomous vehicles with an exceptional grade of 1.0/4.0 (S-tier). I've also completed projects on NLP analysis of spiritual texts, RAG-based QA systems, and interactive fiction co-authoring using AI."
@@ -125,7 +125,7 @@ def _get_fallback_response(user_message: str) -> str:
         return "I specialize in Python, SQL, cloud platforms (GCP, Azure), machine learning frameworks (PyTorch, TensorFlow), and modern data tools like BigQuery, FAISS, and LangChain. I'm particularly experienced in ETL pipelines and NLP applications."
     
     elif any(word in user_message_lower for word in ['education', 'study', 'university']):
-        return "I'm currently pursuing my MSc in Big Data and Artificial Intelligence at SRH University Berlin (2023-2025). I completed my BE in Information Science from Global Academy of Technology, Bengaluru (2018-2022)."
+        return "I completed my MSc in Big Data and Artificial Intelligence at SRH University Berlin (2023-2025). I am based in Norway and start my PhD research at the University of Agder on 1 November 2026. I completed my BE in Information Science from Global Academy of Technology, Bengaluru (2018-2022)."
     
     elif any(word in user_message_lower for word in ['contact', 'reach', 'email']):
         return "You can reach me at venkat.chavan.n@gmail.com or connect with me on LinkedIn at linkedin.com/in/venkatchavan16. I'm always open to discussing opportunities in data engineering and AI!"

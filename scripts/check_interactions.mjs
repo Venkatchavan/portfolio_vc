@@ -65,6 +65,8 @@ try {
   await page.locator('#study-details summary').click();
   assert.equal(await page.locator('#study-details').getAttribute('open'),'');
   await page.locator('#study-details summary').click();
+  await shot(page,'desktop-published-findings','#published-findings');
+  await shot(page,'desktop-patents','#patents');
   await shot(page,'desktop-publications','#publications');
   await shot(page,'desktop-about','#experience');
   await shot(page,'desktop-contact','#contact');
@@ -109,7 +111,7 @@ try {
   await phone.keyboard.press('Escape');
   assert.equal(await phone.locator('#mobile-menu').isVisible(),false);
   assert.equal(await phone.locator('.menu-toggle').evaluate(el=>document.activeElement===el),true,'menu restores focus');
-  for (const [name,id] of [['network','.network-card'],['featured','#projects'],['index','.work-index-header'],['study','#independent-research'],['publications','#publications'],['about','#experience'],['contact','#contact']]) await shot(phone,'mobile-'+name,id);
+  for (const [name,id] of [['network','.network-card'],['featured','#projects'],['index','.work-index-header'],['study','#independent-research'],['published-findings','#published-findings'],['patents','#patents'],['publications','#publications'],['about','#experience'],['contact','#contact']]) await shot(phone,'mobile-'+name,id);
   for (const [name,file] of [['archive','hobby.html'],['writing','narrative_nexus.html'],['case','project/h-rag-cti.html']]) {
     await phone.goto(base+file);await phone.waitForTimeout(300);await audit(phone,'mobile-'+name);await shot(phone,'mobile-'+name);
   }

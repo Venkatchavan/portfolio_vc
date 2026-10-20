@@ -161,6 +161,8 @@ def build_cv():
         _link(info.linkedin, f'https://{info.linkedin}'),
         _link('Google Scholar', f'https://{info.google_scholar}'),
     ]
+    if info.orcid:
+        contact_bits.append(_link('ORCID: ' + info.orcid.rsplit('/', 1)[-1], info.orcid))
     if info.phone:
         contact_bits.insert(1, info.phone)
     story.append(Paragraph(' &nbsp;|&nbsp; '.join(_strip_emdash(b) for b in contact_bits), styles['contact']))
@@ -212,6 +214,16 @@ def build_cv():
             block.append(Paragraph(_strip_emdash(pub.summary), styles['body_soft']))
         story.append(KeepTogether(block))
         story.append(Spacer(1, 6))
+
+    # ----- Patent applications: filed status never implies acceptance or grant -----
+    if data.patent_applications:
+        story += _section('Patent Applications', styles)
+        for patent in data.patent_applications:
+            story.append(KeepTogether([
+                Paragraph(f'<b>{patent.title}</b>', styles['body']),
+                Paragraph(patent.status, styles['body_soft']),
+            ]))
+            story.append(Spacer(1, 6))
 
     # ----- Experience -----
     story += _section('Research and Professional Experience', styles)

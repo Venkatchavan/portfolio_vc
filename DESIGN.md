@@ -1,7 +1,7 @@
 # Portfolio redesign
 
 ## Brief
-Venkat Chavan N is an early-career AI/ML researcher. The primary audience is
+VENKAT CHAVAN NAGABHUSHANA is an early-career AI/ML researcher. The primary audience is
 research supervisors, collaborators and research-engineering recruiters. The
 site must make research questions, evidence and source code easy to inspect.
 Keep the existing Flask/Jinja architecture and static GitHub Pages deployment.
@@ -49,7 +49,7 @@ HERO        name + research role      interactive evidence network
             worth trusting.          focus selector + explanation
             short introduction
             work / contact
-FACTS       research projects | scholarly entries | engineering projects
+FACTS       research projects | scholarly entries | dated citation snapshot
 WORK        large heading / filter controls
             featured case (7 cols)   second case (5 cols)
             full-width indexed project rows
@@ -80,8 +80,22 @@ absolute percentage points lower overall, not a relative percentage. These are
 author-reported aggregate results from a preprint forthcoming, not a published
 or independently reproduced benchmark. No per-dataset or absolute performance
 numbers are inferred. Hero and project diagrams are conceptual, not measurements.
-Assume existing Berlin location, openness to roles and all statuses remain current.
-No content placeholders are introduced.
+The owner is now based in Norway and joins University of Agder, Campus Grimstad,
+as a PhD Research Fellow in ICT on 1 November 2026. The role is labelled incoming.
+The supplied Jobbnorge 295004 brief is condensed into planned research on
+multimodal agentic AI for virtual coaching, robustness and evaluation.
+
+The original proprietary VC PNG remains unchanged and supplies the header,
+favicon and touch icon. Google Scholar shows 2 citations as checked on 20 October
+2026; the displayed value links to its source and is explicitly dated. ORCID is
+linked throughout the profile and CV. Both owner-supplied invention titles are
+labelled applications filed with acceptance pending; filing details are omitted
+until supplied. No content placeholders are introduced.
+
+The published-results section reproduces IJERT Table 4 on a full 0–100 scale,
+with its metric limitations stated. The other three published papers have
+qualitative findings and source links, reflecting the accessible evidence.
+Detailed provenance is recorded in PUBLICATION_EVIDENCE.md.
 
 ## Deployment
 One GitHub Actions workflow builds dist, validates it, and deploys only pushes
@@ -120,3 +134,12 @@ for deployment. QA evidence is local and excluded from version control.
 Manual contrast follow-up: incomplete checks were SVG-overlap detection, underline-only gradient backgrounds and non-text arrow/pause glyphs. The mapped foreground/background pairs were calculated at 4.5:1 or above in both themes; see local .shots/contrast-review.json and .shots/contrast-ratios.json. Final case refinements bring illustrations higher, add the source-described SanskritEval benchmark composition, remove duplicate essay headings and carry the evidence curtain across document navigation.
 
 Final visual correction: enlarged the SVG core so the complete Trustworthy AI label stays inside its circular background on phones. A glyph-bound check and new screenshots pass at 390, 768 and 1440 pixels.
+
+20 October profile update: 28 generated pages pass link and content validation;
+15 browser accessibility states pass with no violations, overflow or asset errors.
+Original-logo URLs, ORCID, both application entries and all four chart fractions
+also pass focused checks at 360, 390, 768 and 1440 pixels. Desktop and phone
+captures were reviewed, including the long invention title and dark chart.
+The rebuilt six-page CV was checked for updated identity, role, ORCID and patent
+content and visually reviewed after rendering. The production audit reports no
+failures; long full-name page titles and preserved source writing produce warnings.

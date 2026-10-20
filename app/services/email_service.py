@@ -126,7 +126,7 @@ Hi {recipient_name},
 Thank you for reaching out through my portfolio! I've received your message and will get back to you as soon as possible.
 
 Best regards,
-Venkat Chavan N
+VENKAT CHAVAN NAGABHUSHANA
 Aspiring Research Scientist & AI/ML Specialist
 """
         
@@ -139,7 +139,7 @@ Aspiring Research Scientist & AI/ML Specialist
         <p>Thank you for reaching out through my portfolio! I've received your message and will get back to you as soon as possible.</p>
         
         <p style="margin-top: 30px;">Best regards,<br>
-        <strong>Venkat Chavan N</strong><br>
+        <strong>VENKAT CHAVAN NAGABHUSHANA</strong><br>
         <em>Aspiring Research Scientist & AI/ML Specialist</em></p>
         
         <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 30px 0;">

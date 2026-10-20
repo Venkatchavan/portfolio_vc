@@ -20,6 +20,7 @@ class PersonalInfo:
     profile_image: str
     bio: str
     cv_url: str = ''
+    orcid: str = ''
 
 
 @dataclass
@@ -104,6 +105,15 @@ class TeachingItem:
 
 
 @dataclass
+class PatentApplication:
+    title: str
+    status: str = 'Application filed; acceptance pending'
+    application_number: str = ''
+    jurisdiction: str = ''
+    filing_date: str = ''
+
+
+@dataclass
 class PortfolioData:
     personal_info: PersonalInfo
     skills: Dict[str, List[str]]
@@ -115,6 +125,7 @@ class PortfolioData:
     research_agenda: str = ''
     teaching: List[TeachingItem] = field(default_factory=list)
     independent_research: List[IndependentResearch] = field(default_factory=list)
+    patent_applications: List[PatentApplication] = field(default_factory=list)
 
     def selected_projects(self) -> List[Project]:
         return [p for p in self.projects if p.category == 'research']
@@ -150,6 +161,13 @@ class PortfolioData:
             'profile_image': self.personal_info.profile_image,
             'bio': self.personal_info.bio,
             'cv_url': self.personal_info.cv_url,
+            'orcid': self.personal_info.orcid,
+            'patent_applications': [
+                {'title': p.title, 'status': p.status,
+                 'application_number': p.application_number,
+                 'jurisdiction': p.jurisdiction, 'filing_date': p.filing_date}
+                for p in self.patent_applications
+            ],
             'skills': self.skills,
             'experience': [
                 {'title': e.title, 'company': e.company, 'period': e.period,
