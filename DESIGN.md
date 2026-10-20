@@ -118,3 +118,5 @@ for deployment. QA evidence is local and excluded from version control.
  proceedings, chapter and preprint references remain honestly labelled.
 
 Manual contrast follow-up: incomplete checks were SVG-overlap detection, underline-only gradient backgrounds and non-text arrow/pause glyphs. The mapped foreground/background pairs were calculated at 4.5:1 or above in both themes; see local .shots/contrast-review.json and .shots/contrast-ratios.json. Final case refinements bring illustrations higher, add the source-described SanskritEval benchmark composition, remove duplicate essay headings and carry the evidence curtain across document navigation.
+
+Final visual correction: enlarged the SVG core so the complete Trustworthy AI label stays inside its circular background on phones. A glyph-bound check and new screenshots pass at 390, 768 and 1440 pixels.
